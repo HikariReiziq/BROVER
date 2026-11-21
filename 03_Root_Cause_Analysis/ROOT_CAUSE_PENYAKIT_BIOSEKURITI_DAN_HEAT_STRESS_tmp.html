@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="deep-root-cause-analysis-rca-masalah-1-wabah-penyakit--biosekuriti-dan-masalah-2-heat-stress--mikroklimat-di-peternakan-unggas-indonesia">DEEP ROOT CAUSE ANALYSIS (RCA): MASALAH #1 (WABAH PENYAKIT &amp; BIOSEKURITI) DAN MASALAH #2 (HEAT STRESS &amp; MIKROKLIMAT) DI PETERNAKAN UNGGAS INDONESIA</h1>
+<blockquote>
+<p><strong>Status Tahapan:</strong> <em>Root Cause Analysis (RCA)</em> Mendalam — Tim MBOYZ, Hackathon Deep Tech UNJ 2026, Jalur Pangan <code>D-FARM UNJ</code> (Challenge #1: <em>Smart Poultry / Smart Egg Production</em>).<br>
+<strong>Batasan Ketat Dokumen:</strong> Dokumen ini <strong>100% murni berfokus pada penggalian akar penyebab permasalahan (<em>Root Cause Analysis</em>)</strong> untuk <strong>Masalah #1</strong> dan <strong>Masalah #2</strong> hasil triangulasi V3 pada peternakan ayam pedaging (<em>broiler</em>) dan petelur (<em>layer</em>) di Indonesia. Dokumen ini <strong>sama sekali tidak mengusulkan solusi, konsep proyek, nama produk, fitur aplikasi, desain perangkat IoT/CV, maupun arsitektur Hackathon</strong>, serta mengecualikan seluruh topik pengolahan limbah/sampah dan jalur kesehatan (<code>D-MARC</code>). Arsip <code>01_Context_Memory/</code> dan <code>02_Problem_Research/</code> dipertahankan utuh tanpa perubahan.</p>
+</blockquote>
+<hr>
+<h2 id="1-ringkasan-eksekutif--metodologi-rca">1. Ringkasan Eksekutif &amp; Metodologi RCA</h2>
+<h3 id="a-ruang-lingkup--sinkronisasi-angka-audit-v3">A. Ruang Lingkup &amp; Sinkronisasi Angka Audit V3</h3>
+<p>Analisis RCA ini membedah secara mendalam dua masalah teknis-operasional paling stabil (invarian peringkat #1 dan #2 pada seluruh skema uji sensitivitas V3) di sektor perunggasan Indonesia:</p>
+<ol>
+<li><strong>Masalah #1:</strong> Wabah Penyakit Endemik &amp; Lemahnya Biosekuriti Kandang Rakyat.</li>
+<li><strong>Masalah #2:</strong> Cekaman Panas (<em>Heat Stress</em>) &amp; Instabilitas Mikroklimat Tropis (baik pada kandang <em>open house</em> maupun <em>closed/semi-closed house</em>).</li>
+<li><strong>Kausalitas Silang (#2 ↔ #1):</strong> Lingkaran setan (<em>vicious cycle</em>) bagaimana instabilitas mikroklimat tropis secara langsung meruntuhkan pertahanan biologis ternak dan memicu ledakan wabah penyakit.</li>
+</ol>
+<p><strong>Sinkronisasi Angka Presisi Audit Lampiran V3:</strong></p>
+<ul>
+<li><code>Mohammadi et al. (2026)</code> <strong>Table 6</strong> (<code>L10b</code> Lampiran V3): ambang (<em>cut-off</em>) analisis ROC prediktor mortalitas broiler pada pukul 16:00 adalah <strong>suhu <code>&gt;32,8°C</code></strong> (<code>AUC = 0,694</code>, <code>p = 0,026</code>) dan <strong>THI <code>&gt;79</code></strong> (<code>AUC = 0,709</code>, <code>p = 0,016</code>).</li>
+<li><code>Rehman et al. (2023)</code> <strong>Figure 2</strong> (<code>L20</code> Lampiran V3): sebanyak <strong><code>58%</code> pekerja kandang unggas Indonesia</strong> berada pada tingkat pengetahuan <em>Avian Influenza</em> kategori <em>Low–Moderate</em> (<strong><code>33% Low</code></strong>, <strong><code>25% Moderate</code></strong>; hanya <code>42% High</code>).</li>
+</ul>
+<h3 id="b-kerangka-kerja-rca--standar-transparansi-peran-ai-agent">B. Kerangka Kerja RCA &amp; Standar Transparansi Peran AI Agent</h3>
+<p>Dokumen ini menerapkan tiga kerangka kerja RCA terpadu: <strong>(1) Diagram Fishbone (Ishikawa) 6 Dimensi</strong> (<em>Man/SDM</em>, <em>Method/SOP</em>, <em>Infrastructure/Kandang</em>, <em>Environment/Iklim</em>, <em>Material/Biologis</em>, <em>Economic/Insentif</em>), <strong>(2) Analisis <em>5 Whys</em></strong> pada 6 sub-masalah kritis (3 per masalah), dan <strong>(3) Peta Kausalitas Silang (<em>Vicious Cycle</em>)</strong>.</p>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code> — <em>Legenda atribusi &amp; pemisahan sumber dalam dokumen RCA.</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Label Asal (<em>Provenance Tag</em>)</th>
+<th style="text-align:left">Definisi &amp; Batas Penggunaannya dalam Dokumen RCA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong><code>[ASLI DARI SUMBER PRIMER]</code></strong></td>
+<td style="text-align:left">Grafik/diagram asli yang diunduh langsung dari jurnal <em>Open Access</em> resmi tanpa digambar ulang oleh AI.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>[DATA PRIMER TERVERIFIKASI — TABEL/VISUALISASI DISUSUN OLEH AI AGENT]</code></strong></td>
+<td style="text-align:left">100% angka, persentase, dan temuan empiris berasal dari jurnal <em>peer-reviewed</em> Tier-1 (2021–2026) atau data resmi BPS/Kementan/PT Medion (Tier-2); AI Agent menyusun format tabel/ringkasannya. Data lapangan Indonesia dipisahkan tegas dari mekanisme fisiologi/patologi dasar yang diberi label <strong><code>[Mekanisme Biologis Umum]</code></strong>.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>[SUARA LAPANGAN DARING (YOUTUBE/BERITA/INTERNET) — NON-PEER-REVIEWED]</code></strong></td>
+<td style="text-align:left">Hasil penelusuran wawancara peternak, webinar praktisi/dokter hewan lapangan, dan media industri perunggasan Indonesia (YouTube, TROBOS Livestock, Afederasi, Kompasiana) untuk validasi mekanisme operasional harian.</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></strong></td>
+<td style="text-align:left">Seluruh diagram Fishbone, rantai <em>5 Whys</em>, pemetaan <em>Vicious Cycle</em>, klasifikasi <em>controllable on-farm</em> vs <em>struktural</em>, serta sintesis titik akar terdalam yang disusun AI Agent untuk diuji melalui wawancara primer Tim MBOYZ.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="2-root-cause-analysis-mendalam--masalah-1-wabah-penyakit-endemik--lemahnya-biosekuriti-kandang-rakyat">2. Root Cause Analysis Mendalam — Masalah #1: Wabah Penyakit Endemik &amp; Lemahnya Biosekuriti Kandang Rakyat</h2>
+<p><img src="file:///home/reiziqzip/Programmer/Hackathon-UNJ/03_Root_Cause_Analysis/assets/01_fishbone_root_cause_penyakit_biosekuriti.png" alt="Diagram Fishbone 6 Dimensi — Akar Masalah #1 Penyakit Endemik &amp; Biosekuriti Lemah">
+<em><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code> Pemetaan 6 dimensi Ishikawa akar penyebab wabah penyakit endemik &amp; lemahnya biosekuriti di peternakan unggas Indonesia.</em></p>
+<h3 id="21-peta-akar-masalah-6-dimensi-masalah-1">2.1. Peta Akar Masalah 6 Dimensi (Masalah #1)</h3>
+<p><code>[DATA PRIMER TERVERIFIKASI — TABEL/VISUALISASI DISUSUN OLEH AI AGENT]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Dimensi</th>
+<th style="text-align:left">Akar Masalah Spesifik</th>
+<th style="text-align:left">Mekanisme Kejadian di Lapangan</th>
+<th style="text-align:left">Bukti Empiris &amp; Label Cakupan</th>
+<th style="text-align:left">Sumber (DOI / URL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1. <em>Man</em> (SDM &amp; Literasi)</strong></td>
+<td style="text-align:left"><strong>Kesenjangan literasi penyakit &amp; biosekuriti pekerja kandang</strong></td>
+<td style="text-align:left">Pekerja kandang (ABK) dan peternak kecil belum memahami jalur transmisi patogen, protokol 3 zona, serta perbedaan gejala klinis antar-penyakit pernapasan/viral.</td>
+<td style="text-align:left"><code>[Survei Multi-Farm / Regional — 200 pekerja unggas RI]</code> <strong><code>58%</code> pekerja</strong> berada di tingkat pengetahuan AI <em>Low–Moderate</em> (<strong><code>33% Low</code></strong>, <strong><code>25% Moderate</code></strong>; hanya <code>42% High</code>).</td>
+<td style="text-align:left"><a href="https://doi.org/10.7717/peerj.14600">Rehman et al., <em>PeerJ</em> Q1 (2023)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>1. <em>Man</em> (SDM &amp; Literasi)</strong></td>
+<td style="text-align:left"><strong>Diagnosis visual spekulatif &amp; kebiasaan <em>self-treatment</em></strong></td>
+<td style="text-align:left">Saat ayam ngorok/lesu, peternak langsung menduga snot/CRD dan memberi antibiotik warung/toko obat secara berulang tanpa bedah bangkai terarah atau uji lab, sehingga wabah viral ganas (AI/ND/IB) baru disadari setelah kematian melonjak.</td>
+<td style="text-align:left"><code>[Survei Multi-Farm — 132 broiler Bogor]</code> <strong><code>75,0%</code></strong> memakai antibiotik untuk <em>flushing</em> &amp; <strong><code>56,1%</code></strong> profilaksis; hanya <code>8,3%</code> terapi terarah. <code>[Survei 56 stakeholder 5 provinsi]</code> Ketergantungan tinggi pada <em>poultry shop</em> &amp; TSO swasta. <code>[Berita Lapangan — Hari Farm 10.000 layer]</code> AI awalnya dikira snot → kematian 4→80 ekor/hari, HDA anjlok <strong>82%→40%</strong>.</td>
+<td style="text-align:left"><a href="https://doi.org/10.14202/vetworld.2022.707-713">Efendi et al., <em>Vet. World</em> Q1 (2022)</a>; <a href="https://doi.org/10.1371/journal.pone.0308379">Chapot et al., <em>PLOS ONE</em> Q1 (2024)</a>; <a href="https://troboslivestock.com/virus-ai-terus-mengintai/">TROBOS (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. <em>Method</em> (SOP, Vaksinasi &amp; Lalu Lintas)</strong></td>
+<td style="text-align:left"><strong>Kegagalan <em>cold chain</em> &amp; aplikasi vaksin tidak seragam</strong></td>
+<td style="text-align:left">Vaksin aktif/inaktif rusak selama distribusi/penyimpanan karena suhu keluar rentang <strong>2–8°C</strong>, paparan klorin/disinfektan pada air minum, atau teknik tetes/minum tidak merata sehingga titer antibodi flok belang (<em>CV</em> tinggi).</td>
+<td style="text-align:left"><code>[Buletin Teknis Nasional — Tier 2]</code> PT Medion menegaskan kerusakan <em>cold chain</em> di luar <strong>2–8°C</strong> dan kekeliruan <em>handling</em> menurunkan potensi antigen sebelum aplikasi. <code>[Studi Kasus Lokal — Majalengka]</code> Titer ELISA IB hari ke-28 menunjukkan <strong>CV <code>256%</code></strong> (sangat tidak seragam akibat infeksi lapang + gagal proteksi merata).</td>
+<td style="text-align:left"><a href="https://www.medion.co.id/info-medion/tips-jitu-menjaga-kualitas-vaksin/">PT Medion — Kualitas Vaksin (2025)</a>; <a href="https://doi.org/10.3390/vetsci13040364">Hartady et al., <em>Vet. Sci.</em> Q1 (2026)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. <em>Method</em> (SOP, Vaksinasi &amp; Lalu Lintas)</strong></td>
+<td style="text-align:left"><strong>Sistem <em>multi-age</em> pada layer &amp; lalu lintas tengkulak (<em>collector</em>) bebas masuk</strong></td>
+<td style="text-align:left">Pada peternakan layer rakyat, banyak kelompok umur ayam dipelihara bersamaan dalam satu lokasi sehingga <strong>istirahat kandang (<em>downtime</em> / <em>all-in all-out</em>) tidak pernah terjadi</strong>; sementara kendaraan/keranjang tengkulak ayam hidup (<em>collector</em>) berpindah antar-farm dan pasar unggas hidup (LBM) tanpa disinfeksi.</td>
+<td style="text-align:left"><code>[Survei Multi-Farm — 19 farm Jabar]</code> Skor <strong>biosekuriti eksternal terburuk: <code>0,28/1,0</code></strong>, disusul <strong>pergerakan &amp; pembelian <code>0,48/1,0</code></strong> dan <strong>pekerja &amp; peralatan <code>0,50/1,0</code></strong>. <code>[Surveilans LBM — 7 pasar tradisional 4 kabupaten Jatim]</code> <strong><code>10,9%</code> (17/156)</strong> swab permukaan alat (pisau, talenan, lap) positif Influenza A termasuk reassortant H9N2.</td>
+<td style="text-align:left"><a href="https://doi.org/10.1016/j.psj.2025.106010">Anwar Sani et al., <em>Poult. Sci.</em> Q1 (2025)</a>; <a href="https://doi.org/10.14202/vetworld.2025.955-968">Dharmayanti et al., <em>Vet. World</em> Q1 (2025)</a>; <a href="https://doi.org/10.5713/ab.24.0678">Sumiati et al., <em>Anim. Biosci.</em> Q1 (2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. <em>Method</em> (SOP, Vaksinasi &amp; Lalu Lintas)</strong></td>
+<td style="text-align:left"><strong>Absennya pemantauan indikator dini &amp; lambatnya akses diagnostik lab</strong></td>
+<td style="text-align:left">Peternak tidak memantau deviasi harian <em>feed/water intake</em>, pola suara napas, atau tren kematian awal secara terstruktur; sementara akses laboratorium PCR/serologi jauh, berbiaya tinggi, dan pelaporan data terputus (<em>silo</em>) antara peternak mandiri, <em>poultry shop</em>, dan Dinas.</td>
+<td style="text-align:left"><code>[Survei Kualitatif 5 Provinsi RI]</code> Peta jaringan informasi kesehatan menunjukkan peternak mandiri terputus dari surveilans dini dan lab diagnostik; pelaporan ke Dinas rendah karena takut penutupan kandang/stigma.</td>
+<td style="text-align:left"><a href="https://doi.org/10.1016/j.prevetmed.2023.106003">Chapot et al., <em>Prev. Vet. Med.</em> Q1 (2023)</a>; <a href="https://doi.org/10.1371/journal.pone.0308379">Chapot et al., <em>PLOS ONE</em> Q1 (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3. <em>Infrastructure</em> (Kandang &amp; Fasilitas)</strong></td>
+<td style="text-align:left"><strong>Kandang <em>open house</em> di tengah pemukiman padat tanpa zonasi 3 lapis</strong></td>
+<td style="text-align:left">Mayoritas kandang rakyat (Sektor 3–4) berdinding terbuka, berjarak rapat dengan rumah/kandang tetangga dan unggas kampung lepas, tanpa pagar keliling, ruang ganti, <em>footbath</em>, bak celup roda kendaraan, maupun fasilitas karantina/pemusnahan bangkai.</td>
+<td style="text-align:left"><code>[Data Nasional / Review RI]</code> ~40% produksi nasional berasal dari &gt;1 juta peternak kecil–menengah dominan <em>open house</em>; kontak terbuka dengan burung liar &amp; unggas kampung mematahkan pertahanan biosekuriti farm bertetangga.</td>
+<td style="text-align:left"><a href="https://doi.org/10.5713/ab.24.0678">Sumiati et al., <em>Anim. Biosci.</em> Q1 (2025)</a>; <a href="https://www.medion.co.id/en/info-medion/closed-house-and-biosecurity-collaboration/">PT Medion — Biosekuriti 3 Zona (2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>4. <em>Environment</em> (Iklim, Gas &amp; Reservoir)</strong></td>
+<td style="text-align:left"><strong>Tekanan mikroklimat ekstrem, gas NH₃ tinggi &amp; reservoir LBM</strong></td>
+<td style="text-align:left">Suhu tinggi (<code>IHS &gt;160</code>), RH <code>&gt;80%</code>, dan akumulasi NH₃ (<code>15–20 ppm</code>) merusak silia trakea dan memicu imunosupresi (lihat Bagian 4); sementara pasar unggas hidup (LBM) &amp; ayam kampung tidak divaksin berperan sebagai reservoir permanen virus ND &amp; AI.</td>
+<td style="text-align:left"><code>[Studi Kasus Lokal — Majalengka]</code> NH₃ <strong><code>20 ppm</code></strong>, RH <strong><code>&gt;80%</code></strong>, IHS <strong><code>&gt;160</code></strong> menyertai koinfeksi AI H5+H9+IB+MG+Koksidiosis. <code>[Surveilans LBM Jatim]</code> Virus H5N1 clade 2.3.2.1c diisolasi dari <strong>ayam tampak sehat</strong> di LBM.</td>
+<td style="text-align:left"><a href="https://doi.org/10.3390/vetsci13040364">Hartady et al., <em>Vet. Sci.</em> Q1 (2026)</a>; <a href="https://doi.org/10.7717/peerj.14917">Rehman et al., <em>PeerJ</em> Q1 (2023b)</a>; <a href="https://troboslivestock.com/sambang-kandang-nd-dihadang/">TROBOS — Prof. Suwarno Unair (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5. <em>Material</em> (Biologis Patogen, Vektor &amp; Mikotoksin)</strong></td>
+<td style="text-align:left"><strong>Evolusi/mutasi strain virus lapang (<em>vaccine mismatch</em>)</strong></td>
+<td style="text-align:left">Sirkulasi <strong>NDV Genotipe VII / VII.2</strong>, <strong>IBV GI-19 (<em>QX-like</em>)</strong> dengan 31 substitusi &amp; 2 delesi asam amino S1, <strong>LPAI H9N2</strong> yang mengalami <em>antigenic drift</em> &amp; reassortment di LBM, serta masuknya <strong>HPAI H5N1 clade 2.3.4.4b</strong> menurunkan daya lindung vaksin klasik non-homolog.</td>
+<td style="text-align:left"><code>[Studi Molekuler Jawa — 2024]</code> Seluruh isolat IBV komersial (<em>breeder/broiler/layer</em>) teridentifikasi <strong>GI-19 (QX-like)</strong> (identitas asam amino 87–100%). <code>[Surveilans Kalsel — 2024]</code> Deteksi perdana <strong>H5N1 clade 2.3.4.4b</strong> di itik domestik RI. <code>[Review Nasional]</code> NDV Genotipe VII tetap mendominasi wabah pada flok tervaksin.</td>
+<td style="text-align:left"><a href="https://doi.org/10.4308/hjb.31.3.414-424">Santoso et al., <em>HAYATI</em> S1/Q2 (2024)</a>; <a href="https://doi.org/10.3201/eid3003.230973">Wibawa et al., <em>Emerg. Infect. Dis.</em> Q1 (2024)</a>; <a href="https://doi.org/10.4142/jvs.23022">Dharmayanti et al., <em>JVS</em> Q2 (2024)</a>; <a href="https://doi.org/10.12688/f1000research.118669.2">Rehman et al., <em>F1000Res.</em> Q1/Q2 (2022)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5. <em>Material</em> (Biologis Patogen, Vektor &amp; Mikotoksin)</strong></td>
+<td style="text-align:left"><strong>Imunosupresi hulu (IBD/Gumboro &amp; Aflatoksin B1) serta vektor kumbang <em>litter</em></strong></td>
+<td style="text-align:left">Infeksi subklinis <strong>IBD/Gumboro</strong> merusak <em>Bursa Fabricius</em>, sementara kontaminasi <strong>Aflatoksin B1 (AFB1)</strong> kronis pada pakan menekan respon imun vaksin; di lantai kandang, kumbang <em>litter</em> <strong><code>Alphitobius diaperinus</code></strong> yang telah resisten insektisida sintetik menyimpan patogen antar-siklus.</td>
+<td style="text-align:left"><code>[Surveilans PCR Nasional — PT Medion 2026]</code> IBD/Gumboro <strong><code>10,6%</code></strong> (peringkat #4 PCR nasional). <code>[Survei Pakan — Bogor &amp; Bekasi, n=86 pakan + 63 bahan]</code> AFB1 terdeteksi di <strong><code>96,51%</code> pakan jadi</strong>, <strong><code>78,00%</code> jagung</strong> (median melonjak <strong><code>126,09 μg/kg</code></strong> di 2024 = <strong>2,5× batas SNI <code>50 μg/kg</code></strong>), &amp; <strong><code>76,92%</code> dedak</strong>. <code>[Studi Vektor RI]</code> <em>A. diaperinus</em> persisten &amp; resisten insektisida sintetik.</td>
+<td style="text-align:left"><a href="https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/">PT Medion TEC (2026)</a>; <a href="https://doi.org/10.1155/vmi/1687482">Widiastuti et al., <em>Vet. Med. Int.</em> Q2 (2026)</a>; <a href="https://doi.org/10.18343/jipi.30.3.517">Nur &amp; Widiyaningrum, <em>JIPI</em> S2 (2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>6. <em>Economic</em> (Insentif &amp; Modal)</strong></td>
+<td style="text-align:left"><strong>Ketiadaan kompensasi <em>stamping out</em>, asimetri kontrak <em>makloon</em>, &amp; keterbatasan modal</strong></td>
+<td style="text-align:left">Tanpa skema kompensasi pemerintah, <em>stamping out</em> merugikan peternak mandiri hingga <strong>−Rp57,35 juta</strong> vs <em>panic selling</em> ke pasar ayam sakit (<strong>−Rp22,89 juta</strong>), sehingga peternak rasional secara ekonomi memilih menjual ayam sakit. Pada kontrak <em>makloon</em>, kerugian petani kecil (<strong>−Rp0,91 juta</strong>) sehingga rendah insentif berinvestasi biosekuriti.</td>
+<td style="text-align:left"><code>[Pemodelan Bio-Ekonomi Jabar — 2023]</code> <em>Gross margin</em> normal Rp5,28 jt → <code>stamp-15</code>: <strong>−Rp57,35 jt</strong>, <code>none-8</code>: <strong>−Rp53,89 jt</strong>, <code>early-8</code>: <strong>−Rp22,89 jt</strong>; <em>makloon</em>: <strong>−Rp0,91 jt</strong>. <code>[Kohort 19 Farm Jabar]</code> Seluruh <strong>4 farm dengan skor biosekuriti terendah akhirnya bangkrut/tutup</strong>.</td>
+<td style="text-align:left"><a href="https://doi.org/10.1016/j.prevetmed.2022.105833">Pramuwidyatama et al., <em>Prev. Vet. Med.</em> Q1 (2023)</a>; <a href="https://doi.org/10.1016/j.psj.2025.106010">Anwar Sani et al., <em>Poult. Sci.</em> Q1 (2025)</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="22-bedah-5-whys-untuk-3-sub-masalah-kritis-masalah-1">2.2. Bedah <em>5 Whys</em> untuk 3 Sub-Masalah Kritis (Masalah #1)</h3>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></p>
+<h4 id="a-mengapa-kepatuhan-biosekuriti-eksternal-kandang-rakyat-sangat-rendah-02810">(a) Mengapa kepatuhan biosekuriti eksternal kandang rakyat sangat rendah (<code>0,28/1,0</code>)?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa skor biosekuriti eksternal hanya <code>0,28</code> (<code>Anwar Sani 2025</code>)?</strong> Karena orang luar (tengkulak/<em>collector</em>, sopir truk pakan/panen, tetangga), kendaraan, keranjang bekas LBM, dan hewan liar bebas keluar-masuk area kandang tanpa pagar pembatas 3 zona maupun disinfeksi ketat.</li>
+<li><strong>Why 2 — Mengapa peternak membiarkan tengkulak &amp; kendaraan panen masuk langsung ke mulut kandang?</strong> Karena transaksi panen <em>livebird</em>/telur rakyat masih mengandalkan sistem jemput-kandang oleh tengkulak/<em>broker</em>, sementara kandang rakyat tidak memiliki <em>loading dock</em> terpisah di zona merah/luar.</li>
+<li><strong>Why 3 — Mengapa kandang rakyat tidak memiliki pagar 3 zona, ruang karantina, atau tata letak terisolasi?</strong> Karena keterbatasan lahan &amp; modal kerja peternak Sektor 3–4 (margin normal hanya ~Rp5,28 jt/siklus pada skala 3.000 ekor; <code>Pramuwidyatama 2023</code>), lokasi kandang <em>open house</em> sudah terlanjur menyatu di tengah pemukiman padat, dan pada layer rakyat diterapkan pola <em>multi-age</em> demi arus kas harian.</li>
+<li><strong>Why 4 — Mengapa peternak tidak melihat urgensi mengeluarkan biaya &amp; tenaga tambahan untuk disiplin akses harian?</strong> Karena pada skema kemitraan <em>makloon</em> risiko kerugian wabah lebih banyak ditanggung inti (<em>makloon</em> hanya rugi −Rp0,91 jt; <code>Pramuwidyatama 2023</code>), <code>58%</code> pekerja memiliki literasi penyakit <em>Low–Moderate</em> (<code>Rehman 2023</code>), dan peternak merasa &quot;aman&quot; mengandalkan antibiotik profilaksis murah (<code>0,47%–1,62%</code> biaya total; <code>Anwar Sani 2026</code>).</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa pola pikir &amp; struktur insentif itu bertahan puluhan tahun?</strong> <strong>Karena tidak ada insentif ekonomi/premi harga pasar yang memberi imbalan atas sertifikasi biosekuriti di tingkat peternak rakyat, disertai tidak adanya pengawasan akses berbasis data harian dan ketiadaan penegakan standar sanitasi rantai pasok <em>collector</em>–LBM.</strong></li>
+</ol>
+<h4 id="b-mengapa-wabah-tetap-berulangjebol-meski-peternak-sudah-melakukan-vaksinasi">(b) Mengapa wabah tetap berulang/jebol meski peternak sudah melakukan vaksinasi?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa flok yang sudah divaksinasi ND, IB, atau AI tetap terkena wabah?</strong> Karena titer antibodi protektif gagal terbentuk secara merata (misal <strong>CV antibodi IB mencapai <code>256%</code></strong> pada kasus Majalengka; <code>Hartady 2026</code>) atau antibodi yang terbentuk tidak mampu menetralisir virus lapang.</li>
+<li><strong>Why 2 — Mengapa titer antibodi gagal terbentuk atau tidak mampu menetralisir virus lapang?</strong> Ada tiga jalur pemicu simultan: <strong>(i) kerusakan/ketidaktepatan aplikasi vaksin</strong>, <strong>(ii) ketidakcocokan (<em>mismatch</em>) strain vaksin vs virus lapang</strong>, dan <strong>(iii) imunosupresi pada tubuh ayam</strong>.</li>
+<li><strong>Why 3 — Mengapa ketiga pemicu itu terjadi serempak di kandang Indonesia?</strong> (i) <em>Cold chain</em> vaksin (<code>2–8°C</code>) sering putus saat distribusi/penyimpanan di toko obat hingga kandang, serta aplikasi lewat air minum tidak seragam/terpapar klorin (<code>Medion 2025</code>); (ii) virus lapang terus bermutasi — <strong>IBV GI-19 (<em>QX-like</em>)</strong> (<code>Santoso 2024</code>), <strong>NDV Genotipe VII.2</strong>, <strong>LPAI H9N2</strong> reassortant LBM (<code>Rehman 2022; Dharmayanti 2025</code>), dan <strong>HPAI H5N1 clade 2.3.4.4b</strong> (<code>Wibawa 2024</code>); (iii) imunitas ayam dirusak sejak awal oleh <strong>IBD/Gumboro</strong> (<code>10,6%</code> PCR nasional), <strong>Aflatoksin B1</strong> pada <strong><code>96,51%</code></strong> pakan &amp; jagung (<code>126,09 μg/kg</code>; <code>Widiastuti 2026</code>), serta stres panas &amp; NH₃ tinggi (<code>Hartady 2026</code>).</li>
+<li><strong>Why 4 — Mengapa tekanan virus lapang (<em>challenge dose</em>) tetap mengalahkan antibodi flok?</strong> Karena biosekuriti eksternal rendah (<code>0,28</code>), sistem <em>multi-age</em> dan kumbang <em>litter</em> (<code>Alphitobius diaperinus</code>) menjaga patogen terus bertahan di kandang, sementara <em>panic selling</em> dan LBM (<code>10,9%</code> swab positif AIV; karier sehat H5N1) memompa ulang beban virus ke wilayah sekitar.</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa peternak tidak menyadari kebocoran proteksi vaksin sebelum wabah meledak?</strong> <strong>Karena sebagian besar peternak rakyat tidak melakukan pemantauan <em>cold chain</em>, pemantauan kondisi imunosupresif kandang (mikroklimat/NH₃/pakan), maupun uji serologi/titer berkala — sehingga vaksinasi diperlakukan sebagai rutinitas administratif, bukan sistem proteksi berbasis bukti.</strong></li>
+</ol>
+<h4 id="c-mengapa-deteksi-penyakit-di-kandang-hampir-selalu-terlambat--memicu-mortalitaskerugian-besar">(c) Mengapa deteksi penyakit di kandang hampir selalu terlambat &amp; memicu mortalitas/kerugian besar?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa kerugian per wabah membengkak ekstrem (HDA anjlok <code>82%→40%</code> di Hari Farm; rugi s.d. <code>−Rp57,35 juta</code>)?</strong> Karena peternak baru mengambil tindakan isolasi/pengobatan/revaksinasi setelah kematian melonjak drastis atau produksi telur telanjur jatuh dalam.</li>
+<li><strong>Why 2 — Mengapa tanda awal wabah terlewatkan pada 24–72 jam pertama?</strong> Karena deteksi di kandang rakyat masih 100% mengandalkan <strong>pengamatan visual/pendengaran sesaat oleh ABK</strong> (baru sadar ketika ayam sudah mati berjejer atau ngorok parah), bukan pelacakan deviasi indikator dini seperti penurunan tiba-tiba <em>feed/water intake</em>, perubahan pola aktivitas/bergerombol, atau kenaikan suhu/deplesi harian.</li>
+<li><strong>Why 3 — Mengapa saat gejala klinis awal muncul, penanganan tetap sering keliru?</strong> Karena penyakit unggas di Indonesia umumnya muncul sebagai <strong>koinfeksi multifaktorial dengan gejala tumpang tindih</strong> (AI H9, IB, ND, Snot/Coryza, dan CRD sama-sama bergejala ngorok, mata berair, lesu, dan turun telur; <code>Hartady 2026</code>; kasus Hari Farm AI dikira snot, <code>TROBOS 2024</code>).</li>
+<li><strong>Why 4 — Mengapa peternak tidak langsung mengonfirmasi ke laboratorium diagnostik?</strong> Karena fasilitas uji PCR/serologi jauh secara geografis, biaya uji terasa mahal dibanding margin tipis, hasil uji memakan waktu beberapa hari, dan terdapat kekhawatiran stigma/penutupan usaha jika melapor ke otoritas (<code>Chapot 2023, 2024</code>).</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa keterlambatan deteksi ini justru memperluas wabah ke skala regional?</strong> <strong>Karena ketika keterlambatan deteksi berujung pada kematian masif tanpa jaring pengaman kompensasi <em>stamping out</em>, satu-satunya rasionalitas ekonomi peternak mandiri untuk meminimalkan kebangkrutan adalah <em>panic selling</em> ayam sakit ke tengkulak/LBM (<code>Pramuwidyatama 2023</code>), yang menyebarkan patogen ke peternakan lain.</strong></li>
+</ol>
+<hr>
+<h3 id="23-validasi-praktis-lapangan--masalah-1">2.3. Validasi Praktis Lapangan — Masalah #1</h3>
+<p><code>[SUARA LAPANGAN DARING (YOUTUBE/BERITA/INTERNET) — NON-PEER-REVIEWED]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No</th>
+<th style="text-align:left">Kanal &amp; Narasumber (Tahun)</th>
+<th style="text-align:left">Validasi Akar Masalah #1 di Lapangan Indonesia</th>
+<th style="text-align:left">Tautan Terverifikasi (<code>HTTP 200</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left"><strong>TROBOS Livestock</strong> — Wawancara Hari Wibowo (<em>Hari Farm</em>, 10.000 layer, Mar 2024)</td>
+<td style="text-align:left">Mengonfirmasi <strong>jebakan kemiripan gejala &amp; deteksi terlambat</strong>: wabah AI awalnya dikira snot biasa sehingga terlambat direspons; kematian melonjak dari 4 menjadi 80 ekor/hari (300 ekor/bulan) dan HDA jatuh <code>82% → 60% → 40%</code>.</td>
+<td style="text-align:left"><a href="https://troboslivestock.com/virus-ai-terus-mengintai/">TROBOS Livestock (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left"><strong>TROBOS Livestock</strong> — Seminar Prof. Suwarno (FKH Unair, Mei 2024)</td>
+<td style="text-align:left">Mengonfirmasi <strong>reservoir &amp; mutasi ND</strong>: virus ND di RI didominasi genotipe I, II, VI, dan VII; ayam kampung lepas tak tervaksin menjadi reservoir persisten, sementara penumpukan amonia dan kelalaian revaksinasi saat wabah landai memicu <em>outbreak</em> berulang.</td>
+<td style="text-align:left"><a href="https://troboslivestock.com/sambang-kandang-nd-dihadang/">TROBOS Livestock (Mei 2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left"><strong>YouTube — Satwa Media Group</strong> (<em>Poultry TechniClass #10</em>, Jan 2023 &amp; <em>Layer Vaksinasi</em>, Nov 2021)</td>
+<td style="text-align:left">Praktisi industri membedah faktor kegagalan vaksinasi broiler &amp; layer di lapangan RI: ketidaksesuaian jadwal terhadap antibodi maternal, kerusakan <em>cold chain</em>, kualitas air pelarut, dan infeksi imunosupresif.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=Bu-VtEhSy5A">YouTube Broiler (2023)</a> | <a href="https://www.youtube.com/watch?v=iusRcz6AymM">YouTube Layer (2021)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:left"><strong>YouTube — Medion Indonesia × Farmsco</strong> (drh. Fakhri Husain, Feb 2023) &amp; <strong>BARA PS</strong> (Feb 2022)</td>
+<td style="text-align:left">Menekankan di lapangan peternak kerap hanya mengandalkan vaksinasi tanpa disiplin biosekuriti 3 zona (<em>isolasi, kontrol lalu lintas, sanitasi</em>), sehingga tantangan bibit penyakit di kandang tetap menjebol kekebalan vaksin.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=i-reMJvs0-k">YouTube Medion (2023)</a> | <a href="https://www.youtube.com/watch?v=JrCKbkL4DMk">YouTube BARA PS (2022)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:left"><strong>YouTube — Edufarmers</strong> (Pak Fatkul, Okt 2023), <strong>FARM SULUNG</strong> (Mei 2023), &amp; <strong>BaLe Saba</strong> (Agu 2022)</td>
+<td style="text-align:left">Peternak rakyat mengeluhkan kerugian belasan juta/siklus akibat penyakit, ngorok layer tak kunjung sembuh meski berulang kali diobati, serta serangan koksidiosis yang bahkan tetap menembus <em>closed house</em> dan membengkakkan FCR.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=lvuE-meEgkE">Edufarmers</a> | <a href="https://www.youtube.com/watch?v=jq6ERRpfYQc">FARM SULUNG</a> | <a href="https://www.youtube.com/watch?v=bMMVM-WQkUs">BaLe Saba</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="24-kesimpulan-inti-masalah-1-controllable-on-farm-vs-struktural">2.4. Kesimpulan Inti Masalah #1 (<em>Controllable On-Farm</em> vs Struktural)</h3>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></p>
+<p><strong>4 Poin Kunci Akar Penyebab Terdalam Masalah #1:</strong></p>
+<ol>
+<li><strong>Biosekuriti Eksternal adalah Mata Rantai Terlemah (<code>0,28/1,0</code>):</strong> Masuknya patogen bukan kebetulan, melainkan konsekuensi langsung dari lalu lintas bebas tengkulak/kendaraan LBM, tata letak <em>open house</em> rapat pemukiman, dan pola <em>multi-age</em> tanpa <em>downtime</em>.</li>
+<li><strong>Vaksinasi Jebol karena Kombinasi 3 Kegagalan Berantai:</strong> Putusnya rantai dingin (<code>2–8°C</code>) &amp; aplikasi tak merata + ketidakcocokan strain lapang (ND VII.2, IBV GI-19 QX, H5N1 2.3.4.4b, H9N2) + imunosupresi kronis (IBD, AFB1 pada <code>96,51%</code> pakan, serta stres mikroklimat/NH₃).</li>
+<li><strong>Deteksi Dini Absen di Tingkat Kandang:</strong> Kemiripan gejala koinfeksi (AI/IB/ND/CRD/Snot) ditambah ketergantungan pada pengamatan kasatmata dan ketiadaan pencatatan deviasi harian menyebabkan intervensi selalu terlambat 2–5 hari.</li>
+<li><strong>Insentif Ekonomi Melanggengkan Wabah Regional:</strong> Tanpa kompensasi <em>stamping out</em>, <em>panic selling</em> menjadi pilihan rasional peternak mandiri, sementara kontrak <em>makloon</em> melemahkan dorongan investasi biosekuriti peternak plasma.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Kategori Kendali</th>
+<th style="text-align:left">Akar Masalah Spesifik pada Masalah #1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Operasional Kandang (<em>Controllable On-Farm</em>)</strong></td>
+<td style="text-align:left">• Deteksi dini deviasi kesehatan/perilaku/<em>intake</em> harian yang belum ada.<br>• Disiplin kontrol akses tamu/tengkulak, sanitasi peralatan, karantina, &amp; pengendalian vektor <em>A. diaperinus</em>.<br>• Ketepatan penanganan <em>cold chain</em> (2–8°C) &amp; teknik aplikasi vaksin di kandang.<br>• Pencegahan imunosupresi kandang (kontrol mikroklimat/NH₃ &amp; manajemen penyimpanan pakan anti-AFB1).<br>• Literasi operasional ABK (<code>58%</code> masih <em>Low–Moderate</em>).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Struktural / Kebijakan (<em>Beyond Farm Control</em>)</strong></td>
+<td style="text-align:left">• Ketiadaan skema kompensasi pemerintah untuk <em>stamping out</em> HPAI.<br>• Struktur rantai pasok LBM tradisional (<code>10,9%</code> swab positif AIV) &amp; keberadaan unggas kampung tak tervaksin.<br>• Desain pembagian risiko kontrak <em>makloon</em> &amp; keterbatasan akses pembiayaan modal Sektor 3–4.<br>• Evolusi genetik virus lintas regional &amp; ketersediaan vaksin homolog nasional serta distribusi fasilitas lab PCR daerah.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="3-root-cause-analysis-mendalam--masalah-2-cekaman-panas-heat-stress--instabilitas-mikroklimat-tropis">3. Root Cause Analysis Mendalam — Masalah #2: Cekaman Panas (<em>Heat Stress</em>) &amp; Instabilitas Mikroklimat Tropis</h2>
+<p><img src="file:///home/reiziqzip/Programmer/Hackathon-UNJ/03_Root_Cause_Analysis/assets/02_fishbone_root_cause_heat_stress_mikroklimat.png" alt="Diagram Fishbone 6 Dimensi — Akar Masalah #2 Heat Stress &amp; Instabilitas Mikroklimat Tropis">
+<em><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code> Pemetaan 6 dimensi Ishikawa akar penyebab cekaman panas &amp; instabilitas mikroklimat pada kandang open house maupun closed/semi-closed house di Indonesia.</em></p>
+<p><img src="file:///home/reiziqzip/Programmer/Hackathon-UNJ/03_Root_Cause_Analysis/assets/04_asli_animals2026_fig1_fisiologi_heat_stress_layer.png" alt="Figure 1 Asli — Kerangka Fisiologis Heat Stress pada Ayam Petelur (Idowu et al., Animals Q1, 2026)">
+<em><code>[ASLI DARI SUMBER PRIMER]</code> <code>[Mekanisme Biologis Umum]</code> <strong>Figure 1</strong> dari <a href="https://doi.org/10.3390/ani16071001">Idowu et al., <em>Animals</em> Q1 (2026, <code>PMC13072026</code>)</a> — Kerangka terpadu dampak fisiologis cekaman panas (suhu &amp; kelembapan tinggi → beban termoregulasi → lonjakan kortikosteron, stres oksidatif, disregulasi imun, gangguan sawar usus → penurunan produksi &amp; kualitas kerabang telur).</em></p>
+<h3 id="31-peta-akar-masalah-6-dimensi-masalah-2--mencakup-open-house--closedsemi-closed-house">3.1. Peta Akar Masalah 6 Dimensi (Masalah #2 — Mencakup <em>Open House</em> &amp; <em>Closed/Semi-Closed House</em>)</h3>
+<p><code>[DATA PRIMER TERVERIFIKASI — TABEL/VISUALISASI DISUSUN OLEH AI AGENT]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Dimensi</th>
+<th style="text-align:left">Akar Masalah Spesifik</th>
+<th style="text-align:left">Mekanisme Kejadian di Lapangan</th>
+<th style="text-align:left">Bukti Empiris &amp; Label Cakupan</th>
+<th style="text-align:left">Sumber (DOI / URL)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>1. <em>Man</em> (SDM &amp; Kalibrasi Operasional)</strong></td>
+<td style="text-align:left"><strong>Kesalahan <em>setting</em> kipas/<em>wind speed</em> &amp; abai <em>wind chill effect</em></strong></td>
+<td style="text-align:left">Operator kandang <em>closed house</em> mengatur jumlah kipas hanya melihat angka suhu termometer tanpa menghitung <em>wind chill</em> berdasarkan umur &amp; bobot ayam — memicu kedinginan di <em>brooding</em> atau panas berlebih di <em>finisher</em>.</td>
+<td style="text-align:left"><code>[Studi Kasus Lokal — CH Komersial RI]</code> Kesalahan pengaturan kecepatan angin kipas lantai 1 menurunkan suhu efektif di bawah zona termonetral fase awal, menghambat pertumbuhan dan menurunkan Indeks Performa (IP).</td>
+<td style="text-align:left"><a href="https://doi.org/10.29244/jipthp.11.1.34-40">Hariono et al., <em>JIPTHP</em> IPB S2 (2023)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>1. <em>Man</em> (SDM &amp; Kalibrasi Operasional)</strong></td>
+<td style="text-align:left"><strong>Kontrol manual reaktif menyimpang dari SOP &amp; terlambat merespons puncak panas sore</strong></td>
+<td style="text-align:left">Pada <em>open house</em> maupun <em>closed house</em> kontrol manual, ABK baru membuka tirai/menyalakan kipas saat ayam sudah <em>panting</em> berat; pada <em>closed house</em>, penyimpangan suhu manual di atas SOP menggandakan mortalitas.</td>
+<td style="text-align:left"><code>[Studi Kasus Lokal — 4.200 CP-707 CH]</code> Kontrol manual menyimpang signifikan di atas SOP (<code>p = 0,001</code>) dengan mortalitas <strong><code>5,09%</code> vs <code>2,36%</code></strong> saat terkendali stabil (<code>p = 0,005</code>). <code>[Studi Kasus Lokal — Jateng]</code> Risiko kematian melonjak signifikan saat <strong>suhu 16:00 <code>&gt;32,8°C</code></strong> (<code>AUC 0,694</code>, <code>p = 0,026</code>) &amp; <strong>THI 16:00 <code>&gt;79</code></strong> (<code>AUC 0,709</code>, <code>p = 0,016</code>).</td>
+<td style="text-align:left"><a href="https://doi.org/10.18343/jipi.31.4.718">Alvandika et al., <em>JIPI</em> S2 (2026)</a>; <a href="https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111">Mohammadi et al., <em>AAVS</em> Q3 (2026)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>1. <em>Man</em> (SDM &amp; Kalibrasi Operasional)</strong></td>
+<td style="text-align:left"><strong>Penerapan SOP seragam (<em>copy-paste</em>) lintas ketinggian wilayah</strong></td>
+<td style="text-align:left">Kemitraan/peternak menerapkan SOP ventilasi &amp; pembasahan yang sama di dataran rendah (0–400 mdpl), sedang, dan tinggi (&gt;700 mdpl) padahal input suhu &amp; RH makroklimat berbeda drastis.</td>
+<td style="text-align:left"><code>[Survei Multi-Lokasi — Demak, Gunungpati, Ampel]</code> Dengan SOP identik, perbedaan ketinggian memengaruhi kadar air <em>litter</em> (<code>46,42%</code> dataran rendah vs <code>22,86%</code> tinggi, <code>p &lt; 0,0001</code>), pH (<code>7,10–8,13</code>, <code>p &lt; 0,0001</code>), suhu <em>litter</em> (<code>32,35°C</code> siang), &amp; NH₃ (<code>13,11–14,94 ppm</code> hari ke-28).</td>
+<td style="text-align:left"><a href="https://doi.org/10.31186/jspi.id.16.2.171-179">Hasibuan et al., <em>JSPI</em> S2 (2021)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. <em>Method</em> (SOP Ventilasi, Air &amp; Pakan)</strong></td>
+<td style="text-align:left"><strong>Pengoperasian <em>evaporative cooling pad</em> tanpa kontrol batas RH</strong></td>
+<td style="text-align:left">Di udara tropis berkelembapan tinggi (80%–96%), penyiraman <em>cooling pad</em> terus-menerus tanpa mempertimbangkan kelembapan justru menjenuhkan udara dengan uap air (RH dalam CH melesat ke <code>89%–93%</code>), melumpuhkan kemampuan ayam membuang panas lewat penguapan napas dan membasahi <em>litter</em> area <em>inlet</em>.</td>
+<td style="text-align:left"><code>[Survei Multi-Farm — 14 CH/semi-CH Jabar]</code> <strong><code>0,0%</code></strong> titik ukur di zona nyaman; <strong><code>62,0%</code> <em>severe</em></strong> &amp; <strong><code>8,3%</code> <em>life-threatening</em></strong> (<code>THI &gt;85</code>); RH rerata <strong><code>81,9%</code></strong> (<code>66%–96%</code>). <code>[Studi CH 3-Lantai — 43.500 Ross RI]</code> RH dalam <em>closed house</em> minggu 3–4 mencapai <strong><code>89,57%–92,76%</code></strong> dengan HSI <strong><code>160,22–168,80</code></strong>.</td>
+<td style="text-align:left"><a href="https://doi.org/10.1017/awf.2025.10052">Wilcox et al., <em>Anim. Welf.</em> Q1 (2025)</a>; <a href="https://doi.org/10.14710/jitaa.49.4.332-347">Sarjana et al., <em>JITAA</em> S1/Q3 (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>2. <em>Method</em> (SOP Ventilasi, Air &amp; Pakan)</strong></td>
+<td style="text-align:left"><strong>Kebiasaan darurat menyemprot air ke ayam/kandang &amp; absennya pengaturan jam makan (<em>feed withdrawal</em>)</strong></td>
+<td style="text-align:left">Saat panas siang, peternak rakyat kerap menyemprot air langsung ke tubuh ayam atau tidak menghentikan pemberian pakan saat puncak panas — menaikkan kelembapan/amonia sekaligus memicu <em>heat increment</em> metabolik pencernaan.</td>
+<td style="text-align:left"><code>[Buletin Teknis Nasional — Tier 2]</code> PT Medion memperingatkan penyemprotan air langsung pada siang hari meningkatkan RH dan lonjakan NH₃; stres panas diperburuk jika pakan tetap diberikan pada jam panas puncak tanpa air dingin <code>20–24°C</code>. <code>[Survei Jabar]</code> <code>49,9%</code> flok CH dipelihara tanpa periode gelap (<em>0 dark hours</em>) yang memperburuk skor FPD.</td>
+<td style="text-align:left"><a href="https://www.medion.co.id/en/info-medion/hhandling-high-temperatures-during-the-day-in-the-chicken-coop/">PT Medion — High Temperatures (2025)</a>; <a href="https://doi.org/10.1017/awf.2025.10052">Wilcox et al., <em>Anim. Welf.</em> Q1 (2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3. <em>Infrastructure</em> (Desain Kandang &amp; Peralatan)</strong></td>
+<td style="text-align:left"><strong>Kandang <em>open house</em> berventilasi pasif tanpa insulasi atap &amp; kepadatan tinggi</strong></td>
+<td style="text-align:left">Atap seng/asbes rendah meradiasikan panas langsung ke ayam, sementara sirkulasi udara hanya bergantung pada angin luar; memasuki minggu 4–5 saat bobot dan panas metabolik flok memuncak, suhu kandang gagal turun di bawah 30–34°C.</td>
+<td style="text-align:left"><code>[Studi Kasus Lokal — 54.000 CP707 Aceh Utara]</code> Sejak minggu ke-4, <em>open house</em> kalah telak oleh panas: FCR minggu 4–5 membengkak <strong><code>2,06</code> vs <code>1,61</code></strong> (<code>p &lt; 0,001</code>), bobot turun <strong><code>−15,9%</code></strong>, IP jatuh ke <strong><code>299</code></strong> (buruk) vs <strong><code>414</code></strong> (sangat baik) di CH. <code>[Studi Lokal Jateng]</code> Hanya <strong>2 dari 35 hari</strong> berada di zona termonetral (pukul 11:00 rerata <code>34,1°C</code>).</td>
+<td style="text-align:left"><a href="https://doi.org/10.4025/actascianimsci.v48i1.74435">Zulfan et al., <em>Acta Sci.</em> Q3 (2026)</a>; <a href="https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111">Mohammadi et al., <em>AAVS</em> Q3 (2026)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>3. <em>Infrastructure</em> (Desain Kandang &amp; Peralatan)</strong></td>
+<td style="text-align:left"><strong>Gradien spasial horizontal (<em>inlet–outlet</em>), stratifikasi vertikal bertingkat, <em>cell pad</em> tersumbat &amp; <em>nipple</em> bocor</strong></td>
+<td style="text-align:left">Di dalam <em>closed house</em>, zona 1–2 dekat <em>inlet/cooling pad</em> lebih lembap dan kecepatan angin lebih rendah (<code>0,88 m/s</code> di zona 1 vs <code>2,10 m/s</code> di zona 2) sehingga <em>litter</em> basah &amp; FPD terburuk; pada CH 3 lantai, paparan radiasi atap dan kecepatan aktivasi kipas menciptakan perbedaan mikroiklim &amp; CO₂ (<code>1.532–2.180 ppm</code>) antar-lantai (<code>p &lt; 0,05</code>); kerak/lumut <em>cell pad</em> dan kebocoran <em>nipple</em> memperparah kondisi.</td>
+<td style="text-align:left"><code>[Survei 14 CH Jabar, 84 titik]</code> Zona 1–2 (<em>inlet</em>) memiliki skor <em>litter</em> terburuk (<code>2,23</code> &amp; <code>2,07</code>) serta FPD <strong><code>40%</code></strong> &amp; <em>Hock Burn</em> <strong><code>30%</code></strong> (skor 3–4 tertinggi dekat pintu/<em>inlet</em>). <code>[Studi CH 3-Lantai Undip]</code> Perbedaan suhu, RH, THI, CO₂, dan kualitas <em>litter</em> antar-lantai signifikan (<code>p &lt; 0,05</code>).</td>
+<td style="text-align:left"><a href="https://doi.org/10.1017/awf.2025.10052">Wilcox et al., <em>Anim. Welf.</em> Q1 (2025)</a>; <a href="https://doi.org/10.14710/jitaa.49.4.332-347">Sarjana et al., <em>JITAA</em> S1/Q3 (2024)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>4. <em>Environment</em> (Iklim Tropis &amp; Kimia <em>Litter</em>)</strong></td>
+<td style="text-align:left"><strong>Beban panas &amp; kelembapan tropis ekstrem sepanjang 12 bulan</strong></td>
+<td style="text-align:left">Iklim ekuatorial Indonesia mempertahankan suhu maksimum <strong>34–36°C</strong> disertai kelembapan relatif <strong>66%–96%</strong> sepanjang tahun (tanpa musim dingin alami), menciptakan beban panas kumulatif mingguan (<code>∑HL</code>) yang tak pernah memberi jeda pemulihan fisiologis.</td>
+<td style="text-align:left"><code>[Data Nasional — 2023]</code> <strong>HSI bulanan</strong> Indonesia Barat <strong><code>155,52–165,42</code></strong> (maks <strong><code>187,84</code></strong>) &amp; Timur <strong><code>150,00–166,40</code></strong> (maks <strong><code>195,00</code></strong>) melampaui zona nyaman (<code>&lt;150–160</code>) di <strong>12 dari 12 bulan</strong>. <code>[Studi Jateng]</code> <code>∑HL</code> menjelaskan <strong><code>61%</code></strong> variasi defisit bobot (<code>B = -3,40</code>, <code>p &lt; 0,001</code>; defisit <strong><code>−552,1 g</code></strong> / <code>−22%</code> di hari ke-35).</td>
+<td style="text-align:left"><a href="https://doi.org/10.5713/ab.24.0678">Sumiati et al., <em>Anim. Biosci.</em> Q1 (2025), Table 6</a>; <a href="https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111">Mohammadi et al., <em>AAVS</em> Q3 (2026), Table 3</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>5. <em>Material</em> (Biologis Ayam Modern)</strong></td>
+<td style="text-align:left"><strong>Kerentanan genetik ayam modern, ketiadaan kelenjar keringat, &amp; mekanisme <em>panting</em> → alkalosis respiratorik</strong></td>
+<td style="text-align:left">Ayam broiler/layer modern diseleksi untuk laju metabolisme tinggi, berbulu lebat, dan <strong>tidak memiliki kelenjar keringat</strong>. Untuk membuang panas, ayam melakukan <em>panting</em> hingga <strong>151 napas/menit</strong> → CO₂ darah keluar berlebihan → <strong>alkalosis respiratorik</strong> → ginjal membuang bikarbonat (<code>HCO₃⁻</code>) &amp; elektrolit → ketersediaan <code>Ca²⁺</code> &amp; <code>HCO₃⁻</code> di kelenjar kerabang turun → <strong>kerabang tipis/pucat/retak</strong>; konsumsi air melonjak drastis → <strong>feses encer (<em>wet droppings</em>)</strong>.</td>
+<td style="text-align:left"><code>[Mekanisme Biologis Umum — Review Scopus Q1]</code> Kaskade <em>panting</em> → alkalosis respiratorik → penurunan deposisi kalsium kerabang &amp; penurunan <em>feed intake</em>; aktivasi aksis HPA → lonjakan kortikosteron. <code>[Data Indonesia]</code> Frekuensi <em>panting</em> pada broiler Jabar melonjak hingga <strong>~70% ayam</strong> saat suhu menyentuh <strong><code>33,3°C</code></strong> (<code>Wilcox 2025</code>, Fig. 8); HDP layer Blitar tertekan suhu panas ke <strong><code>63%</code></strong> vs Payakumbuh <code>68%</code> (<code>Ilham 2021</code>).</td>
+<td style="text-align:left"><a href="https://doi.org/10.3390/ani16071001">Idowu et al., <em>Animals</em> Q1 (2026)</a>; <a href="https://doi.org/10.3390/biology13110926">Huang et al., <em>Biology</em> Q1 (2024)</a>; <a href="https://doi.org/10.5713/ab.24.0678">Sumiati et al., <em>Anim. Biosci.</em> Q1 (2025)</a>; <a href="https://doi.org/10.1017/awf.2025.10052">Wilcox et al., <em>Anim. Welf.</em> Q1 (2025)</a>; <a href="https://doi.org/10.14334/jitv.v26i4.2697">Ilham et al., <em>JITV</em> S1 (2021)</a></td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>6. <em>Economic</em> (Modal &amp; Beban Energi)</strong></td>
+<td style="text-align:left"><strong>Hambatan biaya investasi CH (<code>3–4×</code> OH), tingginya tagihan listrik <em>blower</em>, &amp; risiko <em>blackout</em></strong></td>
+<td style="text-align:left">Tingginya belanja modal (~Rp2 M/lantai impor; <em>payback</em> semi-otomatis <strong>43 periode</strong>) memaksa mayoritas peternak bertahan di <em>open house</em> atau membangun CH rakyat tanpa sensor RH/NH₃ &amp; tanpa proteksi cadangan daya; bahkan di CH, tingginya tarif listrik membuat sebagian operator berhemat menyalakan <em>exhaust fan</em>.</td>
+<td style="text-align:left"><code>[Data Nasional — Tier 2]</code> Investasi CH <strong><code>3–4×</code> OH</strong>, biaya listrik tinggi, ketergantungan listrik <code>&quot;Sangat tinggi; risiko tinggi jika listrik padam&quot;</code>. <code>[Studi Lokal IPB]</code> <em>Payback period</em> CH semi-otomatis <strong>43 periode</strong> vs otomatis <strong>27 periode</strong>. <code>[Berita Lapangan 2025–2026]</code> Listrik padam/langka solar tewaskan <strong>800–18.000 ekor</strong> per insiden.</td>
+<td style="text-align:left"><a href="https://bbpkhcinagara.bppsdmp.pertanian.go.id/storage/master/file/QuSKqJd1_Close_House_vs_Open_House_Menimbang_Efisiensi_dan_Kenyamanan_Ayam_Modern.pdf">BBPKH Cinagara Kementan RI (2025)</a>; <a href="https://doi.org/10.29244/jai.2023.11.2.422-431">Fikrianti et al., <em>JAI</em> S2 (2023)</a>; <a href="https://aceh.antaranews.com/berita/395781/18000-ayam-mati-akibat-listrik-padam-peternak-abdya-gugat-pln-ke-pengadilan">ANTARA Aceh</a>; <a href="https://medan.kompas.com/read/2026/06/12/190231978/kesulitan-dapat-solar-peternak-ayam-di-deli-serdang-kehilangan-800-ekor-saat">Kompas Medan (2026)</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="32-bedah-5-whys-untuk-3-sub-masalah-kritis-masalah-2">3.2. Bedah <em>5 Whys</em> untuk 3 Sub-Masalah Kritis (Masalah #2)</h3>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></p>
+<h4 id="a-mengapa-kandang-open-house-di-indonesia-selalu-kalah-melawan-beban-panas-siang%E2%80%93sore">(a) Mengapa kandang <em>open house</em> di Indonesia selalu kalah melawan beban panas siang–sore?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa broiler di <em>open house</em> mengalami defisit bobot <code>−552,1 g</code> (<code>−22%</code>) dan FCR minggu 4–5 bengkak ke <code>2,06</code>?</strong> Karena suhu kandang <em>open house</em> hanya 2 dari 35 hari berada di zona termonetral (<code>Mohammadi 2026</code>), dengan suhu pukul 11:00 mencapai <code>34,1°C</code> dan risiko kematian melonjak drastis saat suhu sore 16:00 menembus <code>&gt;32,8°C</code> (THI <code>&gt;79</code>).</li>
+<li><strong>Why 2 — Mengapa panas terus terakumulasi sejak siang hingga memuncak pukul 16:00?</strong> Karena akumulasi radiasi panas matahari dari atap rendah tanpa insulasi berpadu dengan peningkatan panas metabolik tubuh ayam yang makin besar pada minggu 4–5 (<code>Zulfan 2026</code>), sementara ventilasi pasif hanya mengandalkan angin alami yang sering tenang/panas di siang–sore hari.</li>
+<li><strong>Why 3 — Mengapa tindakan buka tirai penuh dan kipas angin tambahan manual tidak cukup menahan lonjakan panas?</strong> Karena ketika suhu udara luar sendiri sudah <code>33–36°C</code> (<code>Sumiati 2025</code>), membuka tirai justru memasukkan udara luar yang panas tanpa mampu menciptakan kecepatan angin (<em>wind chill</em>) merata; selain itu reaksi manual ABK biasanya terlambat setelah ayam sudah <em>panting</em>.</li>
+<li><strong>Why 4 — Mengapa mayoritas peternak rakyat (~40% produksi nasional) tetap bertahan menggunakan <em>open house</em> berisiko panas tinggi?</strong> Karena membangun <em>closed house</em> membutuhkan modal <strong><code>3–4×</code> lebih besar</strong> (<code>BBPKH Kementan 2025</code>; <em>payback</em> semi-otomatis 43 periode, <code>Fikrianti 2023</code>), memerlukan lahan/air bersih besar (<code>PT Zara</code>), dan menghadapi ancaman tagihan listrik bulanan serta <em>blackout</em> PLN.</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa <em>open house</em> rakyat tidak mampu beradaptasi terhadap iklim panas yang makin ekstrem?</strong> <strong>Karena desain fisik kandang terbuka memang tidak memiliki mekanisme penurun suhu aktif maupun pemantau akumulasi beban panas (<code>∑HL</code>) berbasis ambang fisiologis sore hari (<code>&gt;32,8°C</code> / THI <code>&gt;79</code>), sementara kesenjangan modal membuat transisi infrastruktur penuh tidak terjangkau peternak kecil.</strong></li>
+</ol>
+<h4 id="b-mengapa-kandang-closedsemi-closed-house-di-indonesia-pun-masih-mengalami-703-titik-thi-severelife-threatening-dan-40-fpd">(b) Mengapa kandang <em>closed/semi-closed house</em> di Indonesia pun masih mengalami <code>70,3%</code> titik THI <em>severe/life-threatening</em> dan <code>40%</code> FPD?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa di dalam 14 kandang <em>closed/semi-closed</em> komersial Jawa Barat justru <code>0,0%</code> titik ukur yang nyaman dan <code>70,3%</code> berada di zona <em>severe</em> hingga <em>life-threatening</em> (<code>Wilcox 2025</code>)?</strong> Karena meskipun suhu udara berhasil ditahan di rata-rata <code>29,3°C</code> (<code>26–33,3°C</code>), <strong>kelembapan relatif (RH) di dalam kandang justru sangat tinggi — rata-rata <code>81,9%</code> (<code>66%–96%</code>)</strong>, bahkan mencapai <strong><code>89,57%–92,76%</code></strong> pada minggu 3–4 di CH bertingkat (<code>Sarjana 2024</code>).</li>
+<li><strong>Why 2 — Mengapa kelembapan di dalam kandang <em>closed house</em> bisa menembus <code>82%–93%</code>?</strong> Karena keterbatasan hukum termodinamika <em><strong>evaporative cooling pad</strong></em> di iklim tropis lembap: ketika udara luar Indonesia sudah berkelembapan tinggi, proses penguapan air pada <em>cooling pad</em> hanya menurunkan suhu secara terbatas namun <strong>langsung menyuntikkan beban uap air masif ke dalam kandang</strong>.</li>
+<li><strong>Why 3 — Mengapa kelembapan ekstrem itu tidak segera terbuang keluar dan malah merusak <em>litter</em> area <em>inlet</em> (memicu <code>40%</code> FPD &amp; <code>30%</code> <em>Hock Burn</em>)?</strong> Karena ketidakseimbangan operasi <em>cooling pad</em> vs kapasitas <em>exhaust fan</em>: pembasahan <em>cooling pad</em> berlebihan (<em>over-wetting</em>), <em>cell pad</em> berlumut/berkerak yang menyumbat aliran udara, kecepatan angin yang lemah di zona 1 dekat pintu/<em>inlet</em> (<code>0,88 m/s</code>; <code>Wilcox 2025</code>), serta kebocoran <em>nipple drinker</em> membuat sekam di zona <em>inlet</em> basah berkepanjangan (<code>46,42%</code> kadar air <em>litter</em> di dataran rendah; <code>Hasibuan 2021</code>).</li>
+<li><strong>Why 4 — Mengapa operator kandang <em>closed house</em> membiarkan <em>cooling pad</em> dan <em>blower</em> beroperasi tidak presisi?</strong> Karena sebagian besar <em>closed house</em> rakyat/menengah masih mengandalkan panel/kontrol berbasis suhu termometer tunggal (atau kontrol manual yang menyimpang di atas SOP, <code>p = 0,001</code>; <code>Alvandika 2026</code>), <strong>tidak mengukur RH, kecepatan angin (<em>wind chill</em>), maupun gradien antar-zona/antar-lantai</strong> (<code>Hariono 2023; Sarjana 2024</code>), dan menerapkan SOP <em>copy-paste</em> tanpa kalibrasi ketinggian tempat (<code>Hasibuan 2021</code>), ditambah tekanan menghemat tagihan listrik <em>blower</em> (<code>PT Zara</code>).</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa investasi mahal <em>closed house</em> tetap gagal menjamin kenyamanan termal di Indonesia?</strong> <strong>Karena desain dan operasional <em>closed house</em> di Indonesia umumnya mengadopsi logika kendali iklim negara subtropis kering (berbasis suhu tunggal + evaporasi penuh), tanpa memperhitungkan kendala psikrometrik kelembapan tropis tinggi (<code>RH &gt;80%</code>), dinamika <em>wind chill</em>, dan gradien spasial <em>inlet–outlet</em>.</strong></li>
+</ol>
+<h4 id="c-mengapa-heat-stress-selalu-memicu-lonjakan-amonia-nh%E2%82%83-dan-kejatuhan-produksimutu-kerabang-telur">(c) Mengapa <em>heat stress</em> selalu memicu lonjakan amonia (<code>NH₃</code>) dan kejatuhan produksi/mutu kerabang telur?</h4>
+<ol>
+<li><strong>Why 1 — Mengapa setiap gelombang panas di Indonesia langsung diikuti bau amonia menyengat di kandang dan anjloknya produksi/mutu kerabang telur (<code>−5%–10%</code> &amp; kerabang pucat; <code>Afederasi Jombang 2025</code>)?</strong> Karena cekaman panas memicu dua respons fisiologis paralel yang merusak: <strong>peningkatan konsumsi air drastis</strong> (untuk pendinginan tubuh) dan <strong>hiperventilasi/<em>panting</em></strong> (<code>[Mekanisme Biologis Umum]</code>; <code>Idowu 2026</code>).</li>
+<li><strong>Why 2 — Mengapa peningkatan minum dan <em>panting</em> menghasilkan amonia tinggi serta kerabang tipis/pucat?</strong> (i) Lonjakan minum sambil <em>feed intake</em> anjlok menghasilkan <strong>feses cair (<em>wet droppings</em>)</strong> yang langsung menaikkan kadar air <em>litter</em> (<code>46,42%</code>; <code>Hasibuan 2021</code>); pada kondisi <em>litter</em> basah, hangat (<code>32,35°C</code>), dan basa (<strong>pH <code>7,59–8,13</code></strong>), bakteri pengurai memfermentasi asam urat feses secara agresif menjadi <strong>gas NH₃ (<code>13–20 ppm</code>)</strong>. (ii) <em>Panting</em> intensif membuang CO₂ darah → <strong>alkalosis respiratorik</strong> → ginjal membuang bikarbonat (<code>HCO₃⁻</code>) → pasokan ion karbonat &amp; kalsium (<code>Ca²⁺</code>) di uterus/kelenjar kerabang anjlok → kerabang menjadi tipis, rapuh, dan pucat (<code>Idowu 2026</code>).</li>
+<li><strong>Why 3 — Mengapa kadar air <em>litter</em> dan pH basa sulit dikendalikan begitu <em>wet droppings</em> mulai terjadi?</strong> Karena pada kandang <em>open house</em> ventilasi pasif tidak mampu mengeringkan sekam, sedangkan pada <em>closed house</em> kelembapan udara tinggi dari <em>cooling pad</em> (<code>82%–93%</code>) menghilangkan daya pengeringan udara (<em>vapor pressure deficit</em> rendah) sehingga sekam makin memadat (<em>caking</em>; <code>Sarjana 2024</code>).</li>
+<li><strong>Why 4 — Mengapa peternak baru menyadari lonjakan NH₃ setelah baunya sudah menyengat hidung manusia?</strong> Karena di Indonesia pengukuran instrumen gas NH₃ hampir tidak pernah dilakukan secara rutin di kandang (<code>PT Medion 2026</code>), padahal <strong>hidung manusia umumnya baru mencium bau menyengat di kisaran <code>&gt;20–25 ppm</code></strong>, sementara <strong>kerusakan mikrobiota &amp; mukosa trakea ayam sudah dimulai sejak <code>15–20 ppm</code></strong> (<code>Zhou 2021; PT Medion 2026</code>).</li>
+<li><strong>Why 5 (Akar Terdalam) — Mengapa <em>heat stress</em> berubah dari stres sesaat menjadi kerusakan produksi kronis?</strong> <strong>Karena ayam modern tidak memiliki mekanisme keringat sehingga kompensasi fisiologis alaminya (<em>panting</em> + minum berlebih) secara otomatis mengorbankan keseimbangan asam-basa kerabang telur sekaligus memicu degradasi kualitas <em>litter</em> dan polusi NH₃ jika mikroklimat suhu–RH–ventilasi gagal dikendalikan secara simultan.</strong></li>
+</ol>
+<hr>
+<h3 id="33-validasi-praktis-lapangan--masalah-2">3.3. Validasi Praktis Lapangan — Masalah #2</h3>
+<p><code>[SUARA LAPANGAN DARING (YOUTUBE/BERITA/INTERNET) — NON-PEER-REVIEWED]</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No</th>
+<th style="text-align:left">Kanal &amp; Narasumber (Tahun)</th>
+<th style="text-align:left">Validasi Akar Masalah #2 di Lapangan Indonesia</th>
+<th style="text-align:left">Tautan Terverifikasi (<code>HTTP 200</code>)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:left"><strong>Afederasi</strong> — Wawancara Eko (Peternak Layer Bareng, Jombang, Okt 2025)</td>
+<td style="text-align:left">Mengonfirmasi langsung dampak <em>heat stress</em> pada layer: cuaca panas ekstrem menekan nafsu makan, menurunkan produksi telur <strong><code>5%–10%</code></strong> (dari normal 275–300 kg/hari), dan membuat <strong>cangkang telur memucat</strong> (selaras mekanisme alkalosis respiratorik).</td>
+<td style="text-align:left"><a href="https://afederasi.com/dampak-cuaca-produksi-telur-ayam-menurun-10-persen">Afederasi (Okt 2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">2</td>
+<td style="text-align:left"><strong>YouTube — INSPIRASI TERNAK</strong> (<em>Operasional Close House</em>, Mar 2024 &amp; <em>Biaya Upgrade OH→CH</em>, Feb 2023)</td>
+<td style="text-align:left">Praktisi lapangan menjelaskan risiko pengoperasian <em>cooling pad</em> berlebihan terhadap kelembapan &amp; <em>litter</em> basah/menggumpal (<em>caking</em>) jika tidak diimbangi timer &amp; kecepatan angin <em>exhaust fan</em>, serta tingginya beban biaya upgrade kandang.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=IuGfqfCGVsw">YouTube Ops CH (2024)</a> | <a href="https://www.youtube.com/watch?v=MCkdJ7uqmrM">YouTube Biaya CH (2023)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:left"><strong>YouTube — PT Ansell Jaya Indonesia</strong> (Mar 2025) &amp; <strong>Satwa Media Group</strong> (Mar 2025)</td>
+<td style="text-align:left">Memaparkan pemicu utama amonia tinggi di kandang Indonesia: feses menumpuk, <em>litter</em> basah (bocor <em>nipple</em> &amp; RH tinggi), kepadatan tinggi, serta sirkulasi ventilasi buruk yang langsung merusak saluran pernapasan ayam.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=SlEDJU4HywA">YouTube Ansell (2025)</a> | <a href="https://www.youtube.com/shorts/TG15IBA8ca0">YouTube Satwa Media (2025)</a></td>
+</tr>
+<tr>
+<td style="text-align:center">4</td>
+<td style="text-align:left"><strong>YouTube — Edufarmers</strong> (Jan 2024) &amp; <strong>Ternak Mania</strong> (Apr 2022) &amp; <strong>Kompasiana Blitar</strong> (Jun 2022)</td>
+<td style="text-align:left">Mengonfirmasi keterbatasan penanganan manual peternak rakyat saat suhu &gt;28°C &amp; RH &gt;70% (hanya mengandalkan buka tirai, tambah kipas, elektrolit/vitamin C) yang tidak mampu mencegah <em>heat stress</em> kronis saat cuaca ekstrem di sentra seperti Blitar.</td>
+<td style="text-align:left"><a href="https://www.youtube.com/watch?v=Qp8rexlhkSw">Edufarmers</a> | <a href="https://www.youtube.com/watch?v=rD-rVRYBwW8">Ternak Mania</a> | <a href="https://www.kompasiana.com/pujiaris4473/6296eeb4ce96e567fd5ba243/populasi-ayam-layer-di-blitar-turun-drastis-peternak-lakukan-berbagai-upaya-alternatif-untuk-tetap-bertahan">Kompasiana Blitar</a></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h3 id="34-kesimpulan-inti-masalah-2-batas-fisik-tropis-vs-kegagalan-kendali-operasional">3.4. Kesimpulan Inti Masalah #2 (Batas Fisik Tropis vs Kegagalan Kendali Operasional)</h3>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></p>
+<p><strong>4 Poin Kunci Akar Penyebab Terdalam Masalah #2:</strong></p>
+<ol>
+<li><strong>Iklim Tropis Lembap Indonesia Menciptakan Dilema Psikrometrik:</strong> Suhu tinggi (hingga <code>36°C</code>) sekaligus RH tinggi (<code>66%–96%</code>) membuat pendinginan evaporatif (<em>cooling pad</em>) menjadi pedang bermata dua — menurunkan sedikit suhu tetapi melambungkan RH dalam <em>closed house</em> ke <code>82%–93%</code>.</li>
+<li><strong>Kegagalan Kendali di <em>Closed House</em> Sama Nyatanya dengan di <em>Open House</em>:</strong> Bukti <code>Wilcox (2025)</code>, <code>Sarjana (2024)</code>, <code>Hasibuan (2021)</code>, dan <code>Hariono (2023)</code> mematahkan mitos bahwa &quot;bangun <em>closed house</em> otomatis selesai&quot; — tanpa kalibrasi RH, <em>wind chill</em>, zonasi <em>inlet–outlet</em>, dan ketinggian wilayah, <em>closed house</em> tetap menghasilkan <code>70,3%</code> THI berat dan <code>40%</code> FPD.</li>
+<li><strong>Puncak Beban Panas Sore (<code>14:00–16:00</code>) Adalah Zona Kritis Kematian yang Gagal Diantisipasi Kontrol Manual:</strong> Prediktor kematian paling tajam adalah kondisi sore hari (<code>&gt;32,8°C</code> &amp; THI <code>&gt;79</code>), saat respon manual ABK terlambat dan panas metabolik flok besar memuncak.</li>
+<li><strong>Amonia (<code>NH₃</code>) adalah Produk Langsung dari Kegagalan Pengelolaan Air + Kelembapan + Ventilasi:</strong> <em>Heat stress</em> memicu <em>wet droppings</em>, diperparah <em>over-wetting cooling pad</em> dan kebocoran <em>nipple</em>, menghasilkan <em>litter</em> basah-basa (<code>46,4%</code> air, pH <code>7,6–8,1</code>) yang melepaskan NH₃ jauh sebelum terdeteksi penciuman manusia.</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">Kategori Batas / Kendali</th>
+<th style="text-align:left">Akar Masalah Spesifik pada Masalah #2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><strong>Batas Fisik Iklim &amp; Biologis (<em>Uncontrollable Constraints</em>)</strong></td>
+<td style="text-align:left">• Iklim tropis ekuatorial Indonesia dengan suhu puncak <code>34–36°C</code>, RH <code>66%–96%</code>, dan HSI &gt;150–160 sepanjang 12 bulan.<br>• Hukum termodinamika pendinginan evaporatif (efisiensi turun drastis saat RH ambien tinggi).<br>• Fisiologi ayam genetik modern (tanpa kelenjar keringat, metabolisme tinggi, wajib mengandalkan <em>panting</em>).</td>
+</tr>
+<tr>
+<td style="text-align:left"><strong>Kegagalan Kendali Operasional Kandang (<em>Controllable On-Farm</em>)</strong></td>
+<td style="text-align:left">• Pengaturan kipas/<em>wind speed</em> tanpa kalibrasi <em>wind chill</em>, umur ayam, dan ketinggian lokasi (SOP <em>copy-paste</em>).<br>• Operasional <em>cooling pad</em> berlebih (<em>over-wetting</em>) tanpa batas ambang RH dan penyemprotan air langsung di siang hari.<br>• Keterlambatan respons manual terhadap akumulasi panas siang–sore (<code>11:00–16:00</code>) &amp; ketiadaan pemantauan gradien <em>inlet–outlet</em> serta kadar gas NH₃/CO₂.<br>• Perawatan <em>cell pad</em> (lumut/kerak), kebocoran <em>nipple drinker</em>, manajemen kepadatan, &amp; jadwal pemberian pakan saat puncak panas.</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="4-analisis-kausalitas-silang-lingkaran-setan-vicious-cycle-mikroklimat-2-%E2%86%94-wabah-penyakit-1">4. Analisis Kausalitas Silang: Lingkaran Setan (<em>Vicious Cycle</em>) Mikroklimat (#2) ↔ Wabah Penyakit (#1)</h2>
+<p>Masalah #1 dan Masalah #2 di peternakan unggas Indonesia <strong>bukan dua fenomena yang berdiri sendiri</strong>, melainkan satu <strong>lingkaran setan kausalitas silang (<em>vicious cycle</em>)</strong> di mana kegagalan kendali mikroklimat (#2) secara sistematis meruntuhkan benteng pertahanan biologis ayam dan membuka pintu gerbang bagi ledakan wabah penyakit (#1) — yang selanjutnya memicu reaksi darurat operasional salah dan memperparah stres kandang.</p>
+<p><img src="file:///home/reiziqzip/Programmer/Hackathon-UNJ/03_Root_Cause_Analysis/assets/03_vicious_cycle_mikroklimat_dan_penyakit.png" alt="Diagram Lingkaran Setan (Vicious Cycle) Kausalitas Silang Mikroklimat (#2) dan Wabah Penyakit (#1)">
+<em><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code> Alur 6 tahap kausalitas silang yang menghubungkan instabilitas mikroklimat tropis Indonesia (#2) hingga memicu kegagalan vaksin &amp; ledakan koinfeksi (#1) beserta umpan balik operasionalnya.</em></p>
+<p><img src="file:///home/reiziqzip/Programmer/Hackathon-UNJ/03_Root_Cause_Analysis/assets/05_asli_biology2024_fig5_neuroendokrin_imunitas_hs.png" alt="Figure 5 Asli — Interaksi Neuroendokrin, Sistem Imun &amp; Kerusakan Organ akibat Heat Stress (Huang et al., Biology Q1, 2024)">
+<em><code>[ASLI DARI SUMBER PRIMER]</code> <code>[Mekanisme Biologis Umum]</code> <strong>Figure 5</strong> dari <a href="https://doi.org/10.3390/biology13110926">Huang et al., <em>Biology</em> Q1 (2024, <code>PMC11591812</code>)</a> — Mekanisme biologis dua arah antara aktivasi neuroendokrin (glukokortikoid/kortikosteron &amp; katekolamin), disfungsi sistem imun, dan kerusakan organ selama cekaman panas.</em></p>
+<h3 id="a-rantai-kausalitas-6-tahap-pemisahan-tegas-data-indonesia-vs-mekanisme-biologis-umum">A. Rantai Kausalitas 6 Tahap (Pemisahan Tegas Data Indonesia vs Mekanisme Biologis Umum)</h3>
+<p><code>[DATA PRIMER TERVERIFIKASI — TABEL/VISUALISASI DISUSUN OLEH AI AGENT]</code></p>
+<ol>
+<li><strong>Tahap 1 — Pemicu Termal &amp; Kelembapan Tropis (<code>[Data Indonesia]</code>):</strong> Suhu kandang melampaui zona nyaman (<code>32,8–36°C</code>; HSI <code>&gt;150–160</code> sepanjang 12 bulan; <code>Sumiati 2025; Mohammadi 2026</code>), sementara pengoperasian <em>cooling pad</em> di kelembapan tropis mendorong RH dalam <em>closed house</em> mencapai <strong><code>81,9%–92,8%</code></strong> dengan <strong><code>70,3%</code></strong> titik THI <em>severe–life-threatening</em> (<code>Wilcox 2025; Sarjana 2024</code>).</li>
+<li><strong>Tahap 2 — Kompensasi Fisiologis &amp; <em>Wet Litter</em> (<code>[Mekanisme Biologis Umum]</code> + <code>[Data Indonesia]</code>):</strong> Ayam merespons panas dengan <em>panting</em> (alkalosis respiratorik → kerabang menipis/memucat; <code>Idowu 2026</code>) dan lonjakan konsumsi air minum yang menghasilkan feses encer (<em>wet droppings</em>); diperparah kelembapan area <em>inlet</em> dan kebocoran <em>nipple</em>, kadar air <em>litter</em> melonjak hingga <strong><code>46,42%</code></strong> dengan pH basa <strong><code>7,59–8,13</code></strong> (<code>Hasibuan 2021</code>).</li>
+<li><strong>Tahap 3 — Lonjakan NH₃ &amp; Aktivasi Hormon Stres HPA (<code>[Data Indonesia]</code> + <code>[Mekanisme Biologis Umum]</code>):</strong> Degradasi mikroba atas asam urat pada <em>litter</em> basah-basa melepaskan <strong>NH₃ hingga <code>13–20 ppm</code></strong> (<code>Hasibuan 2021; Hartady 2026</code>) dan CO₂ hingga <code>2.180 ppm</code> (<code>Sarjana 2024</code>). Secara paralel, stres panas kronis mengaktivasi aksis hipotalamus–pituitari–adrenal (HPA) yang memicu lonjakan hormon <strong>kortikosteron</strong> dan rasio heterofil/limfosit (H/L) (<code>Huang 2024; Idowu 2026</code>).</li>
+<li><strong>Tahap 4 — Runtuhnya Pertahanan Primer Trakea &amp; Imunosupresi Sistemik (<code>[Mekanisme Biologis Umum]</code> + <code>[Buletin Teknis RI]</code>):</strong>
+<ul>
+<li><strong>Sinergi Toksik RH Tinggi × NH₃:</strong> Studi eksperimental <em>Poultry Science</em> Q1 membuktikan bahwa <strong>kelembapan udara tinggi (<code>85% RH</code>) secara sinergis memperparah peradangan mukosa saluran napas akibat NH₃</strong> melalui penurunan protein <em>tight junction</em>, aktivasi jalur inflamasi NF-κB, ketidakseimbangan Th1/Th2, dan gangguan antibodi mukosa SIgA (<code>Wang et al., 2022, PMC9326132</code>).</li>
+<li><strong>Kerusakan Silia &amp; Disbiosis Trakea:</strong> Paparan NH₃ mulai dari <strong><code>15 ppm</code></strong> sudah meruntuhkan keragaman mikrobiota trakea dan menaikkan sitokin pro-inflamasi IL-1β/IL-6 (<code>Zhou et al., 2021, PMC7858136</code>); pada <strong><code>20 ppm</code></strong>, terjadi <strong>siliostasis (lumpuhnya silia)</strong> dan <strong>desiliosis (rontoknya silia trakea)</strong> sehingga gerbang pembersih patogen pertama rusak total (<code>PT Medion 2026</code>).</li>
+<li><strong>Imunosupresi Sistemik:</strong> Kortikosteron tinggi menyebabkan involusi organ limfoid (<em>timus, limpa, Bursa Fabricius</em>) dan penurunan titer antibodi (<code>Huang 2024</code>), yang di kandang Indonesia diperparah lagi oleh <strong>IBD/Gumboro (<code>10,6%</code> PCR)</strong> dan <strong>Aflatoksin B1 (<code>96,51%</code> pakan RI; <code>Widiastuti 2026</code>)</strong>.</li>
+</ul>
+</li>
+<li><strong>Tahap 5 — Kegagalan Vaksin &amp; Ledakan Koinfeksi Multifaktorial (<code>[Data Indonesia]</code>):</strong> Ketika mukosa trakea rusak dan imunitas tertekan, bakteri komensal/oportunis (<em>Mycoplasma gallisepticum</em>/CRD, <em>E. coli</em>/Colibacillosis) serta virus endemik (AI H5/H9, IB varian GI-19 QX, ND Genotipe VII) langsung menginvasi secara serentak — <strong>terbukti nyata di Majalengka (11.000 broiler)</strong>: di bawah <strong>NH₃ <code>20 ppm</code>, RH <code>&gt;80%</code>, dan IHS <code>&gt;160</code></strong>, terjadi koinfeksi simultan <strong>AI H5 clade 2.3.2 + AI H9 + IB (CV 256%) + <em>M. gallisepticum</em> (<code>31,25%</code>) + <em>E. coli</em> + koksidiosis (<code>4.400 OPG</code>)</strong> (<code>Hartady et al., 2026</code>). Bersamaan dengan itu, luka <em>Foot-Pad Dermatitis</em> (<strong><code>40%</code></strong>) dan <em>Hock Burn</em> (<strong><code>30%</code></strong>) akibat <em>litter</em> basah (<code>Wilcox 2025</code>) membuka pintu masuk infeksi bakterial sekunder.</li>
+<li><strong>Tahap 6 — Deteksi Terlambat &amp; Umpan Balik Operasional (<code>[Data Indonesia]</code> + <code>[Suara Lapangan Daring]</code>):</strong> Koinfeksi menyamarkan gejala (AI dikira snot; <code>TROBOS 2024</code>) sehingga pengobatan salah sasaran; tindakan darurat membuka tirai lebar saat siang justru memasukkan patogen luar (<code>Zulfan 2026</code>); penyemprotan air langsung memperparah RH dan NH₃ (<code>Medion 2025</code>); dan saat kematian tak terkendali tanpa kompensasi <em>stamping out</em>, <em>panic selling</em> menyebarkan virus ke LBM dan peternakan sekitar (<code>Pramuwidyatama 2023</code>).</li>
+</ol>
+<hr>
+<h3 id="b-kesimpulan-gabungan-problem-framing-sebelum-validasi-wawancara-primer">B. Kesimpulan Gabungan (<em>Problem Framing</em> Sebelum Validasi Wawancara Primer)</h3>
+<p><code>[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]</code></p>
+<p>Dari seluruh bedah Ishikawa 6 Dimensi, <em>5 Whys</em>, dan <em>Vicious Cycle</em> di atas, berikut <strong>5 Titik Akar Masalah Terdalam (<em>Core Root Causes</em>)</strong> yang berada pada ranah <strong>operasional kandang (<em>controllable on-farm</em>)</strong> sekaligus menjadi titik fokus validasi wawancara primer Tim MBOYZ (tanpa melompat ke perancangan solusi terlebih dahulu):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">No</th>
+<th style="text-align:left">Titik Akar Masalah Terdalam (<em>Core Root Cause</em>)</th>
+<th style="text-align:center">Keterkaitan Masalah</th>
+<th style="text-align:left">Mengapa Paling Kritis di Level Operasional Kandang?</th>
+<th style="text-align:left">Pertanyaan Kunci Validasi Wawancara Primer Tim MBOYZ</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>1</strong></td>
+<td style="text-align:left"><strong>Titik Buta Mikroklimat Multi-Parameter (Suhu–RH–<em>Wind Chill</em>–NH₃) &amp; Gradien Spasial Kandang</strong></td>
+<td style="text-align:center"><strong>#2 → #1</strong></td>
+<td style="text-align:left">Baik <em>open house</em> maupun <em>closed house</em> di Indonesia masih dioperasikan reaktif atau hanya melihat suhu tunggal, mengabaikan jebakan psikrometrik RH tropis (<code>82%–93%</code>), beban panas sore (<code>16:00 &gt;32,8°C</code> / THI <code>&gt;79</code>), <em>wind chill</em>, dan akumulasi NH₃ tak terukur (<code>15–20 ppm</code>).</td>
+<td style="text-align:left"><em>Bagaimana peternak saat ini tahu kapan cooling pad/kipas/tirai harus diubah, dan pernahkah litter dekat inlet basah atau bau amonia tinggi meski suhu terlihat normal?</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>2</strong></td>
+<td style="text-align:left"><strong>Keterlambatan Deteksi Dini Gangguan Kesehatan Flok (Mengandalkan Observasi Visual Sesaat)</strong></td>
+<td style="text-align:center"><strong>#1</strong></td>
+<td style="text-align:left">Koinfeksi multifaktorial membuat gejala klinis mirip (AI dikira snot), sementara absennya pelacakan anomali dini (<em>feed/water intake</em>, perilaku <em>panting/huddling</em>/lesu, tren mortalitas harian) membuat intervensi baru terjadi 2–5 hari terlambat setelah kerugian besar tak terhindarkan.</td>
+<td style="text-align:left"><em>Dari tanda pertama apa peternak/ABK biasanya mulai curiga ayam sakit, berapa hari jeda sampai tindakan/uji lab dilakukan, dan penyakit apa yang paling sering salah duga?</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>3</strong></td>
+<td style="text-align:left"><strong>Kebocoran Biosekuriti Eksternal &amp; Jalur Transmisi Mekanis Harian (Skor <code>0,28/1,0</code>)</strong></td>
+<td style="text-align:center"><strong>#1</strong></td>
+<td style="text-align:left">Lalu lintas tengkulak/kendaraan panen dari LBM, ketiadaan zonasi 3 lapis, sistem <em>multi-age</em> layer, dan persistensi vektor (<em>A. diaperinus</em>, burung liar) terus memasok dosis patogen tinggi ke kandang.</td>
+<td style="text-align:left"><em>Siapa saja pihak luar (tengkulak, sopir, teknisi) yang rutin masuk area kandang tiap minggu, dan kendala apa yang paling membuat sanitasi akses/istirahat kandang sulit dijalankan?</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>4</strong></td>
+<td style="text-align:left"><strong>Kerentanan Proteksi Vaksin &amp; Imunosupresi Hulu (<em>Cold Chain</em>, Aplikasi, IBD &amp; AFB1)</strong></td>
+<td style="text-align:center"><strong>#1 &amp; #2</strong></td>
+<td style="text-align:left">Kegagalan rantai dingin (<code>2–8°C</code>) &amp; aplikasi vaksin bertemu dengan <em>mismatch</em> strain lapang (ND VII.2, IBV QX, AI) serta imunosupresi akibat panas/NH₃ dan AFB1 (<code>96,51%</code> pakan), menyebabkan wabah tetap jebol meski biaya vaksin sudah dikeluarkan.</td>
+<td style="text-align:left"><em>Apakah peternak pernah mengalami wabah meski sudah vaksin lengkap, bagaimana penyimpanan/aplikasi vaksin dilakukan, dan apakah pernah ada pemeriksaan titer/kualitas pakan?</em></td>
+</tr>
+<tr>
+<td style="text-align:center"><strong>5</strong></td>
+<td style="text-align:left"><strong>Kesenjangan Kapasitas &amp; Disiplin Operasional SDM/ABK di Lapangan (<code>58%</code> Literasi <em>Low–Moderate</em>)</strong></td>
+<td style="text-align:center"><strong>#1 &amp; #2</strong></td>
+<td style="text-align:left">SOP teknis yang kompleks (vaksinasi, biosekuriti 3 zona, kalibrasi kipas/<em>cooling pad</em>, pencatatan harian) kerap gagal dieksekusi konsisten oleh ABK karena minimnya panduan praktis, kesalahan kalibrasi manual (<code>p = 0,001</code>), dan <em>turnover</em>/pengawasan 24 jam.</td>
+<td style="text-align:left"><em>Kesalahan operasional harian apa yang paling sering dilakukan ABK terkait tirai/kipas, air minum/<em>litter</em>, pencatatan, maupun sanitasi kandang?</em></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="5-daftar-pustaka--bukti-tautan-terverifikasi">5. Daftar Pustaka &amp; Bukti Tautan Terverifikasi</h2>
+<h3 id="a1-tier-1--jurnal-peer-reviewed-konteks-indonesia-2021%E2%80%932026-26-artikel--scopus-q1%E2%80%93q4--sinta-1%E2%80%932">(A1) Tier 1 — Jurnal <em>Peer-Reviewed</em> Konteks Indonesia (2021–2026: 26 Artikel — Scopus Q1–Q4 / SINTA 1–2)</h3>
+<ol>
+<li><strong>Alvandika, A., et al. (2026).</strong> The Impact of IoT-Based Cyber-Physical Systems on Broiler Farming in Closed-House Systems. <em>Jurnal Ilmu Pertanian Indonesia (JIPI)</em>, 31(4): 718–725. <strong>[SINTA 2]</strong> — <a href="https://doi.org/10.18343/jipi.31.4.718">https://doi.org/10.18343/jipi.31.4.718</a></li>
+<li><strong>Anwar Sani, R., et al. (2025).</strong> Longitudinal evaluation of interventions on antimicrobial use and antimicrobial resistance on small- and medium-scale broiler farms in Indonesia. <em>Poultry Science</em>, 104(12): 106010. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.psj.2025.106010">https://doi.org/10.1016/j.psj.2025.106010</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12681536/">PMC12681536</a></li>
+<li><strong>Anwar Sani, R., et al. (2026).</strong> &quot;If you want to sleep easy, you give antibiotics&quot; exploring drivers of antimicrobial use in the small- and medium scale broiler sector in Indonesia: A qualitative study. <em>Preventive Veterinary Medicine</em>, 249: 106955. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.prevetmed.2026.106955">https://doi.org/10.1016/j.prevetmed.2026.106955</a></li>
+<li><strong>Chapot, L., et al. (2023).</strong> A qualitative analysis of health information-sharing networks in the Indonesian poultry sector. <em>Preventive Veterinary Medicine</em>, 219: 106003. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.prevetmed.2023.106003">https://doi.org/10.1016/j.prevetmed.2023.106003</a></li>
+<li><strong>Chapot, L., et al. (2024).</strong> Needs and capabilities for improving poultry production and health management in Indonesia. <em>PLOS ONE</em>, 19(8): e0308379. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.1371/journal.pone.0308379">https://doi.org/10.1371/journal.pone.0308379</a></li>
+<li><strong>Dharmayanti, N. L. P. I., et al. (2024).</strong> Newcastle disease virus: the past and current situation in Indonesia. <em>Journal of Veterinary Science</em>, 25(1): e17. <strong>[Scopus Q2]</strong> — <a href="https://doi.org/10.4142/jvs.23022">https://doi.org/10.4142/jvs.23022</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10839176/">PMC10839176</a></li>
+<li><strong>Dharmayanti, N. L. P. I., et al. (2025).</strong> <em>(Baru RCA)</em> Genomic surveillance of influenza A virus in live bird markets during the COVID-19 pandemic (East Java, Indonesia). <em>Veterinary World</em>, 18(4): 955–968. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.14202/vetworld.2025.955-968">https://doi.org/10.14202/vetworld.2025.955-968</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12123281/">PMC12123281</a></li>
+<li><strong>Efendi, R., et al. (2022).</strong> An assessment of knowledge and attitude toward antibiotic misuse by small-scale broiler farmers in Bogor, West Java, Indonesia. <em>Veterinary World</em>, 15(3): 707–713. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.14202/vetworld.2022.707-713">https://doi.org/10.14202/vetworld.2022.707-713</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9047124/">PMC9047124</a></li>
+<li><strong>Fikrianti, Y., Priyanto, B., &amp; Aini, F. N. (2023).</strong> Perbandingan Analisis Finansial Sistem Kandang <em>Closed House</em> Semi Otomatis dan Otomatis. <em>Jurnal Agribisnis Indonesia (JAI)</em>, 11(2): 422–431. <strong>[SINTA 2]</strong> — <a href="https://doi.org/10.29244/jai.2023.11.2.422-431">https://doi.org/10.29244/jai.2023.11.2.422-431</a></li>
+<li><strong>Hariono, Afnan, R., Sumiati, &amp; Fadilah, R. (2023).</strong> <em>(Baru RCA)</em> The Effect of Wind Chill in Closed House on Broiler Performance. <em>Jurnal Ilmu Produksi dan Teknologi Hasil Peternakan (JIPTHP)</em>, 11(1): 34–40. <strong>[SINTA 2 — IPB]</strong> — <a href="https://doi.org/10.29244/jipthp.11.1.34-40">https://doi.org/10.29244/jipthp.11.1.34-40</a></li>
+<li><strong>Hartady, T., et al. (2026).</strong> A Case of Avian Influenza Co-Infection and Multifactorial Diseases in a Broiler Farm in West Java, Indonesia. <em>Veterinary Sciences</em>, 13(4): 364. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.3390/vetsci13040364">https://doi.org/10.3390/vetsci13040364</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13120342/">PMC13120342</a></li>
+<li><strong>Hasibuan, A. S., Mahfudz, L. D., &amp; Sarjana, T. A. (2021).</strong> <em>(Baru RCA)</em> Efek Perbedaan Dataran terhadap Kualitas Litter <em>Closed House</em> Ayam Broiler. <em>Jurnal Sain Peternakan Indonesia (JSPI)</em>, 16(2): 171–179. <strong>[SINTA 2]</strong> — <a href="https://doi.org/10.31186/jspi.id.16.2.171-179">https://doi.org/10.31186/jspi.id.16.2.171-179</a></li>
+<li><strong>Ilham, N., Maulana, M., &amp; Gunawan, E. (2021).</strong> Production Efficiency of Poultry Small-Scale Laying Hen in Indonesia. <em>Jurnal Ilmu Ternak dan Veteriner (JITV)</em>, 26(4): 187–194. <strong>[SINTA 1 / Scopus Q4]</strong> — <a href="https://doi.org/10.14334/jitv.v26i4.2697">https://doi.org/10.14334/jitv.v26i4.2697</a></li>
+<li><strong>Mohammadi, N., et al. (2026).</strong> Heat Stress Impacts on Broiler Performance and Mortality in Non-Cooled Equatorial Housing. <em>Advances in Animal and Veterinary Sciences</em>, 14(5): 1100–1111. <strong>[Scopus Q3]</strong> — <a href="https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111">https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111</a></li>
+<li><strong>Nur, W. F. F., &amp; Widiyaningrum, P. (2025).</strong> <em>(Baru RCA)</em> Repellent and Metamorphosis Capability of <em>Alphitobius diaperinus</em> Exposed to Gamal Leaf Extracts. <em>Jurnal Ilmu Pertanian Indonesia (JIPI)</em>, 30(3): 517–524. <strong>[SINTA 2 — IPB]</strong> — <a href="https://doi.org/10.18343/jipi.30.3.517">https://doi.org/10.18343/jipi.30.3.517</a></li>
+<li><strong>Pramuwidyatama, M. G., et al. (2023).</strong> Economic impact of highly pathogenic avian influenza outbreaks in Western Java smallholder broiler farms. <em>Preventive Veterinary Medicine</em>, 212: 105833. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.prevetmed.2022.105833">https://doi.org/10.1016/j.prevetmed.2022.105833</a> | <a href="https://edepot.wur.nl/588952">WUR OA PDF</a></li>
+<li><strong>Rehman, S., et al. (2022).</strong> <em>(Baru RCA)</em> Emerging threats and vaccination strategies of H9N2 viruses in poultry in Indonesia: A review. <em>F1000Research</em>, 11: 548. <strong>[Scopus Q1/Q2]</strong> — <a href="https://doi.org/10.12688/f1000research.118669.2">https://doi.org/10.12688/f1000research.118669.2</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9253659/">PMC9253659</a></li>
+<li><strong>Rehman, S., et al. (2023a).</strong> A cross-sectional survey of avian influenza knowledge among poultry farmworkers in Indonesia. <em>PeerJ</em>, 11: e14600. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.7717/peerj.14600">https://doi.org/10.7717/peerj.14600</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9851045/">PMC9851045</a></li>
+<li><strong>Rehman, S., et al. (2023b).</strong> <em>(Baru RCA)</em> Whole-genome sequence and genesis of an avian influenza virus H5N1 isolated from a healthy chicken in a live bird market in Indonesia. <em>PeerJ</em>, 11: e14917. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.7717/peerj.14917">https://doi.org/10.7717/peerj.14917</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9951803/">PMC9951803</a></li>
+<li><strong>Santoso, F. P. C., Widayanti, R., Widyarini, S., &amp; Wibowo, M. H. (2024).</strong> <em>(Baru RCA)</em> Spike Glycoprotein 1 Partial Gene Analysis of GI-19 (QX-like) Infectious Bronchitis Virus Isolated and Propagated from Breeder, Broiler, and Layer Chickens in Java Region. <em>HAYATI Journal of Biosciences</em>, 31(3): 414–424. <strong>[SINTA 1 / Scopus Q2 — IPB]</strong> — <a href="https://doi.org/10.4308/hjb.31.3.414-424">https://doi.org/10.4308/hjb.31.3.414-424</a></li>
+<li><strong>Sarjana, T. A., et al. (2024).</strong> <em>(Baru RCA)</em> Floor position in multitier broiler closed houses and its impact on microclimatic, air quality and litter conditions. <em>Journal of the Indonesian Tropical Animal Agriculture (JITAA)</em>, 49(4): 332–347. <strong>[SINTA 1 / Scopus Q3 — Undip]</strong> — <a href="https://doi.org/10.14710/jitaa.49.4.332-347">https://doi.org/10.14710/jitaa.49.4.332-347</a></li>
+<li><strong>Sumiati, et al. (2025).</strong> Invited Review — Challenges and constraints to the sustainability of poultry farming in Indonesia. <em>Animal Bioscience</em>, 38(4): 802–817. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.5713/ab.24.0678">https://doi.org/10.5713/ab.24.0678</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11969156/">PMC11969156</a></li>
+<li><strong>Wibawa, H., et al. (2024).</strong> <em>(Baru RCA)</em> Highly Pathogenic Avian Influenza A(H5N1) Virus Clade 2.3.4.4b in Domestic Ducks, Indonesia, 2022. <em>Emerging Infectious Diseases</em>, 30(3): 579–583. <strong>[Scopus Q1 — CDC]</strong> — <a href="https://doi.org/10.3201/eid3003.230973">https://doi.org/10.3201/eid3003.230973</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10902521/">PMC10902521</a></li>
+<li><strong>Widiastuti, R., et al. (2026).</strong> <em>(Baru RCA)</em> Cross-Sectional Survey of Aflatoxin B1 Contamination in Poultry Feeds and Feed Ingredients From Bogor and Bekasi Regencies, West Java, Indonesia. <em>Veterinary Medicine International</em>, 2026: 1687482. <strong>[Scopus Q2]</strong> — <a href="https://doi.org/10.1155/vmi/1687482">https://doi.org/10.1155/vmi/1687482</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13641298/">PMC13641298</a></li>
+<li><strong>Wilcox, C., et al. (2025).</strong> Factors affecting animal welfare on commercial broiler chicken farms in West Java, Indonesia. <em>Animal Welfare</em>, 34: e37. <strong>[Scopus Q1 — Cambridge]</strong> — <a href="https://doi.org/10.1017/awf.2025.10052">https://doi.org/10.1017/awf.2025.10052</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC12722053/">PMC12722053</a></li>
+<li><strong>Zulfan, Daud, M., &amp; Ikram, F. (2026).</strong> Performance comparison of broiler chickens reared in closed versus stage slatted-floor open-sided houses: a case study of broiler farmers under an inti-plasma partnership model in Indonesia. <em>Acta Scientiarum. Animal Sciences</em>, 48: e74435. <strong>[Scopus Q3]</strong> — <a href="https://doi.org/10.4025/actascianimsci.v48i1.74435">https://doi.org/10.4025/actascianimsci.v48i1.74435</a></li>
+</ol>
+<h3 id="a2-tier-1--jurnal-peer-reviewed-mekanisme-fisiologi--patologi-dasar-unggas-mekanisme-biologis-umum-2021%E2%80%932026-4-artikel-scopus-q1">(A2) Tier 1 — Jurnal <em>Peer-Reviewed</em> Mekanisme Fisiologi &amp; Patologi Dasar Unggas (<code>[Mekanisme Biologis Umum]</code>, 2021–2026: 4 Artikel Scopus Q1)</h3>
+<ol start="27">
+<li><strong>Huang, Y., et al. (2024).</strong> <em>(Baru RCA — <code>[Mekanisme Biologis Umum]</code>)</em> Mechanisms of Heat Stress on Neuroendocrine and Organ Damage and Nutritional Measures of Prevention and Treatment in Poultry. <em>Biology</em>, 13(11): 926. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.3390/biology13110926">https://doi.org/10.3390/biology13110926</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11591812/">PMC11591812</a></li>
+<li><strong>Idowu, P. A., et al. (2026).</strong> <em>(Baru RCA — <code>[Mekanisme Biologis Umum]</code>)</em> Integrated Stress Physiology and Mitigation Strategies for Heat Stress in Layer Chickens — Review. <em>Animals</em>, 16(7): 1001. <strong>[Scopus Q1]</strong> — <a href="https://doi.org/10.3390/ani16071001">https://doi.org/10.3390/ani16071001</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC13072026/">PMC13072026</a></li>
+<li><strong>Wang, C., et al. (2022).</strong> <em>(Baru RCA — <code>[Mekanisme Biologis Umum]</code>)</em> High ambient humidity aggravates ammonia-induced respiratory mucosal inflammation by eliciting Th1/Th2 imbalance and NF-κB pathway activation in laying hens. <em>Poultry Science</em>, 101(10): 102028. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.psj.2022.102028">https://doi.org/10.1016/j.psj.2022.102028</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC9326132/">PMC9326132</a></li>
+<li><strong>Zhou, Y., et al. (2021).</strong> <em>(Baru RCA — <code>[Mekanisme Biologis Umum]</code>)</em> The alterations of tracheal microbiota and inflammation caused by different levels of ammonia exposure in broiler chickens. <em>Poultry Science</em>, 100(2): 685–696. <strong>[Scopus Q1 — Elsevier]</strong> — <a href="https://doi.org/10.1016/j.psj.2020.11.026">https://doi.org/10.1016/j.psj.2020.11.026</a> | <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC7858136/">PMC7858136</a></li>
+</ol>
+<h3 id="b-tier-2--data-resmi-pemerintah--surveilans--buletin-teknis-pt-medion">(B) Tier 2 — Data Resmi Pemerintah &amp; Surveilans / Buletin Teknis PT Medion</h3>
+<ol start="31">
+<li><strong>BBPKH Cinagara, Kementerian Pertanian RI (Desember 2025).</strong> <em>Close House vs Open House: Menimbang Efisiensi dan Kenyamanan Ayam Modern</em> — <a href="https://bbpkhcinagara.bppsdmp.pertanian.go.id/storage/master/file/QuSKqJd1_Close_House_vs_Open_House_Menimbang_Efisiensi_dan_Kenyamanan_Ayam_Modern.pdf">PDF Resmi Kementan RI</a></li>
+<li><strong>PT Medion TEC (Januari 2026).</strong> <em>Overview of Poultry Disease Analysis 2025 &amp; Disease Projection 2026</em> — <a href="https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/">https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/</a></li>
+<li><strong>PT Medion (Diperbarui Juli 2026).</strong> <em>(Baru RCA)</em> <em>Kadar Amonia terhadap Sistem Pertahanan Tubuh Primer</em> — <a href="https://www.medion.co.id/info-medion/kadar-amonia-terhadap-sistem-pertahanan-tubuh-primer/">https://www.medion.co.id/info-medion/kadar-amonia-terhadap-sistem-pertahanan-tubuh-primer/</a></li>
+<li><strong>PT Medion (Diperbarui Okt 2025).</strong> <em>(Baru RCA)</em> <em>Tips Jitu Menjaga Kualitas Vaksin (Cold Chain 2–8°C)</em> — <a href="https://www.medion.co.id/info-medion/tips-jitu-menjaga-kualitas-vaksin/">https://www.medion.co.id/info-medion/tips-jitu-menjaga-kualitas-vaksin/</a></li>
+<li><strong>PT Medion (Diperbarui Jul 2025).</strong> <em>(Baru RCA)</em> <em>Closed House and Biosecurity Collaboration (3 Zones)</em> — <a href="https://www.medion.co.id/en/info-medion/closed-house-and-biosecurity-collaboration/">https://www.medion.co.id/en/info-medion/closed-house-and-biosecurity-collaboration/</a></li>
+<li><strong>PT Medion (Diperbarui Nov 2025).</strong> <em>(Baru RCA)</em> <em>Handling High Temperatures During the Day in the Chicken Coop</em> — <a href="https://www.medion.co.id/en/info-medion/hhandling-high-temperatures-during-the-day-in-the-chicken-coop/">https://www.medion.co.id/en/info-medion/hhandling-high-temperatures-during-the-day-in-the-chicken-coop/</a></li>
+</ol>
+<h3 id="c-tier-3--suara-lapangan-daring-indonesia-youtube-berita-wawancara--komunitas--non-peer-reviewed">(C) Tier 3 — Suara Lapangan Daring Indonesia (YouTube, Berita Wawancara &amp; Komunitas — Non-<em>Peer-Reviewed</em>)</h3>
+<ol start="37">
+<li><strong>TROBOS Livestock (Mar 2024).</strong> <em>Virus AI Terus Mengintai (Wawancara Hari Wibowo, Hari Farm)</em> — <a href="https://troboslivestock.com/virus-ai-terus-mengintai/">https://troboslivestock.com/virus-ai-terus-mengintai/</a></li>
+<li><strong>TROBOS Livestock (Mei 2024).</strong> <em>(Baru RCA)</em> <em>Sambang Kandang, ND Dihadang (Prof. Suwarno, FKH Unair)</em> — <a href="https://troboslivestock.com/sambang-kandang-nd-dihadang/">https://troboslivestock.com/sambang-kandang-nd-dihadang/</a></li>
+<li><strong>Afederasi (Okt 2025).</strong> <em>Dampak Cuaca Produksi Telur Ayam Menurun 10 Persen (Wawancara Eko, Jombang)</em> — <a href="https://afederasi.com/dampak-cuaca-produksi-telur-ayam-menurun-10-persen">https://afederasi.com/dampak-cuaca-produksi-telur-ayam-menurun-10-persen</a></li>
+<li><strong>ANTARA News Aceh (2025/2026).</strong> <em>18.000 ayam mati akibat listrik padam, peternak Abdya gugat PLN ke pengadilan</em> — <a href="https://aceh.antaranews.com/berita/395781/18000-ayam-mati-akibat-listrik-padam-peternak-abdya-gugat-pln-ke-pengadilan">https://aceh.antaranews.com/berita/395781/18000-ayam-mati-akibat-listrik-padam-peternak-abdya-gugat-pln-ke-pengadilan</a></li>
+<li><strong>Kompas.com Medan (Jun 2026).</strong> <em>Kesulitan Dapat Solar, Peternak Ayam di Deli Serdang Kehilangan 800 Ekor Saat Listrik Padam</em> — <a href="https://medan.kompas.com/read/2026/06/12/190231978/kesulitan-dapat-solar-peternak-ayam-di-deli-serdang-kehilangan-800-ekor-saat">https://medan.kompas.com/read/2026/06/12/190231978/kesulitan-dapat-solar-peternak-ayam-di-deli-serdang-kehilangan-800-ekor-saat</a></li>
+<li><strong>Kompasiana — <code>pujiaris4473</code> (Jun 2022).</strong> <em>Populasi Ayam Layer di Blitar Turun Drastis</em> — <a href="https://www.kompasiana.com/pujiaris4473/6296eeb4ce96e567fd5ba243/populasi-ayam-layer-di-blitar-turun-drastis-peternak-lakukan-berbagai-upaya-alternatif-untuk-tetap-bertahan">https://www.kompasiana.com/pujiaris4473/6296eeb4ce96e567fd5ba243/populasi-ayam-layer-di-blitar-turun-drastis-peternak-lakukan-berbagai-upaya-alternatif-untuk-tetap-bertahan</a></li>
+<li><strong>YouTube — Satwa Media Group (Jan 2023).</strong> <em>(Baru RCA)</em> <em>Poultry TechniClass Series #10 &quot;Pencegahan Kegagalan Vaksinasi Broiler&quot;</em> — <a href="https://www.youtube.com/watch?v=Bu-VtEhSy5A">https://www.youtube.com/watch?v=Bu-VtEhSy5A</a></li>
+<li><strong>YouTube — Satwa Media Group (Nov 2021).</strong> <em>(Baru RCA)</em> <em>Manajemen Vaksinasi Tepat untuk Proteksi Maksimal Peternakan Layer</em> — <a href="https://www.youtube.com/watch?v=iusRcz6AymM">https://www.youtube.com/watch?v=iusRcz6AymM</a></li>
+<li><strong>YouTube — Medion Indonesia (Feb 2023).</strong> <em>(Baru RCA)</em> <em>Farmsco x Medion E-Learning Part #27: Cara Ampuh Biosecurity dan Vaksinasi</em> — <a href="https://www.youtube.com/watch?v=i-reMJvs0-k">https://www.youtube.com/watch?v=i-reMJvs0-k</a></li>
+<li><strong>YouTube — BARA PS (Feb 2022).</strong> <em>(Baru RCA)</em> <em>BIOSECURITY di peternakan ayam petelur</em> — <a href="https://www.youtube.com/watch?v=JrCKbkL4DMk">https://www.youtube.com/watch?v=JrCKbkL4DMk</a></li>
+<li><strong>YouTube — INSPIRASI TERNAK (Mar 2024).</strong> <em>(Baru RCA)</em> <em>Cara Mengoperasikan Kandang Close House</em> — <a href="https://www.youtube.com/watch?v=IuGfqfCGVsw">https://www.youtube.com/watch?v=IuGfqfCGVsw</a></li>
+<li><strong>YouTube — INSPIRASI TERNAK (Feb 2023).</strong> <em>(Baru RCA)</em> <em>Berapa Biaya Upgrade Kandang Open ke Close House Ayam Broiler</em> — <a href="https://www.youtube.com/watch?v=MCkdJ7uqmrM">https://www.youtube.com/watch?v=MCkdJ7uqmrM</a></li>
+<li><strong>YouTube — PT Ansell Jaya Indonesia (Mar 2025).</strong> <em>(Baru RCA)</em> <em>BAHAYA AMONIA TINGGI! Ini Cara Ampuh Mengatasinya!</em> — <a href="https://www.youtube.com/watch?v=SlEDJU4HywA">https://www.youtube.com/watch?v=SlEDJU4HywA</a></li>
+<li><strong>YouTube — Satwa Media Group (Mar 2025).</strong> <em>(Baru RCA)</em> <em>Faktor Penyebab Tingginya Amoniak di Kandang Ayam</em> — <a href="https://www.youtube.com/shorts/TG15IBA8ca0">https://www.youtube.com/shorts/TG15IBA8ca0</a></li>
+<li><strong>YouTube — Edufarmers (Okt 2023 &amp; Jan 2024).</strong> <em>Kenali Penyakit Ayam Broiler (Pak Fatkul)</em> &amp; <em>Anti Panik Atasi Heat Stress</em> — <a href="https://www.youtube.com/watch?v=lvuE-meEgkE">Penyakit</a> | <a href="https://www.youtube.com/watch?v=Qp8rexlhkSw">Heat Stress</a></li>
+<li><strong>YouTube — FARM SULUNG (Mei 2023), BaLe Saba (Agu 2022), &amp; Ternak Mania (Apr 2022).</strong> <em>Ayam Petelur Ngorok</em>, <em>Koksidiosis CH</em>, &amp; <em>Heat Stress Broiler</em> — <a href="https://www.youtube.com/watch?v=jq6ERRpfYQc">FARM SULUNG</a> | <a href="https://www.youtube.com/watch?v=bMMVM-WQkUs">BaLe Saba</a> | <a href="https://www.youtube.com/watch?v=rD-rVRYBwW8">Ternak Mania</a></li>
+<li><strong>Referensi Internal Mitra Hackathon:</strong> <code>01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md</code> — Konteks lapangan mitra lokal PT Zara Propertifarm Indonesia (KANOPIS).</li>
+</ol>
+
+</body>
+</html>

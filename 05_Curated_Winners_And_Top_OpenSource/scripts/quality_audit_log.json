@@ -1,0 +1,1761 @@
+{
+  "generated_at": "2026-11-20T08:46:42.994023+00:00",
+  "curated_summary": {
+    "total_unique_urls": 94,
+    "passed_count": 94,
+    "failed_count": 0,
+    "retained_from_04_urls": 59,
+    "newly_discovered_urls": 35,
+    "entry_counts_by_file": {
+      "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md": {
+        "total": 10,
+        "tier_s": 10,
+        "tier_a": 0,
+        "tier_b": 0,
+        "masalah_1": 4,
+        "masalah_2": 0,
+        "both_1_2": 6
+      },
+      "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md": {
+        "total": 29,
+        "tier_s": 0,
+        "tier_a": 21,
+        "tier_b": 8,
+        "masalah_1": 22,
+        "masalah_2": 1,
+        "both_1_2": 6
+      },
+      "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md": {
+        "total": 26,
+        "tier_s": 0,
+        "tier_a": 18,
+        "tier_b": 8,
+        "masalah_1": 15,
+        "masalah_2": 2,
+        "both_1_2": 9
+      }
+    }
+  },
+  "legacy_04_baseline": {
+    "total_legacy_entries": 126,
+    "total_legacy_unique_urls": 179,
+    "elimination_criteria": [
+      "Devpost/DoraHacks/Hackster/Instructables non-winner without Tier A traction (>=5,000 views or >=25 likes/respects)",
+      "GitHub repositories with <15 Stars AND <5 Forks without verified peer-reviewed journal/university lab affiliation",
+      "Kaggle datasets with <10 Upvotes AND <500 Downloads (except Indonesian multimodal RGB+Thermal dataset retained as Tier B)",
+      "Hugging Face models/datasets with <100 Downloads AND <5 Likes, or SLEEPING/non-RUNNING Spaces without high likes",
+      "YouTube standalone tutorials with <5,000 Views unless paired with a Tier A GitHub repository",
+      "Non-poultry/false-positive repositories caught during README inspection (e.g. duck carcass, classroom app, CAFO satellite mapping, dead/empty GitHub)"
+    ]
+  },
+  "results": [
+    {
+      "url": "https://coop-door.vercel.app",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://coop-door.vercel.app/",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:31.756677+00:00"
+    },
+    {
+      "url": "https://data.mendeley.com/datasets/dy6gtvt4mk/2",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://data.mendeley.com/datasets/dy6gtvt4mk/2",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:31.758410+00:00"
+    },
+    {
+      "url": "https://data.mendeley.com/datasets/m9nsjhtsph/1",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://data.mendeley.com/datasets/m9nsjhtsph/1",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:31.759993+00:00"
+    },
+    {
+      "url": "https://data.mendeley.com/datasets/vwbb4dc9b7/1",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://data.mendeley.com/datasets/vwbb4dc9b7/1",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:31.760908+00:00"
+    },
+    {
+      "url": "https://data.mendeley.com/datasets/zp4nf2dxbh/1",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://data.mendeley.com/datasets/zp4nf2dxbh/1",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:31.761891+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/coldguard",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/coldguard",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "Global AI Hackathon Series with Qwen Cloud"
+        ],
+        "prizes": [
+          "Top 10 Honorable Mention Projects"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:31.762656+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/coop-colonel",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/coop-colonel",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "MakeUC 2025"
+        ],
+        "prizes": [
+          "MLH Best Use of Vultr"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:31.763617+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/holy-crap",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/holy-crap",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "AI Hackathon 2026 by LA Hacks"
+        ],
+        "prizes": [
+          "QNX",
+          "Photon: iMessage Track Winner"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:31.764310+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/last-mile-vaccine-delivery",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/last-mile-vaccine-delivery",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "2021 CUES ‘Global solution’ Hackathon"
+        ],
+        "prizes": [
+          "CUiD challenge winner"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:31.765218+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/poultry-perfection",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/poultry-perfection",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "AGCO Acceleration Center Hackathon 2020"
+        ],
+        "prizes": [
+          "Second Place"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:31.765889+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/poultryguard-ai-node-health-hub-with-real-time-diagnostics",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/poultryguard-ai-node-health-hub-with-real-time-diagnostics",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "AnimalHack 2026"
+        ],
+        "prizes": [
+          "Excellence in Innovation Award"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:32.359175+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/project-farmspeak",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/project-farmspeak",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "Africa Deep Tech Challenge 2025"
+        ],
+        "prizes": [
+          "First Place"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:32.741915+00:00"
+    },
+    {
+      "url": "https://devpost.com/software/xxxx-4bm0we",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://devpost.com/software/xxxx-4bm0we",
+      "method": "DEVPOST_HTML_AUDIT",
+      "ok": true,
+      "metrics": {
+        "is_winner": true,
+        "hackathons": [
+          "HopHacks Fall 2026"
+        ],
+        "prizes": [
+          "Best Overall Hack"
+        ]
+      },
+      "note": "Devpost HTTP 200 (Winner verified)",
+      "timestamp": "2026-11-20T08:46:32.745873+00:00"
+    },
+    {
+      "url": "https://github.com/417steven/chickenbot",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/417steven/chickenbot",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 1,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-08-21",
+        "root_items": 18
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:32.750726+00:00"
+    },
+    {
+      "url": "https://github.com/AminNasiri63/BroilerWeightEstimation",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/AminNasiri63/BroilerWeightEstimation",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 13,
+        "forks": 6,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-02-18",
+        "root_items": 3
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:32.754456+00:00"
+    },
+    {
+      "url": "https://github.com/CodeMakesItGo/ChickenCoopDoor",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/CodeMakesItGo/ChickenCoopDoor",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 2,
+        "forks": 1,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2025-07-14",
+        "root_items": 14
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:32.780089+00:00"
+    },
+    {
+      "url": "https://github.com/CoderYLH/CVC-Fusion",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/CoderYLH/CVC-Fusion",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": "NOASSERTION",
+        "pushed_at": "2026-09-03",
+        "root_items": 8
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:32.857661+00:00"
+    },
+    {
+      "url": "https://github.com/CodersCafeTech/AI-Smart-Coop",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/CodersCafeTech/AI-Smart-Coop",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2024-10-25",
+        "root_items": 2
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:33.362340+00:00"
+    },
+    {
+      "url": "https://github.com/CodersCafeTech/Smart-Coop-V2",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/CodersCafeTech/Smart-Coop-V2",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 2,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-04-20",
+        "root_items": 9
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:33.368910+00:00"
+    },
+    {
+      "url": "https://github.com/ESP32-COOP/ESP32-COOP-DOC",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/ESP32-COOP/ESP32-COOP-DOC",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 168,
+        "forks": 4,
+        "open_issues": 1,
+        "license": null,
+        "pushed_at": "2023-09-03",
+        "root_items": 4
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:33.381016+00:00"
+    },
+    {
+      "url": "https://github.com/Iszzytech/computerized-poultry",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/Iszzytech/computerized-poultry",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 2,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2023-04-28",
+        "root_items": 88
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:33.575902+00:00"
+    },
+    {
+      "url": "https://github.com/MiftahulSN/poultry-vet-decision-support-system",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/MiftahulSN/poultry-vet-decision-support-system",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-09-12",
+        "root_items": 4
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:33.684426+00:00"
+    },
+    {
+      "url": "https://github.com/Musanza/Poultry-farming-management-system",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/Musanza/Poultry-farming-management-system",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 26,
+        "forks": 22,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2022-02-26",
+        "root_items": 3
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:34.079107+00:00"
+    },
+    {
+      "url": "https://github.com/OpenCoopControl/coop-controller",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/OpenCoopControl/coop-controller",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 15,
+        "forks": 1,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2025-04-10",
+        "root_items": 7
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:34.440952+00:00"
+    },
+    {
+      "url": "https://github.com/RishitRai/Henomaly",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/RishitRai/Henomaly",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 1,
+        "open_issues": 0,
+        "license": "AGPL-3.0",
+        "pushed_at": "2026-10-18",
+        "root_items": 31
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:34.507331+00:00"
+    },
+    {
+      "url": "https://github.com/Ruler02/Deteksi-dan-Klasifikasi-Perilaku-Ayam-Broiler-pada-Kandang-Close-House-Berbasis-YOLO-",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/Ruler02/Deteksi-dan-Klasifikasi-Perilaku-Ayam-Broiler-pada-Kandang-Close-House-Berbasis-YOLO-",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-09-04",
+        "root_items": 6
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:34.682519+00:00"
+    },
+    {
+      "url": "https://github.com/Santhosh-zeta/ColdGuard",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/Santhosh-zeta/ColdGuard",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 3,
+        "forks": 13,
+        "open_issues": 64,
+        "license": "MIT",
+        "pushed_at": "2026-11-16",
+        "root_items": 30
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:34.792625+00:00"
+    },
+    {
+      "url": "https://github.com/SoumilBhandari/SecuriVax",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/SoumilBhandari/SecuriVax",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 3,
+        "forks": 1,
+        "open_issues": 0,
+        "license": "NOASSERTION",
+        "pushed_at": "2026-09-20",
+        "root_items": 13
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.017437+00:00"
+    },
+    {
+      "url": "https://github.com/alain-kubwayo/epms-v0",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/alain-kubwayo/epms-v0",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 17,
+        "forks": 18,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2024-04-24",
+        "root_items": 34
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.163900+00:00"
+    },
+    {
+      "url": "https://github.com/andersen-lab/avian-influenza",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/andersen-lab/avian-influenza",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 42,
+        "forks": 10,
+        "open_issues": 1,
+        "license": null,
+        "pushed_at": "2026-11-16",
+        "root_items": 14
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.272593+00:00"
+    },
+    {
+      "url": "https://github.com/cepdnaclk/e18-co227-Poultry-Feed-Efficiency-Tracking-System",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/cepdnaclk/e18-co227-Poultry-Feed-Efficiency-Tracking-System",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 4,
+        "forks": 8,
+        "open_issues": 1,
+        "license": null,
+        "pushed_at": "2023-05-08",
+        "root_items": 12
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.325716+00:00"
+    },
+    {
+      "url": "https://github.com/decide-ugent/big-broiler-dataset",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/decide-ugent/big-broiler-dataset",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 8,
+        "forks": 0,
+        "open_issues": 0,
+        "license": "AGPL-3.0",
+        "pushed_at": "2026-08-05",
+        "root_items": 12
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.529223+00:00"
+    },
+    {
+      "url": "https://github.com/decide-ugent/multi-view-broiler-tracking",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/decide-ugent/multi-view-broiler-tracking",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 5,
+        "forks": 0,
+        "open_issues": 0,
+        "license": "AGPL-3.0",
+        "pushed_at": "2026-06-09",
+        "root_items": 18
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:35.767642+00:00"
+    },
+    {
+      "url": "https://github.com/e1ioan/esp8266-chicken-coop",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/e1ioan/esp8266-chicken-coop",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 31,
+        "forks": 10,
+        "open_issues": 3,
+        "license": "GPL-3.0",
+        "pushed_at": "2021-04-22",
+        "root_items": 7
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:36.203257+00:00"
+    },
+    {
+      "url": "https://github.com/entbappy/MLflow-DVC-Chicken-Disease-Classification",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/entbappy/MLflow-DVC-Chicken-Disease-Classification",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 3,
+        "forks": 5,
+        "open_issues": 0,
+        "license": "MIT",
+        "pushed_at": "2023-06-17",
+        "root_items": 21
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:36.258112+00:00"
+    },
+    {
+      "url": "https://github.com/hms-11/CoopCommand",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/hms-11/CoopCommand",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 42,
+        "forks": 8,
+        "open_issues": 3,
+        "license": "GPL-3.0",
+        "pushed_at": "2022-10-29",
+        "root_items": 37
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:36.272107+00:00"
+    },
+    {
+      "url": "https://github.com/izsvenezie-virology/FluMut",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/izsvenezie-virology/FluMut",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 15,
+        "forks": 1,
+        "open_issues": 5,
+        "license": "AGPL-3.0",
+        "pushed_at": "2026-11-13",
+        "root_items": 15
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:36.927839+00:00"
+    },
+    {
+      "url": "https://github.com/januriawan/chirex",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/januriawan/chirex",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 96,
+        "forks": 34,
+        "open_issues": 1,
+        "license": null,
+        "pushed_at": "2024-09-17",
+        "root_items": 28
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.030469+00:00"
+    },
+    {
+      "url": "https://github.com/japacible/DashTricks-Pakistan",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/japacible/DashTricks-Pakistan",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 13,
+        "forks": 6,
+        "open_issues": 10,
+        "license": null,
+        "pushed_at": "2014-06-12",
+        "root_items": 12
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.081486+00:00"
+    },
+    {
+      "url": "https://github.com/jeongrubin/broiler-carcass-candidate-detection",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/jeongrubin/broiler-carcass-candidate-detection",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-09-08",
+        "root_items": 4
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.224996+00:00"
+    },
+    {
+      "url": "https://github.com/kngeno/telelbirds",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/kngeno/telelbirds",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 8,
+        "forks": 9,
+        "open_issues": 0,
+        "license": "MIT",
+        "pushed_at": "2020-10-18",
+        "root_items": 13
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.238404+00:00"
+    },
+    {
+      "url": "https://github.com/krishnaik06/Chicken-Disease-Classification-Projects",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/krishnaik06/Chicken-Disease-Classification-Projects",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 90,
+        "forks": 110,
+        "open_issues": 5,
+        "license": "MIT",
+        "pushed_at": "2023-06-02",
+        "root_items": 19
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.405267+00:00"
+    },
+    {
+      "url": "https://github.com/mtrobregado/Vaccine-Carrier-Cold-Box-Temperature-Monitoring",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/mtrobregado/Vaccine-Carrier-Cold-Box-Temperature-Monitoring",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 1,
+        "forks": 1,
+        "open_issues": 0,
+        "license": "MIT",
+        "pushed_at": "2025-02-08",
+        "root_items": 4
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.849776+00:00"
+    },
+    {
+      "url": "https://github.com/nextstrain/avian-flu",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/nextstrain/avian-flu",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 29,
+        "forks": 11,
+        "open_issues": 23,
+        "license": null,
+        "pushed_at": "2026-11-02",
+        "root_items": 19
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:37.945007+00:00"
+    },
+    {
+      "url": "https://github.com/ngbede/poultry",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/ngbede/poultry",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 16,
+        "forks": 3,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2022-04-23",
+        "root_items": 14
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:38.033322+00:00"
+    },
+    {
+      "url": "https://github.com/peter-evance/demo-efarm",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/peter-evance/demo-efarm",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 25,
+        "forks": 10,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2024-02-22",
+        "root_items": 5
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:38.122799+00:00"
+    },
+    {
+      "url": "https://github.com/rbalaji3/Livestock_health_analyzer",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/rbalaji3/Livestock_health_analyzer",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 1,
+        "forks": 0,
+        "open_issues": 26,
+        "license": null,
+        "pushed_at": "2023-01-07",
+        "root_items": 8
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:38.763898+00:00"
+    },
+    {
+      "url": "https://github.com/simiyu-dess/poultryFarmSystem",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/simiyu-dess/poultryFarmSystem",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 9,
+        "forks": 10,
+        "open_issues": 2,
+        "license": null,
+        "pushed_at": "2022-12-07",
+        "root_items": 36
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:38.883548+00:00"
+    },
+    {
+      "url": "https://github.com/skarthik2745/SIRAGU-Poultry-Monitoring",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/skarthik2745/SIRAGU-Poultry-Monitoring",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2026-10-15",
+        "root_items": 19
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:38.950965+00:00"
+    },
+    {
+      "url": "https://github.com/viparc/pathogens",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/viparc/pathogens",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 0,
+        "forks": 0,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2019-07-22",
+        "root_items": 10
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:39.019677+00:00"
+    },
+    {
+      "url": "https://github.com/zebular13/ChickenLanguageDataset",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://github.com/zebular13/ChickenLanguageDataset",
+      "method": "GITHUB_API_AND_HTTP",
+      "ok": true,
+      "metrics": {
+        "stars": 47,
+        "forks": 9,
+        "open_issues": 0,
+        "license": null,
+        "pushed_at": "2020-09-04",
+        "root_items": 4
+      },
+      "note": "GitHub HTTP 200 (non-empty)",
+      "timestamp": "2026-11-20T08:46:39.091010+00:00"
+    },
+    {
+      "url": "https://hackaday.io/project/179275-coopcommand",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://hackaday.io/project/179275-coopcommand",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:39.114656+00:00"
+    },
+    {
+      "url": "https://huggingface.co/Evet-Africa/poultry-disease-detector",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/Evet-Africa/poultry-disease-detector",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "model",
+        "downloads": 51,
+        "likes": 2,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:39.856431+00:00"
+    },
+    {
+      "url": "https://huggingface.co/Williamsanderson/PoultryVision",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/Williamsanderson/PoultryVision",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "model",
+        "downloads": 171,
+        "likes": 1,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:39.867570+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Dianyo/poultry-fecal-fl",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/datasets/Dianyo/poultry-fecal-fl",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "dataset",
+        "downloads": 235,
+        "likes": 0,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:39.954039+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/Evet-Africa/poultry-disease-dataset",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/datasets/Evet-Africa/poultry-disease-dataset",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "dataset",
+        "downloads": 1163,
+        "likes": 2,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.123791+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/IceKhoffi/chicken-health-behavior-multimodal",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/datasets/IceKhoffi/chicken-health-behavior-multimodal",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "dataset",
+        "downloads": 723,
+        "likes": 4,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.161401+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/iagovarela/poultry-disease-dataset",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/datasets/iagovarela/poultry-disease-dataset",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "dataset",
+        "downloads": 562,
+        "likes": 0,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.404201+00:00"
+    },
+    {
+      "url": "https://huggingface.co/datasets/ioaihsc/Task2_Chicken_Counting_Train2",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/datasets/ioaihsc/Task2_Chicken_Counting_Train2",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "dataset",
+        "downloads": 338,
+        "likes": 0,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.423987+00:00"
+    },
+    {
+      "url": "https://huggingface.co/joe611/chickens",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/joe611/chickens",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "model",
+        "downloads": 2247,
+        "likes": 0,
+        "stage": null
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.433303+00:00"
+    },
+    {
+      "url": "https://huggingface.co/spaces/Evet-Africa/poultry-disease-detector",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://huggingface.co/spaces/Evet-Africa/poultry-disease-detector",
+      "method": "HUGGINGFACE_HUB_API",
+      "ok": true,
+      "metrics": {
+        "kind": "space",
+        "downloads": 0,
+        "likes": 0,
+        "stage": "RUNNING"
+      },
+      "note": "Hugging Face API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.457624+00:00"
+    },
+    {
+      "url": "https://poultry27745.netlify.app/",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://poultry27745.netlify.app/",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.559524+00:00"
+    },
+    {
+      "url": "https://projecthub.arduino.cc/shebinjosejacob/smart-coop-20-787f34",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://projecthub.arduino.cc/shebinjosejacob/smart-coop-20-787f34",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {
+        "views": 8185
+      },
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.761659+00:00"
+    },
+    {
+      "url": "https://www.hackster.io/coderscafe/50-diy-ai-smart-coop-4ae70e",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.hackster.io/coderscafe/50-diy-ai-smart-coop-4ae70e",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.767497+00:00"
+    },
+    {
+      "url": "https://www.hackster.io/contests/Healthy-Spaces-with-AWS",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.hackster.io/contests/Healthy-Spaces-with-AWS",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.779777+00:00"
+    },
+    {
+      "url": "https://www.hackster.io/contests/invent-the-future-with-arduino-uno-q-and-app-lab",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.hackster.io/contests/invent-the-future-with-arduino-uno-q-and-app-lab",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.782348+00:00"
+    },
+    {
+      "url": "https://www.hackster.io/mtrobregado/aws-iot-vaccine-carrier-cold-box-9c7fba",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.hackster.io/mtrobregado/aws-iot-vaccine-carrier-cold-box-9c7fba",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.787216+00:00"
+    },
+    {
+      "url": "https://www.instructables.com/Smart-Coop-20/",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.instructables.com/Smart-Coop-20/",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.789004+00:00"
+    },
+    {
+      "url": "https://www.instructables.com/Smart-Phone-Operated-Chicken-Coop-Door-/",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.instructables.com/Smart-Phone-Operated-Chicken-Coop-Door-/",
+      "method": "HTTP_GET",
+      "ok": true,
+      "metrics": {},
+      "note": "HTTP 200 OK",
+      "timestamp": "2026-11-20T08:46:40.871134+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/alamshihab075/e-coli-data-poultry-and-dairy-in-bangladesh",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/alamshihab075/e-coli-data-poultry-and-dairy-in-bangladesh",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "E. coli data Poultry and Dairy ",
+        "votes": 23,
+        "downloads": 60,
+        "views": 520,
+        "usability": 0.64705884,
+        "license": "MIT"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.911700+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/allandclive/chicken-disease-1",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/allandclive/chicken-disease-1",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "Chicken Disease Image Classification",
+        "votes": 85,
+        "downloads": 9211,
+        "views": 42314,
+        "usability": 0.5882353,
+        "license": "Unknown"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:40.936352+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/chandrashekarnatesh/poultry-diseases",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/chandrashekarnatesh/poultry-diseases",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "Poultry Pathology Visual Dataset",
+        "votes": 40,
+        "downloads": 4330,
+        "views": 16247,
+        "usability": 1.0,
+        "license": "MIT"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.447655+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/efoeetienneblavo/chicken-disease-dataset",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/efoeetienneblavo/chicken-disease-dataset",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "chicken_disease_dataset",
+        "votes": 6,
+        "downloads": 679,
+        "views": 4188,
+        "usability": 0.5,
+        "license": "Unknown"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.452810+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/ekosupriyanto/chicken-health-images-dataset-rgb-and-thermal",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/ekosupriyanto/chicken-health-images-dataset-rgb-and-thermal",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "Chicken Health Images Dataset (RGB & Thermal)",
+        "votes": 2,
+        "downloads": 265,
+        "views": 1917,
+        "usability": 0.5,
+        "license": "CC0: Public Domain"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.456126+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/faysal1998/environmental-effect-on-egg-production",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/faysal1998/environmental-effect-on-egg-production",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "Environmental Effect on Egg Production",
+        "votes": 10,
+        "downloads": 984,
+        "views": 5132,
+        "usability": 1.0,
+        "license": "CC0: Public Domain"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.462464+00:00"
+    },
+    {
+      "url": "https://www.kaggle.com/datasets/kausthubkannan/poultry-diseases-detection",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.kaggle.com/datasets/kausthubkannan/poultry-diseases-detection",
+      "method": "KAGGLE_PUBLIC_API",
+      "ok": true,
+      "metrics": {
+        "title": "Poultry Diseases Detection",
+        "votes": 45,
+        "downloads": 4476,
+        "views": 16727,
+        "usability": 0.875,
+        "license": "Database: Open Database, Contents: © Original Authors"
+      },
+      "note": "Kaggle Public API HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.474462+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=CLBnW9OKFF0",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=CLBnW9OKFF0",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "SecuriVax: Modernizing Vaccine Shipping Infrastructure",
+        "author": "Soumil Bhandari"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.803226+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=DEwJw9N-Mhk",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=DEwJw9N-Mhk",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "Henomaly Demo - LA Hacks Fall 2026",
+        "author": "Lance Streuber"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.880282+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=Fnlyil9ettM",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=Fnlyil9ettM",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "poultry management system in c# with souce code",
+        "author": "WS Solutions"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.882925+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=WQw-_dekpuA",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=WQw-_dekpuA",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "HOW OUR IOT DEVICE WORKS",
+        "author": "Farmspeak Technology"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.888436+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=_7XbQrQIzKA",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=_7XbQrQIzKA",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "4 - Poultry Farm Management System with Python - Django Models Tutorial#4",
+        "author": "Peter Evance"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.903172+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dLkrru8zOeA",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=dLkrru8zOeA",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "ColdGuard",
+        "author": "Pius Oblie"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.906897+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=dbEeGJjQNNE",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=dbEeGJjQNNE",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "$50 DIY Smart Coop | AI Powered Smart Coop | Coders Cafe",
+        "author": "Coders Cafe"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.918735+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ffOFzQwUqkg",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=ffOFzQwUqkg",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "Affordable Automatic Chicken Coop Door using ESP32 – Customize Your Coop's Behavior!",
+        "author": "esp32-coop"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.937259+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=i8XpmjvNMpA",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=i8XpmjvNMpA",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "Coop Colonel -- MakeUC 2025 Submission",
+        "author": "Andy Zhang"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.947964+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=ncbQ6UglmqY",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=ncbQ6UglmqY",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "Smart Coop 2.0: Make poultry care easier and more efficient",
+        "author": "Coders Cafe"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.967915+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=p1bfK8ZJgkE",
+      "files": [
+        "02_TOP_GITHUB_HIGH_TRACTION_DAN_RISET.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=p1bfK8ZJgkE",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "End To End Deep Learning Project Using MLOPS DVC Pipeline With Deployments Azure And AWS- Krish Naik",
+        "author": "Krish Naik"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.989962+00:00"
+    },
+    {
+      "url": "https://www.youtube.com/watch?v=rOAGiJb7zHA",
+      "files": [
+        "01_VERIFIED_HACKATHON_CONTEST_WINNERS.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://www.youtube.com/watch?v=rOAGiJb7zHA",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "SIRAGU - Smart IoT-based Real-Time Automated Guardian & Digital Twin for Commercial Poultry Units",
+        "author": "The_Ultimate "
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:41.992519+00:00"
+    },
+    {
+      "url": "https://youtu.be/RmLc_RDQBD4",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://youtu.be/RmLc_RDQBD4",
+      "method": "YOUTUBE_OEMBED_API",
+      "ok": true,
+      "metrics": {
+        "title": "Automatic Chicken Coop Door",
+        "author": "CodeMakesItGo"
+      },
+      "note": "YouTube oEmbed HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.002524+00:00"
+    },
+    {
+      "url": "https://zenodo.org/records/20672799",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/20672799",
+      "method": "ZENODO_REST_API",
+      "ok": true,
+      "metrics": {
+        "doi": "10.5281/zenodo.20672799",
+        "downloads": 3228,
+        "views": 725
+      },
+      "note": "Zenodo API HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.008825+00:00"
+    },
+    {
+      "url": "https://zenodo.org/records/20924893",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/20924893",
+      "method": "ZENODO_REST_API",
+      "ok": true,
+      "metrics": {
+        "doi": "10.5281/zenodo.20924893",
+        "downloads": 1136,
+        "views": 962
+      },
+      "note": "Zenodo API HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.023069+00:00"
+    },
+    {
+      "url": "https://zenodo.org/records/5801834",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/5801834",
+      "method": "ZENODO_REST_API",
+      "ok": true,
+      "metrics": {
+        "doi": "10.5281/zenodo.5801834",
+        "downloads": 36265,
+        "views": 25005
+      },
+      "note": "Zenodo API HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.031776+00:00"
+    },
+    {
+      "url": "https://zenodo.org/records/6655837",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/6655837",
+      "method": "ZENODO_REST_API",
+      "ok": true,
+      "metrics": {
+        "doi": "10.5281/zenodo.6655837",
+        "downloads": 207,
+        "views": 529
+      },
+      "note": "Zenodo API HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.064607+00:00"
+    },
+    {
+      "url": "https://zenodo.org/records/8212853",
+      "files": [
+        "03_TOP_DATASETS_MODELS_SPACES_DAN_VIDEO.md"
+      ],
+      "status_code": 200,
+      "final_url": "https://zenodo.org/records/8212853",
+      "method": "ZENODO_REST_API",
+      "ok": true,
+      "metrics": {
+        "doi": "10.5281/zenodo.8212853",
+        "downloads": 374,
+        "views": 690
+      },
+      "note": "Zenodo API HTTP 200",
+      "timestamp": "2026-11-20T08:46:42.077229+00:00"
+    }
+  ]
+}
