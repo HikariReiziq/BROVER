@@ -45,7 +45,7 @@ Teknologi *deep tech* yang diakui di D-FARM: **AI, IoT, Biotechnology, Computer 
 | 2 | **Functional & Nutrient-enriched Production** | **Next-Generation Nutrition** | Inovasi pengolahan/pemeliharaan untuk menghasilkan produk pangan (hewani/nabati, termasuk telur) fungsional yang diperkaya nutrisi spesifik bernilai tambah. |
 | 3 | **Health-Promoting Food & Nutrient-enhanced Crop** | **Better Nutrition Crops & Food** | Rekayasa dan budidaya tanaman/pangan padat gizi (biofortifikasi) untuk mencegah malnutrisi dan meningkatkan kualitas nutrisi masyarakat. |
 
-> **Pengecualian Tim MBOYZ:** Challenge ke-4 (*Circular Food Production & Waste-to-Value* `[Pedoman, Hal. 2]` / *Circular Production* `[Portal Web]`) **DIKECUALIKAN** sesuai *Hard Constraints* tim (tidak mengambil topik pengolahan limbah/sampah).
+> **Pengecualian Tim Asprak:** Challenge ke-4 (*Circular Food Production & Waste-to-Value* `[Pedoman, Hal. 2]` / *Circular Production* `[Portal Web]`) **DIKECUALIKAN** sesuai *Hard Constraints* tim (tidak mengambil topik pengolahan limbah/sampah).
 
 ### B. 9 Area Eksplorasi Grand Challenge yang Relevan (dari 10 Bidang di Portal Web)
 

@@ -1,6 +1,6 @@
 # DEEP ROOT CAUSE ANALYSIS (RCA): MASALAH #1 (WABAH PENYAKIT & BIOSEKURITI) DAN MASALAH #2 (HEAT STRESS & MIKROKLIMAT) DI PETERNAKAN UNGGAS INDONESIA
 
-> **Status Tahapan:** *Root Cause Analysis (RCA)* Mendalam — Tim MBOYZ, Hackathon Deep Tech UNJ 2026, Jalur Pangan `D-FARM UNJ` (Challenge #1: *Smart Poultry / Smart Egg Production*).  
+> **Status Tahapan:** *Root Cause Analysis (RCA)* Mendalam — Tim Asprak, Hackathon Deep Tech UNJ 2026, Jalur Pangan `D-FARM UNJ` (Challenge #1: *Smart Poultry / Smart Egg Production*).  
 > **Batasan Ketat Dokumen:** Dokumen ini **100% murni berfokus pada penggalian akar penyebab permasalahan (*Root Cause Analysis*)** untuk **Masalah #1** dan **Masalah #2** hasil triangulasi V3 pada peternakan ayam pedaging (*broiler*) dan petelur (*layer*) di Indonesia. Dokumen ini **sama sekali tidak mengusulkan solusi, konsep proyek, nama produk, fitur aplikasi, desain perangkat IoT/CV, maupun arsitektur Hackathon**, serta mengecualikan seluruh topik pengolahan limbah/sampah dan jalur kesehatan (`D-MARC`). Arsip `01_Context_Memory/` dan `02_Problem_Research/` dipertahankan utuh tanpa perubahan.
 
 ---
@@ -27,7 +27,7 @@ Dokumen ini menerapkan tiga kerangka kerja RCA terpadu: **(1) Diagram Fishbone (
 | **`[ASLI DARI SUMBER PRIMER]`** | Grafik/diagram asli yang diunduh langsung dari jurnal *Open Access* resmi tanpa digambar ulang oleh AI. |
 | **`[DATA PRIMER TERVERIFIKASI — TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`** | 100% angka, persentase, dan temuan empiris berasal dari jurnal *peer-reviewed* Tier-1 (2021–2026) atau data resmi BPS/Kementan/PT Medion (Tier-2); AI Agent menyusun format tabel/ringkasannya. Data lapangan Indonesia dipisahkan tegas dari mekanisme fisiologi/patologi dasar yang diberi label **`[Mekanisme Biologis Umum]`**. |
 | **`[SUARA LAPANGAN DARING (YOUTUBE/BERITA/INTERNET) — NON-PEER-REVIEWED]`** | Hasil penelusuran wawancara peternak, webinar praktisi/dokter hewan lapangan, dan media industri perunggasan Indonesia (YouTube, TROBOS Livestock, Afederasi, Kompasiana) untuk validasi mekanisme operasional harian. |
-| **`[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]`** | Seluruh diagram Fishbone, rantai *5 Whys*, pemetaan *Vicious Cycle*, klasifikasi *controllable on-farm* vs *struktural*, serta sintesis titik akar terdalam yang disusun AI Agent untuk diuji melalui wawancara primer Tim MBOYZ. |
+| **`[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]`** | Seluruh diagram Fishbone, rantai *5 Whys*, pemetaan *Vicious Cycle*, klasifikasi *controllable on-farm* vs *struktural*, serta sintesis titik akar terdalam yang disusun AI Agent untuk diuji melalui wawancara primer Tim Asprak. |
 
 ---
 
@@ -217,9 +217,9 @@ Masalah #1 dan Masalah #2 di peternakan unggas Indonesia **bukan dua fenomena ya
 ### B. Kesimpulan Gabungan (*Problem Framing* Sebelum Validasi Wawancara Primer)
 `[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]`
 
-Dari seluruh bedah Ishikawa 6 Dimensi, *5 Whys*, dan *Vicious Cycle* di atas, berikut **5 Titik Akar Masalah Terdalam (*Core Root Causes*)** yang berada pada ranah **operasional kandang (*controllable on-farm*)** sekaligus menjadi titik fokus validasi wawancara primer Tim MBOYZ (tanpa melompat ke perancangan solusi terlebih dahulu):
+Dari seluruh bedah Ishikawa 6 Dimensi, *5 Whys*, dan *Vicious Cycle* di atas, berikut **5 Titik Akar Masalah Terdalam (*Core Root Causes*)** yang berada pada ranah **operasional kandang (*controllable on-farm*)** sekaligus menjadi titik fokus validasi wawancara primer Tim Asprak (tanpa melompat ke perancangan solusi terlebih dahulu):
 
-| No | Titik Akar Masalah Terdalam (*Core Root Cause*) | Keterkaitan Masalah | Mengapa Paling Kritis di Level Operasional Kandang? | Pertanyaan Kunci Validasi Wawancara Primer Tim MBOYZ |
+| No | Titik Akar Masalah Terdalam (*Core Root Cause*) | Keterkaitan Masalah | Mengapa Paling Kritis di Level Operasional Kandang? | Pertanyaan Kunci Validasi Wawancara Primer Tim Asprak |
 | :-: | :--- | :---: | :--- | :--- |
 | **1** | **Titik Buta Mikroklimat Multi-Parameter (Suhu–RH–*Wind Chill*–NH₃) & Gradien Spasial Kandang** | **#2 → #1** | Baik *open house* maupun *closed house* di Indonesia masih dioperasikan reaktif atau hanya melihat suhu tunggal, mengabaikan jebakan psikrometrik RH tropis (`82%–93%`), beban panas sore (`16:00 >32,8°C` / THI `>79`), *wind chill*, dan akumulasi NH₃ tak terukur (`15–20 ppm`). | *Bagaimana peternak saat ini tahu kapan cooling pad/kipas/tirai harus diubah, dan pernahkah litter dekat inlet basah atau bau amonia tinggi meski suhu terlihat normal?* |
 | **2** | **Keterlambatan Deteksi Dini Gangguan Kesehatan Flok (Mengandalkan Observasi Visual Sesaat)** | **#1** | Koinfeksi multifaktorial membuat gejala klinis mirip (AI dikira snot), sementara absennya pelacakan anomali dini (*feed/water intake*, perilaku *panting/huddling*/lesu, tren mortalitas harian) membuat intervensi baru terjadi 2–5 hari terlambat setelah kerugian besar tak terhindarkan. | *Dari tanda pertama apa peternak/ABK biasanya mulai curiga ayam sakit, berapa hari jeda sampai tindakan/uji lab dilakukan, dan penyakit apa yang paling sering salah duga?* |

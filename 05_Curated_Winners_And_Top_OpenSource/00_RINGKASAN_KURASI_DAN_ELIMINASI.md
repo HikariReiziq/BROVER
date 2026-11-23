@@ -1,7 +1,7 @@
 # 00 — RINGKASAN KURASI KETAT, AUDIT ELIMINASI & TOP 15 WAJIB DICEK PERTAMA
 
-> **Status Tahapan:** Audit Kuantitatif & Kurasi Ketat Referensi *Open-Source* Berkualitas Tinggi — Tim MBOYZ, Hackathon Deep Tech UNJ 2026 (`D-FARM UNJ`, Challenge #1: Ayam Pedaging/Broiler & Petelur/Layer).  
-> **Disiplin Tahapan:** Dokumen ini **100% murni laporan audit metrik aktual dan kurasi referensi publik** untuk dicek secara manual. **Tidak ada usulan konsep produk, nama produk, atau arsitektur final Tim MBOYZ.**  
+> **Status Tahapan:** Audit Kuantitatif & Kurasi Ketat Referensi *Open-Source* Berkualitas Tinggi — Tim Asprak, Hackathon Deep Tech UNJ 2026 (`D-FARM UNJ`, Challenge #1: Ayam Pedaging/Broiler & Petelur/Layer).  
+> **Disiplin Tahapan:** Dokumen ini **100% murni laporan audit metrik aktual dan kurasi referensi publik** untuk dicek secara manual. **Tidak ada usulan konsep produk, nama produk, atau arsitektur final Tim Asprak.**  
 > **Proteksi Arsip:** Folder `00 Materi Sosialisasi/`, `01_Context_Memory/`, `02_Problem_Research/`, `03_Root_Cause_Analysis/`, serta arsip mentah `04_OpenSource_Solution_Discovery/` dipertahankan utuh tanpa modifikasi.
 
 ---
@@ -36,7 +36,7 @@
 
 ## 2. Top 15 Paling Wajib Dicek Pertama
 
-`[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]` *Daftar prioritas pengecekan manual yang disusun berdasarkan status pemenang lomba terverifikasi (Tier S), traksi adopsi tertinggi (Tier A), atau kedalaman riset/konteks Indonesia (Tier B) terhadap 5 Akar Masalah RCA. Bukan rekomendasi konsep produk final Tim MBOYZ.*
+`[SINTESIS ANALITIS AI AGENT — BERBASIS BUKTI TIER 1–3, PERLU VALIDASI PENELITI]` *Daftar prioritas pengecekan manual yang disusun berdasarkan status pemenang lomba terverifikasi (Tier S), traksi adopsi tertinggi (Tier A), atau kedalaman riset/konteks Indonesia (Tier B) terhadap 5 Akar Masalah RCA. Bukan rekomendasi konsep produk final Tim Asprak.*
 
 | Peringkat | Nama Proyek / Repo / Dataset | Tier | Masalah | Bukti Kualitas / Traksi Aktual | Alasan Bernilai Tinggi untuk Dicek Manual | Lokasi & Tautan Langsung |
 | :-: | :--- | :-: | :-: | :--- | :--- | :--- |

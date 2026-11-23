@@ -68,4 +68,4 @@ Sumber tertulis resmi: `[PT ECG, Hal. 14; Sos 16 Okt, Hal. 18]`. Elaborasi konte
 ## 5. Catatan Batasan / Pengecualian (Konteks Pasif)
 
 - Dalam sesi pemaparan lisan (`[Transkrip Direktur PT ECG]`), Direktur PT ECG sempat menyinggung lini/masalah **edukasi iuran pengelolaan sampah** di luar materi slide resmi.
-- Sesuai **Hard Constraints Tim MBOYZ** (`01_TEAM_AND_CONSTRAINTS.md`), informasi tersebut **hanya dicatat sebagai konteks pasif dan DIKECUALIKAN sepenuhnya dari target proyek tim**.
+- Sesuai **Hard Constraints Tim Asprak** (`01_TEAM_AND_CONSTRAINTS.md`), informasi tersebut **hanya dicatat sebagai konteks pasif dan DIKECUALIKAN sepenuhnya dari target proyek tim**.

@@ -1,7 +1,7 @@
 # 00 — INDEX & RINGKASAN EKSPLORASI SOLUSI OPEN-SOURCE (MASALAH #1 & #2 PETERNAKAN AYAM)
 
-> **Status Tahapan:** Eksplorasi & Verifikasi Referensi Solusi *Open-Source* Publik — Tim MBOYZ, Hackathon Deep Tech UNJ 2026 (`D-FARM UNJ`, Challenge #1: Ayam Pedaging/Broiler & Petelur/Layer).  
-> **Disiplin Tahapan:** Dokumen ini **100% murni katalog terverifikasi referensi *open-source* yang sudah ada di publik** agar dapat dicek secara manual oleh tim. **Tidak ada usulan konsep produk final, nama produk, maupun penguncian arsitektur Tim MBOYZ di sini.** Seluruh topik pengolahan limbah/sampah (*manure*, kompos, biogas, maggot) dan non-unggas telah dibuang mutlak.  
+> **Status Tahapan:** Eksplorasi & Verifikasi Referensi Solusi *Open-Source* Publik — Tim Asprak, Hackathon Deep Tech UNJ 2026 (`D-FARM UNJ`, Challenge #1: Ayam Pedaging/Broiler & Petelur/Layer).  
+> **Disiplin Tahapan:** Dokumen ini **100% murni katalog terverifikasi referensi *open-source* yang sudah ada di publik** agar dapat dicek secara manual oleh tim. **Tidak ada usulan konsep produk final, nama produk, maupun penguncian arsitektur Tim Asprak di sini.** Seluruh topik pengolahan limbah/sampah (*manure*, kompos, biogas, maggot) dan non-unggas telah dibuang mutlak.  
 > **Proteksi Arsip:** Folder `00 Materi Sosialisasi/`, `01_Context_Memory/`, `02_Problem_Research/`, dan `03_Root_Cause_Analysis/` dipertahankan utuh tanpa perubahan.
 
 ---
