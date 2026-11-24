@@ -5,12 +5,12 @@ trigger: always_on
 # HACKATHON DEEP TECH UNJ 2026 — MASTER CONTEXT (TIM ASPRAK)
 
 ## 1. Identitas & Fokus Aktif
-- **Tim:** **Asprak** — **5/5 anggota lengkap** (4 mahasiswa Teknologi Informasi + 1 Dosen Aktif UNJ):
-  1. **M. Hikari Reiziq Rakhmadinta** — **Hustler** *(Mahasiswa Teknologi Informasi)*
-  2. **Ahmad Syauqi Reza** — **Hacker** *(Mahasiswa Teknologi Informasi)*
-  3. **Arya Bisma Putra Refman** — **Hacker** *(Mahasiswa Teknologi Informasi)*
-  4. **Aditya Reza Daffansyah** — **Hipster** *(Mahasiswa Teknologi Informasi)*
-  5. **Dr. drh. Atin Supiyani, M.Si.** — **Dosen Pembimbing / Pakar Domain Veteriner** *(Dosen Biologi UNJ — bidang Fisiologi & Kesehatan Hewan)*
+- **Tim:** **Asprak** — **5/5 anggota lengkap** (kolaborasi 4 mahasiswa Teknologi Informasi **ITS** + 1 Dosen Aktif **UNJ**):
+  1. **M. Hikari Reiziq Rakhmadinta** — **Hustler** *(Mahasiswa Teknologi Informasi ITS)*
+  2. **Ahmad Syauqi Reza** — **Hacker** *(Mahasiswa Teknologi Informasi ITS)*
+  3. **Arya Bisma Putra Refman** — **Hacker** *(Mahasiswa Teknologi Informasi ITS)*
+  4. **Aditya Reza Daffansyah** — **Hipster** *(Mahasiswa Teknologi Informasi ITS)*
+  5. **Dr. drh. Atin Supiyani, M.Si.** — **Anggota Tim — Pakar Domain Veteriner** *(Dosen Biologi UNJ — bidang Fisiologi & Kesehatan Hewan)*
 - **Status Slot Ke-5 (TERPENUHI):** Syarat legal-administratif **minimal 1 dosen aktif UNJ** (`[Pedoman, Hal. 3]`) sekaligus kapasitas **5 anggota** pada tahap pelaksanaan/bootcamp telah terpenuhi. Pastikan seluruh 5 anggota memiliki akun aktif di portal resmi hackathon.
 - **Fokus Lomba:** **Hackathon Deep Tech UNJ 2026 — Jalur Pangan (`D-FARM UNJ`)** (*Challenge #1: Smart Poultry Production*).
 - **Judul Final Proyek Terkunci:** **`BROVER (Broiler Inspection & Health Rover): Sistem Inspeksi Berbasis Multi-Modal AI dan Edge–Cloud untuk Deteksi Dini Gejala Penyakit serta Pemantauan Mikroklimat Kandang Ayam Broiler`** *(filosofi `BROVER` = Broiler + Rover terinspirasi NASA Rover; sebutan utama `Rover Inspeksi`; fokus deteksi dini penyakit & mikroklimat, bukan klaim alat biosekuriti).*
@@ -24,7 +24,7 @@ trigger: always_on
    - Jujur bahwa tahap saat ini digerakkan operator lewat **Wi-Fi lokal nirkabel (100% tanpa kabel)** dan **otomatisasi penuh terjadwal + *setup* jalur** adalah ***Future Work***.
    - Gunakan **Standar Umur Resmi (`Cobb 500`)** & jurnal *peer-reviewed* (bukan skor kesehatan 0–100 arbitrer; bukan *preprint* arXiv/bioRxiv/SSRN); sensor `DFRobot SEN0567` dilaporkan sebagai **indikator tren kualitatif NH₃**; tidak menggunakan sensor tembak suhu tubuh inframerah (*thermogun/IR*).
 4. **Anti-Halusinasi & Berbasis Fakta:** Jangan mengarang angka, kutipan, syarat, atau klaim teknis. Rujuk selalu fakta terverifikasi beserta sumbernya; bedakan tegas antara data slide resmi dan data transkrip/portal.
-5. **Realistis untuk Tim Multidisiplin (4 TI + 1 Dokter Hewan UNJ):** Diskusi teknis harus selaras dengan kapabilitas inti tim (*software engineering*, AI/ML, Computer Vision, Audio AI, data/analytics, IoT/embedded) serta validasi klinis **Dr. drh. Atin Supiyani, M.Si.**
+5. **Realistis untuk Tim Multidisiplin (4 TI ITS + 1 Dokter Hewan UNJ):** Diskusi teknis harus selaras dengan kapabilitas inti tim (*software engineering*, AI/ML, Computer Vision, Audio AI, data/analytics, IoT/embedded) serta validasi klinis **Dr. drh. Atin Supiyani, M.Si.**
 6. **Gaya Komunikasi:** Bahasa Indonesia profesional, lugas, bebas jargon membingungkan (hindari `"wahana"`, `"UAV"`, `"LAN-First"`, `"derau lingkungan"`), terstruktur (tabel/bullet/bold), tanpa basa-basi.
 7. **Protokol Wajib `MEMORY.md`, `HISTORY.md`, & Standar Git:**
    - Pada awal setiap sesi baru, **WAJIB membaca `MEMORY.md` dan `HISTORY.md`** di root repository agar langsung sinkron dengan keputusan & perubahan terkini.

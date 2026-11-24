@@ -415,7 +415,7 @@ def make_fig6_roadmap():
         add_arrow(ax, x_mid - 0.012, 0.365, x_mid + 0.012, 0.365, "", color=MUTED, lw=1.8)
 
     ax.text(0.5, 0.042,
-            "[SINTESIS ROADMAP TIM ASPRAK (4 TI + DR. DRH. ATIN SUPIYANI, M.SI.) | BERDASARKAN BUKU PEDOMAN HACKATHON DEEP TECH UNJ 2026]",
+            "[SINTESIS ROADMAP TIM ASPRAK (4 TI ITS + DR. DRH. ATIN SUPIYANI, M.SI. UNJ) | BERDASARKAN BUKU PEDOMAN HACKATHON DEEP TECH UNJ 2026]",
             ha="center", va="center", fontsize=7.8, fontweight="bold", color=MUTED,
             bbox=dict(boxstyle="round,pad=0.32", fc="#F1F5F9", ec="#CBD5E1"))
 
@@ -425,8 +425,13 @@ def make_fig6_roadmap():
 
 
 if __name__ == "__main__":
-    make_fig3_architecture()
-    make_fig4_workflow()
+    # Fig 3, 4a/4b/4c, 07 BMC, & 08 Timeline dikelola oleh skrip SVG -> PNG Playwright
+    from generate_architecture_svg import main as build_fig3_svg
+    from generate_workflow_svgs import main as build_fig4_svgs
+    from generate_business_timeline_svgs import main as build_biz_timeline_svgs
+    build_fig3_svg()
+    build_fig4_svgs()
+    build_biz_timeline_svgs()
     make_fig5_hardware_power()
     make_fig6_roadmap()
-    print("REGENERATED ALL 4 VISUALS FOR TIM ASPRAK SUCCESSFULLY")
+    print("REGENERATED ALL VISUALS FOR TIM ASPRAK SUCCESSFULLY")

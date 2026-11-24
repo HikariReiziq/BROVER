@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="848" viewBox="0 0 1600 848">
+  <defs>
+    <filter id="cardShadow" x="-3%" y="-3%" width="106%" height="108%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="848" fill="#FFFFFF"/>
+
+  <!-- CLEAN TITLE ONLY (No pill badge, no long subtitle) -->
+  <text x="800" y="48" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="26.5" font-weight="800" fill="#0F172A">Proyeksi Keuntungan 5 Tahun: Dengan vs Tanpa BROVER</text>
+
+  <!-- LEFT PANEL: 5-YEAR LINE CHART -->
+  <rect x="36" y="70" width="960" height="712" rx="18" fill="#FFFFFF" stroke="#CBD5E1" stroke-width="1.6" filter="url(#cardShadow)"/>
+  <text x="64" y="104" font-family="'Montserrat', sans-serif" font-size="16" font-weight="800" fill="#0F172A">Laba Kumulatif 5 Tahun (30 Siklus | Kandang 15.000 Ekor)</text>
+  <text x="64" y="126" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Sudah memotong harga beli sepaket (Rp11,5 jt) &amp; ganti sensor/baterai Tahun ke-3 (Rp1,5 jt)</text>
+
+  <!-- Legend inside chart header -->
+  <line x1="64" y1="151" x2="94" y2="151" stroke="#059669" stroke-width="3.6"/>
+  <text x="102" y="155" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="700" fill="#065F46">Dengan BROVER (Moderat 30%)</text>
+
+  <rect x="320" y="144" width="22" height="14" rx="3" fill="#10B981" opacity="0.22"/>
+  <text x="348" y="155" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#047857">Rentang Skenario (15%-50%)</text>
+
+  <line x1="538" y1="151" x2="568" y2="151" stroke="#DC2626" stroke-width="3" stroke-dasharray="7,5"/>
+  <text x="576" y="155" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="700" fill="#B91C1C">Tanpa BROVER</text>
+
+  <rect x="698" y="144" width="16" height="14" rx="3" fill="#FEE2E2"/>
+  <text x="720" y="155" font-family="'Open Sans', sans-serif" font-size="11.0" fill="#991B1B">*Simulasi wabah (Thn 2 &amp; 4)</text>
+
+  <rect x="416.8" y="176" width="48" height="504" fill="#FEE2E2" opacity="0.38"/><rect x="733.6" y="176" width="48" height="504" fill="#FEE2E2" opacity="0.38"/>
+  <line x1="124.0" y1="176" x2="124.0" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="124.0" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 0</text><text x="124.0" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">Beli Alat</text><line x1="282.4" y1="176" x2="282.4" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="282.4" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 1</text><text x="282.4" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">6 Siklus</text><line x1="440.8" y1="176" x2="440.8" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="440.8" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 2</text><text x="440.8" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">12 Siklus*</text><line x1="599.2" y1="176" x2="599.2" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="599.2" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 3</text><text x="599.2" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">18 Siklus</text><line x1="757.6" y1="176" x2="757.6" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="757.6" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 4</text><text x="757.6" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">24 Siklus*</text><line x1="916.0" y1="176" x2="916.0" y2="680" stroke="#F1F5F9" stroke-width="1"/><text x="916.0" y="702" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Thn 5</text><text x="916.0" y="718" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" fill="#64748B">30 Siklus</text>
+  <line x1="124" y1="645.0" x2="916" y2="645.0" stroke="#94A3B8" stroke-width="1.4"/><text x="112" y="649.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp0 jt</text><line x1="124" y1="575.0" x2="916" y2="575.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="579.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp100 jt</text><line x1="124" y1="505.0" x2="916" y2="505.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="509.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp200 jt</text><line x1="124" y1="435.0" x2="916" y2="435.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="439.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp300 jt</text><line x1="124" y1="365.0" x2="916" y2="365.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="369.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp400 jt</text><line x1="124" y1="295.0" x2="916" y2="295.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="299.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp500 jt</text><line x1="124" y1="225.0" x2="916" y2="225.0" stroke="#E2E8F0" stroke-width="1.0"/><text x="112" y="229.0" text-anchor="end" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#64748B">Rp600 jt</text>
+
+  <polygon points="124.0,653.0 282.4,546.6 440.8,480.2 599.2,374.8 757.6,308.4 916.0,201.9 916.0,264.3 757.6,369.6 599.2,406.6 440.8,510.7 282.4,547.8 124.0,653.0" fill="#10B981" opacity="0.16"/>
+  <polyline points="124.0,653.0 282.4,546.6 440.8,480.2 599.2,374.8 757.6,308.4 916.0,201.9" fill="none" stroke="#10B981" stroke-width="1.4" stroke-dasharray="4,4"/>
+  <polyline points="124.0,653.0 282.4,547.8 440.8,510.7 599.2,406.6 757.6,369.6 916.0,264.3" fill="none" stroke="#10B981" stroke-width="1.4" stroke-dasharray="4,4"/>
+
+  <polyline points="124.0,645.0 282.4,540.4 440.8,516.0 599.2,411.4 757.6,387.0 916.0,282.4" fill="none" stroke="#DC2626" stroke-width="3.2" stroke-dasharray="8,5"/>
+  <polyline points="124.0,653.0 282.4,547.2 440.8,497.4 599.2,392.7 757.6,343.0 916.0,237.1" fill="none" stroke="#059669" stroke-width="4.2"/>
+  <circle cx="124.0" cy="645.0" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="124.0" cy="653.0" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><circle cx="282.4" cy="540.4" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="282.4" cy="547.2" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><circle cx="440.8" cy="516.0" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="440.8" cy="497.4" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><circle cx="599.2" cy="411.4" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="599.2" cy="392.7" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><circle cx="757.6" cy="387.0" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="757.6" cy="343.0" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><circle cx="916.0" cy="282.4" r="5" fill="#FFFFFF" stroke="#DC2626" stroke-width="2.6"/><circle cx="916.0" cy="237.1" r="5.8" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/>
+
+  <!-- Thn 0 Purchase -->
+  <rect x="138" y="629.0" width="174" height="24" rx="6" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1"/>
+  <text x="225" y="644.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="700" fill="#991B1B">Thn 0: Beli Sepaket (-Rp11,5 jt)</text>
+
+  <!-- Thn 2 BEP Callout -->
+  <line x1="440.8" y1="406" x2="440.8" y2="489.4" stroke="#059669" stroke-width="1.6" stroke-dasharray="4,3"/>
+  <rect x="344.8" y="366" width="192" height="40" rx="8" fill="#ECFDF5" stroke="#34D399" stroke-width="1.5"/>
+  <text x="440.8" y="383" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.6" font-weight="800" fill="#065F46">Titik Balik Modal (BEP)</text>
+  <text x="440.8" y="398" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.9" fill="#047857">Thn 2: +Rp26,5 jt vs Tanpa Alat</text>
+
+  <!-- Thn 3 Maintenance Callout -->
+  <line x1="599.2" y1="276" x2="599.2" y2="384.7" stroke="#D97706" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <rect x="547.2" y="236" width="202" height="40" rx="8" fill="#FFFBEB" stroke="#F59E0B" stroke-width="1.4"/>
+  <text x="648.2" y="253" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="700" fill="#92400E">Thn 3: Ganti Sensor &amp; Baterai</text>
+  <text x="648.2" y="268" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.7" fill="#B45309">Sudah dipotong jujur (-Rp1,5 jt)</text>
+
+  <!-- Year 5 End Labels -->
+  <text x="926.0" y="205.9" font-family="'Open Sans', sans-serif" font-size="10.4" font-weight="700" fill="#047857">633 jt (Opt)</text>
+  <text x="926.0" y="241.1" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="800" fill="#065F46">582,7 jt</text>
+  <text x="926.0" y="286.4" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="800" fill="#B91C1C">518,0 jt</text>
+
+  <!-- Big Delta Highlight Badge -->
+  <rect x="148" y="190" width="380" height="74" rx="14" fill="#ECFDF5" stroke="#10B981" stroke-width="2" filter="url(#cardShadow)"/>
+  <text x="170" y="215" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="700" fill="#047857">SELISIH UNTUNG BERSIH 5 TAHUN (MODERAT)</text>
+  <text x="170" y="246" font-family="'Montserrat', sans-serif" font-size="23.5" font-weight="800" fill="#065F46">+Rp64,7 Juta  (ROI 498%)</text>
+
+  <!-- Chart footnote -->
+  <text x="64" y="746" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">Dasar data primer: Margin Rp1.760/ekor/siklus &amp; rugi wabah batas bawah Rp7.630/ekor (Pramuwidyatama et al., Prev. Vet. Med. Q1, 2023).</text>
+  <text x="64" y="762" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">Rentang 5 tahun dipilih sesuai umur pakai wajar perangkat elektronik di kandang tropis (bukan proyeksi 10 tahun tanpa ganti alat).</text>
+
+  <!-- RIGHT PANEL: JARGON-FREE INVESTOR CARDS -->
+  <!-- CARD 1 -->
+  <rect x="1020" y="70" width="544" height="258" rx="18" fill="#F8FAFC" stroke="#93C5FD" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <path d="M1038 70 H1546 Q1564 70 1564 88 V118 H1020 V88 Q1020 70 1038 70 Z" fill="#1D4ED8"/>
+  <text x="1042" y="99" font-family="'Montserrat', sans-serif" font-size="13.8" font-weight="800" fill="#FFFFFF">1. Rincian Biaya &amp; Untung Tim (100% Lokal RI)</text>
+
+  <rect x="1038" y="134" width="246" height="82" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
+  <text x="1052" y="157" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="700" fill="#64748B">BIAYA PRODUKSI SATUAN</text>
+  <text x="1052" y="184" font-family="'Montserrat', sans-serif" font-size="19" font-weight="800" fill="#0F172A">Rp8,23 Juta</text>
+  <text x="1052" y="204" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#475569">Komponen lokal + rakit &amp; uji</text>
+
+  <rect x="1298" y="134" width="248" height="82" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
+  <text x="1312" y="157" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="700" fill="#0F766E">BIAYA GROSIR LOKAL (≥20 UNIT)</text>
+  <text x="1312" y="184" font-family="'Montserrat', sans-serif" font-size="19" font-weight="800" fill="#0F766E">~Rp6,75 Juta</text>
+  <text x="1312" y="204" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#475569">Distributor RI + dukungan PT Edura</text>
+
+  <rect x="1038" y="228" width="508" height="84" rx="12" fill="#EFF6FF" stroke="#60A5FA" stroke-width="1.6"/>
+  <text x="1054" y="252" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="800" fill="#1E3A8A">Harga Jual Sepaket:  Rp11,50 Juta / Unit</text>
+  <text x="1054" y="273" font-family="'Open Sans', sans-serif" font-size="11.4" fill="#1E40AF">Sudah termasuk cadangan server 3 thn (Rp900 rb) &amp; bebas tagihan bulanan.</text>
+  <text x="1054" y="295" font-family="'Montserrat', sans-serif" font-size="12.0" font-weight="800" fill="#047857">Untung Kotor Tim: Rp2,37 jt (satuan) → Rp3,85 jt/unit (33,5%, grosir)</text>
+
+  <!-- CARD 2 -->
+  <rect x="1020" y="344" width="544" height="206" rx="18" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <path d="M1038 344 H1546 Q1564 344 1564 362 V390 H1020 V362 Q1020 344 1038 344 Z" fill="#059669"/>
+  <text x="1042" y="372" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">2. Perkiraan Untung Peternak 5 Tahun (15.000 Ekor)</text>
+
+  <rect x="1038" y="404" width="508" height="40" rx="9" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1052" y="428" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#334155">Konservatif (15% cegah rugi)</text>
+  <text x="1532" y="428" text-anchor="end" font-family="'Montserrat', sans-serif" font-size="12.5" font-weight="800" fill="#0F766E">+Rp25,9 Juta  |  ROI 199%</text>
+
+  <rect x="1038" y="452" width="508" height="42" rx="9" fill="#ECFDF5" stroke="#10B981" stroke-width="1.6"/>
+  <text x="1052" y="477" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="800" fill="#065F46">Moderat (30% cegah rugi)</text>
+  <text x="1532" y="477" text-anchor="end" font-family="'Montserrat', sans-serif" font-size="13.2" font-weight="800" fill="#059669">+Rp64,7 Juta  |  ROI 498%</text>
+
+  <rect x="1038" y="502" width="508" height="38" rx="9" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="1052" y="525" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#334155">Optimistis (50% cegah rugi)</text>
+  <text x="1532" y="525" text-anchor="end" font-family="'Montserrat', sans-serif" font-size="12.5" font-weight="800" fill="#047857">+Rp115,0 Juta  |  ROI 885%</text>
+
+  <!-- CARD 3 -->
+  <rect x="1020" y="566" width="544" height="216" rx="18" fill="#FFFBEB" stroke="#FCD34D" stroke-width="1.8" filter="url(#cardShadow)"/>
+  <path d="M1038 566 H1546 Q1564 566 1564 584 V612 H1020 V584 Q1020 566 1038 566 Z" fill="#D97706"/>
+  <text x="1042" y="594" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">3. Strategi Penjualan Menurut Ukuran Kandang</text>
+
+  <rect x="1038" y="626" width="508" height="64" rx="11" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4"/>
+  <text x="1052" y="648" font-family="'Montserrat', sans-serif" font-size="12.0" font-weight="800" fill="#065F46">Target Utama Beli Putus: 10.000 - 20.000 Ekor</text>
+  <text x="1052" y="667" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Harga Rp11,5 jt setara ~44% margin 1 siklus (atau ~10% rugi 1× wabah).</text>
+  <text x="1052" y="682" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#047857">Cocok dipaketkan bersama kandang mitra PT Zara / peternak besar.</text>
+
+  <rect x="1038" y="700" width="508" height="68" rx="11" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4"/>
+  <text x="1052" y="722" font-family="'Montserrat', sans-serif" font-size="12.0" font-weight="800" fill="#92400E">Target Skema Sewa / Koperasi: 3.000 - 5.000 Ekor</text>
+  <text x="1052" y="741" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Beli putus 5 thn tetap untung (+Rp13,1 jt, ROI 101%), namun modal awal</text>
+  <text x="1052" y="757" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">jauh lebih ringan lewat Sewa Rp550-650 rb/siklus atau milik koperasi.</text>
+
+  <!-- CLEAN FOOTER -->
+  <rect x="36" y="798" width="1528" height="34" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="800" y="819.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Sumber Data: Pramuwidyatama et al. (2023), Data 6 Farm PT Zara, &amp; Audit Harga E-Commerce Indonesia</text>
+</svg>

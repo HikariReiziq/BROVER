@@ -12,17 +12,17 @@
 
 | No | Nama Anggota | Peran dalam Tim | Latar Belakang & Keahlian Utama |
 | :-: | :--- | :--- | :--- |
-| 1 | **M. Hikari Reiziq Rakhmadinta** | **Hustler** *(Strategi, Bisnis, Mitra & Pitching)* | Mahasiswa Teknologi Informasi UNJ — riset pengguna, validasi mitra/Dinas Peternakan, BMC, hilirisasi, & komunikasi produk. |
-| 2 | **Ahmad Syauqi Reza** | **Hacker** *(Engineering, AI/ML, & Sistem)* | Mahasiswa Teknologi Informasi UNJ — pengembangan perangkat lunak, integrasi AI/IoT, & arsitektur teknis. |
-| 3 | **Arya Bisma Putra Refman** | **Hacker** *(Engineering, AI/ML, & Sistem)* | Mahasiswa Teknologi Informasi UNJ — pengembangan perangkat lunak, *embedded/edge*, backend, & integrasi sistem. |
-| 4 | **Aditya Reza Daffansyah** | **Hipster** *(UI/UX, Dashboard, & Visual Produk)* | Mahasiswa Teknologi Informasi UNJ — desain antarmuka *dashboard* web/PWA, alur interaksi peternak/Dokter Hewan, & desain produk. |
-| 5 | **Dr. drh. Atin Supiyani, M.Si.** | **Dosen Pembimbing & Pakar Domain Veteriner** | **Dosen Aktif Biologi UNJ (Dokter Hewan)** — bidang **Fisiologi & Kesehatan Hewan**. Memenuhi syarat wajib legal-administratif `[Pedoman, Hal. 3]` sekaligus menjadi validator ilmiah gejala klinis penyakit unggas, *Disease Triage Dictionary*, & protokol kesehatan kandang. |
+| 1 | **M. Hikari Reiziq Rakhmadinta** | **Hustler** *(Strategi, Bisnis, Mitra & Pitching)* | Mahasiswa Teknologi Informasi **ITS** — riset pengguna, validasi mitra/Dinas Peternakan, BMC, hilirisasi, & komunikasi produk. |
+| 2 | **Ahmad Syauqi Reza** | **Hacker** *(Embedded/IoT, Edge, & Backend)* | Mahasiswa Teknologi Informasi **ITS** — pengembangan firmware *embedded/IoT*, *edge*, *backend*, & konektivitas perangkat. |
+| 3 | **Arya Bisma Putra Refman** | **Hacker** *(Software, AI/ML, & Sistem)* | Mahasiswa Teknologi Informasi **ITS** — pengembangan perangkat lunak, pelatihan model *Multi-Modal AI*, & integrasi sistem. |
+| 4 | **Aditya Reza Daffansyah** | **Hipster** *(UI/UX, Dashboard, & Visual Produk)* | Mahasiswa Teknologi Informasi **ITS** — desain antarmuka *dashboard* web/PWA, alur interaksi peternak/Dokter Hewan, & desain produk. |
+| 5 | **Dr. drh. Atin Supiyani, M.Si.** | **Anggota Tim — Pakar Domain Veteriner** | **Dosen Aktif Biologi UNJ (Dokter Hewan)** — bidang **Fisiologi & Kesehatan Hewan**. Memenuhi syarat wajib legal-administratif `[Pedoman, Hal. 3]` sekaligus menjadi validator ilmiah gejala klinis penyakit unggas, *Disease Triage Dictionary*, & protokol kesehatan kandang. |
 
 ---
 
-## 2. Profil Kapabilitas Multidisiplin Tim (`4 TI + 1 Dokter Hewan UNJ`)
+## 2. Profil Kapabilitas Multidisiplin Tim (`4 TI ITS + 1 Dokter Hewan UNJ`)
 
-Kombinasi 4 mahasiswa Teknologi Informasi dan 1 Doktor Dokter Hewan UNJ menjawab langsung **Rubrik #5 (*Kapasitas & Relevansi Tim* — bobot 10%: *hardware, software, domain expert, business*)**:
+Kombinasi 4 mahasiswa Teknologi Informasi **ITS** dan 1 Doktor Dokter Hewan **UNJ** menjawab langsung **Rubrik #5 (*Kapasitas & Relevansi Tim* — bobot 10%: *hardware, software, domain expert, business*)**:
 - **Software Engineering & Sistem Informasi:** Pengembangan aplikasi web/PWA (`Next.js`), *backend API* hemat sumber daya (`Golang`), integrasi protokol Wi-Fi lokal & MQTT/HTTPS.
 - **Multi-Modal AI (*Computer Vision* & *Audio AI*):** Deteksi objek citra feses abnormal & fisik ayam (`YOLOv8n/11n` → `NCNN`/`RKNN`) serta klasifikasi audio pernapasan 5 detik (`Log-Mel Spectrogram` + `MobileNetV3-Small`/`2D CNN`).
 - **IoT & *Embedded Systems*:** Integrasi mikrokontroler `ESP32`, komputer *Edge* (`Raspberry Pi 4` PoC → `Orange Pi 3B` Final), sensor mikroklimat (`SHT31`), indikator tren `NH₃` (`DFRobot SEN0567`), dan sistem keamanan *Dead-Man's Switch*.
