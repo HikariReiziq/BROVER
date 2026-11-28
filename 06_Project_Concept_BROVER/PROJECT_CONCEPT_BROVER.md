@@ -1,127 +1,190 @@
-# BROVER (*Broiler Inspection & Health Rover*): Sistem Inspeksi Berbasis *Multi-Modal AI* dan *Edge-Cloud* untuk Deteksi Dini Gejala Penyakit serta Pemantauan Mikroklimat Kandang Ayam Broiler
+# BROVER: Sistem Inspeksi Multisensor Berbasis AI dan *Edge-Cloud* untuk Skrining Gejala Penyakit serta Pemantauan Mikroklimat Kandang Ayam Broiler
 
 ---
 
 ## 1. Judul, Identitas Tim, Filosofi Produk, & Standar Transparansi
 
 - **Judul Final Proyek:**  
-  **`BROVER (Broiler Inspection & Health Rover): Sistem Inspeksi Berbasis Multi-Modal AI dan Edge-Cloud untuk Deteksi Dini Gejala Penyakit serta Pemantauan Mikroklimat Kandang Ayam Broiler`**
-  - *Catatan Penyelarasan Veteriner:* Penamaan telah diselaraskan dengan masukan **Medik Veteriner Ahli Muda (Dinas Peternakan)** serta standar internasional **WOAH *Terrestrial Animal Health Code*** (Bab 6.4 vs Bab 1.4): istilah *biosekuriti* adalah perisai pencegahan fisik (pagar 3-zona, disinfeksi kendaraan, karantina), sedangkan pemindaian gejala klinis & pelaporan dini adalah **Inspeksi & Deteksi Dini Gejala Penyakit**. Protokol biosekuriti alat (`1 Unit = 1 Kandang` dan sanitasi roda) tetap dijaga ketat di Bab Cara Kerja sebagai SOP operasional.
-- **Filosofi `BROVER` (*Broiler* + *Rover* → `Rover Inspeksi`):**  
-  Terinspirasi dari filosofi ***NASA Planetary Rover*** (*Curiosity / Perseverance*), kendaraan darat beroda pembawa paket instrumen ilmiah (kamera, mikrofon, sensor lingkungan) yang turun ke **lingkungan berisiko/kotor (*harsh environment*)** untuk mengambil data langsung di titik lokasi agar manusia tidak perlu terlalu sering masuk ke area tersebut. Dalam terminologi inspeksi industri (*Non-Destructive Testing / Remote Visual Inspection*) dan **ISO 8373:2021 Pasal 4.16 (*Mobile Platform*)**, **`BROVER`** adalah **`Rover Inspeksi`** (*Inspection Rover*), yaitu platform inspeksi bergerak beroda empat pembawa kamera *Computer Vision*, mikrofon, dan sensor suhu–kelembapan–amonia agar **1 unit alat mampu menjangkau hampir seluruh populasi ayam di dalam kandang** secara hemat biaya dibanding memasang puluhan CCTV dan sensor statis.
-- **Program & Jalur Kompetisi:** Hackathon Deep Tech UNJ 2026: Jalur Pangan **`D-FARM UNJ`** (*Challenge #1: Smart Poultry Production*)
-- **Tim Pengusul:** **Tim Asprak**: **5/5 Anggota Lengkap** (Kolaborasi 4 Mahasiswa Teknologi Informasi **ITS** + 1 Dosen Aktif Biologi/Dokter Hewan **UNJ**):
-  1. **M. Hikari Reiziq Rakhmadinta**: **Hustler** *(Mahasiswa Teknologi Informasi ITS; Strategi, Validasi Mitra, BMC, & Pitching)*
-  2. **Ahmad Syauqi Reza**: **Hacker** *(Mahasiswa Teknologi Informasi ITS; Embedded/IoT, Edge AI, & Backend)*
-  3. **Arya Bisma Putra Refman**: **Hacker** *(Mahasiswa Teknologi Informasi ITS; Software Engineering, AI/ML, & Integrasi Sistem)*
-  4. **Aditya Reza Daffansyah**: **Hipster** *(Mahasiswa Teknologi Informasi ITS; UI/UX Dashboard, Alur Pengguna, & Visual Produk)*
-  5. **Dr. drh. Atin Supiyani, M.Si.**: **Anggota Tim: Pakar Domain Veteriner** *(Dosen Biologi UNJ; bidang **Fisiologi & Kesehatan Hewan**; memenuhi syarat wajib slot ke-5 dosen aktif UNJ `[Pedoman, Hal. 3]` sekaligus validator klinis gejala penyakit & kamus triase).*
+  **`BROVER: Sistem Inspeksi Multisensor Berbasis AI dan Edge-Cloud untuk Skrining Gejala Penyakit serta Pemantauan Mikroklimat Kandang Ayam Broiler`**
+  - *Catatan Penyelarasan Veteriner:* Penamaan diselaraskan dengan masukan **Medik Veteriner Ahli Muda (Dinas Peternakan)** serta **WOAH *Terrestrial Animal Health Code***, yaitu [Bab 1.4 *Animal Health Surveillance*](https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/chapitre_surveillance_general.pdf) dan [Bab 6.5 *Biosecurity Procedures in Poultry Production*](https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/chapitre_biosecu_poul_production.pdf). Biosekuriti adalah perisai pencegahan fisik (pagar 3 zona, disinfeksi kendaraan, karantina), sedangkan pemeriksaan tanda klinis dan pelaporan ke dokter hewan adalah **inspeksi dan skrining gejala penyakit**, bukan diagnosis. Kata *dini* tidak dipakai sebelum selisih waktu skrining terukur saat pilot. SOP biosekuriti alat (`1 Unit = 1 Kandang`, sanitasi roda, dan protokol pemindahan unit di Bab 9.2) tetap dijaga sebagai prosedur operasional.
+  - *Catatan Istilah:* Judul memakai kata **multisensor**, bukan *multimodal AI*. Menurut taksonomi Baltrušaitis dkk. (2019), *multimodal machine learning* menuntut fusi atau representasi bersama antarmodalitas yang dilatih dan diuji. `BROVER` memakai **satu model AI** (CV feses) dan beberapa sensor yang dievaluasi dengan aturan standar umur, sehingga istilah multisensor lebih jujur.
+- **Filosofi `BROVER` (*Broiler* + *Rover* → `Rover Inspeksi`):** Kepanjangan merek `BROVER` adalah ***Broiler Inspection & Health Rover***. Kepanjangan ini hanya ditulis di bagian filosofi agar judul tetap ringkas. Nama ini terinspirasi ***NASA Planetary Rover*** (*Curiosity / Perseverance*), yaitu kendaraan beroda pembawa paket instrumen ilmiah ke lingkungan yang berat dan kotor agar manusia tidak terlalu sering masuk. Dalam istilah robotika, `BROVER` tergolong platform bergerak (*mobile platform*) pembawa kamera dan sensor; kosakata resmi robotika dibakukan dalam ISO 8373:2021, yang teksnya berbayar sehingga nomor pasalnya tidak dikutip di sini. Sebutan utama di dokumen ini adalah **`Rover Inspeksi`**. Rover **tidak** dimaksudkan memotret seluruh populasi ayam. Rover mengambil foto feses dan membaca udara setinggi ayam di **titik zona tetap** yang sama setiap hari, sehingga data seragam dan dapat dibandingkan antarhari.
+- **Program & Jalur Kompetisi:** Hackathon Deep Tech UNJ 2026, Jalur Pangan **`D-FARM UNJ`**, *Focus Challenge* **Smart Poultry Production** `[Pedoman, Hal. 2]`. Di portal resmi, *challenge* yang sama tertulis *Smart Egg Production* ([02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md)).
+- **Institusi:** Institut Teknologi Sepuluh Nopember (ITS) dan Universitas Negeri Jakarta (UNJ).
+- **Tim Pengusul: Tim Asprak, 5/5 anggota.** Kolaborasi 4 mahasiswa Teknologi Informasi **ITS** dan 1 dosen aktif Biologi **UNJ**, sehingga syarat minimal 1 dosen aktif UNJ terpenuhi `[Pedoman, Hal. 3]`.
+
+| No | Nama Anggota | Program Studi / Keahlian | Peran dalam Tim |
+| :-: | :--- | :--- | :--- |
+| 1 | **M. Hikari Reiziq Rakhmadinta** *(Ketua Tim)* | Teknologi Informasi ITS; strategi produk, riset pengguna, model bisnis | **Hustler**: validasi mitra dan Dinas, BMC, harga paket, *pitching* |
+| 2 | **Ahmad Syauqi Reza** | Teknologi Informasi ITS; *embedded system*, IoT, *edge*, *backend* | **Hacker**: firmware `ESP32`, sensor, dok dan mode stasiun, Wi-Fi lokal, *backend* `Golang` |
+| 3 | **Arya Bisma Putra Refman** | Teknologi Informasi ITS; rekayasa perangkat lunak, AI/ML | **Hacker**: CV feses dengan detektor Apache-2.0, kuantisasi INT8, layanan inferensi BROVER Saku |
+| 4 | **Aditya Reza Daffansyah** | Teknologi Informasi ITS; UI/UX dan desain produk | **Hipster**: dasbor `Next.js` PWA, alur pengguna BROVER Saku dan BROVER Kandang, desain casing |
+| 5 | **Dr. drh. Atin Supiyani, M.Si.** | Biologi UNJ; fisiologi dan kesehatan hewan (dokter hewan) | **Pakar Domain Veteriner**: label set uji lokal, kamus gejala, aturan RH tropis, validasi klinis |
+
+- *Catatan Data Pribadi:* NIM/NIP/NIK, nomor HP, email, dan portofolio anggota tidak dicantumkan di dokumen ini karena `README.md` bersifat publik. Data tersebut diisi langsung di berkas proposal (lihat Bab 13).
 - **Ruang Lingkup Proyek (*Hard Constraints*):**
-  - Berfokus sepenuhnya pada **peternakan ayam pedaging (*broiler*)** : kompatibel untuk kandang ***open house*** maupun ***closed house*** di Indonesia.
+  - Berfokus sepenuhnya pada **peternakan ayam pedaging (*broiler*)**: kompatibel untuk kandang ***open house*** maupun ***closed house*** di Indonesia.
   - **Tidak** mencakup jalur kesehatan manusia (`D-MARC`), **tidak** mencakup topik pengolahan limbah/sampah (*waste-to-value*, kompos, biogas, maggot), dan **tidak** menggunakan sensor tembak suhu tubuh inframerah (*thermogun/IR*).
-- **Standar Transparansi (*Provenance Tags*):** Seluruh tabel, grafik, dan analisis dalam dokumen ini mematuhi 4 label transparansi:
+- **Standar Transparansi (*Provenance Tags*):** Seluruh tabel, grafik, dan analisis dalam dokumen ini mematuhi 5 label transparansi:
   - **`[ASLI DARI SUMBER PRIMER]`** : Grafik/data diambil utuh tanpa modifikasi dari sumber resmi.
-  - **`[DATA PRIMER TERVERIFIKASI: TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`** : Seluruh angka berasal dari BPS, Kementan RI, PT Medion, Cobb Genetics, WOAH, *datasheet* resmi, atau jurnal *peer-reviewed* terverifikasi (**0 *preprint***).
+  - **`[DATA PRIMER TERVERIFIKASI: TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`** : Seluruh angka berasal dari BPS, Kementan RI, Bapanas, PT Medion, Cobb Genetics, Aviagen, WOAH, *datasheet* resmi, atau jurnal *peer-reviewed* terverifikasi (**0 *preprint***).
   - **`[SUARA LAPANGAN DARING: NON-PEER-REVIEWED]`** : Kesaksian praktisi/peternak Indonesia dari wawancara berita/YouTube untuk triangulasi realitas lapangan.
   - **`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]`** : Rancangan arsitektur, alur kerja, *power budget*, BMC, dan roadmap TKT yang disusun untuk validasi dan eksekusi tim.
+  - **`[ASUMSI TIM]`** : Angka perencanaan tanpa sumber primer, misalnya biaya dukungan teknis atau umur ekonomis alat. Angka ini ditulis terpisah agar mudah diuji dan dikoreksi saat pilot.
 
-> **Ringkasan Eksekutif:** Wabah penyakit pernapasan dan pencernaan serta instabilitas mikroklimat tropis merupakan dua penyebab kerugian operasional utama pada peternakan ayam broiler rakyat di Indonesia, dengan potensi kerugian mencapai Rp22 hingga Rp57 juta per siklus pada skala 3.000 ekor apabila deteksi terlambat. Untuk menjawab permasalahan tersebut, Tim Asprak mengembangkan **`BROVER` (*Broiler Inspection & Health Rover*)**, yaitu sistem inspeksi bergerak berbasis *Multi-Modal AI* dan arsitektur *Edge-Cloud* yang memadukan pemindaian visual feses dan kondisi fisik ayam, deteksi suara gangguan pernapasan, serta pemantauan suhu, kelembapan, dan tren gas amonia dalam satu unit beroda. Seluruh data lingkungan dievaluasi otomatis terhadap standar umur resmi bibit ayam broiler (*Cobb 500* dan *Ross 308*) pada dasbor website, tetap beroperasi saat koneksi internet kandang terputus, dan dilengkapi alur verifikasi manusia serta laporan ringkas sekali klik kepada Dokter Hewan. Berdasarkan audit harga e-commerce dan distributor lokal Indonesia (100% pengadaan dalam negeri), total HPP nyata berada di kisaran Rp8,23 juta per unit (eceran satuan) dan turun menjadi sekitar Rp6,75 juta per unit pada pengadaan grosir lokal (≥20–50 unit), sehingga dapat dipasarkan melalui skema **All-In Sepaket Rp11,50 juta/unit tanpa langganan bulanan** (atau sewa Rp550–650 ribu/siklus bagi peternak kecil), jauh di bawah perangkat impor di atas Rp100 juta; `BROVER` dirancang bertahap dari purwarupa kendali operator langsung lewat website melalui Wi-Fi lokal nirkabel (TKT 3–4 menuju TKT 6–7) hingga otomatisasi inspeksi terjadwal dan aplikasi mobile native pada tahap pengembangan lanjutan.
+> **Ringkasan Eksekutif:** BROVER memantau amonia, kelembapan, dan suhu setinggi ayam sebagai faktor pemicu penyakit pernapasan, menskrining tanda penyakit pencernaan pada feses dengan *computer vision*, dan meneruskan bukti ke dokter hewan, tanpa mengklaim diagnosis.
+>
+> **Latar belakang.** Ayam broiler adalah sumber protein hewani utama Indonesia dengan populasi 3,32 miliar ekor per tahun, dan sekitar 40% pasokannya ditopang peternak kecil–menengah (BPS 2025; Sumiati dkk. 2025). Penyakit klinis broiler didominasi CRD, colibacillosis, dan koksidiosis (Medion 2026). Penyakit ini sering muncul sebagai koinfeksi yang hanya bisa dipilah lewat laboratorium (Hartady dkk. 2026), sementara keputusan antibiotik di peternakan mandiri hampir selalu diambil tanpa dokter hewan (Sunandar dkk. 2024). Di sisi lingkungan, 62% titik ukur di 14 farm Jawa Barat berada pada zona THI *severe discomfort* dengan RH rerata 81,9% (Wilcox dkk. 2025), dan amonia tinggi meningkatkan risiko penyakit pernapasan (Quarles dan Kling 1974; Barbosa dkk. 2024). Per Oktober 2026 harga ayam hidup di kandang berada di bawah biaya produksi peternak, sehingga solusi harus murah dan dibayar per siklus.
+>
+> **Tujuan.** Membantu anak kandang (ABK) dan peternak menemukan feses yang tampak abnormal serta kondisi udara di luar standar umur lebih cepat daripada pengamatan manual, lalu meneruskan bukti yang rapi ke dokter hewan.
+>
+> **Solusi *deeptech*.** (1) `Rover Inspeksi` dikendalikan lewat web di Wi-Fi lokal, berhenti di titik zona tetap 2 kali sehari, dan memotret feses dengan kamera IMX291 pada servo dua posisi serta lampu LED yang seragam. (2) Sensor SHT31 dan SEN0567 dipasang di tiang setinggi ayam; saat tidak berkeliling, rover parkir di dok dalam kandang dan mencatat setiap menit (mode stasiun). (3) Satu model CV feses berlisensi Apache-2.0 dikuantisasi INT8 dan berjalan di *edge* Orange Pi 3B. (4) Dasbor PWA menyajikan standar umur Cobb 500 dan Ross 308, tren deplesi, pakan, dan air, triase 3 tombol, serta laporan 1-klik ke dokter hewan.
+>
+> **Keunggulan dan *novelty*.** Kebaruan `BROVER` terletak pada integrasi dan konteks, bukan pada satu algoritma baru: foto feses dengan sudut dan cahaya seragam di titik zona yang sama setiap hari, udara setinggi ayam per zona ditambah garis dasar kontinu di dok, evaluasi otomatis terhadap standar umur, alur verifikasi dokter hewan, dan operasi inti tanpa internet. Biaya perangkatnya jauh di bawah robot impor seperti Octopus XO (20–34 ribu euro). Dua paket memperluas jangkauan: **BROVER Saku** (foto HP, Rp75 ribu per siklus) untuk peternak kecil, dan **BROVER Kandang** (rover per kandang, Rp750 ribu per siklus, dengan opsi beli putus) untuk peternak menengah–besar.
+>
+> **Target hasil akhir.** Pada akhir *bootcamp* (Februari 2027): purwarupa terintegrasi yang didemonstrasikan di lingkungan relevan (target TKT 6), set uji lokal feses broiler berlabel dokter hewan, dan KPI terukur. Pada akhir program (Agustus 2027): uji lapangan bersama Dinas Pangan dan Pertanian Kota Cimahi dan peternakan mitra (target TKT 7), draf HKI, dan kesepakatan uji coba tertulis.
 
 ---
 
 ## 2. Latar Belakang
 
-Sektor perunggasan merupakan tulang punggung utama pemenuhan protein hewani terjangkau di Indonesia. Berdasarkan data resmi **Badan Pusat Statistik (BPS) 2025** dan telaah ilmiah nasional (Sumiati *et al.*, *Animal Bioscience* Q1, 2025), populasi **ayam ras pedaging (*broiler*)** nasional menembus **3,32 miliar ekor/tahun** (`3.323.003.798` ekor) dengan produksi daging mencapai **4,06–4,28 juta ton/tahun**, melampaui populasi subsektor unggas lainnya secara signifikan (sebagai pembanding, populasi ayam ras petelur tercatat 426,12 juta ekor dengan produksi 6,31 juta ton telur).
+Sektor perunggasan merupakan tulang punggung utama pemenuhan protein hewani terjangkau di Indonesia. Berdasarkan data resmi **Badan Pusat Statistik (BPS) 2025** dan telaah ilmiah nasional (Sumiati *et al.*, *Animal Bioscience* Q1, 2025), populasi **ayam ras pedaging (*broiler*)** nasional menembus **3,32 miliar ekor/tahun** (`3.323.003.798` ekor) dengan produksi daging mencapai **4,06–4,28 juta ton/tahun**, melampaui populasi subsektor unggas lainnya (sebagai pembanding, populasi ayam ras petelur tercatat 426,12 juta ekor dengan produksi 6,31 juta ton telur).
 
-Namun, struktur produksi broiler di Indonesia masih terbelah tajam secara teknologi: sekitar **60% pasokan** berasal dari peternakan industrial skala besar (*closed house*), sedangkan **~40% sisanya** ditopang oleh **lebih dari 1 juta peternak kecil–menengah** yang mayoritas masih mengoperasikan kandang terbuka (*open house*) dengan pengawasan manual (Sumiati *et al.*, 2025). Di sisi lain, inovasi kandang *closed house* bahan lokal untuk peternak rakyat juga mulai berkembang, seperti **KANOPIS** milik mitra industri Hackathon Deep Tech UNJ 2026, **PT Zara Propertifarm Indonesia**, yang telah diuji pada 6 farm di Bogor (`85.000 ekor`) dan pengakuan kapasitas awal JAPFA (`300.000 ekor`), namun pemantauan kesehatan harian di dalam kandang masih menjadi tantangan operasional kritis menuju TKT 9 ([04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md)).
+Struktur produksi broiler masih terbelah secara teknologi: sekitar **60% pasokan** berasal dari peternakan industrial skala besar (*closed house*), sedangkan **~40%** ditopang oleh **lebih dari 1 juta peternak kecil–menengah** yang mayoritas masih mengoperasikan kandang terbuka (*open house*) dengan pengawasan manual (Sumiati *et al.*, 2025). Inovasi kandang *closed house* berbahan lokal untuk peternak rakyat mulai berkembang, misalnya **KANOPIS** milik mitra industri Hackathon Deep Tech UNJ 2026, **PT Zara Propertifarm Indonesia**, yang telah diterapkan di 6 farm di Bogor (`85.000 ekor`) dan diakui JAPFA untuk kapasitas awal `300.000 ekor`. Peta jalan TKT 9 PT Zara menyebut AI dan IoT untuk FCR yang lebih efisien, yaitu estimasi bobot per ekor, pemantauan tempat pakan, serta pemantauan kesehatan ayam ([04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md)). `BROVER` mendukung **bagian pemantauan kesehatan dan lingkungan** pada peta jalan tersebut. Estimasi bobot, pemantauan tempat pakan, biaya listrik, dan biaya LPG tidak dijawab `BROVER`. Mitra **PT Edura Cipta Gemilang** berperan sebagai penyedia dukungan *in-kind* perangkat keras dan perakitan, bukan pemilik masalah perunggasan ([03_MITRA_PT_ECG_EDURA.md](../01_Context_Memory/03_MITRA_PT_ECG_EDURA.md)).
 
-Di tengah margin kotor usaha broiler rakyat yang relatif tipis (rata-rata **Rp5,28 juta per siklus** pada skala 3.000 ekor), satu kali wabah penyakit dapat menimbulkan kerugian **Rp22,89 hingga Rp57,35 juta** (Pramuwidyatama *et al.*, *Prev. Vet. Med.* Q1, 2023), setara keuntungan beberapa siklus sekaligus apabila deteksi gejala terlambat 24–72 jam. Dalam wawancara praktisi peternak broiler skala 12.000 ekor di Malang (`[SUARA LAPANGAN DARING]` [Edufarmers × PecahTelur](https://www.youtube.com/watch?v=FKCNKnTRif0)), serangan bakteri ***Colibacillosis*** pada umur 7 hari pernah menyebabkan **2.000 ekor mati** dalam satu siklus; di sisi lain, anak kandang (ABK) harus terus menjaga kesesuaian suhu dan kelembapan yang berubah signifikan mengikuti umur ayam (*brooding* DOC `30–34°C` hingga fase panen `21–25°C`) serta memantau tanda awal gangguan kesehatan secara harian.
+Margin usaha broiler rakyat tipis. Simulasi bio-ekonomi Pramuwidyatama *et al.* (*Prev. Vet. Med.* Q1, 2023) pada peternakan broiler kecil tipikal di Jawa Barat menghasilkan **margin kotor normal Rp5,28 juta per siklus**. Pada simulasi khusus **wabah HPAI H5N1**, margin kotor berubah menjadi **−Rp22,89 juta** (jual dini hari ke-8) hingga **−Rp57,35 juta** (*stamping out* hari ke-15). Angka ini adalah simulasi margin kotor wabah HPAI, bukan kerugian umum semua penyakit, dan `BROVER` tidak memiliki model yang mendeteksi HPAI. Tekanan ekonomi juga berasal dari harga jual: per 3 Oktober 2026, harga ayam hidup di kandang berkisar **Rp21.000–22.000/kg**, di bawah harga pokok produksi peternak sekitar **Rp23.000/kg** ([detikFinance, 4 Okt 2026](https://finance.detik.com/berita-ekonomi-bisnis/d-8691259/harga-ayam-di-kandang-anjlok-lagi)). Dalam wawancara praktisi peternak broiler skala 12.000 ekor di Malang (`[SUARA LAPANGAN DARING]` [Edufarmers × PecahTelur](https://www.youtube.com/watch?v=FKCNKnTRif0)), serangan ***Colibacillosis*** pada umur 7 hari pernah menyebabkan **2.000 ekor mati** dalam satu siklus. Di sisi lain, anak kandang (ABK) harus terus menjaga kesesuaian suhu dan kelembapan yang berubah mengikuti umur ayam (*brooding* DOC `30–34°C` hingga fase panen `21–25°C`) serta memantau tanda gangguan kesehatan setiap hari.
 
-Sementara itu, solusi perangkat pemantau kandang komersial impor (seperti *ChickenBoy* Big Dutchman berbasis rel plafon atau *Octopus XO* berbobot ~80 kg) memiliki harga dan kompleksitas yang tidak terjangkau bagi peternak rakyat Indonesia. Pemasangan puluhan CCTV dan sensor statis di setiap sudut kandang pun membutuhkan biaya instalasi dan perawatan kabel yang mahal. Diperlukan pendekatan rekayasa ***Demand-Driven DeepTech*** yang jujur, tahan terhadap keterbatasan sinyal internet dan listrik pedesaan, hemat biaya produksi, serta memanfaatkan kekuatan tim multidisiplin **Tim Asprak** (kolaborasi 4 mahasiswa Teknologi Informasi **ITS** + 1 Doktor Dokter Hewan **UNJ**).
+Perangkat pemantau kandang komersial impor sulit dijangkau peternak rakyat. *ChickenBoy* dari Big Dutchman berjalan di rel sekitar 0,5 m di atas ayam selama 24 jam, dan brosur resminya tidak mencantumkan harga. *Octopus XO* adalah robot penggaru sekam selebar 80 cm yang beroperasi pada hari ke-5 sampai sekitar 23 dengan harga 20–34 ribu euro menurut [FAQ resminya](https://www.octopusbiosafety.com/en/faq/xo-en/). Pemasangan banyak CCTV dan sensor statis di setiap sudut kandang juga membutuhkan biaya instalasi dan perawatan kabel. Diperlukan pendekatan rekayasa ***Demand-Driven DeepTech*** yang jujur, tetap berjalan saat sinyal internet pedesaan putus, murah, dan dibayar sesuai siklus panen, dengan memanfaatkan tim multidisiplin **Tim Asprak** (4 mahasiswa Teknologi Informasi **ITS** + 1 dokter hewan **UNJ**).
 
 ---
 
 ## 3. Masalah
 
-Berdasarkan hasil riset sistematis dan triangulasi 35 artikel jurnal *peer-reviewed* Indonesia (2021–2026) dengan 20 sumber lapangan daring ([TOP_5_MASALAH_PETERNAKAN_UNGGAS_INDONESIA_V3_TRANSPARAN.md](../02_Problem_Research/TOP_5_MASALAH_PETERNAKAN_UNGGAS_INDONESIA_V3_TRANSPARAN.md)) serta bedah *Root Cause Analysis* ([ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md](../03_Root_Cause_Analysis/ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md)), **`BROVER` memfokuskan solusi pada 2 masalah teknis-operasional paling konsisten dan berdampak ekonomi besar di Indonesia**:
+Berdasarkan riset sistematis dan triangulasi 35 artikel jurnal *peer-reviewed* Indonesia (2021–2026) dengan 20 sumber lapangan daring ([TOP_5_MASALAH_PETERNAKAN_UNGGAS_INDONESIA_V3_TRANSPARAN.md](../02_Problem_Research/TOP_5_MASALAH_PETERNAKAN_UNGGAS_INDONESIA_V3_TRANSPARAN.md)) serta bedah *Root Cause Analysis* ([ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md](../03_Root_Cause_Analysis/ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md)), **`BROVER` memfokuskan solusi pada 2 masalah teknis-operasional yang paling konsisten dan berdampak ekonomi di peternakan broiler Indonesia**:
 
-### 3.1. Masalah Utama (#1): Wabah Penyakit Unggas & Keterlambatan Deteksi Dini di Kandang
+### 3.1. Masalah Utama (#1): Penyakit Unggas, Koinfeksi, & Keterlambatan Mengenali Gejala di Kandang
 
 `[DATA PRIMER TERVERIFIKASI: TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`
 
-1. **Dampak Ekonomi Berat per Wabah:** Pada pemodelan bio-ekonomi farm broiler Sektor 3 di Jawa Bagian Barat (skala 3.000 ekor, margin kotor normal hanya **Rp5,28 juta/siklus**), **1 kali wabah HPAI H5N1** mengubah margin positif menjadi kerugian rata-rata hingga **−Rp53,89 juta** (*tanpa tindakan*) hingga **−Rp57,35 juta** (*stamping out* tanpa kompensasi), mendorong peternak melakukan *panic selling* ayam sakit (**−Rp22,89 juta**) yang memperluas penyebaran regional (Pramuwidyatama *et al.*, *Prev. Vet. Med.* Q1, 2023).
-2. **Dominasi Penyakit Pernapasan & Pencernaan di Broiler Indonesia:** Berdasarkan surveilans laboratorium nasional **PT Medion TEC (Januari 2026)**, penyakit positif PCR nasional dipimpin oleh ***Infectious Bronchitis* (IB ~17,7%)**, ***Avian Paramyxovirus* (AP ~14,8%)**, ***Newcastle Disease* (ND ~14,1%)**, **IBD/Gumboro (~10,6%)**, dan **AI H5N1 (~9,9%)**. Secara spesifik pada insiden klinis **ayam broiler (2023–Nov 2025)**, 3 penyakit teratas adalah **CRD / ngorok (>31%)**, **Colibacillosis (~17%)**, dan **Coccidiosis (~12%)**.
+1. **Dampak Ekonomi Wabah (Simulasi HPAI):** Pada model bio-ekonomi peternakan broiler kecil tipikal di Jawa Barat (Pramuwidyatama *et al.*, *Prev. Vet. Med.* Q1, 2023), margin kotor normal hanya **Rp5,28 juta/siklus**. Simulasi **1 kali wabah HPAI H5N1** mengubahnya menjadi **−Rp53,89 juta** (*tanpa tindakan*, introduksi hari ke-8) hingga **−Rp57,35 juta** (*stamping out*, introduksi hari ke-15), sedangkan jual dini menghasilkan **−Rp22,89 juta** dan justru mendorong penyebaran regional. Skala 3.000 ekor yang selama ini dipakai tim berasal dari catatan riset TOP5 dan belum dicek ulang ke bagian metode makalah.
+2. **Dominasi Penyakit Pernapasan & Pencernaan:** Berdasarkan surveilans laboratorium **PT Medion TEC (Januari 2026)**, penyakit positif PCR nasional dipimpin ***Infectious Bronchitis*** (IB ~17,7%), ***Avian Paramyxovirus*** (AP ~14,8%), ***Newcastle Disease*** (ND ~14,1%), **IBD/Gumboro** (~10,6%), dan **AI H5N1** (~9,9%). Grafik PCR ini **mencampur ayam pedaging dan petelur**. Grafik klinis khusus **broiler (2023–Nov 2025)** terpisah dan menempatkan **CRD / ngorok (>31%)**, **Colibacillosis (~17%)**, dan **Coccidiosis (~12%)** di tiga teratas.
 
 ![Grafik Asli Surveilans Positif PCR Nasional 2025: PT Medion TEC](./assets/01_medion_pcr_nasional_2025_asli.png)
-*`[ASLI DARI SUMBER PRIMER]` Grafik 4: Rangking Penyakit Pedaging & Petelur Positif PCR Nasional Jan–Nov 2025, disalin utuh dari [PT Medion TEC (Januari 2026)](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/).*
+*`[ASLI DARI SUMBER PRIMER]` Grafik 4: Ranking Penyakit Pedaging & Petelur Positif PCR Nasional Jan–Nov 2025, disalin utuh dari [PT Medion TEC (Januari 2026)](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/). Catatan: data grafik ini gabungan broiler dan petelur, sehingga tidak dipakai sebagai peringkat khusus broiler.*
 
 ![Grafik Asli Ranking Penyakit Klinis Ayam Broiler 2023–Nov 2025: PT Medion TEC](./assets/02_medion_broiler_klinis_2025_asli.png)
-*`[ASLI DARI SUMBER PRIMER]` Grafik 1: Rangking Penyakit Ayam Pedaging (Broiler) 2023–Nov 2025, disalin utuh dari [PT Medion TEC (Januari 2026)](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/), mengonfirmasi dominasi CRD (>31%), Colibacillosis (~17%), dan Coccidiosis (~12%).*
+*`[ASLI DARI SUMBER PRIMER]` Grafik 1: Ranking Penyakit Ayam Pedaging (Broiler) 2023–Nov 2025, disalin utuh dari [PT Medion TEC (Januari 2026)](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/), dengan CRD (>31%), Colibacillosis (~17%), dan Coccidiosis (~12%) di tiga teratas.*
 
-3. **Lemahnya Pengawasan & Literasi Pekerja Kandang:** Studi longitudinal 19 farm broiler (153 siklus) di Jawa Barat mengungkap skor **biosekuriti eksternal rata-rata hanya `0,28/1,0`**, pergerakan/pembelian **`0,48/1,0`**, dan **pekerja & peralatan `0,50/1,0`**; seluruh **4 farm dengan skor terendah akhirnya gulung tikar** (Anwar Sani *et al.*, *Poultry Science* Q1, 2025). Sementara itu, survei 200 pekerja kandang unggas Indonesia menunjukkan **`58%` pekerja** berada pada tingkat pengetahuan *Avian Influenza* kategori *Low–Moderate* (`33% Low`, `25% Moderate`) (Rehman *et al.*, *PeerJ* Q1, 2023).
-4. **Koinfeksi & Deteksi Terlambat di Lapangan:** Penyakit di kandang Indonesia kerap muncul sebagai koinfeksi multifaktorial, seperti temuan studi kasus 11.000 broiler di Majalengka yang mengalami **koinfeksi simultan AI H5 + AI H9 + IB (CV antibodi 256%) + *M. gallisepticum* (31,25%) + koksidiosis (4.400 OPG)** di bawah tekanan amonia **20 ppm** (Hartady *et al.*, *Vet. Sci.* Q1, 2026). Akibat pengamatan visual kasatmata yang terlambat dan kemiripan gejala luar, peternak sering salah duga (misal kasus *Hari Farm*: wabah AI awalnya disangka snot hingga kematian meningkat dari 4 menjadi 80 ekor/hari; `[SUARA LAPANGAN DARING]` TROBOS Livestock, 2024; serta kasus kematian 2.000/12.000 ekor akibat *Colibacillosis* di umur 7 hari pada wawancara `[SUARA LAPANGAN DARING]` Edufarmers × PecahTelur) dan mengandalkan antibiotik profilaktik/*flushing* sembarangan (`75,0%` *flushing*, hanya `8,3%` terapi terarah; Efendi *et al.*, *Vet. World* Q1, 2022).
+3. **Lemahnya Biosekuriti & Literasi Pekerja Kandang:** Studi longitudinal 19 farm broiler kecil–menengah (153 siklus, 2019–2023) di Jawa Barat mencatat skor rata-rata **biosekuriti eksternal hanya `0,28`** (rentang 0–0,67), **pergerakan & pembelian `0,48`**, serta **karyawan & peralatan `0,50`** pada skala 0–1. Empat farm dengan skor rendah di semua kategori termasuk farm yang keluar dari studi karena **berhenti beternak atau berganti manajemen** (Anwar Sani *et al.*, *Poultry Science* Q1, 2025). Survei 200 pekerja kandang unggas Indonesia juga menunjukkan **`58%`** pekerja berada pada tingkat pengetahuan *Avian Influenza* kategori *Low–Moderate* (Rehman *et al.*, *PeerJ* Q1, 2023).
+4. **Koinfeksi & Keputusan Pengobatan Tanpa Dokter Hewan:** Penyakit di kandang Indonesia kerap muncul sebagai koinfeksi multifaktorial. Studi kasus 11.000 broiler di Majalengka mencatat **koinfeksi AI H5 + AI H9 + IB + *M. gallisepticum* + koksidiosis (4.400 OPG)** di bawah tekanan amonia **20 ppm**, yang hanya dapat dipilah lewat HI, ELISA, PCR, dan flotasi feses (Hartady *et al.*, *Vet. Sci.* Q1, 2026). Di 19 peternakan broiler mandiri di Kabupaten Bogor, keputusan memberi antibiotik datang dari PPL (**47,4%**), *technical service* (**36,8%**), dan pemilik (**15,8%**); hanya satu orang pengambil keputusan yang berlatar dokter hewan (Sunandar *et al.*, *Acta Vet. Indones.*, 2024). Pola pemakaian antibiotik untuk *flushing* juga tinggi (**`75,0%`**, hanya `8,3%` terapi terarah; Efendi *et al.*, *Vet. World* Q1, 2022). Artinya, bukti klinis yang rapi perlu sampai ke dokter hewan sebelum keputusan pengobatan diambil.
 
 ### 3.2. Masalah Pendukung (#2): Cekaman Panas (*Heat Stress*), Gas Amonia, & Ketimpangan Mikroklimat per Umur
 
 `[DATA PRIMER TERVERIFIKASI: TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`
 
 1. **Tekanan Iklim Tropis Sepanjang Tahun:** Nilai rata-rata bulanan *Heat Stress Index* (HSI) Indonesia tahun 2023 melampaui ambang nyaman (`<150–160`) **di seluruh 12 bulan**, mencapai **155,5–165,4 (puncak 187,8)** di Indonesia Barat dan **150,0–166,4 (puncak 195,0)** di Indonesia Timur dengan suhu puncak `36°C` (Sumiati *et al.*, 2025).
-2. **Gradien Mikroklimat di Ketinggian Ayam vs Sensor Dinding:** Pada 14 farm *closed/semi-closed house* di Jawa Barat (`2.104 ekor`, `84 titik ukur`), **`0,0%`** titik ukur berada di zona nyaman termal (`THI <72`), sementara **`62,0%` berada di zona *Severe Discomfort*** dan **`8,3%` *Life-Threatening* (`THI >85`)**, dengan kelembapan rerata **`81,9%` (`66%–96%`)**, `NH₃` `7,3 ± 6,4 ppm`, serta lesi *Foot-Pad Dermatitis* (FPD) mencapai **`40%`** akibat *wet litter* (Wilcox *et al.*, *Animal Welfare* Q1, 2025).
-3. **Korelasi Langsung ke Mortalitas, Saluran Napas, & Kebutuhan Dinamis Umur:** Di Jawa Tengah, analisis ROC membuktikan **suhu sore pukul 16:00 `>32,8°C`** (`AUC 0,694`, `p = 0,026`) dan **THI pukul 16:00 `>79`** (`AUC 0,709`, `p = 0,016`) signifikan memprediksi kematian broiler, sementara kadar air *litter* di dataran rendah mencapai **`46,42%`** dengan `NH₃` `13,11–14,94 ppm` (Mohammadi *et al.*, *AAVS*, 2026; Hasibuan *et al.*, *JSPI*, 2021). Kadar gas amonia **`>20 ppm`** terbukti merusak silia saluran pernapasan dan meningkatkan kerentanan terhadap penyakit pernapasan (CRD/airsacculitis) (Ritz *et al.*, 2004; Naseem & King, 2018). Selain itu, standar suhu nyaman broiler berubah signifikan mengikuti umur; suhu `26°C` nyaman untuk umur 14 hari namun terlalu dingin bagi DOC umur 0 hari (`30–34°C`, *Cobb 500 Management Guide*, 2018/2021).
+2. **Gradien Mikroklimat di Ketinggian Ayam:** Pada 14 farm *closed/semi-closed house* di Jawa Barat (`2.104 ekor`, `84 titik ukur`), **`0%`** titik ukur berada di zona nyaman termal (`THI <72`), **`62%`** berada di zona *Severe Discomfort*, dan **`8,3%`** di zona *Life-Threatening* (`THI` di atas 85). Kelembapan rerata **`81,9%`** (`66%–96%`), `NH₃` rerata `7,3 ppm`, dan lesi *Foot-Pad Dermatitis* (FPD) mencapai sekitar **`40%`** ayam (Wilcox *et al.*, *Animal Welfare* Q1, 2025).
+3. **Ambang Mortalitas & Kebutuhan Dinamis Umur:** Di Jawa Tengah, analisis ROC menunjukkan **suhu pukul 16:00 `>32,8°C`** (`AUC 0,694`) dan **THI pukul 16:00 `>79`** (`AUC 0,709`) memprediksi kematian broiler pada kandang tanpa pendingin (Mohammadi *et al.*, *AAVS*, 2026). Nilai AUC ini tergolong sedang, sehingga ambang dipakai sebagai peringatan kondisi berisiko, bukan vonis. Kadar air *litter* di dataran rendah mencapai **`46,42%`** pada umur 28 hari, sedangkan kadar normal 20–25% (Hasibuan *et al.*, *JSPI*, 2021). Suhu nyaman broiler juga berubah mengikuti umur: `26°C` nyaman untuk umur 14 hari, tetapi terlalu dingin bagi DOC umur 0 hari yang butuh `30–34°C` (*Cobb Broiler Management Guide*, 2021).
+4. **Amonia Meningkatkan Risiko Penyakit Pernapasan:** Amonia tidak menunjuk nama penyakit, tetapi memperberat penyakit pernapasan. Paparan 25 dan 50 ppm yang disertai vaksin IB memicu *airsacculitis* berat (Quarles & Kling, 1974). Paparan 15 ppm selama 3 hari sudah memicu radang trakea (Zhou *et al.*, 2020). Paparan 50–75 ppm menurunkan bobot, dan 75 ppm menaikkan kematian (Miles *et al.*, 2004). Pada kadar sedang, lesi trakea dan paru akibat amonia saja tidak konsisten (Beker *et al.*, 2004; Al-Mashhadani & Beck, 1985). Karena itu `BROVER` menulis ***amonia meningkatkan risiko penyakit pernapasan***, bukan *amonia menyebabkan CRD*. Rincian bukti ada di [PETA_FITUR_DAN_BUKTI_BROVER.md](../08_Evaluasi_Proyek/PETA_FITUR_DAN_BUKTI_BROVER.md).
+
+### 3.3. Rumusan Masalah
+
+`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]`
+
+1. Bagaimana membantu ABK broiler di kandang terbuka maupun tertutup menemukan feses yang tampak abnormal dan kondisi udara di luar standar umur lebih cepat daripada pengamatan harian manual, tanpa mengklaim diagnosis?
+2. Seberapa akurat skrining feses broiler di atas sekam bila dinilai terhadap label dokter hewan dan hitungan OPG koksidiosis, dan apakah akurasinya berbeda antara foto rover dan foto HP?
+3. Apakah pengukuran suhu, kelembapan, dan tren amonia setinggi ayam per zona, ditambah mode stasiun di dok, dapat berjalan tanpa internet dengan biaya yang tertutup oleh penyelamatan beberapa puluh ekor ayam per siklus?
+
+### 3.4. Calon Pengguna (*End-User*)
+
+| Pengguna | Kondisi & Kebutuhan | Peran terhadap `BROVER` | Paket |
+| :--- | :--- | :--- | :--- |
+| **Peternak kecil** (sekitar `3.000–5.000 ekor`, umumnya *open house*) | Modal terbatas, margin tipis, sinyal internet tidak stabil, belum punya catatan harian rapi | Memotret feses dengan HP, mengisi catatan harian, menerima saran tindakan | **BROVER Saku** |
+| **Peternak menengah–besar** (`≥10.000 ekor`, *closed/semi-closed house*) | Lorong panjang, gradien mikroklimat, butuh data per zona yang konsisten | Berlangganan rover per kandang atau membeli putus | **BROVER Kandang** |
+| **Anak kandang (ABK)** | Pekerjaan harian padat, butuh alat yang sederhana | Menyetir rover, mengisi deplesi/pakan/air, memilih 3 tombol triase | Kedua paket |
+| **Dokter hewan, TSO, & Medik Veteriner Dinas** | Menerima laporan yang tercecer lewat pesan singkat | Menerima laporan 1-klik berisi foto, grafik, dan catatan harian | Kedua paket |
+| **Mitra B2B pembangun kandang** (misalnya PT Zara / KANOPIS) | Ingin menambah nilai paket kandang | Membeli putus unit untuk dibundel dengan kandang | BROVER Kandang (beli putus) |
+| **Dinas Pangan dan Pertanian Kota Cimahi** | Pembinaan peternak dan kesehatan hewan | Rencana mitra uji lapangan (Bab 9.6) | Pilot |
 
 ---
 
-## 4. Solusi (`BROVER`) & Pengembangan 5 Fitur Utama
+## 4. Solusi (`BROVER`) & Pengembangan 4 Fitur Utama
 
-**`BROVER` (*Broiler Inspection & Health Rover*)** adalah **Sistem Inspeksi Deteksi Dini Gejala Penyakit dan Pemantauan Mikroklimat** berbasis **`Rover Inspeksi`** beroda empat dengan arsitektur ***Multi-Modal AI*** (Baltrušaitis *et al.*, 2019) dan ***Edge-Cloud* (*Offline-First*)** (Shi *et al.*, 2016). Alih-alih memasang puluhan kamera dan sensor statis mahal di setiap sudut kandang, **`BROVER`** membawa 1 set kamera *Computer Vision*, mikrofon, dan sensor lingkungan menyusuri lorong kandang pada kecepatan pelan (`≤0,1 m/s`) agar mampu memantau hampir seluruh populasi ayam secara efisien.
+**`BROVER`** adalah **sistem inspeksi multisensor untuk skrining gejala penyakit dan pemantauan mikroklimat** pada kandang broiler, dengan arsitektur ***Edge-Cloud* (*Offline-First*)** (Shi *et al.*, 2016). Sistem ini terdiri atas `Rover Inspeksi` beroda empat yang membawa kamera feses dan sensor udara setinggi ayam, satu model *computer vision* (CV) feses yang berjalan di perangkat *edge*, dan dasbor website untuk peternak, anak kandang (ABK), dan dokter hewan. `BROVER` ditawarkan dalam **dua paket**: **BROVER Kandang** (rover per kandang) dan **BROVER Saku** (foto HP tanpa rover). Rover tidak berkeliling terus-menerus. Rover berhenti di titik zona tetap 2 kali sehari dan sisanya parkir di dok sebagai stasiun pencatat udara.
 
-![Arsitektur Sistem BROVER: Multi-Modal AI & Edge-Cloud](./assets/03_arsitektur_sistem_brover.png)
-*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Alur sistem BROVER dari kiri ke kanan: (1) Rover inspeksi di dalam kandang (dikendalikan lewat website pada tahap saat ini) dengan kamera AI, mikrofon 15 detik (3×5 detik voting), sensor suhu-RH/NH₃, otak AI lokal (offline-first), dan rem aman otomatis 500 ms; (2) koneksi Wi-Fi lokal nirkabel dan sinkronisasi otomatis ke server pusat serta data cuaca luar (BMKG + Open-Meteo); (3) dasbor aplikasi website (Next.js PWA) untuk kendali Rover dan evaluasi standar umur bibit ayam broiler Cobb 500 / Ross 308; hingga (4) aksi cepat Peternak/ABK dan Laporan 1-Klik ke Dokter Hewan/Dinas.*
+![Arsitektur Sistem BROVER: Multisensor Berbasis AI dan Edge-Cloud](./assets/03_arsitektur_sistem_brover.png)
+*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Dua jalur data BROVER. Jalur BROVER Kandang: rover dikendalikan lewat web di Wi-Fi lokal, kamera IMX291 pada servo dua posisi memotret feses di titik zona, SHT31 dan SEN0567 di tiang setinggi ayam mencatat udara, rover parkir di dok sebagai mode stasiun, dan detektor Apache-2.0 berjalan di edge Orange Pi 3B. Jalur BROVER Saku: foto HP diantre di aplikasi saat tidak ada sinyal, lalu diproses di server pusat dengan model yang sama. Keduanya bermuara di dasbor standar umur Cobb 500/Ross 308, triase 3 tombol, dan laporan 1-klik ke dokter hewan, dengan cuaca luar dari BMKG dan Open-Meteo. Seluruh keluaran adalah skrining, bukan diagnosis.*
 
-### 4.1. Rincian 5 Fitur Utama `BROVER`
+### 4.1. Rincian 4 Fitur Utama `BROVER`
 
-#### Fitur 1: `Rover Inspeksi` Bergerak (Jangkauan Menyeluruh 1 Kandang)
-- **Fungsi Utama:** Platform inspeksi bergerak beroda empat (ISO 8373:2021 Pasal 4.16) berkecepatan pelan (`≤0,1 m/s` agar ayam terbiasa dan tidak panik) yang membawa seluruh kamera, mikrofon, dan sensor melintasi lorong kandang sehingga **1 unit alat dapat menjangkau hampir seluruh populasi ayam**.
-- **Pengoperasian Tahap Saat Ini (Dikendalikan Lewat Website, Jujur & Aman):** Pada fase PoC dan prototipe awal, pergerakan `Rover Inspeksi` **dikendalikan operator langsung lewat website** (browser HP Android maupun laptop dalam mode layar penuh *landscape* berjoystick sentuh) menggunakan **Koneksi Wi-Fi Lokal Nirkabel (100% Tanpa Kabel Fisik, Tetap Berfungsi Saat Internet Kandang Mati)** (halaman kendali disajikan langsung oleh `Raspberry Pi` / `Orange Pi` di Wi-Fi lokal agar bebas blokir *Mixed Content* dan memiliki jeda video rendah `~100–300 ms`).
-- **Fitur Keselamatan & Instrumen di Atas `Rover`:**
-  - ***Dead-Man's Switch* (`500 ms`; Rem Darurat Otomatis):** Apabila sinyal Wi-Fi terputus atau perintah berhenti diterima lebih dari `0,5 detik`, `ESP32` otomatis memutus tenaga motor dan mengerem penuh agar `Rover` tidak menabrak ayam atau tempat pakan.
-  - **Sensor Jarak Depan Anti-Tabrak** (`HC-SR04` PoC / `DFRobot A02YYUW` IP67 Final dengan *blind zone* 3 cm) untuk menghentikan gerak otomatis saat ada ayam atau penghalang tepat di depan bumper.
-  - **Kontrol Sudut Kamera 2-Posisi (1× Servo *Tilt*) + Lampu LED Putih 5000K CRI >90:** Posisi miring bawah `~45°` untuk memindai feses di permukaan sekam dan posisi datar `~0–15°` untuk memindai fisik/postur ayam, disertai lampu LED untuk menstandarkan warna foto pada pencahayaan kandang yang redup.
-  - **Tombol 1-Klik `Cek Napas 15 Detik`** untuk menghentikan motor/kipas dan merekam suara pernapasan ayam (`3 segmen × 5 detik` *voting*) tanpa gangguan bunyi mesin.
-- ***Future Work* (Pengembangan Lanjutan; Otomatisasi Penuh Terjadwal):** Pada tahap pengembangan lanjutan, `Rover Inspeksi` ditingkatkan dari kendali operator lewat website menjadi **otomatisasi penuh terjadwal**: peternak cukup **mengatur jadwal inspeksi rutin** (misalnya pagi dan sore) serta melakukan ***setup* jalur/rute kandang** di dashboard; saat jadwal tiba, `Rover` bergerak sendiri menyusuri rute, menjalankan pemindaian kamera + audio + sensor secara otomatis, lalu kembali ke *dock* pengisian daya.
+#### Fitur 1: `Rover Inspeksi` Pembawa Kamera Feses, dengan Unggah Foto HP
+- **Fungsi Utama:** Platform bergerak beroda empat yang membawa kamera feses dan sensor udara ke **titik zona tetap** di lorong kandang (misalnya dekat *inlet*, tengah, dan dekat kipas), sehingga foto feses diambil dengan sudut, jarak, dan cahaya yang sama setiap hari. Model CV butuh masukan yang seragam; foto acak dari HP berbeda sudut, jarak, dan cahaya.
+- **Pengoperasian Tahap Saat Ini (Dikendalikan Lewat Website):** Operator menyetir rover lewat halaman web di HP Android atau laptop (tampilan *landscape* dengan joystick sentuh) melalui **Wi-Fi lokal nirkabel** yang tetap berfungsi saat internet kandang mati. Halaman kendali disajikan langsung oleh `Raspberry Pi 4` (PoC) atau `Orange Pi 3B` (final) agar bebas blokir *Mixed Content*.
+- **Jadwal & Batas Operasi:** Rover beroperasi **setiap hari dari hari ke-7 sampai panen** (umur panen *closed house* Indonesia sekitar 27–35 hari), dinaikkan bertahap per minggu dengan kriteria berhenti. Di MVP ada **2 putaran per hari**, yaitu pagi dan sore pukul **15.00–16.00**; setelah otomatisasi menjadi 3 putaran. Rover **tidak** berkeliling terus-menerus.
+- **Fitur Keselamatan:**
+  - ***Dead-Man's Switch* `500 ms`:** bila perintah kendali tidak diterima lebih dari 0,5 detik, `ESP32` memutus tenaga motor dan mengerem.
+  - **Kecepatan awal `0,07–0,1 m/s`**, bumper depan lunak, dan **sensor jarak yang memperlambat laju, bukan menghentikan total** (`HC-SR04` PoC / `DFRobot A02YYUW` IP67 final). Robot yang terlalu lambat (0,04 m/s) justru membuat ayam tidak menyingkir sehingga terjadi benturan (da Rocha Balthazar *et al.*, 2024).
+  - **Kriteria berhenti sesi:** ayam tidak menyingkir, ada ayam terdorong jatuh atau terluka, atau suhu kandang melewati ambang cekaman panas.
+- **Kamera & Servo Dua Posisi:** Kamera **USB UVC `IMX291`** dipasang pada **servo tahan air `DS3218`**. Posisi **depan `~0–15°`** dipakai untuk tampilan FPV saat operator menyetir, dan kelak untuk CV navigasi. Posisi **bawah `~45°`** dipakai untuk foto feses saat rover berhenti, dengan **LED putih `5000K CRI >90`** menyala agar warna foto seragam. Karena foto diambil saat rover berhenti, satu kamera yang dimiringkan servo sudah cukup.
+- **Dua Peran Foto HP:**
+  1. **Cadangan pada BROVER Kandang:** bila rover tidak bisa masuk, ABK memotret feses dengan HP lewat aplikasi web yang sama, lalu foto dikirim lewat Wi-Fi lokal ke Orange Pi.
+  2. **Jalur utama pada BROVER Saku:** peternak kecil tanpa rover memotret feses dengan HP; foto diantre saat tidak ada sinyal dan diproses di server pusat (Bab 5).
+- **Mengapa Tidak Berkeliling Terus-Menerus:** setiap lintasan membuat ayam di zona itu menyingkir; robot Marin *et al.* (2024) hanya bergerak 2 jam per hari dan penulisnya menyebut data paparan lebih lama belum ada; robot Dennis *et al.* (2020) berjalan 3 kali sehari; periode gelap penting bagi kekebalan dan konversi pakan (*Cobb Broiler Management Guide*, 2021); baterai rover hanya tahan 3–4 jam; dan data kontinu sudah didapat dari mode stasiun di dok.
+- ***Future Work* (Otomatisasi Rover):** Prototipe tetap dikendalikan manual. Pengembangan lanjutan menambah **CV navigasi** (mendeteksi ayam dan halangan di depan rover untuk menentukan kapan berhenti, melambat, atau berbelok) memakai data deteksi ayam seperti PIO, YOLOv5-CBAM broiler di atas sekam, dan Big Broiler, serta **penjadwalan otomatis** (putaran terjadwal dan putaran khusus saat THI atau amonia di dok melewati ambang). Rujukan: robot navigasi otonom di kandang broiler (Marin *et al.*, 2024), PoultryBot (Vroegindeweij *et al.*, 2018), dan Octopus XO yang memetakan lingkungan kandang.
 
-#### Fitur 2: Perangkat Sensor Mikroklimat & Gas Amonia (Dinamis Mengikuti Umur Ayam)
-- **Sensor di Ketinggian Ayam (*Bird-Level*):** Mengukur **Suhu & Kelembapan Relatif (`SHT31` / probe waterproof `FS304`)** serta **Indikator Tren Gas Amonia (`DFRobot SEN0567`)** terkompensasi suhu/RH langsung pada zona tempat ayam berada (bukan hanya di dinding/plafon).
-- **Evaluasi Otomatis Berbasis Standar Umur Resmi Bibit Ayam Broiler (`Cobb 500`):** `Cobb 500` adalah jenis bibit (*strain*) ayam broiler pedaging komersial yang paling luas dipelihara di Indonesia bersama `Ross 308`. Alih-alih memakai batas suhu kaku yang salah secara biologis, pembacaan `SHT31` dibandingkan otomatis terhadap **Matriks Suhu–RH Ideal buku panduan resmi `Cobb 500` sesuai umur ayam (Hari ke-N)** (mendukung pula pilihan `Ross 308`), sekaligus menghitung **Indeks Cekaman Panas (THI)** (waspada `>32,8°C` / `THI >79` pada fase besar; Mohammadi *et al.*, 2026).
-- **Pemetaan per Area Dalam Kandang (`Zona A / B / C / D`) & Prakiraan Cuaca Luar Hibrida (`BMKG` + `Open-Meteo`):** Pemetaan variasi suhu, RH, dan tren NH₃ antar-area di dalam kandang **100% diukur langsung oleh sensor fisik di atas `Rover`** saat operator mengetuk label zona pada website (bukan dari API cuaca). Sebagai pelengkap preventif untuk cuaca luar kandang, server menggabungkan **API Publik BMKG level desa/kelurahan (`adm4`, prakiraan lokal 0–72 jam berbasis stasiun dan radar resmi Indonesia dengan atribusi BMKG)** bersama **Open-Meteo API (`ECMWF IFS`, prakiraan per 1 jam hingga 7 hari berbasis GPS untuk mendeteksi puncak panas pukul `11:00–16:00` sekaligus *automatic fallback* apabila server BMKG lambat/*timeout*)** yang di-cache tiap 3–6 jam di backend `Golang`. *(Sebagai catatan teknis, Google Maps Platform Weather API tidak dipilih karena kebijakan resmi Google membatasi cakupan Indonesia hanya untuk internal usage only; untuk tahap komersialisasi TKT 8–9, tim menyiapkan pengajuan kerja sama resmi BMKG dan/atau paket komersial Open-Meteo).*
+#### Fitur 2: Sensor Mikroklimat di Rover (Suhu, Kelembapan, & Tren Amonia) dengan Mode Stasiun
+- **Sensor Setinggi Ayam:** **`SHT31`** (probe tahan air `FS304-SHT31` pada versi final) dan **`DFRobot SEN0567`** dipasang di **tiang setinggi ayam**, jauh dari panas `Orange Pi` dan motor agar bacaan suhu tidak bias. Panduan Cobb (2021) meminta sensor suhu dipasang setinggi ayam.
+- **Saat Putaran:** rover berhenti di setiap titik zona sampai bacaan stabil. Lama berhenti per zona ditentukan saat pilot.
+- **Mode Stasiun:** saat tidak berkeliling, yaitu malam hari, saat diisi daya, dan **hari ke-0 sampai 6**, rover parkir di **dok di dalam kandang** dan mencatat suhu, RH, dan amonia **setiap menit**. Dok ditempatkan di area *brooding* atau tengah kandang dan **membutuhkan stopkontak** di dalam kandang.
+- **Evaluasi Standar Umur:** bacaan dibandingkan dengan tabel suhu–RH **`Cobb 500`** atau **`Ross 308`** sesuai umur (Bab 4.2), lalu **THI** dihitung. Peringatan cekaman panas sore memakai ambang suhu `>32,8°C` atau `THI >79` pada pukul 16.00 (Mohammadi *et al.*, 2026). Tabel RH Cobb berhenti di 70%, sehingga aturan untuk RH tropis yang lebih tinggi disusun bersama **Dr. drh. Atin Supiyani, M.Si.**
+- **Tren Amonia, Bukan ppm Lab:** `SEN0567` menurut [wiki resminya](https://wiki.dfrobot.com/sen0567/) bersifat **kualitatif** dan bekerja pada RH 15–90% tanpa embun, padahal RH kandang Jawa Barat bisa mencapai 96% (Wilcox *et al.*, 2025). Karena itu amonia ditampilkan sebagai **tren per zona pada jam yang sama** dibanding hari-hari sebelumnya, ditambah **tren di dok** terhadap garis dasarnya. Saat pilot, `SEN0567` **dikalibrasi terhadap alat acuan** pinjaman. Ambang **target `<10 ppm`**, **waspada `~10–15 ppm`**, dan **bahaya `≥25 ppm`** baru dipakai setelah kalibrasi lolos. Sensor gas murah memang perlu dikalibrasi terhadap instrumen acuan sebelum angkanya dipakai (da Rocha Balthazar *et al.*, 2025; von Jasmund *et al.*, 2022).
+- **Cuaca Luar Kandang:** server menggabungkan **API BMKG tingkat desa/kelurahan (`adm4`)** dengan **Open-Meteo** sebagai cadangan otomatis, di-*cache* tiap 3–6 jam. Pemetaan zona di dalam kandang **100% dari sensor fisik rover**, bukan dari API cuaca.
+- **Tidak Mengukur CO₂ di MVP:** CO₂ 3.000–6.000 ppm tidak menurunkan bobot (Reece & Lott, 1980), dan saat ventilasi ditahan rendah yang naik justru amonia, debu, dan kelembapan. CO₂ dijadikan modul opsional untuk kandang berpemanas gas (riset lanjutan).
 
-#### Fitur 3: *Computer Vision* Deteksi Dini Gejala Penyakit (Fisik Ayam & Feses)
-- **Pemindaian Ganda (Feses + Fisik/Perilaku Ayam):**
-  1. **Model #1 (CV Feses Abnormal):** Mendeteksi kandidat feses berdarah (indikasi koksidiosis), diare putih-kapur, dan diare kehijauan pada jarak `30–50 cm` di depan `Rover` (berbasis dataset terverifikasi PCR `Zenodo 5801834` + data lokal Indonesia).
-  2. **Model #2 (CV Fisik & Perilaku Ayam):** Mendeteksi ayam lesu/menyendiri, kandidat ayam mati (*carcass*), serta gejala fisik eksternal yang tervalidasi **Dr. drh. Atin Supiyani, M.Si.** (berbasis `Kaggle ekosupriyanto RGB`, `ChickenVerse 2026`, dan `PIO Broiler`).
-- **Mode *Live Overlay* + Analisis Detail (`3–5 Frame Voting` + LED):** Saat operator melihat objek mencurigakan pada tampilan kamera langsung, tombol **`Analisis Detail`** menghentikan `Rover`, menyalakan LED putih `5000K CRI >90`, lalu menjalankan ***majority voting* 3–5 frame** agar hasil skrining lebih stabil dan menekan *false positive*.
+#### Fitur 3: *Computer Vision* Skrining Feses (Satu-satunya Model AI)
+- **Fungsi:** menandai feses yang tampak abnormal sebagai kandidat untuk dicek. Keluaran berbunyi ***"pola feses mirip koksidiosis, perlu konfirmasi dokter hewan"***, bukan *"ayam terkena koksidiosis"*. Panduan Cobb (2021) menyebut *perubahan mendadak tampilan feses* sebagai salah satu tanda penyakit yang harus dikenali pekerja kandang.
+- **Model:** detektor berlisensi **Apache-2.0**, yaitu **`YOLOX`** atau **`RT-DETR`**, sejalan dengan Tugas Akhir (TA) Ketua Tim tentang deteksi objek feses ayam di perangkat *edge*. Hasil TA belum tersedia, sehingga angka akurasi belum boleh diklaim.
+- **Satu Model, Rover Dulu:** satu arsitektur dan satu pipeline dilatih dari data publik ditambah foto rover lokal, lalu diekspor ke dua format: **RKNN INT8** untuk NPU `Orange Pi 3B` (BROVER Kandang) dan **ONNX FP32** untuk server (BROVER Saku). Pada PoC, model berjalan di `Raspberry Pi 4` lewat **NCNN atau ONNX Runtime**, dan kecepatannya diukur sendiri oleh tim.
+- **Gerbang Peluncuran BROVER Saku:** kamera rover dipasang tetap pada sudut dan cahaya yang sama, sedangkan foto HP beragam sudut, jarak, warna, dan cahaya. Model yang dilatih untuk rover bisa turun akurasinya pada foto HP, seperti penurunan lintas domain pada Henomaly (98,5–99,6% menjadi 74,6–78,2%) dan Chidziwisano *et al.* (2025, 0,91 menjadi 0,69). Karena itu set uji lokal memuat **foto rover dan foto HP berpasangan** dari titik feses yang sama. BROVER Saku baru dijual setelah akurasi pada foto HP diukur, aplikasi diberi panduan foto, dan model di-*fine-tune* dengan foto HP. Varian bobot khusus HP dibuat hanya bila selisihnya tetap besar.
+- **Data:** `Zenodo 4628934` (label YOLO, dibersihkan sesuai audit TA) untuk latih; `Zenodo 5801834` (label PCR, klasifikasi saja, tanpa label YOLO) untuk uji tingkat citra; `Mendeley 8pnbzpt2k9` (broiler dan petelur, Nigeria) sebagai tambahan; dan **set uji lokal BROVER** (feses broiler di atas sekam, berlabel dokter hewan dan hitungan OPG untuk koksidiosis) yang **wajib** untuk klaim akurasi. Rincian di Bab 11.
+- **Batas Jujur:** feses tidak menunjukkan penyakit pernapasan; satu tampilan feses bisa berasal dari sebab berbeda; feses salmonela dan sehat mudah tertukar karena sama-sama putih (Machuve *et al.*, 2022); dan koinfeksi hanya bisa dipilah lewat laboratorium.
 
-#### Fitur 4: Deteksi Audio Pernapasan / Respirasi Ayam (`15 Detik`: `3 × 5 Detik` *Voting*)
-- **Protokol *Stop–Mute–Sample* `15 Detik` (`3 Segmen × 5 Detik`):** Berdasarkan mekanisme klinis unggas, bunyi gangguan pernapasan (*ngorok/rales*, bersin) kerap muncul lebih awal daripada gejala fisik berat dan dapat tertangkap dari radius `3–5 meter` menembus kerumunan ayam dengan konsumsi daya sensor jauh lebih kecil dibanding kamera. Saat tombol **`Cek Napas 15 Detik`** ditekan di setiap zona (atau terjadwal di *Future Work*), motor roda dan kipas komputer mini berhenti total (`~1–2 detik` jeda hening mekanis) lalu mikrofon (`Mic USB` PoC / `INMP441` Final) merekam **3 segmen beruntun masing-masing `5 detik`** (`44,1 kHz`) untuk diproses dengan mekanisme *voting* agar gejala bersin/ngorok dini yang muncul selang-seling (*intermittent*) tidak terlewat.
-- **Klasifikasi 3 Kelas yang Mudah Dipahami (Adaptasi Dataset *Peer-Reviewed* Q1 *SmartEars*, Qiao *et al.*, 2026):**
-  1. **`Pernapasan Normal`** : suara ayam sehat biasa.
-  2. **`Indikasi Ngorok / Gangguan Pernapasan (CRD/IB/ND)`** : memicu rekomendasi pemeriksaan visual fisik lebih lanjut di zona tersebut.
-  3. **`Suara Bising Kandang` (*Background Noise*; kipas *blower*, hujan, aktivitas kandang)** : kelas penyaring wajib (berasal dari kelas `None` pada *SmartEars*) agar suara kipas *closed house* tidak salah dikenali sebagai ayam ngorok.
-- **Bukti Audio yang Dapat Diputar Ulang:** Setiap klip `.wav` (`5 detik` per segmen atau gabungan `15 detik`) yang berindikasi abnormal otomatis disimpan dan dapat diputar ulang langsung di dashboard oleh peternak maupun Dokter Hewan.
+#### Fitur 4: Dashboard Website Berbasis Standar Umur Resmi (`Cobb 500` & `Ross 308`), Tren Harian, Triase, & Laporan Dokter Hewan
+Dashboard **`BROVER`** (`Next.js` PWA) **tidak memakai skor kesehatan 0–100**. Dasbor dibangun di atas **setup siklus flok** (1 kali saat *chick-in*: tanggal masuk DOC, strain `Cobb 500` / `Ross 308`, dan populasi awal) yang menghitung **umur ayam (hari ke-N)** secara otomatis:
 
-#### Fitur 5: Dashboard Website Berbasis Standar Umur Resmi (`Cobb 500` & `Ross 308`), Triase, & Pelaporan Dokter Hewan
-Alih-alih menggunakan skor kesehatan 0–100 buatan sendiri yang rancu secara peternakan (karena suhu ideal berubah drastis dari DOC hingga panen), Dashboard **`BROVER`** dibangun di atas **Setup Siklus Flok (1× saat *Chick-In*: Tanggal Masuk DOC, Strain `Cobb 500` / `Ross 308`, & Populasi Awal)** yang otomatis menghitung **Umur Ayam (Hari ke-N)** dan menyajikan **4 Panel Indikator Objektif**:
+1. **Panel 1, Standar Umur & Mikroklimat:** status **`Terlalu Dingin` / `Sesuai Standar Umur` / `Terlalu Panas`** terhadap tabel `Cobb 500` atau `Ross 308`, angka THI, tren amonia per zona pada jam yang sama dan tren di dok, serta peringatan cuaca luar `BMKG` + `Open-Meteo`. Status per parameter ditulis **Normal / Waspada / Bahaya** beserta tindakan yang disarankan.
+2. **Panel 2, Daftar Triase:** temuan CV feses dan **ceklis gejala pernapasan oleh ABK** (misalnya ngorok atau bersin), masing-masing dengan **3 tombol keputusan**: **`Akan Saya Cek`**, **`Terlihat Normal`** (menjadi data perbaikan model), dan **`Laporkan ke Dokter Hewan`**. Pola tiga tombol ini terinspirasi [aremyhens.fit](https://aremyhens.fit/); dasbor aremyhens.fit sendiri menampilkan skor 0–100, dan skor seperti itu tidak dipakai `BROVER`. Setiap temuan dilengkapi **kamus gejala** tervalidasi **Dr. drh. Atin Supiyani, M.Si.** dan [Manual Penyakit Unggas Kementan RI](https://wiki.isikhnas.com/images/d/dd/Manual_Penyakit_Unggas.pdf).
+3. **Panel 3, Tren Harian:** **deplesi, pakan, dan air** dari catatan harian ABK, dengan peringatan bila angka berubah tajam dibanding hari-hari sebelumnya. Panduan Cobb (2021) meminta konsumsi air dicatat setiap 24 jam dan perubahan besar diselidiki; Edge *et al.* (2025) serta Manning *et al.* (2007) memakai konsumsi air sebagai penanda kesehatan dan kesejahteraan. Aturan perubahan tajam ditetapkan bersama dokter hewan.
+4. **Panel 4, Catatan Vaksinasi, Fase Pemeliharaan, & Laporan 1-Klik:** tanggal vaksinasi (reaksi vaksin pernapasan bisa memicu gejala sementara), pengingat fase *brooding/grower/finisher*, target bobot resmi, log sanitasi roda, dan tombol **Laporan 1-Klik ke Dokter Hewan** (WhatsApp/PDF) berisi umur flok, foto feses, grafik suhu/RH/tren amonia, ceklis gejala, dan catatan harian. Laporan hanya terkirim bila peternak menekannya (*explicit consent*).
 
-1. **Panel 1: Status Kesesuaian Mikroklimat vs Standar Umur Resmi (`Cobb 500` / `Ross 308`):** Menampilkan status objektif **`Terlalu Dingin` / `Sesuai Standar Umur` / `Terlalu Panas`** berdasarkan tabel suhu–RH `Cobb 500` atau `Ross 308`, angka **THI**, **Indikator Tren Gas Amonia (`Normal / Meningkat / Waspada Ventilasi`)**, peta warna per zona di dalam kandang (`Zona A/B/C/D` dari sensor fisik `Rover`), serta peringatan prakiraan cuaca luar 1–7 hari (`BMKG` + `Open-Meteo`).
-2. **Panel 2: Daftar Temuan Gejala Penyakit Multi-Modal (Prioritas Terkritis) & 3 Tombol Aksi Manusia:** Merangkum jumlah & bukti foto/audio per kategori (CV Feses, CV Fisik Ayam, Audio Pernapasan) diurutkan dari yang paling mendesak (*Most Critical*, terinspirasi dari alur UX [`aremyhens.fit`](https://aremyhens.fit/)). Setiap temuan dilengkapi **3 tombol keputusan manusia (*Human-in-the-Loop*)**: **`Akan Saya Cek`** (mencatat verifikasi ABK), **`Terlihat Normal`** (menandai *false positive* untuk memperbaiki data latih AI), dan **`Laporkan ke Dokter Hewan`**, disertai **Kamus Gejala Penyakit (*Disease Triage Dictionary*)** tervalidasi **Dr. drh. Atin Supiyani, M.Si.** dan [Manual Penyakit Unggas Kementan RI](https://wiki.isikhnas.com/images/d/dd/Manual_Penyakit_Unggas.pdf).
-3. **Panel 3: Pengingat Fase Pemeliharaan, Klasifikasi Pakan, & Target Bobot Resmi (`Cobb 500` / `Ross 308`):** Menampilkan otomatis fase pemeliharaan (*Brooding / Grower / Finisher*), pengingat jenis pakan sesuai umur (*Pre-Starter / Starter / Finisher*), serta patokan bobot standar `Cobb 500` atau `Ross 308` agar ABK dapat langsung mencocokkannya dengan hasil sampling mingguan.
-4. **Panel 4: Catatan Harian Ringkas ABK (Opsional) + Laporan 1-Klik ke Dokter Hewan + Log Sanitasi Roda:** Form ringan input harian ABK (mortalitas/deplesi harian, sampling bobot rata-rata, dan konsumsi pakan untuk menghitung **FCR** otomatis). Saat tombol **`Laporkan ke Dokter Hewan`** diklik, website otomatis merangkum **1 paket bukti klinis lengkap via WhatsApp/PDF** (umur flok Hari ke-N, angka deplesi harian, foto feses/ayam, klip audio ngorok `.wav`, grafik suhu/RH/tren NH₃, dan lokasi zona) siap dikirim ke Dokter Hewan / TSO / Medik Veteriner Dinas Peternakan. Dilengkapi halaman kendali `Rover Inspeksi` lewat website dan ***Checklist* Log Sanitasi Roda** pasca-inspeksi.
+#### Matriks Fitur per Paket
+
+| Fitur | BROVER Saku *(foto HP, tanpa rover)* | BROVER Kandang *(rover per kandang)* |
+| :--- | :-: | :-: |
+| CV skrining feses | Ya, foto HP diproses di server | Ya, foto rover diproses di Orange Pi; foto HP cadangan lewat Wi-Fi lokal |
+| Triase 3 tombol & kamus gejala | Ya | Ya |
+| Catatan harian ABK (deplesi, pakan, air), ceklis pernapasan, catatan vaksin | Ya | Ya |
+| Laporan 1-klik ke dokter hewan | Ya | Ya |
+| Panel standar umur Cobb/Ross & cuaca BMKG | Ya, suhu dan RH diisi manual | Ya, dari sensor rover |
+| Sensor suhu, RH, & tren amonia per zona | Tidak | Ya |
+| Mode stasiun di dok (pencatatan per menit) | Tidak | Ya |
+| Berjalan tanpa internet | Foto bisa diambil luring; hasil CV butuh sinyal | Ya, inti sistem berjalan luring |
+
+#### Fitur yang Dihapus dari MVP
+
+| Fitur Lama | Alasan Dihapus | Status |
+| :--- | :--- | :--- |
+| AI audio pernapasan (mikrofon `INMP441`, *Cek Napas 15 detik*, *Stop–Mute–Sample*) | Data terbuka untuk broiler di lantai sekam tidak tersedia; studi SmartEars memakai mikrofon tetap di kandang baterai dan perlu penyesuaian ulang di tiap kandang; blower kandang tetap berbunyi saat rover berhenti | Riset lanjutan: mikrofon tetap per kandang, peluang kolaborasi data dengan penulis UGM (Rosyida *et al.*, 2026) |
+| CV fisik dan perilaku ayam (Model #2) | Tidak ada dataset penyakit ayam hidup yang sah; label publik berupa perilaku normal | Dihapus |
+| Deteksi bangkai | Di luar fokus masalah; ABK sudah memungut bangkai setiap hari | Dihapus |
+| Node sensor tetap | Celah waktu antarputaran ditutup mode stasiun di dok | Dihapus |
+| Sensor CO₂ | Dampak langsung CO₂ pada kadar kandang yang wajar lemah | Modul opsional kandang berpemanas gas |
 
 ### 4.2. Acuan Ilmiah Standar Umur Dashboard (`Cobb 500`, `Ross 308`, & Jurnal *Peer-Reviewed*)
 
 `[DATA PRIMER TERVERIFIKASI, TABEL DISUSUN OLEH AI AGENT]`
 
-#### A. Matriks Acuan Suhu & Kelembapan Berdasarkan Umur Ayam: `Cobb 500` (*Cobb 500 Broiler Management Guide*, 2018 & [Edisi Resmi 2021](https://www.cobbgenetics.com/assets/Cobb-Files/Broiler-Guide_English-2021-min.pdf))
+#### A. Matriks Acuan Suhu & Kelembapan Berdasarkan Umur Ayam: `Cobb 500` ([*Cobb Broiler Management Guide* 2021](https://www.cobbgenetics.com/assets/Cobb-Files/Broiler-Guide_English-2021-min.pdf))
 
 | Umur / Fase Ayam | RH 30% | RH 40% | RH 50% | RH 60% | RH 70% | Evaluasi Otomatis Dashboard `BROVER` |
 | :--- | :---: | :---: | :---: | :---: | :---: | :--- |
@@ -130,16 +193,21 @@ Alih-alih menggunakan skor kesehatan 0–100 buatan sendiri yang rancu secara pe
 | **Umur 14 hari** | `29°C` | `28°C` | `27°C` | `26°C` | `25°C` | Transisi dari *brooding* menuju fase *grower*. |
 | **Fase Besar (`28 kg/m²` / *Finisher*)** | `25°C` | `24°C` | `23°C` | `22°C` | `21°C` | Aktifkan peringatan cekaman panas sore (`>32,8°C` / `THI >79`, Mohammadi *et al.*, 2026) & pantau RH tropis tinggi (Wilcox *et al.*, 2025). |
 
-#### B. Acuan Suhu, Kelembapan, & Target Bobot Resmi: `Ross 308` (*Aviagen Ross Broiler Management Handbook*, 2018; *Ross 308 Performance Objectives*, 2022; & Jurnal *Peer-Reviewed* Tropis Quintana-Ospina *et al.*, *Animals*, 2023)
+*Catatan: tabel Cobb berhenti di RH 70%, sedangkan RH kandang Jawa Barat rata-rata 81,9%. Aturan untuk RH di atas 70% disusun bersama Dr. drh. Atin Supiyani, M.Si. dengan mempertimbangkan THI.*
 
-| Umur (Hari) | Suhu Ideal *Whole-House* `Ross 308` | Suhu *Spot Brooding* (Tepi Pemanas) | Target RH `Ross 308` | Target Bobot *As-Hatched* `Ross 308` (2022) | Catatan Evaluasi Iklim Tropis (*Peer-Reviewed*) |
-| :---: | :---: | :---: | :---: | :---: | :--- |
-| **Hari 0 (DOC)** | `30°C` | `32°C` | `60–70%` | `42–44 g` | Jaga kelembapan awal `60–70%` agar saluran napas DOC tidak dehidrasi (*Aviagen*, 2018). |
-| **Hari 3** | `28°C` | `30°C` | `60–70%` | `~90–100 g` | Transisi awal pemeliharaan; pantau sebaran ayam & kenyamanan termal. |
-| **Hari 7** | `26–27°C` | `27–28°C` | `50–60%` | `195–213 g` | Patokan minggu 1: bobot mencapai minimal `4×` bobot *chick-in* (*Aviagen*, 2022). |
-| **Hari 14** | `24–25°C` | `25–26°C` | `50–60%` | `485–533 g` | Penurunan bertahap mengikuti kenaikan panas metabolik (Quintana-Ospina *et al.*, 2023). |
-| **Hari 21** | `22°C` | `23°C` | `50–60%` | `1.010–1.012 g` | Memasuki fase *finisher* (~1 kg); risiko cekaman panas mulai meningkat. |
-| **Hari 27–35** | `20°C` | `20°C` | `50–60%` | `1.616–1.675 g` (H28) / `~2.296 g` (H35) | Pantau ketat ambang mortalitas sore `>32,8°C` / `THI >79` (Mohammadi *et al.*, 2026) & RH ekstrem (Wilcox *et al.*, 2025). |
+#### B. Acuan Suhu & Target Bobot Resmi: `Ross 308` ([*Ross Broiler Management Handbook* 2025](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf), Tabel 2.4; [*Ross 308 Broiler Performance Objectives* 2022](https://aviagen.com/assets/Tech_Center/Ross_Broiler/RossxRoss308-BroilerPerformanceObjectives2022-EN.pdf), kolom *as-hatched*)
+
+| Umur (Hari) | Target Bobot `Ross 308` (PO 2022) | Suhu Rumah Kandang menurut Bobot (Handbook 2025) | Suhu Tepi Pemanas (*Spot Brooding*) | Catatan RH & Evaluasi |
+| :---: | :---: | :---: | :---: | :--- |
+| **Hari 0 (DOC)** | `44 g` | `30°C` (bobot 44 g) | `32°C` | RH `60–70%` sampai hari ke-3 agar DOC tidak dehidrasi. |
+| **Hari 3** | `102 g` | `28°C` (bobot 100 g) | `30°C` | RH `60–70%`. |
+| **Hari 7** | `213 g` | `27°C` (180 g) – `26°C` (290 g) | `28–27°C` | Suhu tabel mengacu RH 50% setelah hari ke-3. Bobot hari ke-7 sekitar 4,8 kali bobot hari ke-0. |
+| **Hari 14** | `533 g` | `25°C` (425 g) – `24°C` (590 g) | `26°C` (425 g) | Penurunan suhu bertahap mengikuti bobot. |
+| **Hari 21** | `1.012 g` | `22°C` (bobot 1.015 g) | `23°C` | Memasuki fase *finisher* (~1 kg); risiko cekaman panas mulai meningkat. |
+| **Hari 28** | `1.616 g` | `20°C` (bobot >1.530 g) | `20°C` | Setelah umur 27 hari, suhu tetap 20°C atau disesuaikan perilaku ayam. |
+| **Hari 35** | `2.296 g` | `20°C` | `20°C` | Pantau ambang mortalitas sore `>32,8°C` / `THI >79` (Mohammadi *et al.*, 2026) & RH tinggi (Wilcox *et al.*, 2025). |
+
+*Catatan: Handbook 2025 menyusun suhu menurut bobot badan, bukan umur; kolom umur di atas dipetakan dari target bobot PO 2022. Target RH 50–60% setelah hari ke-3 yang tertulis di versi lama dokumen ini tidak dikutip langsung dari Aviagen, sehingga aturan RH tropis disusun bersama dokter hewan. Rujukan iklim tropis pendukung: Quintana-Ospina et al. (2023).*
 
 #### C. Acuan Fase Pakan & Target Pertumbuhan Bobot `Cobb 500` (*Cobb500 Male Performance & Nutrition Supplement*, 2017 & 2020; `[SUARA LAPANGAN DARING]` [Edufarmers × PecahTelur](https://www.youtube.com/watch?v=FKCNKnTRif0))
 
@@ -152,113 +220,187 @@ Alih-alih menggunakan skor kesehatan 0–100 buatan sendiri yang rancu secara pe
 | **Hari 28** | *Finisher* | *Finisher* (*crumble* kasar, 21 hari–panen) | `1.585 g` (`1,63×`) | `1.675 g` (`1,61×`) | Pantau ketat *heat stress*, NH₃, & FCR |
 | **Hari 35** | *Finisher* / Panen | *Finisher* | `2.299 g` (`1,45×`) | `2.392 g` (`1,41×`) | Evaluasi akhir panen (FCR, deplesi, bobot) |
 
-> **Acuan Kualitas Udara Amonia (NH₃):** Berdasarkan [Cobb Broiler Management Guide (2021)](https://www.cobbgenetics.com/assets/Cobb-Files/Broiler-Guide_English-2021-min.pdf), Ritz *et al.* (2004), dan Naseem & King (2018), kadar NH₃ di ketinggian ayam idealnya **`<10 ppm`**, sedangkan paparan **`>20 ppm`** merusak silia saluran napas dan memperparah risiko CRD/airsacculitis.
+*Catatan: angka suplemen Cobb500 jantan di tabel C belum dicek ulang terhadap dokumen Cobb pada sinkronisasi 28 November 2026, sehingga divalidasi bersama dokter hewan sebelum dipakai sebagai ambang dasbor.*
+
+> **Acuan Kualitas Udara Amonia (NH₃):** Panduan Cobb (2021) menargetkan NH₃ di ketinggian ayam **`<10 ppm`**. `BROVER` memakai tiga tingkat: **target `<10 ppm`**, **waspada `~10–15 ppm`** (Barbosa *et al.*, 2024 mendefinisikan risiko sedang 10–14 ppm; Zhou *et al.*, 2020 mencatat radang trakea pada 15 ppm), dan **bahaya `≥25 ppm`** (Quarles & Kling, 1974). Amonia **meningkatkan risiko** penyakit pernapasan; amonia tidak menunjuk nama penyakit. Ambang ppm hanya dipakai setelah `SEN0567` dikalibrasi terhadap alat acuan.
 
 ### 4.3. Pagar Kejujuran & Batasan Operasional (Prinsip *Anti-Fake Innovation*)
 
 `[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]`
 
-Menjawab langsung peringatan **Anti-*Fake Innovation*** dari Mitra PT Zara Propertifarm Indonesia ([04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md#L108-L113)) dan masukan **Medik Veteriner Ahli Muda Dinas Peternakan**, `BROVER` menetapkan 6 batasan jujur berikut sejak awal:
+Menjawab peringatan **Anti-*Fake Innovation*** dari mitra PT Zara Propertifarm Indonesia ([04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md#L108-L113)) dan masukan **Medik Veteriner Ahli Muda Dinas Peternakan**, `BROVER` menetapkan batasan jujur berikut sejak awal:
 
 | Aspek | Batasan Jujur yang Diterapkan `BROVER` | Bukti Ilmiah / Teknis Pendukung |
 | :--- | :--- | :--- |
-| **Mode Operasi Saat Ini vs *Future Work*** | Tahap PoC & prototipe saat ini **digerakkan operator melalui dashboard web via Wi-Fi lokal nirkabel (tanpa kabel)**. **Otomatisasi jadwal & *setup* jalur otomatis** ditetapkan jujur sebagai ***Future Work***. | Sesuai **ISO 8373:2021 Pasal 4.16** (*Mobile Platform*), menghindari klaim berlebih sebagai sistem otonom penuh, mempercepat validasi akurasi AI, dan menekan biaya belanja komponen (`BOM`). |
-| **Fase Umur Operasi Lantai** | Inspeksi lantai difokuskan pada **hari ke-5 s.d. ~23** (kecepatan `≤0,1 m/s`, bukan 24 jam nonstop). | Perangkat broiler komersial *Octopus XO* menetapkan operasi **hari ke-5–23** pada kecepatan `0,04–0,12 m/s` ([FAQ Octopus XO](https://www.octopusbiosafety.com/en/faq/xo-en/)); mulai minggu ke-4–5 kepadatan broiler mencapai `13–30 kg/m²` ([PT Medion](https://www.medion.co.id/info-medion/closed-house-solusi-peningkatan-performa-ayam/)) dan ruang lantai makin rapat ([PMC11011048](https://pmc.ncbi.nlm.nih.gov/articles/PMC11011048/)). |
-| **Bukan Alat Biosekuriti / Roda Tidak Diklaim Steril** | Sesuai **WOAH**, `BROVER` adalah **alat inspeksi & deteksi dini**, bukan alat biosekuriti. Risiko kontaminasi silang dicegah lewat SOP **1 unit = 1 kandang** + **sikat mekanis & disinfeksi roda**. | Fenomena ***subclinical/asymptomatic fecal shedding*** membuat feses tampak normal tetap dapat membawa patogen ([PMC13433518](https://pmc.ncbi.nlm.nih.gov/articles/PMC13433518/); [PLOS ONE, 2022](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0264028)); ookista *Eimeria* kebal disinfektan umum ([PMC11416347](https://pmc.ncbi.nlm.nih.gov/articles/PMC11416347/)). |
-| **Klaim Diagnosis AI** | Output aplikasi adalah **Deteksi Dini / Skrining Gejala (*Human-in-the-Loop*)**, **bukan** diagnosis medis/lab otomatis dan **tidak** meresepkan dosis antibiotik. | Kemiripan gejala koinfeksi lintas penyakit (kasus Hari Farm AI dikira snot, [TROBOS 2024](https://troboslivestock.com/virus-ai-terus-mengintai/)) serta efek *domain shift* lintas kandang ([Henomaly](https://github.com/RishitRai/Henomaly): akurasi turun 99%→75–78%). |
-| **Pengukuran Gas `NH₃`** | Sensor **`DFRobot SEN0567`** (~Rp175–230 rb di Tokopedia/Shopee/Lazada) dilaporkan jujur sebagai **indikator tren kualitatif lonjakan `NH₃`** (terkompensasi Suhu/RH), bukan angka `ppm` absolut sertifikasi lab. | [Wiki Resmi DFRobot `SEN0567`](https://wiki.dfrobot.com/sen0567/) menyatakan eksplisit: *"Qualitative only; for quantitative, buy the Factory-calibrated Gas Sensor."* |
-| **Status Kit 4WD Akrilik** | Kit 4WD akrilik + roda 65 mm (*ground clearance* 1,3–1,5 cm) hanya digunakan sebagai ***indoor PoC testbed* (TKT 3–4)**, **bukan** unit uji sekam basah lapangan. | Sekam broiler tebal `5–10 cm` (kadar air hingga `46,42%`, Hasibuan *et al.*, 2021) mensyaratkan upgrade motor *metal-gear* + roda *off-road*/*track* (*ground clearance* ≥5–6 cm) pada fase Bootcamp (TKT 5–6). |
+| **Mode Operasi Saat Ini vs *Future Work*** | Prototipe **digerakkan operator lewat web di Wi-Fi lokal**. CV navigasi dan penjadwalan otomatis adalah ***future work***. | Menghindari klaim sistem otonom; robot navigasi otonom di kandang broiler sudah diteliti (Marin *et al.*, 2024; Vroegindeweij *et al.*, 2018) tetapi belum dibangun tim. |
+| **Fase Umur Operasi Lantai** | Inspeksi lantai **hari ke-7 sampai panen**, dinaikkan bertahap per minggu dalam **2 putaran pendek per hari**. Kecepatan awal `0,07–0,1 m/s`, bumper lunak, sensor jarak memperlambat laju, dan **kriteria berhenti sesi** berlaku. Batas akhir ditetapkan dari uji di kandang mitra. | Robot kemudi manual pengukur iklim setinggi ayam dioperasikan **hari 3–37** pada 1.597 Ross 308 dengan gangguan perilaku terbatas (Dennis *et al.*, 2020); robot 6,2 kg dioperasikan **hari 7–42** pada kepadatan hingga `32 kg/m²` dengan gangguan terbesar di minggu pertama (Marin *et al.*, 2024); kecepatan 0,04 m/s memicu benturan karena ayam tidak menyingkir (da Rocha Balthazar *et al.*, 2024). Batas hari ke-5–23 hanya milik robot penggaru sekam *Octopus XO* selebar 80 cm, tanpa alasan tertulis. Umur panen: `27,06` & `31,03` hari (Candra *et al.*, 2025), `34` hari (Junita *et al.*, 2025), `35` hari (Wijayanto *et al.*, 2023). |
+| **Cakupan Data** | Foto feses dan data udara per zona hanya ada **saat putaran**. Data kontinu hanya ada di **satu titik**, yaitu lokasi dok. Kamera hanya merekam pita lantai di sepanjang jalur. | Keterbatasan ini ditulis terbuka; CV navigasi dan putaran khusus berbasis ambang adalah *future work*. |
+| **Bukan Alat Biosekuriti / Roda Tidak Diklaim Steril** | Sesuai WOAH, `BROVER` adalah **alat inspeksi dan skrining gejala**, bukan alat biosekuriti. Risiko kontaminasi silang dicegah lewat SOP **1 unit = 1 kandang**, **sikat mekanis dan disinfeksi roda**, serta **protokol pemindahan unit** (Bab 9.2). | Peralatan harus dibersihkan dan disanitasi sebelum masuk kandang (WOAH Bab 6.5); ookista *Eimeria* tahan terhadap disinfektan berdaya rendah (Zhao *et al.*, 2024); feses yang tampak normal tetap dapat membawa patogen (Abdelgany *et al.*, 2026). |
+| **Klaim Diagnosis AI** | Keluaran aplikasi adalah **skrining gejala dengan verifikasi manusia**, **bukan** diagnosis medis/lab otomatis, dan **tidak** meresepkan antibiotik. | Koinfeksi AI H5, H9, IB, *M. gallisepticum*, dan koksidiosis hanya dapat dipilah lewat uji laboratorium (Hartady *et al.*, 2026); akurasi turun di peternakan baru ([Henomaly](https://github.com/RishitRai/Henomaly): 98,5–99,6% menjadi 74,6–78,2% pada data PCR). |
+| **Penyakit Pernapasan** | Ditangani lewat **pencegahan**: pemantauan amonia, kelembapan, dan suhu, ditambah ceklis ABK dan dokter hewan. Feses hanya menjawab koksidiosis serta sebagian tanda ND dan salmonelosis. | Bukti amonia sebagai faktor risiko di Bab 3.2; feses tidak menunjukkan penyakit pernapasan. |
+| **Pengukuran Gas `NH₃`** | **`DFRobot SEN0567`** dilaporkan sebagai **indikator tren kualitatif**, bukan angka `ppm` sertifikasi lab, sampai dikalibrasi terhadap alat acuan saat pilot. | [Wiki resmi DFRobot `SEN0567`](https://wiki.dfrobot.com/sen0567/): *Qualitative only*; rentang kerja RH 15–90% tanpa embun. |
+| **BROVER Saku Butuh Sinyal** | Foto HP bisa diambil tanpa sinyal, tetapi hasil CV muncul setelah foto terkirim ke server. Klaim tetap berjalan tanpa internet berlaku penuh hanya untuk BROVER Kandang. | Keputusan desain Bab 5; inferensi langsung di HP adalah *future work*. |
+| **Status Kit 4WD Akrilik** | Kit 4WD akrilik + roda 65 mm (*ground clearance* 1,3–1,5 cm) hanya ***indoor PoC testbed* (TKT 3–4)**, bukan unit uji sekam lapangan. | Sekam broiler tebal sekitar 1–10 cm (rerata 5,1 cm pada 14 farm Jawa Barat, Wilcox *et al.*, 2025) dengan kadar air hingga `46,42%` (Hasibuan *et al.*, 2021) mensyaratkan motor *metal-gear* dan roda besar (*ground clearance* ≥5–6 cm) pada fase *bootcamp*. |
 
 ### 4.4. *State of the Art* (SOTA), *Research Gap*, Kebaruan (*Novelty*), & Target KPI Terukur
 
 `[SINTESIS KOMPARASI SOLUSI & METRIK PENGUJIAN TIM ASPRAK: DISUSUN OLEH AI AGENT]`
 
-#### A. Perbandingan *State of the Art* (SOTA) & Posisi Kebaruan `BROVER` (Menjawab Rubrik Kebaruan 30%)
+#### A. Perbandingan *State of the Art* (SOTA) & Posisi Kebaruan `BROVER` (Rubrik Kebaruan 30%)
 
-| Solusi / Riset Pembanding | Modalitas Sensor & AI | Ketahanan Offline & Kandang | Estimasi Biaya / Hambatan Adopsi di RI | Celah (*Research Gap*) yang Dijawab `BROVER` |
+| Solusi / Riset Pembanding | Sensor & AI | Platform & Operasi | Biaya / Hambatan Adopsi di RI | Celah yang Dijawab `BROVER` |
 | :--- | :--- | :--- | :--- | :--- |
-| **Big Dutchman *ChickenBoy*** *(Komersial Rel Plafon)* | Kamera + suhu + RH + CO₂ + NH₃ + suara | Rel plafon 24/7 (butuh modifikasi struktur atap) | **>Rp100 juta+/unit** (impor penuh, skala *enterprise*) | Tidak terjangkau bagi >1 juta peternak kecil–menengah Indonesia maupun kandang *open house*. |
-| **Octopus Biosafety *XO*** *(Robot Darat Impor)* | Robot berat (~80 kg) disinfeksi/aerasi sekam + sensor | Operasi lantai hari ke-5–23 (`0,04–0,12 m/s`) | **Impor Eropa**, bobot & perawatan tinggi | Bukan alat deteksi dini penyakit multi-modal terjangkau untuk peternak rakyat. |
-| **CCTV & Sensor IoT Statis** *(Konvensional)* | Kamera/sensor diam di beberapa titik dinding/plafon | Membutuhkan banyak unit + instalasi kabel mahal | Biaya naik linear mengikuti panjang kandang (`120 m`) | Banyak *blind spot* lantai; sensor dinding tidak mencerminkan suhu/NH₃ di ketinggian ayam (*bird-level*). |
-| ***Henomaly* (`aremyhens.fit`)** *(Pemenang AI Hackathon)* | CV feses & perilaku + 3 tombol *Human-in-the-Loop* | Raspberry Pi lokal | Belum ada audio pernapasan, mikroklimat per umur, & platform bergerak | `BROVER` memadukan alur triase 3 tombol dengan mobilitas 1 unit/kandang, audio ngorok, & standar umur `Cobb 500`/`Ross 308`. |
-| ***SmartEars* (Qiao *et al.*, 2026)** *(Riset Audio Q1)* | Audio spektrogram `5 detik` (`Healthy/Sick/None`) | Mikrofon statis | Hanya 1 modalitas (tanpa foto feses/fisik & tanpa mikroklimat) | `BROVER` mengintegrasikan model *SmartEars* dalam protokol `15 detik` (`3×5 detik` *voting*) + verifikasi kamera & sensor udara. |
-| **`BROVER` (Tim Asprak: ITS & UNJ)** | **Multi-Modal 3-in-1:** CV Feses + CV Fisik Ayam + Audio `3×5 detik` + Suhu/RH/Tren NH₃ | **100% *Offline-First* (Wi-Fi lokal nirkabel)** + *Dead-Man's Switch* 500 ms + standar umur `Cobb 500`/`Ross 308` + cuaca `BMKG + Open-Meteo` | **HPP Eceran RI `Rp8,23 jt` → Grosir Lokal RI `~Rp6,75 jt`; Jual All-In `Rp11,50 jt`** *(nol langganan bulanan)* | **Satu-satunya sistem inspeksi bergerak multi-modal terjangkau bagi kandang broiler rakyat RI (*open* & *closed house*) yang tahan mati internet dan terhubung 1-klik ke Dokter Hewan.** |
+| **Big Dutchman *ChickenBoy*** *(komersial)* | Kamera, suhu, RH, CO₂, NH₃, sensor tingkat kebisingan, penilaian ekskreta | Rel sekitar 0,5 m di atas ayam, 24 jam, butuh struktur rel | Harga tidak tercantum di brosur; impor | `BROVER` tanpa rel, dibayar per siklus, dan menyertakan alur dokter hewan lokal. |
+| **Octopus Biosafety *XO*** *(robot darat impor)* | Robot penggaru sekam selebar 80 cm yang juga mencatat suhu, RH, dan NH₃ | Operasi lantai hari ke-5 sampai sekitar 23, `0,04–0,12 m/s` | 20–34 ribu euro ([FAQ resmi](https://www.octopusbiosafety.com/en/faq/xo-en/)) | `BROVER` fokus inspeksi: foto feses berstandar + udara setinggi ayam, sampai panen. |
+| **BroilerX & Chickin** *(agritech Indonesia)* | Kontrol iklim IoT, pencatatan harian (FCR, deplesi, IP); BroilerX juga kamera AI aktivitas dan timbangan pintar | Perangkat tetap + aplikasi, dibundel kemitraan atau pendanaan | Harga tidak dipublikasikan; lewat kontak sales ([BroilerX IoT](https://www.broilerx.com/teknologi/iot), [Chickin CI-Touch](https://landing.chickin.id/citouch/)) | Tidak ditemukan skrining feses atau udara setinggi ayam per zona; `BROVER` dapat melengkapi, bukan menggantikan kontrol iklim. |
+| **CCTV & Sensor IoT Statis** *(konvensional)* | Kamera/sensor diam di beberapa titik | Banyak unit + kabel | Biaya naik mengikuti panjang kandang | Kamera pandangan luas tidak membaca kotoran kecil; sensor dinding tidak mewakili udara setinggi ayam. |
+| ***Henomaly* (`aremyhens.fit`)** *(pemenang hackathon)* | CV feses & perilaku, 3 tombol tindakan | Kamera kandang tetap, Raspberry Pi | Akurasi turun ke 74,6–78,2% pada data PCR | `BROVER` memakai pola 3 tombol tanpa skor 0–100, ditambah foto berstandar dan data lokal. |
+| **Talingan** *(Indonesia, 2020)* & **AvianAlert** *(juara Cornell 2025)* | AI suara pernapasan; AvianAlert juga foto feses | Perangkat suara / aplikasi | Proyek terbuka | Suara sudah dikerjakan pihak lain, sehingga kebaruan `BROVER` **tidak** bersandar pada fitur suara. |
+| **`BROVER` (Tim Asprak: ITS & UNJ)** | **Multisensor:** CV feses + suhu/RH/tren NH₃ setinggi ayam + catatan harian ABK | Rover di titik zona tetap 2×/hari + mode stasiun di dok; foto HP untuk paket Saku; inti luring | **Saku Rp75 rb/siklus; Kandang Rp750 rb/siklus** atau beli putus | Lihat pernyataan kebaruan di bawah. |
 
-#### B. Indikator Keberhasilan Terukur (*Key Performance Indicators* / KPI: Menjawab Rubrik Kelayakan Teknis 20%)
+**Pernyataan Kebaruan yang Jujur:** Kebaruan `BROVER` adalah **integrasi dan konteks**, bukan satu algoritma baru:
+1. Foto feses dengan sudut, jarak, dan cahaya seragam di titik zona yang sama setiap hari, sehingga tren feses per zona bisa dibandingkan antarhari.
+2. Udara setinggi ayam per zona saat putaran, ditambah garis dasar kontinu di dok, dan amonia ditampilkan sebagai tren per jam yang sama.
+3. Evaluasi otomatis terhadap standar umur `Cobb 500`/`Ross 308` untuk kondisi tropis Indonesia, dengan aturan RH tinggi disusun bersama dokter hewan.
+4. Alur verifikasi manusia dan laporan dokter hewan, sejalan dengan fakta bahwa keputusan antibiotik di peternakan mandiri jarang diambil dokter hewan.
+5. Set uji lokal feses broiler di atas sekam berlabel dokter hewan dan OPG, yang belum tersedia di data publik.
 
-*(Catatan Anti-Fake Innovation: Angka berikut adalah **target pengujian terukur** untuk tahap PoC dan Bootcamp, bukan klaim hasil uji yang sudah dilaksanakan).*
+#### B. Indikator Keberhasilan Terukur (*Key Performance Indicators* / KPI, Rubrik Kelayakan Teknis 20%)
+
+*(Catatan Anti-Fake Innovation: angka berikut adalah **target pengujian**, bukan klaim hasil uji yang sudah dilaksanakan).*
 
 | Dimensi Uji | Parameter / Metrik KPI | Target Fase PoC *(Seleksi Nov 2026, TKT 3–4)* | Target Fase Final *(Bootcamp Des 2026 – Feb 2027, TKT 5–6)* | Metode Verifikasi |
 | :--- | :--- | :--- | :--- | :--- |
-| **Keselamatan & Kendali Web** | Latensi video & kendali FPV di browser HP + *Dead-Man's Switch* | Video `<400 ms`; rem darurat aktif `≤500 ms` saat Wi-Fi diputus | Video `100–300 ms`; kecepatan stabil `≤0,1 m/s`; *blind zone* anti-tabrak `3 cm` (`A02YYUW`) | Uji cabut Wi-Fi/heartbeat berulang & *stopwatch*/*log* `ESP32` |
-| **Akurasi Multi-Modal AI** | F1-Score / mAP@0,5 pada data uji lokal + *cross-farm* | Baseline publik *mAP/F1* `≥0,75` pada simulasi meja | *Fine-tuning* kandang lokal RI bersama Dr. drh. Atin: target `F1 ≥0,80` (CV & Audio `3×5 dtk`) | Evaluasi *confusion matrix* pada dataset terpisah (*held-out test*) |
-| **Ketahanan Medan & Daya** | Kemampuan melintasi sekam & durasi baterai | Stabil di lantai datar (`~1,5–2,5 jam` *dual-rail*) | Mampu melintasi sekam lembap (`ground clearance ≥5–6 cm`), *runtime* `LiFePO₄` `≥3 jam` | Uji lintasan sekam simulasi & aktual kandang mitra + log `INA219` |
-| **Ketahanan Luring & Cuaca** | Operasi saat internet mati total & keandalan cuaca luar | Kendali lokal & *SQLite WAL* jalan 100% tanpa internet | *Auto-sync* sukses saat internet pulih; *cache* & *fallback* `BMKG → Open-Meteo` `<3 detik` | Simulasi putus WAN/internet & uji *timeout* API |
-| **Kepatuhan Program UNJ** | Kehadiran Bootcamp/Mentoring & kelayakan Katsinov | Berkas administrasi + Katsinov `≥80%` | Kehadiran Bootcamp/Mentoring **`≥80%`** (`[Pedoman, Hal. 6]`) + *Working Prototype* | Rekap absensi resmi & validasi mentor 3 pilar |
+| **Keselamatan & Kendali Web** | Latensi video FPV di browser HP + *Dead-Man's Switch* | Video `<400 ms`; rem aktif `≤500 ms` saat Wi-Fi diputus *(Tahap 1 sudah lulus uji rem)* | Video `100–300 ms`; kecepatan stabil `0,07–0,1 m/s`; 0 ayam terluka per putaran | Uji cabut Wi-Fi berulang, log `ESP32`, catatan sesi |
+| **Akurasi CV Feses per Sumber Foto** | Presisi, *recall*, F1 / mAP@0,5 | Baseline data publik dilaporkan apa adanya | F1 pada set uji lokal dilaporkan **terpisah untuk foto rover dan foto HP**; target F1 `≥0,80` | *Confusion matrix* pada set uji terpisah dari data latih |
+| **Kalibrasi `SEN0567`** | Korelasi dan galat terhadap alat acuan | Respons naik saat didekatkan sumber amonia | Koefisien korelasi dan galat dilaporkan; ambang ppm dipakai hanya bila kalibrasi lolos | Pengukuran berpasangan dengan alat acuan pinjaman |
+| **Operasi Rover & Respons Ayam** | Waktu putaran, jumlah sentuhan ayam, kejadian kriteria berhenti | Uji meja dan lantai datar | Uji bak sekam simulasi dan sesi pendek di kandang mulai hari ke-7 | Video sesi + lembar catatan |
+| **Mode Stasiun & Daya** | Kelengkapan data per menit di dok, *runtime* baterai | *Runtime* PoC `~1,5–2,5 jam` | Data dok `≥95%` lengkap per hari; *runtime* `LiFePO₄` `≥3 jam` | Log `SQLite` + `INA219` |
+| **Ketahanan Luring & Cuaca** | Operasi saat internet mati, cadangan cuaca | Kendali lokal & *SQLite WAL* berjalan tanpa internet | *Auto-sync* saat internet pulih; *fallback* `BMKG → Open-Meteo` `<3 detik` | Simulasi putus WAN & uji *timeout* API |
+| **Kepatuhan Program UNJ** | Kehadiran *bootcamp*/mentoring & Katsinov | Berkas administrasi + Katsinov `≥80%` | Kehadiran **`≥80%`** (`[Pedoman, Hal. 6]`) + *working prototype* | Rekap absensi resmi & validasi mentor 3 pilar |
+
+### 4.5. Komponen *Deeptech*, Spesifikasi Teknis, & Keunggulan dibanding Metode Konvensional
+
+`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]`
+
+#### A. Komponen *Deeptech* yang Diintegrasikan
+
+| Komponen | Isi di `BROVER` | Alasan Dipilih |
+| :--- | :--- | :--- |
+| ***Computer Vision* di *edge*** | Satu detektor feses Apache-2.0, dikuantisasi INT8 untuk NPU `RK3566` | Inferensi lokal tetap berjalan saat internet mati; lisensi Apache-2.0 memungkinkan produk dijual tanpa wajib membuka kode |
+| **IoT & *embedded system*** | `ESP32` (gerak, rem 500 ms, sensor), `SHT31`, `SEN0567`, sensor jarak, servo | Kendali *real-time* terpisah dari komputer AI agar rover aman |
+| **Robotika lapangan** | Rover 4WD, servo kamera dua posisi, dok pengisian | Foto feses berstandar dan udara setinggi ayam di banyak zona dengan satu set sensor |
+| ***Edge-Cloud* & data** | `SQLite` luring di rover, sinkronisasi ke *backend* `Golang`, layanan ONNX Runtime untuk BROVER Saku, PWA `Next.js` | Data tetap tersimpan saat sinyal putus; laporan dokter hewan dan arsip lintas siklus di server |
+
+#### B. Spesifikasi Teknis Ringkas BROVER Kandang (Versi Final)
+
+| Bagian | Spesifikasi |
+| :--- | :--- |
+| Komputer AI | `Orange Pi 3B`, `RK3566`, NPU `0,8 TOPS`, RAM 4 GB, `eMMC 32 GB`, antena Wi-Fi eksternal `2,4 GHz` |
+| Pengendali gerak & keselamatan | `ESP32`, *Dead-Man's Switch* `500 ms`, `2× BTS7960`, `4× JGB37-520` 12 V |
+| Kamera | `IMX291` USB UVC `1080p` pada servo tahan air `DS3218`; posisi depan `~0–15°`, bawah `~45°`; LED `5000K CRI >90` |
+| Sensor udara | Probe `FS304-SHT31` (suhu & RH) dan `DFRobot SEN0567` (tren NH₃, kualitatif) di tiang setinggi ayam |
+| Sensor jarak | `DFRobot A02YYUW` IP67, *blind zone* 3 cm, memperlambat laju |
+| Daya | `LiFePO₄` 4S `12,8 V 6 Ah` (`76,8 Wh`), *runtime* target `≥3 jam`, dok dengan stopkontak |
+| Kecepatan & jadwal | `0,07–0,1 m/s`; 2 putaran/hari; mode stasiun per menit di dok |
+| Konektivitas | Wi-Fi lokal (halaman kendali `http://192.168.4.1`), sinkronisasi saat internet tersedia |
+
+#### C. Keunggulan dibanding Metode Konvensional
+
+| Aspek | Cara Konvensional | `BROVER` | Status Bukti |
+| :--- | :--- | :--- | :--- |
+| Pengamatan feses | ABK melihat sekilas saat berkeliling; tidak tercatat | Foto berstandar di titik zona yang sama setiap hari, ditandai CV, disimpan sebagai arsip | Desain; akurasi diukur pada set uji lokal |
+| Udara kandang | Termometer/higrometer di satu titik dinding | Suhu, RH, dan tren amonia setinggi ayam per zona + garis dasar di dok | Panduan Cobb (2021) meminta sensor setinggi ayam; Dennis *et al.* (2020) mengukur iklim setinggi ayam dengan robot |
+| Standar umur | Tabel kertas atau hafalan | Evaluasi otomatis terhadap `Cobb 500`/`Ross 308` sesuai hari ke-N | Tabel Cobb terverifikasi; Ross dari Handbook 2025 & PO 2022 |
+| Catatan harian | Tercecer di buku atau pesan singkat | Tren deplesi, pakan, dan air dengan peringatan perubahan tajam | Desain; aturan disusun bersama dokter hewan |
+| Laporan ke dokter hewan | Foto lewat pesan singkat tanpa konteks | Paket bukti 1-klik: foto, grafik, ceklis, catatan harian | Desain |
+| Biaya | Robot impor 20–34 ribu euro (Octopus XO) | Rp75 ribu atau Rp750 ribu per siklus, atau beli putus | Harga paket Bab 9.2 |
+
+*Catatan: `BROVER` belum mengklaim waktu skrining lebih cepat dalam satuan hari. Selisih waktu antara peringatan sistem dan konfirmasi dokter hewan baru diukur saat pilot (Bab 9.6).*
 
 ---
 
 ## 5. Tech Stack
 
-Pemilihan tumpukan teknologi `BROVER` menyeimbangkan **kecepatan pengembangan 4 mahasiswa TI ITS**, **validasi klinis Dokter Hewan UNJ**, **hemat daya di atas baterai `Rover`**, dan **efisiensi biaya operasional server komersial**:
+Pemilihan tumpukan teknologi `BROVER` menyeimbangkan **kecepatan pengembangan 2 Hacker dan 1 Hipster**, **validasi klinis Dokter Hewan UNJ**, **hemat daya di atas baterai rover**, dan **biaya server yang kecil per peternak**:
 
 `[SINTESIS ARSITEKTUR SOFTWARE TIM ASPRAK: DISUSUN OLEH AI AGENT]`
 
 | Lapisan Sistem | Teknologi Terpilih | Peran Spesifik & Justifikasi Teknis |
 | :--- | :--- | :--- |
-| **1. Firmware MCU (*Real-Time*)** | **`C++`** (`PlatformIO` / Arduino Framework pada **`ESP32`**) | Mengendalikan PWM motor pelan (`≤0,1 m/s`), ***Dead-Man's Switch* (`500 ms`: rem darurat otomatis jika sinyal Wi-Fi/SBC putus >0,5 dtk)**, *stall protection*, servo *tilt*, LED 5000K, serta pembacaan `SHT31` (I2C), `SEN0567` (ADC + kompensasi T/RH), `A02YYUW`/`HC-SR04`, dan `INA219`. Berkomunikasi via **UART Serial** ke SBC. |
-| **2. Edge AI, Kendali Nirkabel & Orchestrator (Di Atas `Rover`)** | • **Fase PoC (`RPi 4`):** **`Python 3`**, `OpenCV`, `NumPy/SciPy`, **`Ultralytics NCNN`**, **`WebRTC` (*MediaMTX*) / `MJPEG`** + **`WebSocket`** + **Halaman Kendali Web Lokal (`http://192.168.4.1`)**, `SQLite (WAL Mode)`, `Paho-MQTT`<br>• **Fase Final (`Orange Pi 3B`):** **`Golang` (*Edge Daemon/Orchestrator*)** + **`C++` (`rknn-toolkit-lite2` / RKNN C-API)** + `SQLite (WAL Mode)` | **Wi-Fi lokal nirkabel** menyajikan halaman kendali FPV web langsung dari `RPi 4` / `Orange Pi 3B` (`http://192.168.4.1`) sehingga browser HP bebas blokir *Mixed Content* (`https://` → `ws://`), menjaga video kamera tetap lancar (`~100–300 ms`), dan 100% beroperasi saat internet kandang mati. Pada fase Final, memindahkan manajemen UART/SQLite/MQTT/sync ke **`Golang`** dan inferensi NPU ke **`C++` RKNN** menghemat RAM & daya baterai `LiFePO₄`. Mode `SQLite WAL` menjamin operasi **beroperasi luring (*Offline-First*)** (>30 hari *ring-buffer* di eMMC). |
-| **3. Training & Konversi Model AI** | **`PyTorch`**, **`Ultralytics`**, **`torchaudio` / `librosa`**, `ONNX`, `rknn-toolkit2` *(dijalankan di PC/Laptop ber-GPU lokal Tim Asprak)* | Pelatihan *offline* 3 model AI sekuensial: (1) CV Feses (`YOLOv8n/11n`), (2) CV Ayam Lesu/Mati & Gejala Fisik (`YOLOv8n/11n`), (3) Audio Pernapasan (`Log-Mel Spectrogram` + `MobileNetV3-Small` / `2D CNN`, ukuran segmen input `5 detik` *SmartEars* dengan *voting* `3×5 detik` di lapangan), lalu dikuantisasi **INT8** ke format **NCNN** (PoC) atau **RKNN** (Final). |
-| **4. Backend Server Pusat & Broker** | **`Golang`** (`Fiber` / `Gin` / `Chi`), **`PostgreSQL`** (`pgx`), **`Eclipse Mosquitto`** (MQTT Broker), **`MinIO / S3`**, **`BMKG API Publik` + `Open-Meteo API`**, Bot WhatsApp/Telegram | Karena seluruh inferensi AI berlangsung di *Edge*, backend pusat tidak membutuhkan library ML Python. **`Golang`** (*compiled binary*, RAM *idle* `~15–30 MB`, *goroutine* konkuren ringan) melayani sinkronisasi telemetri, kalkulasi standar umur bibit broiler `Cobb 500` & `Ross 308`, *polling* & *caching* cuaca luar hibrida (**BMKG `adm4` 0–72 jam + Open-Meteo `ECMWF IFS` per jam 1–7 hari sebagai *fallback***), penyimpanan bukti foto/audio, dan ekspor Laporan 1-Klik Dokter Hewan hanya pada **1 VPS hemat biaya**. |
-| **5. Frontend Aplikasi (*Website-First*) & Mobile Native (*Future Work*)** | • **Tahap Awal (PoC s.d. Bootcamp):** **`Next.js` (React + Tailwind CSS)** berformat **PWA (*Progressive Web App*)** + halaman kendali FPV layar penuh (*HTML5 Touch Joystick* `nipplejs` + `WebSocket`)<br>• **Tahap Komersial (*Future Work*, TKT 8–9):** Aplikasi **Mobile Native** (`Flutter` / `React Native`) | **Fokus Website terlebih dahulu** mempercepat eksekusi tim 4 mahasiswa TI ITS karena **1 basis kode** langsung berjalan di browser **HP Android peternak/ABK** (tampilan *fullscreen landscape* + dual joystick sentuh persis aplikasi FPV, ringan di 3G/4G desa, dapat dipasang ke *home screen*, notifikasi krisis via WhatsApp/Telegram) maupun **browser desktop** pemilik farm & Dokter Hewan. Memuat 4 Panel Standar Umur `Cobb 500` & `Ross 308`, kendali `Rover`, 3 tombol aksi ala `aremyhens.fit`, Kamus Gejala Penyakit, catatan harian ABK, & Laporan 1-Klik Dokter Hewan. **Aplikasi Mobile Native** disiapkan pada fase komersialisasi untuk *auto-switch* Wi-Fi SSID di latar belakang (*Android `WifiNetworkSpecifier`*), *BLE provisioning*, dan notifikasi native ketat. |
+| **1. Firmware MCU (*Real-Time*)** | **`C++`** (`PlatformIO` / Arduino Framework pada **`ESP32`**) | Mengendalikan PWM motor pelan (`0,07–0,1 m/s`), ***Dead-Man's Switch* `500 ms`**, perlambatan otomatis dari sensor jarak, *stall protection*, servo kamera dua posisi, LED 5000K, serta pembacaan `SHT31` (I2C), `SEN0567` (ADC), `A02YYUW`/`HC-SR04`, dan `INA219`. Menyimpan jadwal putaran dan menjalankan pencatatan per menit saat mode stasiun. Berkomunikasi lewat **UART Serial** ke komputer AI. |
+| **2. Edge AI, Kendali Nirkabel & Orkestrasi (Di Atas Rover, BROVER Kandang)** | • **Fase PoC (`Raspberry Pi 4`):** **`Python 3`**, `OpenCV`, **NCNN atau ONNX Runtime**, **`WebRTC` (*MediaMTX*) / `MJPEG`** + **`WebSocket`** + halaman kendali web lokal (`http://192.168.4.1`), `SQLite (WAL Mode)`<br>• **Fase Final (`Orange Pi 3B`):** **`Golang`** (*edge daemon*) + **`C++`** (`rknn-toolkit-lite2` / RKNN C-API) + `SQLite (WAL Mode)` | Wi-Fi lokal menyajikan halaman kendali FPV langsung dari rover, sehingga browser HP bebas blokir *Mixed Content* dan tetap berjalan saat internet kandang mati. Foto HP cadangan diterima lewat Wi-Fi lokal yang sama dan diproses model yang sama. Mode `SQLite WAL` menyimpan data luring dan menyinkronkannya saat internet tersedia. |
+| **3. Training & Konversi Model AI** | **`PyTorch`**, repositori resmi **`YOLOX`** atau **`RT-DETR`** (Apache-2.0), `ONNX`, `rknn-toolkit2`, `rknn_model_zoo` *(di PC/laptop ber-GPU tim)* | Melatih **satu detektor feses** dari data publik yang sudah dibersihkan dan foto rover lokal, lalu mengekspor ke **RKNN INT8** (Orange Pi 3B) dan **ONNX FP32** (server). Tidak ada pustaka audio dan tidak memakai `Ultralytics` (AGPL-3.0) agar produk bisa dijual tanpa wajib membuka kode. Syarat lisensi `rknn-toolkit2` dibaca sebelum komersialisasi karena repositorinya tidak memakai lisensi standar. |
+| **4. Layanan Inferensi BROVER Saku (Server)** | Layanan kecil **`ONNX Runtime` CPU** (`Python`, memakai ulang pipeline TA) di samping *backend* | Menerima foto HP dari antrean aplikasi, menjalankan model ONNX FP32 yang sama, lalu mengirim hasil ke dasbor. Dibangun **setelah** inferensi rover berjalan. Inferensi langsung di HP menjadi *future work* setelah kecepatan dan akurasinya diukur di HP kelas bawah. |
+| **5. Backend Server Pusat** | **`Golang`** (`Fiber` / `Gin`), **`PostgreSQL`**, penyimpanan objek untuk foto, **`BMKG API adm4` + `Open-Meteo API`**, bot WhatsApp/Telegram | Menyinkronkan data rover, menghitung standar umur `Cobb 500` & `Ross 308`, menyimpan bukti foto, mengambil dan menyimpan sementara cuaca luar (BMKG sebagai sumber utama, Open-Meteo sebagai cadangan), dan membuat Laporan 1-Klik Dokter Hewan. Satu VPS kelas `2 vCPU / 4 GB` (sekitar Rp139 ribu/bulan, [Biznet Gio NEO Lite](https://www.biznetgio.com/product/neo-lite)) dibagi banyak peternak. |
+| **6. Frontend Aplikasi (*Website-First*) & Mobile Native (*Future Work*)** | • **Tahap awal:** **`Next.js`** (React + Tailwind CSS) sebagai **PWA**, halaman kendali FPV layar penuh (`nipplejs` + `WebSocket`), dan **antrean unggah luring** untuk foto HP<br>• **Tahap komersial (*future work*, TKT 8–9):** aplikasi **mobile native** (`Flutter` / `React Native`) | **Satu basis kode** berjalan di browser HP Android peternak/ABK maupun desktop pemilik farm dan dokter hewan. Memuat panel standar umur, tren harian, triase 3 tombol, ceklis gejala, catatan vaksin, Laporan 1-Klik, dan halaman kendali rover (khusus BROVER Kandang). Foto HP yang diambil tanpa sinyal disimpan di perangkat lalu dikirim otomatis saat sinyal tersedia. |
+
+*Catatan penyederhanaan untuk 2 Hacker:* broker MQTT, penyimpanan objek terpisah, dan *daemon* `Golang` di rover dapat ditunda sampai pilot. Untuk demo, cukup satu layanan HTTP sinkron dan satu basis data, sesuai rekomendasi [EVALUASI_OBJEKTIF_BROVER.md](../08_Evaluasi_Proyek/EVALUASI_OBJEKTIF_BROVER.md) Bab 7.3.
 
 ---
 
 ## 6. Cara Kerja
 
-### 6.1. Pola Jalur Inspeksi & Alur 4-Tahap Multi-Modal `BROVER`
+### 6.1. Pola Jalur Inspeksi, Alur 4 Tahap, & Alur Pengguna Dua Paket
 
 ![Pola Jalur Inspeksi Rover di Kandang Broiler](./assets/04a_pola_jalur_inspeksi_rover.png)
-*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Pola jalur inspeksi huruf U menyusuri celah antar-baris pan feeder dan nipple drinker dengan titik pengecekan audio pernapasan 15 detik (3×5 detik voting) serta verifikasi visual berhenti 30 cm saat menemukan indikasi feses/ayam abnormal.*
+*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Denah putaran rover di lorong antara baris pan feeder dan nipple drinker. Rover berhenti di titik zona tetap untuk memotret feses dan membaca suhu, RH, dan NH₃ setinggi ayam. Dok berada di dalam kandang (area brooding atau tengah kandang, dekat stopkontak). Putaran dijalankan 2 kali sehari, pagi dan sore pukul 15.00–16.00; di luar putaran dan pada hari ke-0 sampai 6, rover parkir di dok sebagai mode stasiun.*
 
-![Alur 4-Tahap Inspeksi Multi-Modal & Pelaporan Dokter Hewan](./assets/04b_alur_4tahap_inspeksi_brover.png)
-*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Alur kerja 4-tahap BROVER: (1) setup bibit Cobb 500/Ross 308 & inspeksi Rover lewat website, (2) analisis AI lokal & evaluasi standar umur/cuaca luar, (3) verifikasi manusia dengan 3 tombol keputusan, dan (4) Laporan 1-Klik Dokter Hewan beserta SOP sanitasi roda 3 langkah di dock.*
+![Alur 4 Tahap Inspeksi BROVER & Laporan Dokter Hewan](./assets/04b_alur_4tahap_inspeksi_brover.png)
+*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Alur kerja 4 tahap BROVER: (1) putaran rover atau foto HP, (2) skrining CV feses dan status mikroklimat terhadap standar umur, (3) ceklis gejala pernapasan oleh ABK dan triase 3 tombol, serta (4) laporan 1-klik ke dokter hewan beserta SOP sanitasi roda di dok.*
 
-#### *User Flow* Harian: Pemisahan Peran Peternak/ABK, Sistem `BROVER`, & Dokter Hewan
+#### *User Flow* Harian: Peternak/ABK, Sistem `BROVER`, & Dokter Hewan
 
-Untuk memudahkan pembaca memahami **apa yang diklik manusia** versus **apa yang diproses otomatis oleh sistem**, diagram di bawah ini menyajikan *User Flow* harian dalam 3 jalur peran (*swimlane*) beserta versi kode `mermaid` ringkas bagi tim pengembang:
+Diagram berikut memisahkan **apa yang dikerjakan manusia** dari **apa yang diproses sistem**, untuk paket BROVER Kandang dan BROVER Saku, beserta versi `mermaid` ringkas bagi tim pengembang:
 
-![User Flow Harian BROVER: Peternak, Sistem, dan Dokter Hewan](./assets/04c_user_flow_brover.png)
-*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` User Flow harian BROVER dalam 3 jalur peran (Peternak/ABK, Rover & Website, serta Dokter Hewan) dengan prinsip privasi explicit consent (laporan hanya dikirim jika peternak menekan tombol Laporkan).*
+![User Flow Harian BROVER: Paket Kandang dan Paket Saku](./assets/04c_user_flow_brover.png)
+*`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]` Alur pengguna harian untuk dua paket. BROVER Kandang: ABK menjalankan 2 putaran rover, sistem memproses foto di Orange Pi dan mencatat udara. BROVER Saku: peternak memotret feses dengan HP, foto diantre lalu diproses di server. Keduanya memakai catatan harian ABK (deplesi, pakan, air, ceklis gejala, vaksin), triase 3 tombol, dan laporan dokter hewan yang hanya terkirim bila peternak menekan tombol Laporkan.*
 
 ```mermaid
 flowchart LR
-    subgraph U1["1. Peternak / ABK (Di Kandang)"]
-        A1["1. Buka Website & Setup 1x<br/>(Pilih Cobb 500/Ross 308 + Tanggal DOC)"] --> A2["2. Gerakkan Rover lewat HP<br/>& Tekan Cek Napas (15 dtk)"]
-        A5["5. Lihat Bukti & Pilih 1 dari 3 Tombol:<br/>Akan Saya Cek / Terlihat Normal / Laporkan"] --> A6["6. Kembali ke Dock & Sanitasi Roda<br/>(Sikat -> Disinfeksi -> Kering + Log)"]
+    subgraph U1["1. Peternak / ABK"]
+        A0["Setup 1x: strain Cobb 500/Ross 308,<br/>tanggal DOC, populasi"]
+        A1["Kandang: jalankan rover<br/>pagi & 15.00-16.00"]
+        A2["Saku: potret feses dengan HP<br/>(boleh tanpa sinyal)"]
+        A3["Isi catatan harian: deplesi, pakan,<br/>air, ceklis gejala, vaksin"]
+        A5["Pilih 1 dari 3 tombol:<br/>Akan Saya Cek / Terlihat Normal / Laporkan"]
     end
 
-    subgraph U2["2. Rover & Website BROVER (Otomatis)"]
-        B1["3. Pindai Kamera, Audio 3x5 dtk,<br/>& Sensor Suhu/RH/NH3 (Offline OK)"] --> B2["4. Bandingkan ke Umur Ayam +<br/>Cuaca BMKG/Open-Meteo + AI"]
-        B3["5b. Kemas Paket Laporan 1-Klik<br/>(Foto + Audio + Grafik + Deplesi)"]
+    subgraph U2["2. Sistem BROVER"]
+        B1["Orange Pi: CV feses + udara per zona<br/>+ mode stasiun di dok (luring)"]
+        B2["Server: antrean foto HP<br/>diproses ONNX Runtime"]
+        B3["Dasbor: standar umur, THI, tren amonia,<br/>tren deplesi/pakan/air, daftar triase"]
+        B4["Kemas Laporan 1-Klik<br/>(foto + grafik + catatan)"]
     end
 
     subgraph U3["3. Dokter Hewan / Dinas"]
-        C1["7. Terima Laporan WA / PDF<br/>(Bukti Klinis Lengkap)"] --> C2["8. Beri Saran Medis &<br/>Terapi Tepat Sasaran"]
+        C1["Terima laporan WA/PDF"] --> C2["Konfirmasi & saran tindakan"]
     end
 
-    A2 -- "Wi-Fi Lokal" --> B1
-    B2 -- "Peringatan & Bukti" --> A5
-    A5 -- "Klik Laporkan" --> B3
-    B3 -- "WA / PDF" --> C1
+    A0 --> A1
+    A0 --> A2
+    A1 -- "Wi-Fi lokal" --> B1
+    A2 -- "saat ada sinyal" --> B2
+    B1 --> B3
+    B2 --> B3
+    A3 --> B3
+    B3 -- "peringatan & bukti" --> A5
+    A5 -- "klik Laporkan" --> B4
+    B4 --> C1
 ```
 
-### 6.2. Urutan Detail Eksekusi per Sesi Inspeksi & Dasar Ilmiah Parameter Kritis
+### 6.2. Urutan Eksekusi per Putaran & Dasar Ilmiah Parameter Kritis
 
-1. **Setup Siklus *Chick-In* & Gerak Pelan Berbasis Bukti *Peer-Reviewed* (`≤0,1 m/s`):** Sebelum siklus dimulai, peternak memasukkan Tanggal *Chick-In*, Strain (`Cobb 500` atau `Ross 308`), dan Populasi Awal pada website sehingga seluruh ambang batas suhu, RH, fase pakan, dan target bobot menyesuaikan **Umur Hari ke-N** secara otomatis. Batas kecepatan **`≤0,1 m/s`** (kisaran operasional `0,05–0,10 m/s`) ditetapkan berdasarkan konsensus 3 jurnal *peer-reviewed* dan 1 standar komersial: (a) ***RobôFrango*** ([PMC11011048](https://pmc.ncbi.nlm.nih.gov/articles/PMC11011048/)) menguji robot darat broiler pada **`0,04 m/s`** dan **`0,07 m/s`** untuk menekan jarak menghindar (*escape distance*); (b) ***AviSense*** (*Poultry Science*, 2026, [PMC13696172](https://pmc.ncbi.nlm.nih.gov/articles/PMC13696172/)) beroperasi hingga **`~0,09 m/s`** dan membuktikan paparan rutin sejak awal siklus memicu pembiasaan (*habituation*) alih-alih kepanikan; (c) **Parajuli *et al.* (2020, *Transactions of the ASABE*, [DOI: 10.13031/trans.13644](https://doi.org/10.13031/trans.13644))** menguji kecepatan `0,2`, `0,4`, dan `0,6 m/s` serta membuktikan kecepatan lebih tinggi meningkatkan *Avoidance Distance* (indikator stres/ketakutan) pada broiler besar sehingga `≤0,1 m/s` berada aman di bawah ambang stres tersebut; dan (d) perangkat komersial *Octopus XO* beroperasi pada **`0,04–0,12 m/s`**. Secara visi komputer, kecepatan `≤0,1 m/s` (`≤10 cm/detik`) juga mencegah *motion blur* saat *live overlay* berjalan pada ~2,3 FPS (PoC `RPi 4`). Mengikuti tata letak standar [Cobb](https://www.cobbgenetics.com/assets/Cobb-Files/2024-Nipple-Drinker-Poster.pdf) dan [Aviagen Ross](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-PocketGuide-EN.pdf) (jarak antar-baris alat ±1,2–3,0 m; ruang ujung kandang 3–4 m), operator mengarahkan `Rover Inspeksi` langsung lewat website (Wi-Fi lokal nirkabel) lurus di celah antar-baris *pan feeder* & *nipple drinker* lalu memutar di ujung kandang *(otomatisasi penuh mengikuti jadwal & jalur menjadi target Future Work)*.
-2. **Pemetaan Zona & Pengecekan Audio Pernapasan `15 Detik` (`3 Segmen × 5 Detik` *Voting*, Protokol *Stop–Mute–Sample*):** Saat berjalan, mikrofon dimatikan agar bebas bising roda. Saat berpindah lorong, operator mengetuk label area (`Zona A / B / C / D`) dan menekan tombol **`Cek Napas 15 Detik`**. Pemilihan durasi **berhenti `15 detik`** yang diproses sebagai **`3 segmen × 5 detik`** didasarkan pada 3 bukti objektif: (a) dataset *peer-reviewed* Q1 ***SmartEars*** (Qiao *et al.*, *Computers and Electronics in Agriculture*, 2026, [DOI: 10.1016/j.compag.2025.111241](https://doi.org/10.1016/j.compag.2025.111241)) memotong setiap segmen input model spektrogramnya tepat **`5 detik`** (`44,1 kHz`); (b) laju napas normal ayam broiler berkisar **`30–60 kali/menit`** (`1–2 detik/napas`), namun gejala awal bersin (*sneeze*) dan ngorok (*rales*) bersifat **intermiten (muncul selang-seling)** sehingga 1 klip tunggal 5 detik rawan melewatkan gejala (*false negative*) dan belum memberi jeda hening pasca-motor mati; dan (c) protokol pengamatan fisiologi respirasi unggas lazim memakai jendela **`15 detik`** (`7–15 siklus napas`). Dengan jeda hening `~1–2 detik` setelah motor/kipas SBC mati lalu merekam **3 segmen beruntun `5 detik`** (*voting*), akurasi meningkat signifikan sambil hanya menambah ~1 menit total untuk 4 zona. Klasifikasi menghasilkan 3 kelas (`Pernapasan Normal`, `Indikasi Ngorok/CRD-IB-ND`, atau `Suara Bising Kandang`) sekaligus membaca `SHT31` & `SEN0567`. Jika indikasi ngorok terdeteksi, servo mengangkat kamera (`0–15°`) untuk pemindaian gejala fisik/ayam lesu lebih intensif di zona tersebut.
-3. **Verifikasi 2-Tahap CV Feses & Evaluasi Standar Umur (`Cobb 500` / `Ross 308`):** Jika *live overlay* kamera depan (miring 45°) menangkap kandidat feses abnormal pada jarak `30–50 cm`, operator menekan tombol **`Analisis Detail`** (`Rover` berhenti aman sebelum melindas bercak, menyalakan LED putih `5000K CRI >90`, dan menjalankan *majority voting* 3–5 frame). Seluruh temuan visual, audio, dan sensor ditampilkan pada 4 Panel Dashboard secara objektif (status suhu–RH terhadap **Matriks Umur `Cobb 500` atau `Ross 308`**, THI, tren NH₃, cuaca luar `BMKG + Open-Meteo`, dan daftar temuan terkritis).
-4. **Tindak Lanjut *Human-in-the-Loop* (3 Tombol Aksi), Laporan 1-Klik Dokter Hewan, & SOP Sanitasi Roda:** Untuk setiap temuan, peternak memilih salah satu dari 3 tombol keputusan: **`Akan Saya Cek`** (ABK menuju zona terkait berpanduan Kamus Gejala Penyakit tervalidasi **Dr. drh. Atin Supiyani, M.Si.** & [Manual Penyakit Unggas Kementan RI](https://wiki.isikhnas.com/images/d/dd/Manual_Penyakit_Unggas.pdf)), **`Terlihat Normal`** (menandai *false positive*), atau **`Laporkan ke Dokter Hewan`** (mengekspor 1 paket bukti lengkap via WhatsApp/PDF mencakup umur flok, data deplesi/FCR harian ABK, foto, klip audio ngorok `.wav`, dan grafik suhu/RH/NH₃). Saat `Rover` kembali ke *Cleaning Dock* di dalam kandang (`1 Unit = 1 Kandang`), aplikasi menampilkan panduan SOP sanitasi roda 3 tahap berbasis bukti [PMC11416347](https://pmc.ncbi.nlm.nih.gov/articles/PMC11416347/) dan [PMC12414267](https://pmc.ncbi.nlm.nih.gov/articles/PMC12414267/) (karena ookista *Eimeria* relatif tahan terhadap disinfektan umum), yaitu: **(1) penyikatan mekanis sekam dari alur ban, (2) penyemprotan disinfektan spektrum luas, dan (3) pengeringan penuh**, diikuti pencatatan log digital.
+1. **Setup Siklus *Chick-In*:** peternak memasukkan tanggal *chick-in*, strain (`Cobb 500` atau `Ross 308`), dan populasi awal, sehingga ambang suhu, RH, fase pakan, dan target bobot menyesuaikan **umur hari ke-N** secara otomatis.
+2. **Hari ke-0 sampai 6, Mode Stasiun Saja:** rover parkir di dok di area *brooding* dan mencatat suhu, RH, dan tren amonia setiap menit. Rover belum masuk lantai karena gangguan terbesar pada ayam terjadi di minggu pertama (Marin *et al.*, 2024).
+3. **Mulai Hari ke-7, 2 Putaran per Hari:** pagi dan sore pukul **15.00–16.00**, mendekati jam rawan suhu sore (Mohammadi *et al.*, 2026). Operator menyetir rover lewat web dengan kamera di posisi depan untuk tampilan FPV, menyusuri celah antar-baris *pan feeder* dan *nipple drinker* sesuai tata letak standar [Cobb](https://www.cobbgenetics.com/assets/Cobb-Files/2024-Nipple-Drinker-Poster.pdf) dan [Aviagen Ross](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-PocketGuide-EN.pdf).
+4. **Di Setiap Titik Zona:** rover berhenti, menunggu bacaan sensor stabil, lalu servo memiringkan kamera ke posisi bawah `~45°`, LED menyala, dan foto feses diambil. Lama berhenti per zona ditetapkan saat pilot.
+5. **Kecepatan & Keselamatan:** kecepatan awal `0,07–0,1 m/s`. Dasarnya: robot *RobôFrango* diuji pada `0,04` dan `0,07 m/s`, dan kecepatan sangat lambat membuat ayam tidak menyingkir sehingga terjadi benturan (da Rocha Balthazar *et al.*, 2024, [teks penuh](https://pmc.ncbi.nlm.nih.gov/articles/PMC11011048/)); robot *AviSense* bergerak sekitar `0,05 m/s` dan anak ayam yang sering terpapar justru mendekat (Caliva *et al.*, 2026, [teks penuh](https://pmc.ncbi.nlm.nih.gov/articles/PMC13696172/)); Parajuli *et al.* (2020) hanya menguji `0,2`, `0,4`, dan `0,6 m/s` pada ayam umur 2–8 minggu, sehingga kecepatan di bawah 0,2 m/s belum teruji pada studi itu; dan *Octopus XO* beroperasi pada `0,04–0,12 m/s`. Sensor jarak memperlambat laju, bumper lunak menahan sentuhan, dan **sesi dihentikan** bila ayam tidak menyingkir, ada ayam terdorong jatuh atau terluka, atau suhu melewati ambang cekaman panas.
+6. **Skrining & Evaluasi:** foto diproses detektor di Orange Pi; temuan feses abnormal masuk daftar triase. Bacaan udara dibandingkan dengan tabel standar umur, THI dihitung, dan amonia dibandingkan dengan jam yang sama di hari-hari sebelumnya.
+7. **Foto HP:** bila rover tidak bisa masuk (BROVER Kandang), ABK memotret feses dengan HP dan foto dikirim lewat Wi-Fi lokal ke Orange Pi. Pada BROVER Saku, foto HP diantre di aplikasi dan diproses di server saat sinyal tersedia. Aplikasi menampilkan panduan jarak dan sudut foto.
+8. **Catatan Harian ABK:** ayam mati dan afkir, karung pakan terpakai, angka meteran air, ceklis gejala pernapasan (ngorok, bersin, mata berair), dan tanggal vaksinasi. Dasbor menampilkan tren dan memberi peringatan saat ada perubahan tajam.
+9. **Tindak Lanjut 3 Tombol & Laporan Dokter Hewan:** untuk setiap temuan, peternak memilih **`Akan Saya Cek`**, **`Terlihat Normal`**, atau **`Laporkan ke Dokter Hewan`**. Laporan 1-klik berisi umur flok, foto, grafik suhu/RH/tren amonia, ceklis gejala, dan catatan harian, siap dikirim ke dokter hewan, TSO, atau Medik Veteriner Dinas.
+10. **Kembali ke Dok & Sanitasi Roda:** setelah putaran, rover kembali ke dok untuk diisi daya sambil tetap mencatat (mode stasiun). Aplikasi menampilkan SOP sanitasi roda 3 langkah: **(1) sikat mekanis sekam dari alur ban, (2) semprot disinfektan sesuai konsentrasi dan waktu kontak, (3) keringkan**, lalu catat di log (Hansson *et al.*, 2025; Zhao *et al.*, 2024).
 
 ### 6.3. Mitigasi 7 Skenario *Worst-Case* Lapangan
 
@@ -266,22 +408,27 @@ flowchart LR
 
 | No | Skenario *Worst-Case* | Mekanisme Mitigasi pada `BROVER` |
 | :-: | :--- | :--- |
-| **1** | **Internet Kandang Mati Berhari-hari** | **beroperasi luring (*Offline-First*) + Wi-Fi Lokal Nirkabel:** Kendali `Rover` lewat website, 3 model AI, dan *ring-buffer* `SQLite WAL` di eMMC 32GB (>30 hari) tetap beroperasi tanpa koneksi internet; *cache* prakiraan cuaca luar (`BMKG` + `Open-Meteo`) tersimpan di server/perangkat; **LED Merah + Buzzer fisik** di bodi & *dock*; otomatis sinkron ke server `Golang` begitu sinyal internet pulih. |
-| **2** | **Sinyal Wi-Fi Putus / HP Operator Mati Mendadak** | ***Dead-Man's Switch* (`500 ms`) di `ESP32`:** Begitu paket *heartbeat* kendali tidak masuk >0,5 detik, `ESP32` langsung memutus PWM motor dan mengerem penuh agar `Rover` aman di tengah flok ayam. |
-| **3** | **Listrik PLN Padam (*Blackout* 5 Jam – 3 Hari)** | Saat *dock* kehilangan tegangan PLN, `Rover` masuk ***Emergency Low-Power Mode*** (motor mati agar baterai `LiFePO₄` bertahan >12–24 jam, sensor Suhu/RH/NH₃ + alarm darurat tetap siaga memantau lonjakan panas). |
-| **4** | **Roda Macet (*Stall*) di Sekam atau Baterai Menipis** | Peringatan baterai `25%` (`INA219`) pada layar kendali untuk segera mengarahkan pulang ke *dock*; *stall detection* (arus lonjak tinggi → *cutoff* proteksi motor + bunyi *beep* pencari). |
-| **5** | ***Domain Shift* & *False Positive* di Kandang Baru** | Pencahayaan standar LED `5000K CRI >90` + *fine-tuning* 300–500 foto sekam/feses lokal Indonesia bersama **Dr. drh. Atin Supiyani, M.Si.** saat Bootcamp + tombol **`Terlihat Normal`** di dashboard (*active learning*). |
-| **6** | **SBC *Crash* / MicroSD Korup / *Overheat* di 35°C** | 3 model INT8 (<50 MB total) sangat lega di RAM 4GB; **`ESP32` *Hardware Watchdog*** memutus motor jika SBC *hang* >1 dtk; versi Final memakai **eMMC bawaan `Orange Pi 3B`** (tahan getaran & anti-korup) + *heatsink*. |
-| **7** | **Korosi Amonia (`NH₃`), Kelembapan 96%, & Debu Bulu** | Casing tertutup IP54–IP65 + ***Custom Carrier PCB* berlapis *Conformal Coating*** + probe `SHT31 FS304` berfilter + *splash-shield* busa di lubang mikrofon. |
+| **1** | **Internet Kandang Mati Berhari-hari** | BROVER Kandang tetap berjalan luring: kendali rover lewat Wi-Fi lokal, CV feses di Orange Pi, dan pencatatan `SQLite WAL` di eMMC. Cuaca luar memakai data *cache*. Data tersinkron otomatis saat internet pulih. Pada BROVER Saku, foto tetap bisa diambil dan diantre di HP, tetapi hasil CV menunggu sinyal. |
+| **2** | **Sinyal Wi-Fi Putus / HP Operator Mati Mendadak** | ***Dead-Man's Switch* (`500 ms`)** di `ESP32` memutus PWM motor dan mengerem. |
+| **3** | **Listrik PLN Padam** | Rover di dok beralih ke baterai: motor dimatikan, sensor suhu/RH/NH₃ dan alarm tetap mencatat selama daya tersedia (estimasi, diukur saat pilot). Alarm kipas mati atau listrik padam tetap menjadi tugas kontroler *closed house*. |
+| **4** | **Roda Macet di Sekam atau Baterai Menipis** | Peringatan baterai `25%` (`INA219`) untuk kembali ke dok; deteksi arus lonjak (*stall*) memutus motor dan membunyikan *beep*. |
+| **5** | ***Domain Shift* di Kandang Baru atau Foto HP** | LED `5000K CRI >90` menyeragamkan foto rover; set uji lokal dengan foto rover dan HP berpasangan bersama **Dr. drh. Atin Supiyani, M.Si.**; tombol **`Terlihat Normal`** menjadi data perbaikan model; BROVER Saku baru dijual setelah akurasi foto HP diukur. |
+| **6** | **Komputer AI Macet / Kartu Memori Korup / Panas 35°C** | Satu model INT8 berukuran kecil; ***hardware watchdog*** `ESP32` memutus motor bila komputer AI tidak merespons; versi final memakai **eMMC** `Orange Pi 3B` dan *heatsink*. |
+| **7** | **Korosi Amonia, Kelembapan 96%, & Debu Bulu** | Casing IP54–IP65, ***custom carrier PCB*** berlapis ***conformal coating***, probe `FS304-SHT31` berfilter, dan sensor ditempatkan di tiang terpisah dari sumber panas. |
 
 ---
 
 ## 7. Prototype (Fase PoC Awal: TKT 3–4, Seleksi Nov 2026)
 
-Sesuai ketentuan fleksibilitas pendaftaran Buku Pedoman Hackathon Deep Tech UNJ 2026 (`TKT 3–4` diperbolehkan pada tahap seleksi proposal Nov 2026; [02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md#L95-L98)), fase **Prototype (PoC)** memaksimalkan **perangkat keras yang sudah dimiliki Tim Asprak** untuk membuktikan *end-to-end software*, kendali Wi-Fi lokal nirkabel + *Dead-Man's Switch*, inferensi 3 model AI, evaluasi standar umur `Cobb 500`, dan integrasi Dashboard PWA di permukaan uji simulasi (*indoor testbed*).
+Sesuai fleksibilitas pendaftaran Hackathon Deep Tech UNJ 2026 (`TKT 3–4` diperbolehkan pada seleksi proposal; [02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md#L95-L98)), fase **Prototype (PoC)** memaksimalkan **perangkat keras yang sudah dimiliki Tim Asprak** untuk membuktikan kendali Wi-Fi lokal dan *Dead-Man's Switch*, inferensi satu model CV feses, pembacaan sensor di tiang, evaluasi standar umur, dan dasbor PWA di permukaan uji (*indoor testbed*). Panduan rakit bertahap ada di [07_IoT_Hardware_Guide](../07_IoT_Hardware_Guide/01_PANDUAN_TAHAP1_ROVER_KONTROL_WEB.md).
+
+**Status per 28 November 2026:**
+- **Rover Tahap 1 sudah dirakit dan lulus uji:** berjalan lewat halaman web `http://192.168.4.1` dan rem darurat `500 ms` teruji.
+- **Dasbor web versi awal sudah ada.**
+- **Model CV feses belum dilatih.** Pelatihan dimulai pada masa *bootcamp* (Bab 9.7).
 
 ![Ilustrasi Konfigurasi Rover 4WD Berkamera dan Antena Wi-Fi untuk Fase PoC](./assets/04d_ilustrasi_rover_4wd_poc.png)
-*`[ILUSTRASI REFERENSI KONFIGURASI HARDWARE]` Gambaran tata letak kit rover 4WD akrilik berkamera depan dan antena Wi-Fi eksternal sebagai referensi bentuk purwarupa awal (PoC TKT 3–4); pada perakitan aktual BROVER, kamera ditingkatkan ke webcam USB low-light, driver MOSFET TB6612FNG/BTS7960, serta pasokan daya dual-rail.*
+*`[ILUSTRASI REFERENSI KONFIGURASI HARDWARE]` Gambaran tata letak kit rover 4WD akrilik berkamera depan dan antena Wi-Fi eksternal sebagai referensi bentuk purwarupa awal (PoC TKT 3–4). Pada perakitan BROVER, kamera diganti webcam USB pada servo dua posisi, driver diganti TB6612FNG (PoC) atau BTS7960 (final), dan daya memakai dua jalur terpisah.*
 
 ### 7.1. Daftar Komponen Lengkap Versi Prototype Awal (PoC: TKT 3–4)
 
@@ -289,131 +436,205 @@ Sesuai ketentuan fleksibilitas pendaftaran Buku Pedoman Hackathon Deep Tech UNJ 
 
 | Subsistem | Komponen Terpilih | Status Stok Tim | Spesifikasi Kunci & Alasan Teknis |
 | :--- | :--- | :---: | :--- |
-| **Edge AI SBC** | **`Raspberry Pi 4`** + *Heatsink* + MicroSD 32GB A2 | **Sudah Dimiliki** | Menjalankan `YOLOv8n` **NCNN (~2,3 FPS, 414–433 ms)** ([Ultralytics Docs](https://docs.ultralytics.com/guides/raspberry-pi/)) + Audio `3×5 dtk` + *streaming* & halaman kendali web lokal Wi-Fi nirkabel + `SQLite WAL`. Ekosistem driver lebih matang sehingga meminimalkan risiko kendala integrasi menjelang tenggat Nov 2026. |
-| **Real-Time MCU** | **`ESP32` (Standar)** *(via kabel USB Serial ke RPi 4)* | **Sudah Dimiliki** | Menutupi 3 batas GPIO `RPi 4` (0 pin ADC bawaan, hanya 2 kanal hardware PWM, pin 3,3V rawan 5V) sekaligus menjadi ***Dead-Man's Switch* 500 ms** & *safety watchdog*. |
-| **Sasis & Penggerak** | **Kit Smart Chassis 4WD Akrilik + 4× Motor TT 1:48 + Roda 65 mm** | **Sudah Dimiliki** | Platform ***indoor PoC testbed*** (permukaan datar/simulasi). Beban total di atas sasis dijaga **≤800–1.000 gram**. |
-| **Driver Motor** | **`TB6612FNG`** (MOSFET Dual H-Bridge) | Ready Tokped/Shopee *(Rp15–60 rb)* | Drop tegangan hanya **~0,5 V** (efisiensi >90%, tanpa heatsink), jauh lebih efisien dari `L298N` (drop 1,8–3,2 V) ([Datasheet TB6612FNG](https://cdn.sparkfun.com/datasheets/Robotics/TB6612FNG.pdf)). |
-| **Optik, Servo & Audio** | **`Webcam USB`** + **1× `Servo` *Tilt*** + **LED Putih 5V** + **`Mikrofon USB`** | **Sudah Dimiliki** *(+LED)* | 1 webcam + 1 servo mencakup sudut feses (45°) & ayam (0–15°); jauh lebih tajam di *low-light* dibanding `ESP32-CAM` OV2640. |
-| **Sensor Lingkungan** | • **Suhu & RH:** `SHT31` (I2C)<br>• **Tren Gas `NH₃`:** **`DFRobot SEN0567`** (MEMS `1–300 ppm`, `<20 mA`) | Ready Tokped/Shopee/Lazada *(Rp175–230 rb)* | Hemat daya dibanding `MQ-137` (~150 mA *heater*); output `SEN0567` dilabeli jujur sebagai **indikator tren kualitatif lonjakan `NH₃`** ([Wiki SEN0567](https://wiki.dfrobot.com/sen0567/)). |
-| **Anti-Tabrak** | **`HC-SR04`** *(dengan voltage divider 3,3V)* / `VL53L0X` | Tambahan murah | Mencegah tabrakan objek saat demo meja/simulasi. |
-| **Baterai (*Dual-Rail*)** | • **Rail 1 (`RPi 4` + Cam + Mic):** Powerbank 5V 3A `10.000 mAh` (~37 Wh)<br>• **Rail 2 (Motor + Servo + `ESP32`):** `2× 18650` (2S `7,4V` `2.500–3.000 mAh`) + **BMS 2S 10A** + *Buck 5V 3A* | **Wajib Benahi** *(ganti 4×AA)* | Memisahkan jalur daya mencegah `RPi 4` *brownout/reboot* saat motor *start*. Estimasi *runtime* PoC: **~1,5–2,5 jam**. |
-| **Kabel & Proteksi** | *Perfboard* solder rapi + **Kabel Silikon `18 AWG`** (daya) + **`XT30` / `JST-XH`** + **Sekring `5A`** + Saklar Utama | Ready Tokped/Shopee | Menghindari kabel jumper DuPont tipis (26–28 AWG) yang longgar akibat getaran dan tidak kuat arus *stall* 4 motor. |
-| **Node Pembanding (Opsional)** | **`ESP32-C3 Super Mini`** + sensor Suhu/RH statis | **Sudah Dimiliki** | Dipasang diam di tepi area simulasi untuk membandingkan pembacaan suhu/RH dinding vs pengukuran bergerak `BROVER`. |
+| **Edge AI SBC** | **`Raspberry Pi 4`** + *Heatsink* + MicroSD 32GB A2 | **Sudah Dimiliki** | Menjalankan detektor feses Apache-2.0 lewat **NCNN atau ONNX Runtime**, *streaming* dan halaman kendali web lokal, serta `SQLite WAL`. Kecepatan inferensi diukur sendiri oleh tim; angka FPS dari dokumentasi pihak lain tidak dipakai. |
+| **Real-Time MCU** | **`ESP32` (`DOIT DEVKIT V1` 30-Pin)** *(USB Serial ke RPi 4)* | **Sudah Dimiliki** | Menutupi keterbatasan GPIO `RPi 4` (tanpa ADC bawaan, kanal PWM terbatas) sekaligus menjadi ***Dead-Man's Switch* 500 ms** dan *safety watchdog*. |
+| **Sasis & Penggerak** | **Kit Smart Chassis 4WD Akrilik + 4× Motor TT 1:48 + Roda 65 mm** | **Sudah Dimiliki** | Platform ***indoor PoC testbed***. Beban total di atas sasis dijaga **≤800–1.000 gram**. |
+| **Driver Motor** | **`TB6612FNG`** (MOSFET Dual H-Bridge) | **Sudah Dimiliki** *(Tahap 1)* | Drop tegangan **~0,5 V**, lebih efisien dari `L298N` ([Datasheet TB6612FNG](https://cdn.sparkfun.com/datasheets/Robotics/TB6612FNG.pdf)). |
+| **Optik & Servo** | **`Webcam USB`** + **1× Servo *Tilt*** (`SG90`/`MG90S`) + **LED Putih 5V** | **Sudah Dimiliki** *(+LED)* | Satu webcam pada servo dua posisi: **depan `~0–15°`** untuk FPV saat menyetir dan **bawah `~45°`** untuk foto feses saat berhenti. |
+| **Sensor Lingkungan** | • **Suhu & RH:** `SHT31` (I2C)<br>• **Tren Gas `NH₃`:** **`DFRobot SEN0567`** (MEMS `1–300 ppm`) | Perlu Dibeli *(Tahap 2)* | Dipasang di **tiang setinggi ayam**, jauh dari panas komputer dan motor. Output `SEN0567` dilabeli **indikator tren kualitatif `NH₃`** ([Wiki SEN0567](https://wiki.dfrobot.com/sen0567/)). |
+| **Sensor Jarak** | **`HC-SR04`** *(dengan pembagi tegangan 3,3V)* | **Sudah Dimiliki** | Memperlambat laju saat ada objek di depan, bukan menghentikan total; diuji di meja dan lantai datar. |
+| **Baterai (*Dual-Rail*)** | • **Rail 1 (`RPi 4` + kamera):** Powerbank 5V 3A `10.000 mAh`<br>• **Rail 2 (motor + servo + `ESP32`):** `2× 18650` + **BMS 2S** + *Buck 5V* | **Sudah Dimiliki** *(Tahap 1)* | Memisahkan jalur daya mencegah `RPi 4` *brownout* saat motor mulai berputar. Estimasi *runtime* PoC **~1,5–2,5 jam**. |
+| **Kabel & Proteksi** | *Perfboard* + kabel `18 AWG` (daya) + konektor + sekring + saklar utama | Sebagian sudah dimiliki | Menghindari kabel jumper tipis yang longgar akibat getaran. |
+| **Pembanding Uji Meja (Opsional)** | **`ESP32-C3 Super Mini`** + sensor suhu/RH diam | **Sudah Dimiliki** | Hanya alat uji di meja untuk membandingkan bacaan dinding dengan bacaan setinggi ayam. Bukan bagian produk `BROVER`. |
 
-*(Catatan: `PC/Laptop ber-GPU` milik tim digunakan khusus untuk training model; `Raspberry Pi 3` dan `ESP32-CAM` disiapkan sebagai cadangan/kamera statis *dock*; `Arduino UNO` tidak digunakan karena fungsinya telah digantikan penuh oleh `ESP32`. Referensi kit rover 4WD berkamera komersial umum umumnya memakai `ESP32-CAM`, driver `L298N`, dan baterai terbuka, namun `BROVER` sengaja menaikkan kelas kamera ke webcam USB *low-light* + `TB6612FNG` / `BTS7960` serta mengadopsi keunggulan **antena Wi-Fi eksternal 2,4 GHz** pada versi final untuk kestabilan jangkauan kandang).*
+*(Catatan: PC/laptop ber-GPU milik tim dipakai khusus untuk pelatihan model. Kit rover 4WD komersial umumnya memakai `ESP32-CAM`, driver `L298N`, dan baterai terbuka; `BROVER` menaikkan kelas kamera ke webcam USB, memakai `TB6612FNG` / `BTS7960`, dan memasang antena Wi-Fi eksternal 2,4 GHz pada versi final.)*
 
 ---
 
 ## 8. Finalisasi (Rencana Final Komersial / *Field-Ready*: TKT 5–7+, Bootcamp Des 2026 – Feb 2027)
 
-Fase **Finalisasi** dirancang khusus untuk lolos uji lapangan kandang broiler asli Indonesia (**sekam tebal 5–10 cm dengan kadar air hingga 46,42%, suhu 30–36°C, RH 80–96%, amonia hingga 20 ppm, debu bulu, dan keterjangkauan harga komersial bagi peternak rakyat**), memanfaatkan fasilitas **Lab Robotika/IoT/Manufaktur UNJ** dan potensi dukungan hardware *in-kind* **PT Edura Cipta Gemilang**.
+Fase **Finalisasi** dirancang untuk lolos uji lapangan kandang broiler Indonesia (**sekam setebal sekitar 1–10 cm dengan kadar air hingga 46,42%, suhu 30–36°C, RH 80–96%, debu bulu, dan uap amonia**), memanfaatkan fasilitas **Lab Robotika/IoT/Manufaktur UNJ** dan potensi dukungan *in-kind* **PT Edura Cipta Gemilang**.
 
-![Analisis Efisiensi Komputasi & Keamanan Energi BROVER](./assets/05_komparasi_komputasi_dan_baterai_brover.png)
-*`[DATA DATASHEET DAN BENCHMARK TERVERIFIKASI: VISUALISASI DISUSUN OLEH AI AGENT]` (A) Komparasi FPS YOLOv8n vs daya & harga global SBC yang menetapkan `Orange Pi 3B` (`RK3566` 0,8 TOPS, ~18 FPS, ~4W) sebagai sweet spot anti-over-spec; (B) Perbandingan keamanan termal & durasi operasi `LiFePO₄` vs `Li-Ion NMC`.*
+![Analisis Komputasi & Keamanan Energi BROVER](./assets/05_komparasi_komputasi_dan_baterai_brover.png)
+*`[DATA DATASHEET RESMI: VISUALISASI DISUSUN OLEH AI AGENT]` (A) Perbandingan spesifikasi resmi papan komputasi untuk satu model CV feses: NPU dan RAM Raspberry Pi 4, Orange Pi 3B, Orange Pi 5, dan Luckfox Pico; kecepatan inferensi diukur sendiri oleh tim, bukan dari dokumentasi pihak lain. (B) Perbandingan karakter baterai Li-ion NMC (PoC) dan LiFePO₄ (final) untuk operasi di atas sekam kering.*
 
-### 8.1. Mengapa `Orange Pi 3B` + *Custom Carrier PCB* + `LiFePO₄`?
-1. **Anti-*Over-Spec* Komputasi (`Orange Pi 3B` 4GB vs `Orange Pi 5`):** Karena 3 model AI berjalan **sekuensial (*time-sliced*)** pada kecepatan `Rover` `≤0,1 m/s`, `Orange Pi 3B` (`Rockchip RK3566`, NPU `0,8 TOPS`, RAM 4GB, slot **eMMC**, daya `3,5–4,5 W`, ~16–22 FPS INT8) memotong biaya board hingga **~50%** dibanding `Orange Pi 5` (`6 TOPS`, harga lokal Rp4,8–7,9 jt untuk varian Pro/Plus) sekaligus jauh lebih aman terhadap *Out-of-Memory* dibanding `Luckfox Pico` (RAM hanya 256 MB).
-2. **Wajib *Custom Carrier PCB* 2-Layer (Menurunkan Biaya & Menaikkan Keandalan Komersial):** Prosesor `Orange Pi 3B` dan modul `ESP32` tetap dibeli jadi (*off-the-shelf*), sementara seluruh jalur daya, *buck converter*, sekring, *Dead-Man's Switch*, driver motor, dan port sensor disatukan dalam **1 papan *Custom Carrier PCB* (desain KiCad, cetak ~Rp30–80 rb/pcs pada produksi batch kecil)** berlapis ***Conformal Coating***: menekan biaya perakitan manual, meningkatkan ketahanan terhadap getaran sekam, serta melindungi sirkuit dari kelembapan 96% dan uap `NH₃`.
-3. **Keamanan Kebakaran Sekam (`LiFePO₄` 4S `12,8V 6Ah`):** Kandang broiler penuh sekam kering mudah terbakar pada suhu ambien 33–36°C. Ambang *thermal runaway* **`LiFePO₄` (`250–270°C`)** jauh lebih aman dibanding `Li-Ion NMC` (`180–210°C`) dengan umur pakai **`3.000–6.000+ siklus`**. Dengan beban rata-rata `~18–26 W` (efisiensi daya `Orange Pi 3B`), kapasitas `76,8 Wh` (`~65 Wh` efektif pada 85% DoD) menghasilkan durasi operasi **~3–4 jam kontinu** (cukup untuk **6–8 sesi inspeksi harian** dalam 1× pengisian daya).
-4. **Efisiensi Biaya Komponen (`BOM`) Berkat Tahap Kendali Operator:** Karena navigasi otonom penuh ditempatkan secara bertahap pada *Future Work*, komponen navigasi otonom tambahan (seperti LiDAR atau sensor odometri/IMU presisi tinggi) **tidak wajib dipasang pada versi awal**, sehingga mempercepat perakitan dan menekan total biaya belanja komponen (`BOM`) per unit.
-5. **Antena Wi-Fi Eksternal 2,4 GHz (Kestabilan Jangkauan Kandang 60–120 m):** Terinspirasi dari tata letak antena vertikal pada *rover* berkamera 4WD, modul `Orange Pi 3B` (konektor u.FL/SMA bawaan) dipasangkan antena eksternal omnidirectional `2,4 GHz` di luar casing `IP54–65` agar sinyal kendali website tetap stabil menembus lorong panjang dan kerangka besi kandang tanpa menaikkan biaya secara berarti.
+### 8.1. Mengapa `Orange Pi 3B` + *Custom Carrier PCB* + `LiFePO₄` + Kamera pada Servo?
+1. **Komputasi yang Cukup untuk Satu Model:** `BROVER` hanya menjalankan **satu detektor feses** saat rover berhenti di titik zona. `Orange Pi 3B` (`Rockchip RK3566`, NPU `0,8 TOPS`, RAM 4 GB, slot **eMMC**) cukup untuk beban ini dan lebih murah daripada `Orange Pi 5` (`RK3588S`, NPU `6 TOPS`), sekaligus jauh lebih aman dari kehabisan memori dibanding `Luckfox Pico` (RAM 256 MB). Kecepatan inferensi INT8 di `Orange Pi 3B` diukur sendiri; pengukuran FP32 terhadap INT8 di ONNX Runtime CPU dan RKNN NPU menjadi bagian TA Ketua Tim.
+2. ***Custom Carrier PCB* 2-Layer:** `Orange Pi 3B` dan `ESP32` tetap dibeli jadi, sedangkan jalur daya, *buck converter*, sekring, *Dead-Man's Switch*, driver motor, dan port sensor disatukan dalam satu papan rancangan KiCad berlapis ***conformal coating***, sehingga tahan getaran sekam serta kelembapan dan uap `NH₃`.
+3. **Baterai `LiFePO₄` 4S `12,8V 6Ah` (`76,8 Wh`):** kimia `LiFePO₄` dikenal lebih stabil secara termal daripada Li-ion NMC, penting di atas sekam kering. Angka suhu *thermal runaway* mengikuti *datasheet* sel yang dibeli. Kapasitas ini ditargetkan cukup untuk **2 putaran per hari**; sisanya rover terisi di dok sambil tetap mencatat udara.
+4. **Dok di Dalam Kandang:** dok berfungsi sebagai tempat pengisian daya, titik mode stasiun, dan tempat sanitasi roda. Dok ditempatkan di area *brooding* atau tengah kandang dan **membutuhkan stopkontak 220 V** di dalam kandang yang terlindung dari cipratan air. Bila belum ada, peternak menyiapkan stopkontak tahan air sebelum unit dipasang.
+5. **Kamera `IMX291` pada Servo `DS3218`, Bukan Pilihan Lain:** foto feses diambil saat rover berhenti, sehingga satu kamera yang dimiringkan servo antara posisi depan (FPV) dan bawah (feses) sudah cukup. Pilihan lain yang dipertimbangkan dan tidak dipakai:
+   - **Kamera PTZ CCTV** (misalnya Tapo C200): firmware tertutup, kendali putar lewat ONVIF tidak bisa dijamin konsisten antarversi firmware, dan jeda video RTSP terlalu besar untuk menyetir rover menurut laporan pengguna; jeda ini belum diuji sendiri oleh tim.
+   - **Kit *pan-tilt* siap pakai** (misalnya Waveshare atau Arducam): lebih mahal, stok lokal sedikit, dirancang untuk ruangan bersih, dan kamera CSI-nya belum tentu cocok dengan `Orange Pi 3B`.
+   - **Dua kamera USB tetap** (depan dan bawah) hanya dicatat sebagai cadangan bila servo bermasalah saat uji lapangan.
+6. **Antena Wi-Fi Eksternal 2,4 GHz:** antena *omnidirectional* di luar casing IP54–IP65 menjaga sinyal kendali di lorong panjang dan rangka besi kandang. Jangkauan pada jarak 30, 60, 90, dan 120 m diukur di kandang mitra sebelum diklaim.
+7. **Biaya Komponen Tetap Rendah di Tahap Kendali Operator:** komponen navigasi otonom (misalnya *encoder* roda presisi atau sensor jarak tambahan untuk CV navigasi) tidak wajib pada versi awal; pin cadangannya disiapkan di *carrier PCB*.
 
-### 8.2. Audit Daftar Komponen & HPP Nyata Versi Final (100% E-Commerce & Distributor Lokal Indonesia)
+### 8.2. Audit Daftar Komponen & HPP Versi Final (100% E-Commerce & Distributor Lokal Indonesia)
 
 `[DATA AUDIT HARGA MARKETPLACE & DISTRIBUTOR LOKAL INDONESIA (TOKOPEDIA, SHOPEE, LAZADA, BLIBLI): DISUSUN OLEH AI AGENT]`
 
-Agar perhitungan ekonomi produk tidak meleset atau menjual di bawah modal sekaligus bebas hambatan izin impor tahap awal, seluruh **19 item komponen** (termasuk komponen pendukung wajib seperti *charger* khusus `LiFePO₄ 14,6V`, *bracket* motor, *Cleaning Dock*, serta biaya *overhead* rakit/ongkir/garansi) diaudit **100% pada pasar Indonesia**: perbandingan antara **pembelian eceran satuan (1 unit)** di Tokopedia, Shopee, Lazada, dan Blibli dengan **pembelian grosir distributor lokal Indonesia (`≥20–50 unit` + efisiensi dukungan *in-kind* PT Edura Cipta Gemilang, estimasi diskon grosir lokal ~18–19%)**:
+Seluruh **18 item komponen** (termasuk *charger* `LiFePO₄ 14,6V`, *bracket* motor, dan dok, serta *overhead* rakit/ongkir/garansi) dibandingkan antara **pembelian eceran satuan (1 unit)** dan **pembelian grosir distributor lokal (`≥20–50 unit` + dukungan *in-kind* PT Edura, estimasi diskon ~19%)**. Mikrofon `INMP441` dihapus bersama fitur audio. Harga per item berasal dari audit marketplace 24 November 2026 dan belum diaudit ulang pada sinkronisasi ini.
 
 | No | Subsistem & Komponen Terpilih (`Varian Final Rakyat`) | Qty | Rentang Eceran RI *(Tokped/Shopee/Lazada/Blibli)* | Eceran 1 Unit RI | Grosir Lokal RI *(≥20–50 Unit)* | Alasan Teknis & Catatan Audit |
 | :-: | :--- | :-: | :--- | --: | --: | :--- |
-| 1 | **`Orange Pi 3B` (4GB RAM + Modul `eMMC 32GB` + *Heatsink* + Antena Wi-Fi)** | 1 | `Rp1.600.000 – Rp2.300.000` | `Rp1.950.000` | `Rp1.600.000` | *Sweet spot* komersial (~18 FPS RKNN INT8, 3,5–4,5 W) + konektor antena eksternal. |
+| 1 | **`Orange Pi 3B` (4GB RAM + Modul `eMMC 32GB` + *Heatsink* + Antena Wi-Fi)** | 1 | `Rp1.600.000 – Rp2.300.000` | `Rp1.950.000` | `Rp1.600.000` | Komputer AI *edge* (NPU `0,8 TOPS`) + konektor antena eksternal. |
 | 2 | **`ESP32` Dev Board (`WROOM-32`)** | 1 | `Rp50.000 – Rp85.000` | `Rp65.000` | `Rp52.000` | *Real-time MCU*, PWM pelan, & *Dead-Man's Switch* 500 ms. |
-| 3 | ***Custom Carrier PCB* 2-Layer + SMD + *Conformal Coating*** | 1 | `Rp150.000 – Rp400.000` | `Rp250.000` | `Rp160.000` | Cetak PCB jasa lokal Indonesia + pelapis anti-lembap 96% & uap `NH₃`. |
-| 4 | **Motor DC *Metal-Gear* `JGB37-520` 12V 100 RPM (Non-Encoder)** | 4 | `Rp215.000 – Rp350.000/pcs` (`Rp860 rb–1,40 jt`) | `Rp1.000.000` | `Rp800.000` | Torsi tinggi untuk ban besar di sekam lembap; grosir toko robotika RI ~Rp200 rb/pcs. |
-| 5 | **Bracket L Metal Motor 37 mm** | 4 | `Rp15.000 – Rp25.000/pcs` (`Rp60–100 rb`) | `Rp80.000` | `Rp64.000` | Dudukan baja kokoh ke plat sasis aluminium. |
-| 6 | **Driver Motor MOSFET `BTS7960` 43A** | 2 | `Rp60.000 – Rp95.000/pcs` (`Rp120–190 rb`) | `Rp150.000` | `Rp120.000` | Tahan arus lonjakan *stall* di sekam tebal 5–10 cm (menggantikan `L298N` kit hobi). |
-| 7 | **Ban RC *Crawler* 110–120 mm (Set 4 pcs) + *Hex Coupler* 12 mm** | 1 set | `Rp275.000 – Rp550.000` | `Rp400.000` | `Rp320.000` | Memberi *ground clearance* ≥5–6 cm & *quick-release* mudah disikat. |
-| 8 | **Sasis & Casing IP54–65 (Box Panel IP65 + Plat Al 2 mm + 3D Print PETG)** | 1 set | `Rp450.000 – Rp900.000` | `Rp650.000` | `Rp520.000` | Jasa 3D print PETG lokal Rp400–1.200/g + plat aluminium 2 mm + *seal*. |
-| 9 | **Kamera USB *Low-Light* `IMX291` (Modul Generik 1080p UVC)** | 1 | `Rp350.000 – Rp750.000` *(Arducam Rp1,2–2,4 jt)* | `Rp550.000` | `Rp450.000` | Sensor *starlight* tajam di kandang redup (jauh di atas `ESP32-CAM`). |
-| 10 | **Servo *Metal-Gear* Waterproof `DS3218` 20 kg (Standar)** | 1 | `Rp180.000 – Rp250.000` | `Rp215.000` | `Rp175.000` | Mengatur sudut kamera 45° (feses) & 0–15° (fisik ayam). |
-| 11 | **LED Strip/Bar COB Putih 5V `5000K CRI >90` + *Diffuser*** | 1 | `Rp30.000 – Rp75.000` | `Rp50.000` | `Rp40.000` | Menstandarkan warna foto feses pada pencahayaan redup. |
-| 12 | **Mikrofon MEMS Digital `INMP441` (I2S) + Busa *Shield*** | 1 | `Rp30.000 – Rp55.000` | `Rp45.000` | `Rp36.000` | Konsumsi daya `<0,1 W`; rekam *Stop–Mute–Sample* `15 detik` (`3×5 detik`). |
-| 13 | **Sensor Suhu & RH Waterproof Probe `FS304-SHT31` (I2C)** | 1 | `Rp200.000 – Rp450.000` *(opsi `SHT30`: Rp110–250 rb)* | `Rp325.000` | `Rp260.000` | Cangkang *stainless* berfilter anti-debu (stok tersedia di e-commerce RI). |
-| 14 | **Sensor Tren Gas `NH₃` `DFRobot SEN0567` (MEMS `1–300 ppm`)** | 1 | `Rp175.000 – Rp230.000` *(opsi Pro RS485: Rp1,5–3,2 jt)* | `Rp230.000` | `Rp195.000` | Hemat daya (`<20 mA`); dilabeli jujur sebagai indikator tren kualitatif `NH₃`. |
-| 15 | **Sensor Anti-Tabrak Waterproof `DFRobot A02YYUW` IP67** | 1 | `Rp350.000 – Rp510.000` | `Rp410.000` | `Rp340.000` | *Blind zone* hanya `3 cm` ([Datasheet](https://www.dfrobot.com/product-1935.html)); stok distributor DFRobot RI. |
-| 16 | **Baterai `LiFePO₄` 4S `12,8V 6Ah` + Built-in BMS** | 1 | `Rp190.000 – Rp330.000` *(rakitan)* / `Rp350–600 rb` *(pack)* | `Rp350.000` | `Rp290.000` | Aman kebakaran sekam (*thermal runaway* 250–270°C), *runtime* 3–4 jam. |
-| 17 | **Charger Khusus `LiFePO₄` `14,6V` (2A–3A)** | 1 | `Rp75.000 – Rp180.000` | `Rp115.000` | `Rp93.000` | Wajib untuk pengisian aman *cutoff* 3,65V/sel `LiFePO₄`. |
-| 18 | **Kelistrikan (2× Buck `XL4015` 5A, `INA219`, `XT60`, `GX16`, Fuse, *Kill Switch*, Kabel 16–18 AWG)** | 1 set | `Rp160.000 – Rp350.000` | `Rp240.000` | `Rp200.000` | Proteksi arus, monitor baterai, & koneksi tahan getaran. |
-| 19 | ***Cleaning Dock* Sederhana + Sikat Mekanis + *Sprayer*** | 1 set | `Rp120.000 – Rp300.000` | `Rp200.000` | `Rp185.000` | Mendukung wajib SOP sanitasi roda 3 langkah pasca-inspeksi. |
-| | **SUBTOTAL DIRECT BOM (19 ITEM KOMPONEN)** | | **`Rp5.455.000 – Rp9.645.000`** | **`Rp7.275.000`** | **`Rp5.900.000`** | **Efisiensi ~18,9% via grosir distributor lokal RI.** |
+| 3 | ***Custom Carrier PCB* 2-Layer + SMD + *Conformal Coating*** | 1 | `Rp150.000 – Rp400.000` | `Rp250.000` | `Rp160.000` | Cetak PCB jasa lokal + pelapis anti-lembap & uap `NH₃`. |
+| 4 | **Motor DC *Metal-Gear* `JGB37-520` 12V 100 RPM (Non-Encoder)** | 4 | `Rp215.000 – Rp350.000/pcs` (`Rp860 rb–1,40 jt`) | `Rp1.000.000` | `Rp800.000` | Torsi tinggi untuk ban besar di sekam lembap. |
+| 5 | **Bracket L Metal Motor 37 mm** | 4 | `Rp15.000 – Rp25.000/pcs` (`Rp60–100 rb`) | `Rp80.000` | `Rp64.000` | Dudukan baja ke plat sasis aluminium. |
+| 6 | **Driver Motor MOSFET `BTS7960` 43A** | 2 | `Rp60.000 – Rp95.000/pcs` (`Rp120–190 rb`) | `Rp150.000` | `Rp120.000` | Tahan arus lonjakan *stall* di sekam tebal. |
+| 7 | **Ban RC *Crawler* 110–120 mm (Set 4 pcs) + *Hex Coupler* 12 mm** | 1 set | `Rp275.000 – Rp550.000` | `Rp400.000` | `Rp320.000` | *Ground clearance* ≥5–6 cm & mudah dilepas untuk disikat. |
+| 8 | **Sasis & Casing IP54–65 (Box Panel IP65 + Plat Al 2 mm + 3D Print PETG, termasuk tiang sensor)** | 1 set | `Rp450.000 – Rp900.000` | `Rp650.000` | `Rp520.000` | Jasa 3D print PETG lokal + plat aluminium 2 mm + *seal*; tiang sensor setinggi ayam dicetak PETG. |
+| 9 | **Kamera USB *Low-Light* `IMX291` (Modul Generik 1080p UVC)** | 1 | `Rp350.000 – Rp750.000` *(Arducam Rp1,2–2,4 jt)* | `Rp550.000` | `Rp450.000` | Sensor *starlight* untuk kandang redup. |
+| 10 | **Servo *Metal-Gear* Waterproof `DS3218` 20 kg (Standar)** | 1 | `Rp180.000 – Rp250.000` | `Rp215.000` | `Rp175.000` | Mengatur kamera ke posisi depan `~0–15°` (FPV operator, kelak CV navigasi) & bawah `~45°` (feses). |
+| 11 | **LED Strip/Bar COB Putih 5V `5000K CRI >90` + *Diffuser*** | 1 | `Rp30.000 – Rp75.000` | `Rp50.000` | `Rp40.000` | Menyeragamkan warna foto feses. |
+| 12 | **Sensor Suhu & RH Waterproof Probe `FS304-SHT31` (I2C)** | 1 | `Rp200.000 – Rp450.000` *(opsi `SHT30`: Rp110–250 rb)* | `Rp325.000` | `Rp260.000` | Cangkang *stainless* berfilter, dipasang di tiang setinggi ayam. |
+| 13 | **Sensor Tren Gas `NH₃` `DFRobot SEN0567` (MEMS `1–300 ppm`)** | 1 | `Rp175.000 – Rp230.000` *(opsi Pro RS485: Rp1,5–3,2 jt)* | `Rp230.000` | `Rp195.000` | Indikator tren kualitatif `NH₃`; dikalibrasi terhadap alat acuan saat pilot. |
+| 14 | **Sensor Jarak Waterproof `DFRobot A02YYUW` IP67** | 1 | `Rp350.000 – Rp510.000` | `Rp410.000` | `Rp340.000` | *Blind zone* `3 cm` ([halaman produk](https://www.dfrobot.com/product-1935.html)); memperlambat laju saat ada ayam di depan. |
+| 15 | **Baterai `LiFePO₄` 4S `12,8V 6Ah` + Built-in BMS** | 1 | `Rp190.000 – Rp600.000` *(rakitan sampai pack)* | `Rp350.000` | `Rp290.000` | Target *runtime* ≥3 jam, cukup untuk 2 putaran per hari. |
+| 16 | **Charger Khusus `LiFePO₄` `14,6V` (2A–3A)** | 1 | `Rp75.000 – Rp180.000` | `Rp115.000` | `Rp93.000` | Pengisian aman di dok. |
+| 17 | **Kelistrikan (2× Buck `XL4015` 5A, `INA219`, `XT60`, `GX16`, Fuse, *Kill Switch*, Kabel 16–18 AWG)** | 1 set | `Rp160.000 – Rp350.000` | `Rp240.000` | `Rp200.000` | Proteksi arus, monitor baterai, & koneksi tahan getaran. |
+| 18 | **Dok Pengisian & Sanitasi (Tatakan Dok + Sikat Mekanis + *Sprayer*)** | 1 set | `Rp120.000 – Rp300.000` | `Rp200.000` | `Rp185.000` | Tempat mode stasiun, pengisian daya, dan SOP sanitasi roda; butuh stopkontak di dalam kandang. |
+| | **SUBTOTAL DIRECT BOM (18 ITEM KOMPONEN)** | | **`Rp5.395.000 – Rp9.620.000`** | **`Rp7.230.000`** | **`Rp5.864.000`** | **Efisiensi ~18,9% via grosir distributor lokal RI.** |
 | | ***Overhead* Produksi (Ongkir lokal, Perakitan, QC/Kalibrasi, Packing, Cadangan Garansi 10%)** | | `Rp650.000 – Rp1.200.000` | `Rp950.000` | `Rp850.000` | Biaya nyata operasional produksi agar perhitungan tidak merugi. |
-| | **TOTAL HPP (*COGS*) SEBENARNYA PER UNIT** | | **`Rp6.105.000 – Rp10.845.000`** | **`Rp8.225.000`** | **`Rp6.750.000`** | **100% rantai pasok RI (bebas risiko impor awal).** |
+| | **TOTAL HPP (*COGS*) PER UNIT** | | **`Rp6.045.000 – Rp10.820.000`** | **`Rp8.180.000`** | **`Rp6.714.000`** | **100% rantai pasok RI.** |
 
-> **Ringkasan Transparansi Biaya Produksi (100% Pasar Indonesia):** Pada pengadaan eceran satuan di e-commerce Indonesia (fase *pilot* 1–10 unit), total HPP riil termasuk *charger*, *dock*, dan *overhead* perakitan berada di kisaran **Rp8,23 juta/unit** (bisa ditekan ~Rp150 rb dengan opsi probe `FS304-SHT30` serta dukungan *in-kind* PT Edura Cipta Gemilang). Saat pengadaan dinaikkan ke skala grosir distributor lokal Indonesia (`≥20–50 unit`), HPP turun menjadi **~Rp6,75 juta/unit** tanpa bergantung pada impor langsung tahap awal, tetap merupakan fraksi kecil dibanding potensi kerugian 1 kali wabah penyakit berat (`Rp22,89–57,35 juta` pada 3.000 ekor; Pramuwidyatama *et al.*, 2023) maupun harga alat impor (`Rp100 juta+`).
+> **Ringkasan Transparansi Biaya Produksi:** Pada pembelian eceran satuan (fase *pilot* 1–10 unit), total HPP termasuk *charger*, dok, dan *overhead* sekitar **Rp8,18 juta/unit**. Pada pembelian grosir distributor lokal (`≥20–50 unit`), HPP turun menjadi **~Rp6,71 juta/unit**. Rentang subtotal dihitung ulang dengan skrip pada 28 November 2026 setelah `INMP441` dihapus; rentang di versi lama dokumen ini tidak konsisten secara aritmetika. Instalasi stopkontak dok dan biaya dukungan lapangan dihitung terpisah di Bab 9.2 sebagai `[ASUMSI TIM]`.
+
+### 8.3. Diagram Blok Perangkat Keras BROVER Kandang (Versi Final)
+
+`[SINTESIS REKAYASA TIM ASPRAK: DISUSUN OLEH AI AGENT]`
+
+```mermaid
+flowchart LR
+    DOCK["Dok di dalam kandang<br/>(stopkontak 220V + charger 14,6V)"] -- "mengisi daya" --> BAT["LiFePO4 4S 12,8V 6Ah"]
+    BAT --> KS["Kill switch IP65 + Fuse 15A"] --> INA["INA219 (arus & baterai)"]
+    INA --> BTS["2x BTS7960 -> 4x JGB37-520"]
+    INA --> B1["Buck XL4015 #1 5,10V"] --> OPI["Orange Pi 3B (RK3566 NPU)<br/>+ kamera IMX291 + antena 2,4 GHz"]
+    INA --> B2["Buck XL4015 #2 5,00V"] --> ACT["ESP32 + servo DS3218<br/>+ LED 5000K + buzzer"]
+    MAST["Tiang sensor setinggi ayam:<br/>FS304-SHT31 + SEN0567"] --> ACT
+    DIST["A02YYUW IP67 (perlambat laju)"] --> ACT
+    OPI <-- "UART / USB serial" --> ACT
+    OPI <-- "Wi-Fi lokal 192.168.4.1" --> HP["HP operator / HP ABK (foto cadangan)"]
+    OPI -. "sinkron saat ada internet" .-> SRV["Server pusat (Golang + PostgreSQL)"]
+```
 
 ---
 
-## 9. Model Bisnis, Tata Kelola AI, *Risk Register*, & *Project Timeline*
+## 9. Model Bisnis, Tata Kelola AI, *Risk Register*, & Rencana Kerja
 
 ### 9.1. *Business Model Canvas* (BMC: Rubrik Penilaian 15%)
 
 ![Business Model Canvas BROVER](./assets/07_business_model_canvas_brover.png)
-*`[SINTESIS MODEL BISNIS TIM ASPRAK: BERBASIS DATA BPS 2025, MITRA PT ZARA / PT EDURA, & WAWANCARA PRAKTISI PETERNAK BROILER EDUFARMERS × PECAHTELUR]` Visualisasi 9 blok Business Model Canvas (Osterwalder) BROVER dengan 100% rantai pasok e-commerce/distributor lokal Indonesia dan skema All-In Sepaket tanpa langganan bulanan.*
+*`[SINTESIS MODEL BISNIS TIM ASPRAK: BERBASIS DATA BPS 2025, MITRA PT ZARA / PT EDURA, & RISET HARGA 28 NOVEMBER 2026]` Business Model Canvas BROVER dengan dua paket langganan per siklus, BROVER Saku untuk peternak kecil dan BROVER Kandang untuk peternak menengah–besar, ditambah opsi beli putus untuk mitra B2B.*
 
 | Blok BMC | Strategi Komersialisasi `BROVER` |
 | :--- | :--- |
-| **1. *Customer Segments*** | (1) Peternak broiler menengah–besar skala **10.000–20.000 ekor** (*target utama beli putus*, setara profil 6 farm mitra PT Zara & praktisi Malang 12.000 ekor); (2) Peternak rakyat kecil skala **3.000–5.000 ekor** (*target utama skema sewa/koperasi*); (3) Penyedia kandang lokal (*agritech* seperti **PT Zara / KANOPIS**); (4) Dokter Hewan & TSO. |
-| **2. *Value Propositions*** | Sistem inspeksi deteksi dini 3-in-1 (feses, fisik, pernapasan `3×5 detik`) + pemantauan mikroklimat dinamis berbasis standar umur resmi `Cobb 500` & `Ross 308` + cuaca luar `BMKG + Open-Meteo`, tahan mati internet, kendali lewat website, paket **Laporan 1-Klik ke Dokter Hewan**, **beli sekali sepaket tanpa tagihan bulanan**, pada fraksi biaya perangkat impor (`Rp100 juta+`). |
-| **3. *Channels*** | B2B *bundling* bersama mitra konstruksi kandang (PT Zara/KANOPIS), kemitraan distributor/TSO obat hewan, koperasi/asosiasi peternak (PINSAR/GOPAN), dan demo lapangan di sentra broiler Jawa. |
-| **4. *Customer Relationships*** | Pendampingan instalasi & kalibrasi awal *dock*, layanan **penggantian suku cadang aus & kalibrasi berkala** (sensor & baterai tiap 2–3 tahun), pembaruan model AI berkala (*OTA update*), serta dukungan teknis via grup WhatsApp & Kamus Gejala Penyakit. |
-| **5. *Revenue Streams*** | (1) **Penjualan Unit All-In Sepaket:** **`Rp11,50 juta/unit`** (sudah termasuk Website PWA, cadangan server Cloud 3 tahun `Rp900 rb/unit`, & *Cleaning Dock*; nol langganan bulanan; opsi Varian Pro `RS485 NH₃` sesuai permintaan); (2) **Skema *Rover-as-a-Service* (Sewa per Siklus):** **`Rp550–650 ribu/siklus`** (sepaket tanpa biaya bulanan terpisah, bagi peternak skala 3.000–5.000 ekor); (3) **Paket Suku Cadang Aus & Kalibrasi Berkala:** **`~Rp1,5 juta` tiap 2–3 tahun** (penggantian sensor `SEN0567`/`FS304-SHT31` & baterai `LiFePO₄` sesuai umur pakai fisik di kandang tropis). |
-| **6. *Key Resources*** | Tim multidisiplin **Asprak** (4 TI **ITS** + **1 Doktor Dokter Hewan UNJ**), *Custom Carrier PCB* & desain mekanik 3D, dataset terkurasi + data *fine-tuning* lokal Indonesia, serta fasilitas Lab UNJ & jejaring mitra industri. |
-| **7. *Key Activities*** | Kurasi & *fine-tuning* model AI pada kandang lokal bersama pakar veteriner, perakitan & uji ketahanan sasis/PCB, pengembangan Website PWA & backend `Golang`, serta validasi *pilot testing* bersama Dokter Hewan/Dinas Peternakan. |
-| **8. *Key Partnerships*** | **PT Zara Propertifarm Indonesia** (validasi lapangan 6 farm Bogor & *bundling* KANOPIS), **PT Edura Cipta Gemilang** (dukungan hardware *in-kind* & komersialisasi PTNBH UNJ), **Lab UNJ & Biologi UNJ** (pendampingan TKT, fisiologi unggas, & HKI), **Dinas Peternakan / Medik Veteriner**, serta **pemasok e-commerce & distributor komponen lokal Indonesia** (Tokopedia, Shopee, Lazada, Blibli). |
-| **9. *Cost Structure*** | HPP nyata 100% lokal RI (**`Rp8,23 juta`** eceran 1 unit RI; **`~Rp6,75 juta`** grosir distributor lokal RI ≥20–50 unit), **cadangan operasional Cloud 3 tahun (`~Rp900 rb/unit`, VPS `Golang` hemat RAM `~Rp25–30 rb/bln`)** yang sudah dimasukkan ke harga jual, biaya *pilot testing*, & pendaftaran HKI/Paten Sederhana. |
+| **1. *Customer Segments*** | (1) Peternak broiler kecil skala **3.000–5.000 ekor**, umumnya *open house* → **BROVER Saku**; (2) peternak menengah–besar skala **≥10.000 ekor**, *closed/semi-closed house* → **BROVER Kandang** (langganan atau beli putus); (3) mitra B2B pembangun kandang seperti **PT Zara / KANOPIS** → beli putus untuk dibundel; (4) dokter hewan, TSO, dan Medik Veteriner Dinas sebagai penerima laporan. |
+| **2. *Value Propositions*** | Skrining feses dari foto rover berstandar atau foto HP; suhu, RH, dan tren amonia setinggi ayam per zona ditambah garis dasar di dok; evaluasi otomatis standar umur `Cobb 500`/`Ross 308`; tren deplesi, pakan, dan air; triase 3 tombol; **laporan 1-klik ke dokter hewan**; inti sistem tetap berjalan tanpa internet (BROVER Kandang); **dibayar per siklus setelah panen**. |
+| **3. *Channels*** | Demo dan uji lapangan bersama **Dinas Pangan dan Pertanian Kota Cimahi** (rencana), *bundling* bersama mitra pembangun kandang (rencana dengan PT Zara), TSO dan *poultry shop*, koperasi dan asosiasi peternak, serta komunitas peternak daring. |
+| **4. *Customer Relationships*** | Pendampingan instalasi dok dan *onboarding*, grup WhatsApp dukungan, kunjungan lapangan saat penggantian sensor dan baterai, pembaruan model berkala, dan kamus gejala tervalidasi dokter hewan. |
+| **5. *Revenue Streams*** | (1) **BROVER Saku: Rp75.000/siklus**; (2) **BROVER Kandang: Rp750.000/siklus**, kontrak minimal 6 siklus; (3) **beli putus BROVER Kandang**: usulan Rp11,5 juta/unit, termasuk layanan *cloud* 6 siklus pertama, lalu iuran *cloud* opsional Rp75.000/siklus; (4) penggantian sensor dan baterai bagi pemilik unit beli putus. |
+| **6. *Key Resources*** | Tim multidisiplin **Asprak** (4 TI **ITS** + 1 dokter hewan **UNJ**), model CV feses dan set uji lokal, desain *carrier PCB* dan mekanik, **armada unit rover milik tim** untuk paket langganan, dan server pusat. |
+| **7. *Key Activities*** | Perakitan dan QC unit, pelatihan dan pembaruan model, dukungan lapangan, pelaksanaan protokol pemindahan unit, dan pilot bersama dokter hewan dan Dinas. |
+| **8. *Key Partnerships*** | **PT Zara Propertifarm Indonesia** (calon mitra *bundling* KANOPIS; `BROVER` mendukung bagian pemantauan kesehatan dan lingkungan pada peta jalan AI + IoT mereka), **PT Edura Cipta Gemilang** (dukungan *in-kind* perangkat keras dan perakitan), **Lab UNJ & Biologi UNJ**, **Dinas Pangan dan Pertanian Kota Cimahi** (rencana mitra uji lapangan), dokter hewan, serta pemasok komponen dan penyedia server lokal. |
+| **9. *Cost Structure*** | HPP unit **Rp8,18 juta** (eceran) atau **~Rp6,71 juta** (grosir) sebagai modal armada langganan; server (VPS sekitar Rp139 ribu/bulan dibagi banyak peternak); dukungan teknis dan kunjungan lapangan `[ASUMSI TIM]`; penggantian sensor dan baterai; biaya pilot; dan pendaftaran HKI. |
 
-### 9.2. *Unit Economics* Tim, Skema All-In Sepaket, & Proyeksi Keuntungan 5 Tahun bagi Investor/Peternak
+### 9.2. Paket Langganan, Beli Putus, *Unit Economics*, & Titik Impas
 
-`[SIMULASI FINANSIAL 5 TAHUN BERBASIS DATA PRIMER BPS 2025, PRAMUWIDYATAMA ET AL. 2023, DATA 6 FARM PT ZARA, & AUDIT E-COMMERCE RI]`
+`[RISET HARGA 28 NOVEMBER 2026: DATA PRIMER + ASUMSI TIM BERLABEL]`
 
-#### A. Mengapa Skema Jual Murni All-In Sepaket (Tanpa Langganan Bulanan Cloud)?
-Secara teknis, seluruh inferensi AI, kendali `Rover`, dan penyimpanan lokal (`SQLite`) berjalan **gratis selamanya** di perangkat kandang (*Offline-First*). Komponen yang menimbulkan biaya rutin bagi pengelola sistem hanyalah server **Cloud** (`VPS Golang` + *object storage* foto/audio arsip lintas siklus + domain/SSL, estimasi `~Rp25–30 ribu/kandang/bulan` atau `~Rp300 ribu/tahun`). Namun, riset lapangan menunjukkan peternak Indonesia cenderung enggan berlangganan tagihan bulanan (*subscription fatigue*).
+#### A. Dua Paket Langganan dan Opsi Beli Putus
 
-Oleh karena itu, `BROVER` menetapkan **Skema Murni All-In Sepaket (`Rp11,50 juta/unit`)**:
-1. **Cadangan Cloud 3 Tahun (`Rp900 ribu/unit`) sudah dimasukkan ke harga jual di muka** dengan kebijakan *auto-prune* arsip Cloud >6 bulan (peternak tetap bebas mengunduh penuh seluruh riwayat PDF/CSV ke HP/PC). Pembeli tidak pernah ditagih iuran bulanan apa pun.
-2. **Pendapatan Berulang Alami dari Suku Cadang Aus (`~Rp1,5 juta` tiap 2–3 tahun):** Di lingkungan kandang tropis (`RH 80–96%` + uap `NH₃`), sensor gas/suhu dan baterai secara ilmiah memang memerlukan penggantian/kalibrasi setiap 2–3 tahun. Pendapatan berulang tim berasal dari kebutuhan perawatan fisik nyata, bukan pungutan akses *software*.
+| Aspek | **BROVER Saku** | **BROVER Kandang (Langganan)** | **BROVER Kandang (Beli Putus)** |
+| :--- | :--- | :--- | :--- |
+| Sasaran | Peternak kecil (`3.000–5.000 ekor`) | Peternak menengah–besar (`≥10.000 ekor`) | Peternak menengah–besar yang punya modal, mitra B2B |
+| Isi | CV feses dari foto HP + semua fitur dasbor kecuali data sensor | Rover lengkap per kandang: kamera, servo, sensor di tiang, dok, dan semua fitur dasbor | Sama dengan langganan, unit menjadi milik pembeli |
+| Harga | **Rp75.000 per siklus** | **Rp750.000 per siklus** | **Usulan Rp11,5 juta per unit**, menunggu konfirmasi |
+| Tagihan | Setelah panen | Setelah panen | Sekali di depan |
+| Kontrak | Tanpa minimum | **Minimal 6 siklus** (sekitar 1 tahun), lalu boleh lanjut tanpa batas atau berhenti | Tidak ada; garansi 1 tahun |
+| Perawatan | Tidak ada perangkat | Ditanggung tim, termasuk ganti sensor dan baterai | Ditanggung pemilik setelah garansi |
+| *Cloud* & model | Termasuk | Termasuk | 6 siklus pertama termasuk; setelahnya iuran opsional Rp75.000/siklus. Fitur di rover tetap berjalan tanpa internet. |
 
-#### B. *Unit Economics* Tim `BROVER` (Biaya Produksi, Harga Jual, & Untung Kotor)
+#### B. Mengapa Ditagih per Siklus
 
-| Skala Pengadaan (100% Pasar Indonesia) | HPP Produksi Nyata *(BOM 19 Item + Overhead)* | Cadangan Server Cloud 3 Tahun *(Inkl. di Harga)* | Total Modal Penuh per Unit | Harga Jual **All-In Sepaket** | **Untung Kotor Bersih Tim / Unit** | Skema Alternatif Sewa (*Peternak Kecil*) |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Tahap Pilot (`1–10 unit`, Eceran RI)** | `Rp8,23 juta` | `Rp0,90 juta` | `Rp9,13 juta` | **`Rp11,50 juta`** | **`Rp2,37 juta` (`20,6%`)** | `Rp550–650 ribu / siklus` *(sepaket)* |
-| **Tahap Grosir Lokal RI (`≥20–50 unit` + *in-kind* PT Edura)** | **`~Rp6,75 juta`** | `Rp0,90 juta` | **`~Rp7,65 juta`** | **`Rp11,50 juta`** | **`Rp3,85 juta` (`33,5%`)** | `Rp550–650 ribu / siklus` *(sepaket)* |
+1. **Arus kas peternak datang per panen.** Dokumen Rekapitulasi Hasil Pemeliharaan Peternak (RHPP) pada kemitraan broiler umumnya terbit 3–7 hari setelah panen terakhir, dan memuat penjualan ayam, kinerja, serta laba atau rugi satu periode (Amam & Harsita, 2024).
+2. **Tidak ada tagihan saat kandang kosong.** Masa istirahat kandang di antara siklus tidak dihitung, berbeda dengan tagihan bulanan.
+3. **Harga ayam sedang di bawah biaya produksi.** Per 3 Oktober 2026 harga ayam hidup di kandang Rp21.000–22.000/kg, sementara HPP peternak sekitar Rp23.000/kg ([detikFinance, 4 Okt 2026](https://finance.detik.com/berita-ekonomi-bisnis/d-8691259/harga-ayam-di-kandang-anjlok-lagi)). Tagihan kecil yang dibayar setelah panen lebih mudah diterima daripada modal besar di depan.
 
-#### C. Basis Potensi Pasar Indonesia
-- **Total Populasi Nasional (*TAM* Sektor):** **3,32 miliar ekor/tahun** (`BPS 2025`), dengan **~40% pasokan** ditopang oleh **>1 juta peternak kecil–menengah** (`Sumiati et al., 2025`).
+#### C. Biaya Tim per Unit Rover & Lama Balik Modal (BROVER Kandang Langganan)
+
+| Komponen | Nilai | Sumber / Label |
+| :--- | :--- | :--- |
+| Harga langganan | Rp750.000 per siklus | Keputusan tim |
+| HPP unit | Rp8.180.000 (eceran) / Rp6.714.000 (grosir) | BOM Bab 8.2 |
+| Dukungan teknis & kunjungan | Rp100.000 per siklus | `[ASUMSI TIM]` |
+| Bagi beban server | ~Rp4.200 per siklus | VPS Rp139.000/bulan ([Biznet Gio NEO Lite](https://www.biznetgio.com/product/neo-lite)) × 1,5 bulan ÷ 50 peternak `[ASUMSI TIM: pembagi]` |
+| Cadangan ganti sensor & baterai | ~Rp50.300 per siklus | `SEN0567` + `FS304-SHT31` + `LiFePO₄` = Rp905.000 (BOM) ÷ 18 siklus `[ASUMSI TIM: umur 3 tahun]` |
+| Instalasi dok & stopkontak | ~Rp16.700 per siklus | Rp300.000 ÷ 18 siklus `[ASUMSI TIM]` |
+| **Total biaya variabel** | **~Rp171.100 per siklus** | |
+| **Kontribusi per siklus** | **~Rp578.900** | |
+| **Lama balik modal unit** | **14,1 siklus (≈2,4 tahun)** untuk unit eceran; **11,6 siklus (≈1,9 tahun)** untuk unit grosir | 6 siklus per tahun `[ASUMSI TIM]` |
+
+*Catatan: perhitungan ini belum memasukkan biaya pengembangan tim, pajak bila tim menjadi PKP, dan margin kanal penjualan. Karena modal kembali setelah sekitar 12–14 siklus, kontrak minimal 6 siklus diikuti perpanjangan atau pemindahan unit ke kandang lain sesuai protokol di bagian G.*
+
+#### D. Titik Impas bagi Peternak
+
+**Metode:** titik impas adalah jumlah ayam yang harus terselamatkan per siklus agar biaya paket tertutup, yaitu harga paket dibagi nilai satu ekor ayam yang terselamatkan. Nilai satu ekor ayam yang terselamatkan dihitung sebagai **pendapatan ayam saat panen dikurangi sisa biaya pakan** sejak ayam itu terselamatkan. Asumsi dasarnya: ayam terselamatkan pada hari ke-21 (bobot sekitar 0,925 kg), dipanen pada bobot 2,0 kg, dengan FCR fase *grower–finisher* 1,61 (Zulfan *et al.*, 2025), sehingga sisa pakan sekitar 1,73 kg. Harga pakan Rp8.000–9.400/kg diambil dari pernyataan Permindo di media `[ASUMSI TIM: sumber berita]`.
+
+![Titik Impas Paket BROVER bagi Peternak](./assets/09_titik_impas_paket_brover.png)
+*`[SIMULASI TITIK IMPAS: DATA PRIMER + ASUMSI TIM BERLABEL]` Jumlah ayam yang harus terselamatkan per siklus agar biaya paket tertutup, untuk BROVER Saku (Rp75 ribu) dan BROVER Kandang (Rp750 ribu) pada nilai ayam Rp22.700–36.200 per ekor, dibandingkan dengan kematian normal per siklus pada beberapa skala kandang, serta perbandingan harga kedua paket dan opsi beli putus.*
+
+| Variabel | Nilai | Sumber |
+| :--- | :--- | :--- |
+| Harga ayam hidup | Rp19.500/kg (batas bawah acuan Kementan mulai 15 Juli 2026) – Rp25.000/kg (harga acuan pembelian di produsen) | [detikFinance, 7 Jul 2026](https://finance.detik.com/berita-ekonomi-bisnis/d-8562724/alasan-harga-ayam-di-peternak-dipatok-paling-murah-rp-19-500-kg); [Perbadan 6/2024](https://peraturan.go.id/files/peraturan-bapanas-no-6-tahun-2024.pdf) |
+| Bobot panen | 2,0 kg (sensitivitas 1,6–2,3 kg) | Candra *et al.* (2025): 1,58–2,01 kg; Zulfan *et al.* (2025): 2,295 kg *closed house* |
+| Deplesi normal | 2,47% *closed house*; 4,54% *open house* | Zulfan *et al.* (2025) |
+| **Nilai 1 ekor terselamatkan** | **Rp22.700 – Rp36.200** | Perhitungan |
+
+| Paket & Skala Kandang | Kematian Normal per Siklus | Titik Impas | Porsi dari Kematian Normal |
+| :--- | :-: | :-: | :-: |
+| **BROVER Kandang Rp750 rb**, kandang tertutup 10.000 ekor | 247 ekor | 21–33 ekor | 8,4–13,4% |
+| **BROVER Kandang Rp750 rb**, kandang tertutup 15.000 ekor | 370 ekor | 21–33 ekor | 5,6–8,9% |
+| **BROVER Kandang Rp750 rb**, kandang tertutup 20.000 ekor | 494 ekor | 21–33 ekor | 4,2–6,7% |
+| **BROVER Saku Rp75 rb**, kandang terbuka 3.000 ekor | 136 ekor | 2,1–3,3 ekor | 1,5–2,4% |
+| **BROVER Saku Rp75 rb**, kandang terbuka 5.000 ekor | 227 ekor | 2,1–3,3 ekor | 0,9–1,5% |
+
+**Sensitivitas terhadap harga ayam hidup dan bobot panen** (harga pakan tengah Rp8.700/kg):
+
+| Harga Ayam Hidup | Bobot 1,6 kg | Bobot 2,0 kg | Bobot 2,3 kg |
+| :--- | :-: | :-: | :-: |
+| Rp19.500/kg | Kandang 34 ekor; Saku 3,4 ekor | Kandang 31 ekor; Saku 3,1 ekor | Kandang 29 ekor; Saku 2,9 ekor |
+| Rp21.500/kg | Kandang 30 ekor; Saku 3,0 ekor | Kandang 27 ekor; Saku 2,7 ekor | Kandang 25 ekor; Saku 2,5 ekor |
+| Rp25.000/kg | Kandang 25 ekor; Saku 2,5 ekor | Kandang 21 ekor; Saku 2,1 ekor | Kandang 20 ekor; Saku 2,0 ekor |
+
+*Catatan: titik impas ini adalah **hipotesis pilot**, bukan klaim manfaat. Pengaruh `BROVER` terhadap kematian dan FCR belum diukur; pilot membandingkan deplesi dan FCR antarflok atau antarkandang selama beberapa siklus bersama Dr. drh. Atin Supiyani, M.Si. Proyeksi ROI 5 tahun di versi lama dokumen ini dihapus karena tiga asumsi utamanya tidak memiliki data.*
+
+#### E. Opsi Beli Putus BROVER Kandang (Usulan, Menunggu Konfirmasi Harga)
+
+- **Untuk siapa:** peternak menengah–besar yang memilih memiliki unit, dan mitra B2B seperti pembangun kandang KANOPIS yang ingin membundel unit dengan kandang. Harga volume untuk B2B dinegosiasikan.
+- **Usulan harga Rp11,5 juta per unit**, termasuk dok, instalasi, garansi 1 tahun, dan layanan *cloud* serta pembaruan model selama 6 siklus pertama. Margin kotor tim sekitar Rp3,32 juta (eceran) atau Rp4,79 juta (grosir) sebelum biaya dukungan.
+- **Perbandingan 3 tahun (18 siklus) bagi peternak:** langganan Rp750 ribu × 18 = **Rp13,5 juta**, perawatan ditanggung tim, tanpa modal awal; beli putus Rp11,5 juta + iuran *cloud* 12 siklus × Rp75 ribu (Rp0,9 juta) + ganti sensor dan baterai sekitar Rp0,9 juta = **~Rp13,3 juta**, dengan modal besar di awal.
+- **Manfaat bagi tim:** modal unit kembali saat penjualan, sehingga kebutuhan modal armada langganan berkurang.
+
+#### F. Basis Potensi Pasar Indonesia
+- **Total Populasi Nasional (*TAM* sektor):** **3,32 miliar ekor/tahun** (`BPS 2025`), dengan **~40% pasokan** ditopang **>1 juta peternak kecil–menengah** (`Sumiati et al., 2025`).
 - **Sentra Prioritas Pulau Jawa (*SAM*):** Jawa Barat (`765,74 juta`), Jawa Tengah (`644,09 juta`), Jawa Timur (`444,43 juta`), dan Banten (`203,49 juta` ekor; `BPS 2025`).
-- **Target Adopsi Awal (*SOM* Tahun 1–2):** 6 farm mitra **PT Zara / KANOPIS** di Bogor (`85.000 ekor`, rata-rata `~14.200 ekor/farm`) dan ekspansi koperasi/mitra binaan kapasitas awal JAPFA (`300.000 ekor`, [04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md)).
+- **Target Adopsi Awal (*SOM* Tahun 1–2):** peternak di wilayah binaan Dinas Pangan dan Pertanian Kota Cimahi dan peternakan mitra pilot (rencana), lalu calon mitra B2B PT Zara / KANOPIS dengan 6 farm di Bogor (`85.000 ekor`) ([04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md)).
 
-#### D. Proyeksi Keuntungan 5 Tahun (30 Siklus): Dengan vs Tanpa `BROVER`
+#### G. Protokol Pemindahan Unit Rover Antarpeternakan
 
-![Proyeksi Keuntungan 5 Tahun: Dengan vs Tanpa BROVER](./assets/09_proyeksi_keuntungan_5tahun_brover.png)
-*`[SIMULASI FINANSIAL 5 TAHUN: DISUSUN OLEH AI AGENT]` Perbandingan laba kumulatif 5 tahun (30 siklus) pada kandang skala menengah 15.000 ekor (setara rata-rata farm mitra PT Zara) dengan skema beli putus All-In Rp11,50 juta + perawatan sensor/baterai Tahun ke-3 Rp1,50 juta (total TCO Rp13,00 juta), beserta analisis sensitivitas 3 skenario dan segmentasi jujur skala kandang.*
+Langganan BROVER Kandang berlaku **per kandang**: selama kontrak, 1 unit hanya melayani 1 kandang. Bila kontrak berakhir dan unit dipindahkan ke peternakan lain, protokol berikut **wajib** dijalankan. **Sewa antarfarm jangka pendek**, misalnya unit berpindah setiap siklus, **tetap dilarang**.
 
-**Mengapa Horizon Analisis 5 Tahun (Bukan 10 Tahun)?**  
-Secara rekayasa dan keuangan *AgTech*, **5 tahun adalah horizon paling objektif dan kredibel di hadapan investor/juri**: (1) umur pakai wajar perangkat elektronik dan sensor di kandang broiler tropis (`RH 80–96%` + uap `NH₃`) adalah **3–5 tahun** (dengan penggantian jujur paket sensor & baterai `-Rp1,50 juta` pada Tahun ke-3); proyeksi 10 tahun tanpa ganti unit tidak realistis; (2) pada horizon 5 tahun (30 siklus), selisih laba kumulatif sudah sangat kontras (**`+Rp64,70 juta`**, **`ROI 498%`**) dengan titik balik modal (*Break-Even Point*) tercapai pada **Tahun ke-2**.
-
-**Parameter Primer Terverifikasi (Anti-Overclaim):**
-- **Margin Normal Broiler:** `Rp5,28 juta` per 3.000 ekor (`Rp1.760/ekor/siklus`; Pramuwidyatama *et al.*, *Prev. Vet. Med.* Q1, 2023) → setara **`Rp26,40 juta/siklus`** pada kandang `15.000 ekor` (6 siklus/tahun = `30 siklus` dalam 5 tahun).
-- **Kerugian Wabah Penyakit (Batas Bawah Konservatif):** `Rp22,89 juta` per 3.000 ekor (`Rp7.630/ekor`; batas bawah rentang `Rp22,89–57,35 juta` pada Pramuwidyatama *et al.*, 2023) → **`Rp114,45 juta/kejadian`** pada `15.000 ekor`. Disimulasikan hanya **2 kali kejadian wabah dalam 5 tahun** (Tahun ke-2 & Tahun ke-4) ditambah kerugian mikroklimat/cekaman panas rutin `Rp1,50 juta/siklus`.
-- **Total Biaya Kepemilikan 5 Tahun (`TCO`):** Beli putus All-In **`Rp11,50 juta`** (Tahun 0) + ganti sensor/baterai **`Rp1,50 juta`** (Tahun ke-3) + **`Rp0` langganan bulanan** = **`Rp13,00 juta`**.
-
-| Skala Kandang & Skenario | Laba Bersih 5 Thn *(Tanpa BROVER)* | Laba Bersih 5 Thn *(Dengan BROVER, Net TCO Rp13 jt)* | **Selisih Untung Bersih 5 Tahun** | **ROI 5 Tahun** *(atas TCO Rp13 jt)* | Rekomendasi Strategi Jual (*Go-To-Market*) |
-| :--- | --: | --: | --: | :-: | :--- |
-| **15.000 Ekor (Konservatif:** *15% wabah / 10% rutin*) | `Rp518,00 juta` | `Rp543,85 juta` | **`+Rp25,85 juta`** | **`199%`** | **Beli Putus All-In `Rp11,50 jt`** *(layak meski efektivitas sangat konservatif)* |
-| **15.000 Ekor (Moderat:** *30% wabah / 20% rutin*) | `Rp518,00 juta` | `Rp582,70 juta` | **`+Rp64,70 juta`** | **`498%`** | **Target Utama Beli Putus (`BEP Tahun ke-2`)**: *bundling* kandang KANOPIS/mitra besar |
-| **15.000 Ekor (Optimistis:** *50% wabah / 30% rutin*) | `Rp518,00 juta` | `Rp633,00 juta` | **`+Rp115,00 juta`** | **`885%`** | **Beli Putus All-In** *(harga alat hanya ~44% margin 1 siklus)* |
-| **3.000 Ekor (Pembanding Jujur, Moderat 30%/20%)** | `Rp103,60 juta` | `Rp116,70 juta` | `+Rp13,10 juta` | `101%` | **Skema Sewa `Rp550–650 rb/siklus`** atau beli bersama **Koperasi** *(modal awal Rp11,5 jt setara ~2,2 siklus profit, terlalu berat bila beli sendiri)* |
+1. **Waktu pemindahan:** unit hanya dipindah setelah kontrak selesai dan kandang asal sudah dipanen, tidak pernah di tengah siklus.
+2. **Pembersihan kering:** buang sekam, feses, dan debu dari roda, alur ban, sasis, tiang sensor, dan dok dengan sikat. WOAH Bab 6.5 meminta setiap peralatan dibersihkan dan disanitasi sebelum dibawa masuk ke kandang.
+3. **Pencucian:** basahi dan cuci roda serta sasis dengan air dan detergen dengan casing IP65 tertutup dan konektor terlindung. Permukaan harus bersih dari bahan organik sebelum disinfeksi, dan perendaman dengan air serta detergen memperbaiki hasil pembersihan (Hansson *et al.*, 2025).
+4. **Disinfeksi:** semprotkan disinfektan sesuai konsentrasi dan waktu kontak pada label. Untuk ookista koksidia, pilih jenis yang efektif seperti larutan amonia, asam perasetat, atau sabun kresol, karena disinfektan berdaya rendah hampir tidak efektif (Zhao *et al.*, 2024). Lubang sensor udara ditutup selama penyemprotan.
+5. **Pengeringan dan pemeriksaan:** keringkan penuh, periksa visual, dan lakukan uji usap bila tersedia. WOAH Bab 6.5 meminta pembersihan peralatan diuji efektivitasnya sebelum kandang diisi ulang.
+6. **Penggantian bagian habis pakai:** sikat dok dan bagian yang sulit dibersihkan diganti bila perlu.
+7. **Pencatatan:** setiap langkah dicatat di log pemindahan unit, sesuai anjuran WOAH untuk mencatat pembersihan dan disinfeksi peralatan.
+8. **Pemasangan di kandang tujuan:** unit dipasang saat kandang tujuan dalam masa persiapan sebelum DOC masuk, lalu kembali berlaku aturan 1 unit untuk 1 kandang.
 
 ### 9.3. Tata Kelola AI, Privasi Data, Keamanan Sistem, & Etika Veteriner
 
@@ -421,11 +642,12 @@ Secara rekayasa dan keuangan *AgTech*, **5 tahun adalah horizon paling objektif 
 
 | Aspek Tata Kelola | Risiko Etis / Hukum / Teknis | Mekanisme Tata Kelola pada `BROVER` |
 | :--- | :--- | :--- |
-| **1. Privasi Data Kandang Peternak** | Data mortalitas, FCR, dan foto penyakit kandang sensitif secara bisnis (kekhawatiran peternak terhadap *stamping out* tanpa kompensasi atau penurunan harga pengepul). | Arsitektur ***Offline-First*** menyimpan data lokal di `SQLite` kandang; pengiriman laporan ke Dokter Hewan/Dinas bersifat ***explicit consent*** (hanya terkirim saat peternak secara sadar menekan tombol **`Laporkan ke Dokter Hewan`**). |
-| **2. Anti-*Overtrust* & Etika Veteriner (AMR)** | Peternak terlalu percaya pada output AI atau langsung membeli antibiotik dosis sembarangan tanpa konsultasi dokter hewan. | UI wajib menampilkan pernyataan *"AI hanya skrining deteksi dini, bukan diagnosis medis"* serta **tidak pernah menampilkan resep atau dosis antibiotik**; setiap temuan diarahkan melalui 3 tombol verifikasi manusia & Kamus Gejala tervalidasi **Dr. drh. Atin Supiyani, M.Si.** |
-| **3. Transparansi Keputusan AI (*Explainability*)** | Peternak atau Dokter Hewan ragu pada peringatan sistem jika berbentuk kotak hitam (*black-box*). | Setiap peringatan wajib menyertakan **bukti mentah yang dapat diperiksa manusia**: foto asli ber-*bounding box*, *confidence score*, klip audio `.wav` yang bisa diputar ulang, serta grafik suhu–RH terhadap tabel `Cobb 500` / `Ross 308`. |
-| **4. Kepatuhan Lisensi *Open-Source* & API Cuaca** | Penggunaan model `AGPL-3.0` (`Ultralytics YOLO`), dataset terbatas, atau API cuaca non-komersial saat memasuki pasar berbayar. | Fase komersialisasi (TKT 8–9) menyiapkan migrasi ke *backbone* **`Apache-2.0`** (`YOLOX-Nano` / `RT-DETR` / `MobileNetV3`), dataset `CC0`/primer lokal, atribusi wajib **`BMKG`** + pengajuan kerja sama resmi BMKG, dan paket komersial **`Open-Meteo`**. |
-| **5. Perlindungan HKI & Kerahasiaan (NDA)** | Potensi sengketa kepemilikan desain PCB, kode, atau kebocoran desain teknis saat inkubasi. | Mematuhi penuh **`[Pedoman, Hal. 6]`**: HKI (Hak Cipta software/web, desain PCB, & Paten Sederhana sistem inspeksi) tetap milik **Tim Inovator / institusi asal** dengan UNJ sebagai lembaga pembina; skema royalti diatur via **MoA** terpisah dan dilindungi **NDA**. |
+| **1. Privasi Data Kandang Peternak** | Data mortalitas, FCR, dan foto penyakit sensitif secara bisnis. | BROVER Kandang menyimpan data lokal di `SQLite`; foto BROVER Saku disimpan di server hanya dengan persetujuan peternak. Laporan ke dokter hewan/Dinas bersifat ***explicit consent***. Foto dipakai untuk memperbaiki model hanya bila peternak setuju. |
+| **2. Anti-*Overtrust* & Etika Veteriner (AMR)** | Peternak terlalu percaya pada keluaran AI atau membeli antibiotik tanpa konsultasi. | UI menampilkan pernyataan *"AI hanya skrining, bukan diagnosis medis"* dan **tidak pernah menampilkan resep atau dosis antibiotik**. Setiap temuan melewati 3 tombol verifikasi manusia dan kamus gejala tervalidasi **Dr. drh. Atin Supiyani, M.Si.** |
+| **3. Transparansi Keputusan AI** | Peringatan berbentuk kotak hitam sulit dipercaya. | Setiap peringatan menyertakan **bukti mentah**: foto asli ber-*bounding box*, tingkat keyakinan, dan grafik suhu–RH terhadap tabel `Cobb 500`/`Ross 308`. Akurasi dilaporkan terpisah untuk foto rover dan foto HP. |
+| **4. Kepatuhan Lisensi** | Model `AGPL-3.0`, data berlisensi terbatas, atau API cuaca non-komersial. | Detektor **Apache-2.0** (`YOLOX`/`RT-DETR`) dipakai sejak awal; data publik berlisensi CC BY 4.0 diberi atribusi; syarat `rknn-toolkit2` dibaca sebelum komersialisasi; atribusi wajib **BMKG** dan paket komersial **Open-Meteo** saat dijual. |
+| **5. Perlindungan HKI & Kerahasiaan** | Sengketa kepemilikan desain PCB, kode, atau kebocoran desain. | Mematuhi **`[Pedoman, Hal. 6]`**: HKI tetap milik **tim inovator / institusi asal** dengan UNJ sebagai lembaga pembina; royalti diatur lewat **MoA** dan dilindungi **NDA**. Hasil TA Ketua Tim dipakai dengan atribusi, dan repositori kode TA dipisahkan dari repositori lomba. |
+| **6. Biosekuriti Alat** | Unit rover menjadi pembawa patogen antarkandang. | SOP 1 unit untuk 1 kandang, sanitasi roda setelah putaran, dan protokol pemindahan unit (Bab 9.2 G). |
 
 ### 9.4. *Risk Register* & Rencana Mitigasi Menyeluruh
 
@@ -433,165 +655,354 @@ Secara rekayasa dan keuangan *AgTech*, **5 tahun adalah horizon paling objektif 
 
 | Kode | Kategori & Risiko Utama | Peluang | Dampak | Strategi Mitigasi Konkret |
 | :---: | :--- | :---: | :---: | :--- |
-| **R01** | **Lonjakan Harga Komponen Ritel / Stok Kosong** *(membuat HPP melampaui harga jual)* | Sedang | Tinggi | Tetapkan harga jual **All-In `Rp11,50 jt`** di atas HPP eceran RI (`Rp8,23 jt` + cadangan Cloud `Rp0,90 jt`), perjanjian grosir distributor lokal RI (`~Rp6,75 jt`), opsi substitusi `FS304-SHT30`, dan optimalkan dukungan *in-kind* **PT Edura**. |
-| **R02** | **Kegagalan Traksi Roda / Sasis Kandas di Sekam Lembap (`46,4%`)** | Sedang | Tinggi | Pisahkan tegas PoC akrilik (uji meja) vs versi Final *metal-gear* `JGB37-520` + ban RC `110–120 mm` (*ground clearance* ≥5–6 cm) & uji di bak sekam simulasi sejak Jan 2027. |
-| **R03** | **Penurunan Akurasi AI di Kandang Baru (*Domain Shift*)** | Tinggi | Tinggi | Standarisasi cahaya LED `5000K CRI >90`, *fine-tuning* 300–500 foto & audio lokal bersama Dr. drh. Atin, serta *active learning* via tombol **`Terlihat Normal`**. |
-| **R04** | **Bising Kipas *Blower* Mengganggu Deteksi Audio Ngorok** | Tinggi | Sedang | Protokol *Stop–Mute–Sample* `15 detik` (`3×5 detik` *voting*) mematikan motor/kipas internal + kelas penyaring wajib **`Suara Bising Kandang`** (*SmartEars*). |
-| **R05** | **Hambatan Adopsi & Literasi Digital Peternak/ABK** | Sedang | Tinggi | Desain *Website-First* tanpa instal rumit, antarmuka 4 panel lugas tanpa skor rancu, kendali joystick sentuh ala permainan HP, serta notifikasi via WhatsApp. |
-| **R06** | **Gangguan Internet Desa & *Timeout* API Publik BMKG** | Tinggi | Sedang | Operasi inti 100% luring via Wi-Fi lokal + `SQLite WAL` (>30 hari); cuaca luar di-cache 3–6 jam di backend `Golang` dengan *automatic fallback* ke `Open-Meteo`. |
-| **R07** | **Korsleting / Korosi Amonia (`NH₃`) & Kelembapan `96%`** | Sedang | Tinggi | Casing IP54–65, *Custom Carrier PCB* berlapis *Conformal Coating*, baterai `LiFePO₄` tahan panas, sekring `15A`, dan *kill switch* IP65. |
-| **R08** | **Risiko Jadwal Tim Lintas Kampus (ITS & UNJ) & Syarat Hadir Bootcamp `≥80%`** | Sedang | Tinggi | Pembagian kerja paralel berbasis GitHub/CI, sinkronisasi mingguan lintas ITS–UNJ, dan jadwal piket kehadiran wajib seluruh sesi Bootcamp/Mentoring (`[Pedoman, Hal. 6]`). |
+| **R01** | **Harga Komponen Naik / Stok Kosong** *(HPP melampaui rencana)* | Sedang | Tinggi | Perjanjian grosir distributor lokal (`~Rp6,71 jt`), opsi substitusi `FS304-SHT30`, dukungan *in-kind* **PT Edura**, dan peninjauan harga paket per tahun. |
+| **R02** | **Kegagalan Traksi / Sasis Kandas di Sekam Lembap (`46,4%`)** | Sedang | Tinggi | Pisahkan PoC akrilik (uji meja) dari versi final *metal-gear* `JGB37-520` + ban `110–120 mm`; uji di bak sekam simulasi mulai Januari 2027. |
+| **R03** | **Akurasi CV Turun di Kandang Baru atau pada Foto HP** | Tinggi | Tinggi | LED `5000K CRI >90`, set uji lokal dengan foto rover dan HP berpasangan, *fine-tuning* bersama Dr. drh. Atin, tombol **`Terlihat Normal`**, dan gerbang peluncuran BROVER Saku. |
+| **R04** | **`SEN0567` Kualitatif dan Bergeser di RH Tinggi** | Tinggi | Sedang | Tampilkan sebagai tren per zona dan per jam yang sama, kalibrasi terhadap alat acuan saat pilot, lindungi sensor dari embun, dan siapkan opsi sensor elektrokimia untuk varian Pro. |
+| **R05** | **Adopsi Rendah saat Harga Ayam di Bawah HPP** | Tinggi | Tinggi | Tagihan per siklus setelah panen, BROVER Saku seharga Rp75 ribu, antarmuka 3 tombol tanpa skor rancu, dan notifikasi lewat WhatsApp. |
+| **R06** | **Gangguan Internet Desa & *Timeout* API BMKG** | Tinggi | Sedang | BROVER Kandang berjalan luring lewat Wi-Fi lokal + `SQLite WAL`; BROVER Saku memakai antrean unggah; cuaca di-*cache* 3–6 jam dengan cadangan `Open-Meteo`. |
+| **R07** | **Korsleting / Korosi Amonia & Kelembapan `96%`** | Sedang | Tinggi | Casing IP54–65, *carrier PCB* berlapis *conformal coating*, baterai `LiFePO₄`, sekring `15A`, dan *kill switch* IP65. |
+| **R08** | **Jadwal Tim Lintas Kampus & Syarat Hadir Bootcamp `≥80%`** | Sedang | Tinggi | Pembagian kerja paralel berbasis GitHub, sinkronisasi mingguan ITS–UNJ, dan jadwal piket kehadiran (`[Pedoman, Hal. 6]`). |
+| **R09** | **Modal Armada Langganan** *(Rp6,7–8,2 jt per unit di muka)* | Tinggi | Tinggi | Opsi beli putus untuk B2B, kontrak minimal 6 siklus, mulai dengan sedikit unit pilot, dan pembelian grosir. |
+| **R10** | **Kontaminasi Silang saat Unit Dipindah** | Sedang | Tinggi | Protokol pemindahan unit (Bab 9.2 G) dan larangan sewa antarfarm jangka pendek. |
+| **R11** | **Respons Ayam terhadap Rover** *(menyingkir, sentuhan, stres)* | Sedang | Sedang | Mulai hari ke-7, kecepatan `0,07–0,1 m/s`, bumper lunak, sensor jarak memperlambat laju, kriteria berhenti sesi, dan pencatatan sentuhan saat pilot. |
 
-### 9.5. *Project Timeline* Resmi (Nov 2026 – Agu 2027), Peta Jalan TKT, & Kesiapan Tim `Asprak`
+### 9.5. *Project Timeline* (Nov 2026 – Agu 2027), Status TKT, Milestone, & Peta Jalan
 
-Seluruh jadwal kerja Tim `Asprak` disusun mengikuti langsung **Tahap 3 s.d. Tahap 7 `[02 Buku Pedoman Hackathon 2026.pdf, Hal. 4]`** selama 10 bulan pelaksanaan aktif:
+Seluruh jadwal kerja Tim `Asprak` mengikuti **Tahap 3 sampai Tahap 7 `[02 Buku Pedoman Hackathon 2026.pdf, Hal. 4]`** selama 10 bulan pelaksanaan aktif:
 
 ![Jadwal Pelaksanaan Proyek BROVER](./assets/08_project_timeline_brover.png)
-*`[SINTESIS JADWAL TIM ASPRAK: MENGACU BUKU PEDOMAN HACKATHON DEEP TECH UNJ 2026 HAL. 4]` Jadwal pelaksanaan proyek selama 10 bulan (Nov 2026 – Agu 2027) dalam resolusi mingguan (Minggu 1–4 setiap bulan) dari seleksi, bootcamp dan prototyping, demo alat, pertemuan mitra, hingga uji lapangan dan pendaftaran HKI.*
+*`[SINTESIS JADWAL TIM ASPRAK: MENGACU BUKU PEDOMAN HACKATHON DEEP TECH UNJ 2026 HAL. 4]` Jadwal pelaksanaan proyek selama 10 bulan (Nov 2026 – Agu 2027) per minggu: seleksi, bootcamp dan prototyping (termasuk set uji lokal foto rover dan HP, kalibrasi sensor amonia, dan jalur BROVER Saku), demo alat, pertemuan mitra, hingga uji lapangan mulai hari ke-7 dan pendaftaran HKI. Rincian 3 bulan masa bootcamp ada di Bab 9.7.*
+
+#### A. Status TKT Saat Ini & Target
+
+Definisi tingkat mengikuti materi pengukuran TKT Kemenristekdikti ([LPPM Undip](https://lppm.undip.ac.id/wp-content/uploads/Materi-Sosialisasi-TRL1.pdf)) yang mengacu pada Permenristekdikti No. 42 Tahun 2016: **TKT 3** pembuktian konsep fungsi penting secara analitis dan eksperimental; **TKT 4** validasi komponen/subsistem di lingkungan laboratorium; **TKT 5** validasi komponen/subsistem di lingkungan yang relevan; **TKT 6** demonstrasi prototipe sistem/subsistem di lingkungan yang relevan; **TKT 7** demonstrasi prototipe sistem di lingkungan sebenarnya.
+
+| Subsistem | TKT Saat Ini (28 Nov 2026) | Bukti Saat Ini | Target Akhir *Bootcamp* (Feb 2027) | Target Akhir Program (Agu 2027) |
+| :--- | :-: | :--- | :-: | :-: |
+| Gerak & kendali web + rem darurat | **4** | Rover Tahap 1 sudah dirakit, berjalan lewat web, dan rem 500 ms teruji di meja | 6 (bak sekam + sesi kandang) | 7 |
+| Dasbor website | **4** | Versi awal dasbor sudah berjalan | 6 | 7 |
+| Sensor udara & mode stasiun | **3** | Dasar analitis dari literatur dan panduan Cobb; belum diuji tim | 5 (kalibrasi di kandang) | 7 |
+| CV feses | **3** | Dasar analitis dari literatur dan rancangan TA; model belum dilatih | 5 (set uji lokal) | 6–7 |
+| **Sistem utuh** | **3** | Fungsi gerak dan kendali sudah dibuktikan eksperimen; fungsi lain baru analitis | **6** | **7** |
+
+#### B. Milestone Kunci & Indikator Teknis
+
+| Milestone | Waktu | Indikator Keberhasilan Teknis |
+| :--- | :--- | :--- |
+| **M0** | Nov 2026 | Rover Tahap 1 lulus uji jalan lewat web dan rem `500 ms`; video purwarupa untuk berkas seleksi |
+| **M1** | Akhir Des 2026 | Purwarupa Tahap 2 lulus uji meja: servo dua posisi, sensor di tiang tampil di dasbor, model *baseline* berjalan di `Raspberry Pi 4` |
+| **M2** | Akhir Jan 2027 | Unit Tahap 3 melintasi bak sekam lembap tanpa kandas; model RKNN INT8 berjalan di `Orange Pi 3B`; set uji lokal mulai terkumpul |
+| **M3** | Akhir Feb 2027 | *Working prototype* terintegrasi didemonstrasikan di lingkungan relevan; KPI Bab 4.4 B terukur; *runtime* `≥3 jam`; jalur BROVER Saku berjalan bila siap |
+| **M4** | Mar 2027 | Demo Day: demo alat, *pitch deck*, BMC, dan harga paket final |
+| **M5** | Mei – Agu 2027 | Pilot 1–2 siklus di kandang mitra; laporan pilot; draf HKI; kesepakatan uji coba tertulis |
 
 ![Peta Jalan Kesiapan Teknologi (TKT) BROVER](./assets/06_roadmap_tkt_dan_evolusi_brover.png)
-*`[SINTESIS PETA JALAN TKT TIM ASPRAK: BERBASIS PERMENRISTEKDIKTI NO. 42/2016 & JURNAL PEER-REVIEWED]` Peta jalan kenaikan Tingkat Kesiapterapan Teknologi (TKT) BROVER secara bertahap dari Purwarupa Awal (TKT 3–4) → Purwarupa Siap Kandang (TKT 5–6) → Uji Kandang Mitra (TKT 7) → Produk Siap Pasar (TKT 8–9).*
+*`[SINTESIS PETA JALAN TKT TIM ASPRAK: BERBASIS PERMENRISTEKDIKTI NO. 42/2016 & JURNAL PEER-REVIEWED]` Peta jalan kenaikan Tingkat Kesiapterapan Teknologi (TKT) BROVER: Purwarupa Awal (TKT 3–4) → Purwarupa Siap Kandang (TKT 5–6) → Uji Kandang Mitra (TKT 7) → Produk Siap Pasar (TKT 8–9), dengan pengembangan lanjutan berupa CV navigasi, penjadwalan otomatis, modul CO₂, kamera termal, dan riset mikrofon tetap.*
 
-#### Mengapa Kesiapan Teknologi (TKT) `BROVER` Dinaikkan Secara Bertahap?
-Secara sederhana, **Tingkat Kesiapterapan Teknologi (TKT / *Technology Readiness Level*)** adalah skala kematangan **1 sampai 9** yang mengukur seberapa siap sebuah alat hasil riset untuk benar-benar dipakai di lapangan (Permenristekdikti RI No. 42 Tahun 2016). `BROVER` sengaja tidak mengklaim langsung siap jual dalam satu lompatan karena tiga alasan ilmiah yang terverifikasi:
-1. **Menghindari Jebakan Riset Berhenti di Lab (*TKT 3–4 → 5–6*):** Tinjauan sistematis atas lebih dari 260 publikasi *peer-reviewed* teknologi peternakan unggas oleh **Rowe *et al.* (*Animals* Q1, 2019)** membuktikan bahwa mayoritas inovasi gagal diadopsi peternak karena berhenti di purwarupa meja laboratorium tanpa teruji menghadapi debu, kelembapan tinggi, amonia, dan keterjangkauan harga.
-2. **Wajib Melewati Uji Lingkungan Relevan (*TKT 5–6*):** Kerangka resmi penilaian kesiapan teknologi oleh **Mankins (*Acta Astronautica* Q1, 2009)** menegaskan bahwa perpindahan dari uji laboratorium (**TKT 4**) ke lapangan sesungguhnya (**TKT 7**) harus melewati simulasi lingkungan relevan (**TKT 5–6**) terlebih dahulu, yakni pengujian ketahanan rangka, baterai, dan akurasi AI di bak sekam lembap sebelum masuk kandang komersial.
-3. **Menjamin Integrasi Antar-Subsistem (*TKT 7 → 8–9*):** Kajian **Olechowski *et al.* (*Systems Engineering*, 2020)** menunjukkan kegagalan paling sering muncul saat perangkat keras, sensor, AI, dan perangkat lunak digabungkan dalam kondisi kerja asli; oleh sebab itu uji siklus penuh di kandang mitra Bogor (**TKT 7**) dijadikan syarat kelulusan sebelum pendaftaran HKI dan pemasaran luas (**TKT 8–9**).
+#### C. Mengapa TKT `BROVER` Dinaikkan Bertahap?
+**Tingkat Kesiapterapan Teknologi (TKT)** adalah skala kematangan **1 sampai 9** yang mengukur seberapa siap hasil riset dipakai di lapangan (Permenristekdikti RI No. 42 Tahun 2016). `BROVER` tidak mengklaim langsung siap jual karena tiga alasan:
+1. **Menghindari riset yang berhenti di lab (TKT 3–4 → 5–6):** tinjauan sistematis atas 264 publikasi peternakan presisi unggas oleh **Rowe *et al.* (*Animals* Q1, 2019)** menyimpulkan bahwa teknologi ini belum menjadi kenyataan komersial yang luas, sehingga laju komersialisasi perlu diprioritaskan.
+2. **Wajib melewati uji lingkungan relevan (TKT 5–6):** kerangka penilaian kesiapan teknologi **Mankins (*Acta Astronautica*, 2009)** menempatkan demonstrasi di lingkungan relevan sebelum demonstrasi di lingkungan sebenarnya, yaitu uji rangka, baterai, dan akurasi AI di bak sekam lembap sebelum masuk kandang komersial.
+3. **Menjamin integrasi antarsubsistem (TKT 7 → 8–9):** kajian **Olechowski *et al.* (*Systems Engineering*, 2020)** atas praktisi TRL menemukan bahwa tantangan kompleksitas sistem, termasuk integrasi antarsubsistem, paling kritis, sehingga uji siklus penuh di kandang mitra menjadi syarat sebelum HKI dan pemasaran luas.
 
-#### Peta Ekspansi Jangka Panjang (*Future Work*) & Pembagian Peran Tim `Asprak` (Rubrik Kapasitas Tim 10%)
-1. **Peta Ekspansi Produk (*Future Work* TKT 8–9):**
-   - **Otomatisasi Penuh Terjadwal & *Setup* Jalur Inspeksi:** Mengaktifkan *Hall Encoder* + `MPU6050` (pinout disiapkan pada *Custom Carrier PCB*) agar peternak cukup mengatur jadwal rutin dan rute lorong di dashboard.
-   - **Aplikasi Mobile Native (`Flutter` / `React Native`):** Menambahkan *auto-switch* SSID Wi-Fi latar belakang (*Android `WifiNetworkSpecifier`*), *BLE provisioning*, dan notifikasi darurat native.
-   - **Modul Rel/Kabel Gantung (*Overhead Track Kit*):** Kotak sensor & *Edge AI* modular dapat digantung pada rel plafon untuk melayani broiler penuh hingga hari ke-35 (`30 kg/m²`) serta kandang baterai ayam petelur (*layer*).
-2. **Pembagian Peran Multidisiplin Tim `Asprak` (5/5 Lengkap):**
-   - **M. Hikari Reiziq Rakhmadinta (`Hustler`, TI ITS):** Strategi produk, riset mitra & Dinas Peternakan, analisis model bisnis/BMC, manajemen timeline lomba, & pitching.
-   - **Ahmad Syauqi Reza (`Hacker`, TI ITS):** Pengembangan firmware `ESP32` (*Dead-Man's Switch 500 ms*, sensor `SHT31`/`SEN0567`), *Custom Carrier PCB*, konektivitas Wi-Fi lokal nirkabel, & *Backend* `Golang`.
-   - **Arya Bisma Putra Refman (`Hacker`, TI ITS):** Pelatihan & kuantisasi 3 model *Multi-Modal AI* (CV Feses, CV Fisik Ayam, Audio Pernapasan `3×5 detik`) serta integrasi *Edge-Backend*.
-   - **Aditya Reza Daffansyah (`Hipster`, TI ITS):** Perancangan UI/UX Dashboard `Next.js` PWA (4 Panel Standar Umur `Cobb 500` & `Ross 308`, halaman kendali FPV `Rover` di website, 3 tombol triase, Laporan 1-Klik Dokter Hewan) & desain industrial casing.
-   - **Dr. drh. Atin Supiyani, M.Si. (`Anggota Tim: Pakar Domain Veteriner, Biologi UNJ`):** Validasi ilmiah gejala klinis penyakit broiler & fisiologi mikroklimat, penyusunan *Disease Triage Dictionary* berbasis Manual Kementan RI, kolaborasi uji lapangan/TKT–Katsinov (`≥80%`), akses Lab UNJ, & pengawalan HKI.
+#### D. Pengembangan Lanjutan (*Future Work*) & Pembagian Peran Tim `Asprak` (Rubrik Kapasitas Tim 10%)
+1. **Pengembangan lanjutan (P2):**
+   - **Otomatisasi rover:** CV navigasi untuk mendeteksi ayam dan halangan di depan rover lalu memutuskan berhenti, melambat, atau berbelok, memakai data deteksi ayam seperti PIO, YOLOv5-CBAM broiler di atas sekam (Guo *et al.*, 2023), dan Big Broiler; ditambah **penjadwalan otomatis**, yaitu putaran terjadwal dan putaran khusus saat THI atau amonia di dok melewati ambang. Rujukan: Marin *et al.* (2024), Vroegindeweij *et al.* (2018), dan Octopus XO.
+   - **Inferensi CV langsung di HP** untuk BROVER Saku, setelah kecepatan dan akurasinya diukur di HP kelas bawah.
+   - **Modul CO₂** untuk kandang berpemanas gas (Reece & Lott, 1980; McGovern *et al.*, 2001).
+   - **Kamera termal** untuk peta panas permukaan kelompok ayam, bukan suhu tubuh per ekor.
+   - **Riset mikrofon tetap per kandang**, dengan peluang kolaborasi data bersama penulis UGM (Rosyida *et al.*, 2026) dan pembelajaran dari SmartEars (Qiao *et al.*, 2026).
+   - **Aplikasi mobile native** (`Flutter` / `React Native`) dan modul rel gantung untuk kandang yang lantainya terlalu padat di akhir siklus.
+2. **Pembagian Peran Tim `Asprak` (5/5 Lengkap):**
+   - **M. Hikari Reiziq Rakhmadinta (Ketua Tim, `Hustler`, TI ITS):** strategi produk, riset harga paket, kemitraan Dinas Pangan dan Pertanian Kota Cimahi dan peternak mitra, BMC, *pitching*, dan sinergi dengan TA.
+   - **Ahmad Syauqi Reza (`Hacker`, TI ITS):** firmware `ESP32` (rem 500 ms, perlambatan sensor jarak, jadwal putaran, mode stasiun), sensor di tiang dan dok, *carrier PCB*, Wi-Fi lokal, dan *backend* `Golang`.
+   - **Arya Bisma Putra Refman (`Hacker`, TI ITS):** pelatihan dan kuantisasi detektor feses Apache-2.0, set uji lokal bersama dokter hewan, evaluasi akurasi per sumber foto, dan layanan inferensi BROVER Saku.
+   - **Aditya Reza Daffansyah (`Hipster`, TI ITS):** UI/UX dasbor `Next.js` PWA (panel standar umur, tren harian, triase, laporan 1-klik), halaman kendali rover, alur unggah foto HP, dan desain casing.
+   - **Dr. drh. Atin Supiyani, M.Si. (Pakar Domain Veteriner, Biologi UNJ):** label set uji lokal dan hitungan OPG, kamus gejala berbasis Manual Kementan RI, aturan RH tropis dan ambang amonia, validasi tabel standar umur, dan pengawalan etika uji lapangan.
+
+### 9.6. Rencana Pengujian Lapangan (Pilot) & Hilirisasi
+
+`[SINTESIS RENCANA PILOT TIM ASPRAK: RENCANA, BELUM KESEPAKATAN]`
+
+**Calon Mitra Uji Lapangan (Rencana):**
+1. **Dinas Pangan dan Pertanian Kota Cimahi**, yang membidangi urusan peternakan dan kesehatan hewan melalui Seksi Peternakan dan UPTD Pusat Kesehatan Hewan (Puskeswan) ([Renstra 2025–2029](https://ppid.cimahikota.go.id/image/document/dinas-pangan-dan-pertanian-rencana-strategis-dinas-pangan-dan-pertanian-tahun-2025-2029.pdf)). Peran yang diajukan: menghubungkan tim dengan peternak binaan, mendampingi validasi klinis, dan menjadi penerima laporan uji.
+2. **Peternakan broiler milik keluarga salah satu anggota tim.** Hubungan keluarga ini diungkap terbuka. Peran: akses kandang untuk set uji lokal dan sesi uji rover. Tipe kandang dan skala populasi menunggu konfirmasi.
+
+Kedua mitra **belum** menandatangani kesepakatan. Persetujuan tertulis dan *Letter of Intent* (LoI) ditargetkan pada tahap Business Matching (April 2027).
+
+**Tahapan Uji:**
+
+| Tahap | Waktu | Kegiatan | Lingkungan |
+| :--- | :--- | :--- | :--- |
+| Uji meja & bak sekam | Des 2026 – Jan 2027 | Uji gerak, rem, sensor, dan model; uji traksi di bak sekam lembap | Laboratorium & simulasi |
+| Set uji lokal | Jan – Feb 2027 | Foto feses broiler di atas sekam dengan rover dan HP berpasangan, label dokter hewan, hitungan OPG | Kandang mitra (rencana) |
+| Sesi pendek rover | Akhir Feb 2027 | Putaran pendek mulai hari ke-7 dengan kriteria berhenti; kalibrasi `SEN0567` terhadap alat acuan | Lingkungan relevan |
+| Pilot siklus penuh | Mei – Agu 2027 | Hari 0–6 mode stasiun, hari ke-7 sampai panen 2 putaran per hari, selama 1–2 siklus | Kandang mitra (lingkungan sebenarnya) |
+
+**Metrik Pilot:**
+- akurasi CV feses per sumber foto terhadap label dokter hewan dan OPG;
+- korelasi dan galat `SEN0567` terhadap alat acuan;
+- waktu putaran, waktu operator, jumlah sentuhan ayam, dan kejadian kriteria berhenti;
+- kelengkapan data mode stasiun di dok;
+- pemakaian 3 tombol dan jumlah laporan ke dokter hewan;
+- **selisih waktu antara peringatan sistem dan konfirmasi dokter hewan**, sebagai dasar sebelum memakai kata *lebih cepat* atau *dini*;
+- deplesi dan FCR dibanding flok atau siklus pembanding, disajikan deskriptif, bukan sebagai klaim sebab-akibat.
+
+**Etika & Biosekuriti Pilot:** persetujuan tertulis peternak, SOP 1 unit untuk 1 kandang, sanitasi roda setiap putaran, data dianonimkan, dan tim tidak memberikan pengobatan. Keputusan klinis tetap di tangan dokter hewan.
+
+**Jalur Hilirisasi:** TKT 7 di kandang mitra → pendaftaran HKI (hak cipta perangkat lunak dan desain *carrier PCB*, kajian paten sederhana) → LoI uji coba → produksi batch kecil dengan dukungan *in-kind* PT Edura → *bundling* beli putus bersama mitra pembangun kandang (rencana dengan PT Zara / KANOPIS) → BROVER Saku melalui kanal TSO, koperasi, dan Dinas.
+
+### 9.7. Jadwal Pengembangan Purwarupa 3 Bulan (Desember 2026 – Februari 2027)
+
+`[SINTESIS JADWAL TIM ASPRAK: MASA BOOTCAMP & PROTOTYPING SESUAI PEDOMAN HAL. 4]`
+
+Masa *bootcamp* dan *prototyping* berlangsung tepat 3 bulan. Jadwal berikut merinci periode **pengembangan** dan **pendampingan** (4 modul *bootcamp*: *Ideation & Feasibility*, *Technical Deep-Dive*, *Commercialization/BMC/BPOM/SNI/Bapanas*, dan *Rapid Prototyping & Pitching*; serta mentoring 3 pilar: akademik, industri, dan mitra pengguna). Tanggal modul mengikuti pengumuman panitia. Kolom M1–M12 adalah minggu ke-1 sampai ke-12.
+
+| No | Kegiatan | Penanggung Jawab | Des M1 | M2 | M3 | M4 | Jan M5 | M6 | M7 | M8 | Feb M9 | M10 | M11 | M12 |
+| :-: | :--- | :--- | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
+| 1 | Pendampingan: 4 modul *bootcamp* & mentoring 3 pilar | Seluruh tim | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ |
+| 2 | Rover Tahap 2: `Raspberry Pi 4`, kamera pada servo dua posisi, LED, tiang sensor | Ahmad | ■ | ■ | ■ | | | | | | | | | |
+| 3 | Firmware: perlambatan sensor jarak, jadwal putaran, mode stasiun | Ahmad | | ■ | ■ | ■ | ■ | ■ | | | | | | |
+| 4 | CV feses: pembersihan data, latih detektor Apache-2.0, ekspor ONNX, uji di `Raspberry Pi 4` | Arya | ■ | ■ | ■ | ■ | ■ | ■ | | | | | | |
+| 5 | Dasbor: standar umur, catatan ABK, ceklis, vaksin, triase, laporan 1-klik | Aditya | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | ■ | | |
+| 6 | Mekanik Tahap 3: pengadaan & rakit motor, driver, baterai, ban, casing, *carrier PCB* | Ahmad | | | ■ | ■ | ■ | ■ | ■ | ■ | | | | |
+| 7 | Set uji lokal: foto rover & HP berpasangan, label dokter hewan, OPG | Dr. drh. Atin, Arya | | | | ■ | ■ | ■ | ■ | ■ | ■ | ■ | | |
+| 8 | Migrasi `Orange Pi 3B` & RKNN INT8 | Arya | | | | | | | ■ | ■ | ■ | ■ | | |
+| 9 | Uji bak sekam lembap | Ahmad, Arya | | | | | | | | ■ | ■ | | | |
+| 10 | Dok, mode stasiun, & uji baterai `≥3 jam` | Ahmad | | | | | | | | | ■ | ■ | | |
+| 11 | Kalibrasi `SEN0567` terhadap alat acuan | Ahmad, Dr. drh. Atin | | | | | | | | | ■ | ■ | ■ | |
+| 12 | Jalur server BROVER Saku (setelah inferensi rover berjalan) | Arya, Aditya | | | | | | | | | | ■ | ■ | ■ |
+| 13 | Integrasi, uji KPI, & sesi pendek di kandang mitra | Seluruh tim | | | | | | | | | | ■ | ■ | ■ |
+| 14 | *Pitch deck*, BMC final, video demo, persiapan Demo Day | Hikari, Aditya | | | | | | | | | | | ■ | ■ |
+| | **Milestone** | | | | | **M1** | | | | **M2** | | | | **M3** |
+
+![Jadwal Pengembangan Purwarupa 3 Bulan BROVER](./assets/08b_jadwal_purwarupa_3_bulan_brover.png)
+*`[SINTESIS JADWAL TIM ASPRAK]` Gantt 12 minggu masa bootcamp (Desember 2026 – Februari 2027) berisi alur kerja pengembangan dan pendampingan, dengan milestone M1 akhir Desember, M2 akhir Januari, dan M3 akhir Februari.*
+
+### 9.8. Target Luaran & Indikator Keberhasilan
+
+| Jenis Luaran | Luaran yang Diserahkan | Indikator Keberhasilan | Cara Verifikasi | Waktu |
+| :--- | :--- | :--- | :--- | :--- |
+| **Produk fisik** | Purwarupa BROVER Kandang: rover, tiang sensor, dan dok | Lulus KPI keselamatan, *runtime* `≥3 jam`, uji bak sekam, dan sesi pendek di kandang | Video uji, log `ESP32` dan `INA219` | Feb 2027 |
+| **Produk digital** | Dasbor `Next.js` PWA + halaman kendali rover | Panel standar umur, tren harian, triase, dan laporan 1-klik berjalan | Demo langsung | Feb 2027 |
+| **Model AI** | Detektor feses Apache-2.0 dalam format ONNX dan RKNN INT8 | F1 pada set uji lokal dilaporkan terpisah untuk foto rover dan HP | Laporan evaluasi model | Feb 2027 |
+| **Layanan BROVER Saku** | Layanan inferensi server + antrean unggah foto HP | Berjalan bila inferensi rover sudah stabil; akurasi foto HP diukur | Demo dan laporan evaluasi | Feb 2027 bila siap, atau saat pilot |
+| **Data** | Set uji lokal feses broiler di atas sekam (foto rover & HP berpasangan, label dokter hewan, OPG) | Jumlah sampel dan sebaran kelas dilaporkan | Lembar deskripsi dataset | Feb 2027 |
+| **Dokumentasi** | Laporan uji fungsi, spesifikasi teknis, SOP sanitasi, protokol pemindahan unit | Dokumen lengkap dan dipakai saat pilot | Repositori proyek | Feb – Mar 2027 |
+| **HKI** | Draf hak cipta perangkat lunak dan desain *carrier PCB*; kajian paten sederhana | Draf diajukan | Bukti pendaftaran | Mei – Agu 2027 |
+| **Kesiapan adopsi** | *Pitch deck*, BMC, harga paket final, kesepakatan uji coba dengan Dinas Pangan dan Pertanian Kota Cimahi dan peternakan mitra | Dokumen bertanda tangan | Arsip kesepakatan | Mar – Apr 2027 |
+| **Pilot** | Data 1–2 siklus penuh | Metrik Bab 9.6 terkumpul | Laporan pilot | Agu 2027 |
 
 ---
 
 ## 10. Kesimpulan
 
-**`BROVER` (*Broiler Inspection & Health Rover*)** dirancang sebagai jawaban rekayasa yang jujur, berbasis bukti ilmiah, dan realistis secara ekonomi terhadap dua persoalan paling merugikan peternak ayam broiler rakyat Indonesia: keterlambatan deteksi dini gejala penyakit dan instabilitas mikroklimat tropis.
+**`BROVER`** dirancang sebagai jawaban rekayasa yang jujur, berbasis bukti ilmiah, dan realistis secara ekonomi terhadap dua persoalan peternak ayam broiler Indonesia: penyakit yang terlambat dikenali di kandang, dan mikroklimat tropis yang menyimpang dari standar umur.
 
-1. **Kebaruan & Kelayakan Teknis:** Memadukan 3 modalitas *Edge AI* (CV Feses, CV Fisik Ayam, dan Audio Pernapasan `15 detik` / `3×5 detik` *voting* berbasis *SmartEars*) dengan sensor udara *bird-level* di atas 1 unit *Rover Inspeksi* berkecepatan aman (`≤0,1 m/s`), *Dead-Man's Switch* `500 ms`, kendali langsung lewat website via Wi-Fi lokal nirkabel (*Offline-First*), evaluasi otomatis terhadap standar umur resmi `Cobb 500` & `Ross 308`, serta prakiraan cuaca luar hibrida `BMKG + Open-Meteo`.
-2. **Keberlanjutan Bisnis & Tata Kelola:** Audit harga riil 100% e-commerce dan distributor lokal Indonesia memastikan struktur biaya transparan (**HPP `Rp8,23 juta`** eceran satuan; **`~Rp6,75 juta`** grosir lokal ≥20–50 unit) dengan skema **All-In Sepaket `Rp11,50 juta/unit` tanpa langganan bulanan** (cadangan Cloud 3 tahun `Rp900 rb/unit` sudah termasuk, proyeksi keuntungan bersih 5 tahun **`+Rp64,70 juta` / `ROI 498%`** pada kandang 15.000 ekor), dilengkapi tata kelola privasi *explicit consent*, pencegahan *operator overtrust*/AMR, dan perlindungan HKI sesuai Buku Pedoman Hackathon Deep Tech UNJ 2026.
-3. **Kesiapan Hilirisasi:** Didukung tim multidisiplin lengkap **4 mahasiswa Teknologi Informasi ITS + 1 Doktor Dokter Hewan Biologi UNJ**, target KPI terukur, serta jadwal kerja terstruktur 10 bulan (**Nov 2026 – Agu 2027**) menuju *working prototype*, *pilot testing* di kandang mitra, dan kesiapan pasar.
+1. **Kebaruan & Kelayakan Teknis:** `BROVER` memadukan `Rover Inspeksi` yang berhenti di titik zona tetap 2 kali sehari dengan foto feses berstandar, sensor suhu, RH, dan tren amonia di tiang setinggi ayam, mode stasiun di dok dalam kandang, **satu model CV feses berlisensi Apache-2.0** yang berjalan di *edge*, serta dasbor berbasis standar umur `Cobb 500` dan `Ross 308`. Keluarannya adalah skrining dengan verifikasi manusia, bukan diagnosis. Penyakit pernapasan ditangani lewat pemantauan faktor pemicunya, ceklis ABK, dan dokter hewan.
+2. **Keberlanjutan Bisnis & Tata Kelola:** dua paket yang ditagih per siklus setelah panen, **BROVER Saku Rp75 ribu** dan **BROVER Kandang Rp750 ribu** (atau beli putus), menjangkau peternak kecil sampai besar. Titik impasnya setara 2,1–3,3 ekor ayam terselamatkan per siklus untuk BROVER Saku dan 21–33 ekor untuk BROVER Kandang, dengan HPP rover **Rp8,18 juta** (eceran) atau **~Rp6,71 juta** (grosir) yang kembali dalam sekitar 12–14 siklus. Tata kelola mencakup persetujuan eksplisit, pencegahan *overtrust* dan penyalahgunaan antibiotik, lisensi Apache-2.0, serta protokol pemindahan unit berbasis WOAH dan jurnal *peer-reviewed*.
+3. **Kesiapan Hilirisasi:** tim multidisiplin **4 mahasiswa Teknologi Informasi ITS + 1 dokter hewan Biologi UNJ** sudah menyelesaikan rover Tahap 1 dan dasbor awal, memiliki jadwal purwarupa 3 bulan pada masa *bootcamp*, KPI terukur, dan rencana uji lapangan bersama Dinas Pangan dan Pertanian Kota Cimahi dan peternakan mitra menuju TKT 7 pada Agustus 2027.
 
 ---
 
-## 11. Kumpulan Dataset, GitHub / Hugging Face / Kaggle, & Model AI
+## 11. Kumpulan Dataset, Repositori, & Model AI
 
-Seluruh tautan di bawah ini telah diverifikasi aktif (`HTTP 200`) dari kurasi [05_Curated_Winners_And_Top_OpenSource](../05_Curated_Winners_And_Top_OpenSource/00_RINGKASAN_KURASI_DAN_ELIMINASI.md) dan audit langsung.
+Tautan di bawah ini diuji ulang pada sinkronisasi 28 November 2026. Hasil uji dua kali dicatat di [EVALUASI_ULANG_BROVER.md](../08_Evaluasi_Proyek/EVALUASI_ULANG_BROVER.md).
 
 `[DATA PRIMER TERVERIFIKASI: TABEL/VISUALISASI DISUSUN OLEH AI AGENT]`
 
-### A. Kumpulan Dataset Terverifikasi (CV Feses, CV Fisik/Mati, Audio Pernapasan, & Mikroklimat)
+### A. Dataset CV Feses & Data Pendukung
 
-| No | Jenis | Nama & Platform | Untuk Apa (Peran di `BROVER`) | Catatan Audit & Lisensi | Link Terverifikasi (`HTTP 200`) |
+| No | Jenis | Nama & Platform | Peran di `BROVER` | Catatan Audit & Lisensi | Tautan |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| 1 | **Dataset CV Feses (PCR)** | **PCR-Annotated Poultry Disease Diagnostics** *(Zenodo 5801834)* | **Dataset Utama Model #1 (CV Feses):** 4 kelas terverifikasi uji PCR (*Coccidiosis, Salmonella, Newcastle Disease, Healthy*) + anotasi deteksi objek YOLO. | `36.265 downloads`; DOI permanen (`Machuve et al., 2022`); wajib ditambah foto sekam lokal Indonesia untuk *domain shift*. | [Zenodo 5801834](https://zenodo.org/records/5801834) |
-| 2 | **Dataset CV Feses** | **Chicken Disease Image Classification** *(Kaggle: `allandclive`)* | Pengayaan data *training/validation* Model #1 (4 kelas feses unggas, 266 MB). | `9.211 downloads`, `85 upvotes`; *benchmark* standar komunitas. | [Kaggle Dataset](https://www.kaggle.com/datasets/allandclive/chicken-disease-1) |
-| 3 | **Dataset CV Feses** | **Chicken Feces Baseline Clean** *(Hugging Face: `iagovarela`)* | Dataset citra feses bersih format HF untuk uji *baseline* cepat Model #1. | `562 downloads`; siap pakai di pipeline PyTorch/HF. | [Hugging Face Dataset](https://huggingface.co/datasets/iagovarela/poultry-disease-dataset) |
-| 4 | **Dataset CV Fisik/Mati (ID)** | **Chicken Health Images Dataset: RGB & Thermal** *(Kaggle: `ekosupriyanto`)* | **Dataset Utama Model #2 (CV Ayam Sehat/Lesu/Mati):** Memanfaatkan cabang **RGB** berlabel *Healthy, Sick, Dead* buatan kontributor Indonesia. | **Lisensi `CC0 Public Domain`** (bebas untuk penggunaan komersial); cabang termal tidak dipakai karena tanpa IR/thermogun. | [Kaggle Dataset](https://www.kaggle.com/datasets/ekosupriyanto/chicken-health-images-dataset-rgb-and-thermal) |
-| 5 | **Dataset CV Perilaku Broiler** | **ChickenVerse: Detection, Segmentation & Behavior (2026)** *(Zenodo 20672799)* | Melatih Model #2 mengenali deteksi individu, postur abnormal, dan perilaku broiler di kandang nyata. | `3.228 downloads`; riset terbuka mutakhir 2026 (`DOI: 10.5281/zenodo.20672799`). | [Zenodo 20672799](https://zenodo.org/records/20672799) |
-| 6 | **Dataset CV Broiler** | **PIO Broiler Detection Dataset** *(Zenodo 16686320)* | Pengayaan deteksi broiler & kerumunan/distribusi lantai (`1.435` gambar resolusi tinggi, `327.289` anotasi YOLO). | `3.875 downloads`; label fokus deteksi individu & distribusi (bukan label penyakit). | [Zenodo 16686320](https://zenodo.org/records/16686320) |
-| 7 | **Dataset CV Gejala Eksternal *(Cadangan)*** | **Evet-Africa Poultry Disease Dataset** *(Hugging Face)* | Eksperimen sekunder Model #2 khusus **hanya 8 kelas gejala fisik luar** (*Torticollis, Facial Swelling, Oculonasal Discharge, Cyanotic comb*, dll.). | **Peringatan Audit:** `~18/26` kelas adalah organ dalam bedah bangkai (**wajib dibuang**); lisensi **`AGPL-3.0`** (opsi diganti data lain saat komersialisasi). | [Hugging Face Dataset](https://huggingface.co/datasets/Evet-Africa/poultry-disease-dataset) |
-| 8 | **Dataset Audio Pernapasan** | **SmartEars: Poultry Respiratory Monitoring Audio** *(Mendeley Data / Comp. Electron. Agric., 2026)* | **Dataset Utama Model #3 (Audio AI):** `6.000` segmen audio persis berdurasi **5 detik** (`44,1 kHz`: *Healthy*, *Sick/Gangguan Pernapasan*, *None/Suara Bising Kandang*). | Ukuran segmen 5 detik dipadukan protokol *Stop–Mute–Sample* `15 detik` (`3×5 detik` *voting*) agar gejala intermiten tertangkap & bising *blower* tersaring. | [Mendeley Data](https://data.mendeley.com/datasets/dy6gtvt4mk/2) |
-| 9 | **Dataset Audio Pernapasan** | **Poultry Vocalization Signal Dataset** *(Mendeley Data)* | Pengayaan Model #3: `346` file `.wav` (*healthy, noise, unhealthy*) hasil rekaman longitudinal 65 hari. | DOI permanen (`10.17632/zp4nf2dxbh.1`); memperkuat generalisasi suara ngorok/bersin. | [Mendeley Data](https://data.mendeley.com/datasets/zp4nf2dxbh.1) |
-| 10 | **Dataset Multimodal (ID/EN)** | **Chicken Health & Behavior Multimodal** *(Hugging Face: `IceKhoffi`)* | Pengayaan Model #2 & #3: mencakup folder `vision-object-detection` & `vocalization-dataset-for-early-disease-detection`. | `723 downloads`; bertag bahasa Indonesia & Inggris. | [Hugging Face Dataset](https://huggingface.co/datasets/IceKhoffi/chicken-health-behavior-multimodal) |
-| 11 | **Dataset Mikroklimat** | **Environmental Monitoring of Broiler Chickens** *(Mendeley Data)* | Referensi kalibrasi & pengujian simulasi evaluasi mikroklimat (`1.920` observasi Suhu, RH, `NH₃`, `CO₂`, & umur broiler). | DOI permanen (`10.17632/m9nsjhtsph.1`). | [Mendeley Data](https://data.mendeley.com/datasets/m9nsjhtsph.1) |
+| 1 | **Dataset CV feses (label YOLO)** | **Machine Learning Dataset for Poultry Diseases Diagnostics** *(Zenodo 4628934, Machuve 2021)* | **Data latih utama** setelah label dibersihkan | 6.812 citra dengan label YOLO dan segmentasi; audit TA menemukan 3 berkas kosong, 3 kotak cacat, dan 357 kotak `class_id` 1. Feses ayam petelur, persilangan, dan lokal di Tanzania, bukan broiler di atas sekam. CC BY 4.0. | [Zenodo 4628934](https://zenodo.org/records/4628934) |
+| 2 | **Dataset CV feses (label PCR)** | *Machine Learning Dataset for Poultry Diseases Diagnostics, PCR annotated* (Zenodo 5801834) | **Uji klasifikasi tingkat citra** berlabel laboratorium | 1.255 citra dalam 4 arsip klasifikasi PCR, **tanpa label YOLO**, bukan broiler. CC BY 4.0. | [Zenodo 5801834](https://zenodo.org/records/5801834) |
+| 3 | **Dataset CV feses tambahan** | *Mendeley 8pnbzpt2k9* (Aworinde dkk. 2023) | Tambahan data sehat dan tidak sehat | 14.618 citra 100×100 piksel, **broiler dan petelur**, Nigeria. CC BY 4.0. | [Mendeley 8pnbzpt2k9](https://data.mendeley.com/datasets/8pnbzpt2k9/1) |
+| 4 | **Set uji lokal `BROVER`** | Foto feses broiler di atas sekam dari rover dan HP berpasangan | **Wajib** untuk klaim akurasi, termasuk perbandingan foto rover dan HP | Label dokter hewan dan hitungan OPG untuk koksidiosis; dikumpulkan dengan persetujuan peternak; milik tim. | Belum tersedia |
+| 5 | **Dataset feses gabungan** | *Kaggle allandclive* | Hanya pembanding; **jangan dipakai bersama Zenodo** | Gabungan data Zenodo sehingga berisiko duplikat dan kebocoran data; lisensi di laman tercatat *Unknown*. | [Kaggle](https://www.kaggle.com/datasets/allandclive/chicken-disease-1) |
+| 6 | **Dataset feses gabungan** | *Hugging Face iagovarela* | Hanya untuk audit asal-usul data | 9.611 baris label, tanpa lisensi, menggabungkan beberapa sumber termasuk Machuve. | [Hugging Face](https://huggingface.co/datasets/iagovarela/poultry-disease-dataset) |
+| 7 | **Data mikroklimat** | *Environmental Monitoring of Broiler Chickens During Summer and Winter* (Mendeley m9nsjhtsph) | Uji perangkat lunak dasbor saja | 1.920 observasi; deskripsi resmi tidak memuat tanggal, lokasi sensor, maupun luaran biologis. | [Mendeley Data](https://data.mendeley.com/datasets/m9nsjhtsph/1) |
 
-### B. Repositori GitHub & Proyek Pemenang Hackathon Referensi
+*Catatan: Wang dkk. (2019) mengklasifikasikan feses broiler Ross umur 25–35 hari di kandang bertingkat dengan sabuk kotoran. Artikelnya berlisensi CC BY 4.0, tetapi ketersediaan datanya belum dapat diverifikasi, sehingga dipakai sebagai rujukan metode, bukan dataset.*
 
-| No | Jenis | Nama & Platform | Untuk Apa (Peran di `BROVER`) | Catatan Audit & Lisensi | Link Terverifikasi (`HTTP 200`) |
+### B. Repositori & Proyek Referensi
+
+| No | Jenis | Nama & Platform | Peran di `BROVER` | Catatan Audit & Lisensi | Tautan |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| 12 | **GitHub + Devpost Winner** | **Henomaly (`RishitRai/Henomaly`)** | Referensi utama arsitektur *Edge AI* Raspberry Pi + *anomaly triage* feses/perilaku (3 tombol aksi *Human-in-the-Loop*, bukan vonis medis) & studi kasus *cross-farm domain shift*. | Pemenang resmi AI Hackathon 2026; demo web [aremyhens.fit](https://aremyhens.fit/) aktif. | [GitHub](https://github.com/RishitRai/Henomaly) \| [Devpost](https://devpost.com/software/holy-crap) |
-| 13 | **GitHub Riset CV Karkas** | **Broiler Carcass Candidate Detection (`jeongrubin`)** | Referensi algoritma membedakan **ayam mati vs ayam tidur** pada lantai broiler (Model #2). | Implementasi riset *YOLOv8s + U-Net + BiLSTM*. | [GitHub](https://github.com/jeongrubin/broiler-carcass-candidate-detection) |
-| 14 | **GitHub Audio AI** | **CVC-Fusion (`CoderYLH/CVC-Fusion`)** | Referensi arsitektur *encoder* akustik ringan (*1D MobileNetV2 + spectrogram fusion*) untuk Model #3. | Implementasi paper riset vokalisasi ayam. | [GitHub](https://github.com/CoderYLH/CVC-Fusion) |
-| 15 | **GitHub Audio AI** | **ChickenLanguageDataset (`zebular13`)** | Referensi skrip prapemrosesan & segmentasi rekaman vokalisasi ayam + suara bising latar. | `47 stars`, `9 forks`. | [GitHub](https://github.com/zebular13/ChickenLanguageDataset) |
-| 16 | **GitHub Indonesia (SPK)** | **ChiRex (`januriawan/chirex`)** | Referensi struktur basis pengetahuan gejala penyakit ayam Indonesia untuk merancang ***Disease Triage Dictionary*** di Dashboard. | `96 stars`, `34 forks`; konteks lokal Indonesia. | [GitHub](https://github.com/januriawan/chirex) |
-| 17 | **GitHub Indonesia (ESP32)** | **Poultry Vet Env Monitor (`MiftahulSN`)** | Referensi firmware C++ ESP32 Indonesia membaca Suhu + RH + Amonia `NH₃` + monitor baterai secara terpadu. | Merujuk jurnal *Animals* (`DOI: 10.3390/ani14040615`). | [GitHub](https://github.com/MiftahulSN/poultry-vet-decision-support-system) |
-| 18 | **GitHub Indonesia (YOLO CH)** | **Perilaku Broiler *Closed House* (`Ruler02`)** | Referensi eksperimen YOLO perilaku broiler + suhu aktual pada kandang *closed house* di Indonesia. | Riset lapangan kandang *closed house* Indonesia. | [GitHub](https://github.com/Ruler02/Deteksi-dan-Klasifikasi-Perilaku-Ayam-Broiler-pada-Kandang-Close-House-Berbasis-YOLO-) |
-| 19 | **GitHub MLOps Feses** | **Chicken Disease MLOps (`krishnaik06`)** | Referensi *pipeline* pelatihan, DVC, & *containerization* model klasifikasi feses ayam. | `90 stars`, `110 forks`, **MIT License**. | [GitHub](https://github.com/krishnaik06/Chicken-Disease-Classification-Projects) |
-| 20 | **GitHub NPU Rockchip** | **Qengineering YOLO NPU (`RK3566/RK3588`)** | Referensi konversi & *deployment* C++ RKNN INT8 untuk **Orange Pi 3B (`RK3566`)** pada fase Finalisasi. | Benchmark terverifikasi RK3566/RK3588. | [GitHub YoloV5-NPU](https://github.com/Qengineering/YoloV5-NPU) \| [YoloV6-NPU](https://github.com/Qengineering/YoloV6-NPU) |
-| 21 | **Hackathon Winner** | **PoultryGuard AI (`SIRAGU`)** & **Smart Coop 2.0 (`CodersCafeTech`)** | Referensi fitur *sensor fault diagnostics* (deteksi *drift* sensor) + desain *Custom Carrier PCB* + *Edge ONNX* + alert Telegram. | Terverifikasi pemenang resmi AnimalHack 2026 & Hackster Contest. | [SIRAGU GitHub](https://github.com/skarthik2745/SIRAGU-Poultry-Monitoring) \| [Smart Coop 2.0 GitHub](https://github.com/CodersCafeTech/Smart-Coop-V2) |
+| 8 | **Pemenang hackathon** | **Henomaly** + dasbor *aremyhens.fit* | Rujukan pola 3 tombol dan studi penurunan akurasi lintas domain | Akurasi 98,5–99,6% di data asal turun ke 74,6–78,2% di data PCR; kamera kandang tetap; AGPL-3.0; dasbornya memakai skor 0–100 yang tidak ditiru. | [GitHub](https://github.com/RishitRai/Henomaly) \| [aremyhens.fit](https://aremyhens.fit/) |
+| 9 | **Pembanding SOTA** | **AvianAlert** & **Talingan** | Bukti bahwa AI suara (dan foto feses pada AvianAlert) sudah dikerjakan pihak lain | AvianAlert juara 1 Data Science Cornell Digital Agriculture Hackathon 2025; Talingan produk IoT dan AI suara dari Indonesia, tanpa lisensi. | [AvianAlert](https://github.com/farhan-439/avian_alert) \| [Talingan](https://github.com/FadhlanHawali/Talingan-Android) |
+| 10 | **Model pembanding** | **mosiAfrica MobileNetV2** | Contoh model ponsel yang menyebut dirinya alat bantu skrining | Set uji 1.022 citra; lisensi MIT. | [Hugging Face](https://huggingface.co/mosiAfrica/poultry-disease-mobilenetv2) |
+| 11 | **Basis pengetahuan Indonesia** | **ChiRex** (`januriawan/chirex`) | Rujukan struktur basis pengetahuan gejala untuk kamus triase | Konteks lokal Indonesia; dipakai sebagai inspirasi struktur. | [GitHub](https://github.com/januriawan/chirex) |
+| 12 | **Firmware sensor Indonesia** | **Poultry Vet Env Monitor** (`MiftahulSN`) | Rujukan firmware `ESP32` pembaca suhu, RH, dan amonia | Merujuk Barbosa dkk. (2024). | [GitHub](https://github.com/MiftahulSN/poultry-vet-decision-support-system) |
+| 13 | **Deployment NPU Rockchip** | **Qengineering YoloV5-NPU / YoloV6-NPU** | Rujukan konversi dan *deployment* RKNN pada `RK3566` | Contoh kode C++ untuk NPU. | [YoloV5-NPU](https://github.com/Qengineering/YoloV5-NPU) \| [YoloV6-NPU](https://github.com/Qengineering/YoloV6-NPU) |
+| 14 | **Inspirasi perangkat keras** | **SIRAGU Poultry Monitoring** & **Smart Coop 2.0** | Inspirasi deteksi *drift* sensor dan desain *carrier PCB* | Repositori tanpa lisensi; kode tidak disalin. | [SIRAGU](https://github.com/skarthik2745/SIRAGU-Poultry-Monitoring) \| [Smart Coop 2.0](https://github.com/CodersCafeTech/Smart-Coop-V2) |
+| 15 | **Tutorial pipeline** | **Chicken Disease MLOps** (`krishnaik06`) | Contoh struktur pipeline pelatihan, bukan acuan model | `params.yaml` memakai 2 kelas dan 1 *epoch*; lisensi MIT. | [GitHub](https://github.com/krishnaik06/Chicken-Disease-Classification-Projects) |
 
-### C. Model AI *Pretrained*, Demo *Space*, & Arsitektur Target
+### C. Model & *Toolchain*
 
-| No | Jenis | Nama Model / Platform | Untuk Apa (Peran di `BROVER`) | Catatan Audit & Lisensi | Link Terverifikasi (`HTTP 200`) |
+| No | Jenis | Nama | Peran di `BROVER` | Catatan Lisensi | Tautan |
 | :-: | :--- | :--- | :--- | :--- | :--- |
-| 22 | **Pretrained YOLO** | **Ultralytics `YOLOv8n` / `YOLO11n` → NCNN / RKNN** | *Backbone* utama PoC untuk **Model #1 (Feses)** dan **Model #2 (Ayam Lesu/Mati)**: berjalan ~2,3 FPS di `RPi 4` (NCNN) & ~18 FPS di `Orange Pi 3B` (RKNN INT8). | `AGPL-3.0` (migrasi ke `YOLOX-Nano` / `RT-DETR` `Apache-2.0` saat komersialisasi *closed-source*). | [Ultralytics Raspberry Pi Guide](https://docs.ultralytics.com/guides/raspberry-pi/) |
-| 23 | **Pretrained HF Model** | **PoultryVision (`Williamsanderson/PoultryVision`)** | Bobot awal *pretrained* `YOLO11` unggas untuk percepatan *transfer learning* Model #2. | `171 downloads`; `AGPL-3.0`. | [Hugging Face Model](https://huggingface.co/Williamsanderson/PoultryVision) |
-| 24 | **Pretrained HF Model** | **DETR ResNet-50 Chickens (`joe611/chickens`)** | *Teacher model* / pembanding akurasi deteksi ayam pada eksperimen *training* di PC GPU. | `2.247 downloads`; **Apache-2.0 License** (bebas komersial). | [Hugging Face Model](https://huggingface.co/joe611/chickens) |
-| 25 | **Live Demo Space *(Referensi)*** | **Evet-Africa Poultry Disease Detector Space** *(Hugging Face)* | Pembanding *benchmark* inferensi visual cepat (khusus kelas gejala eksternal). | `RUNNING`; `AGPL-3.0` (jangan gunakan prediksi 18 kelas bedah bangkai untuk ayam hidup). | [HF Space](https://huggingface.co/spaces/Evet-Africa/poultry-disease-detector) |
-| 26 | **Arsitektur Audio AI** | **`Log-Mel Spectrogram` + `MobileNetV3-Small` / `2D CNN`** | Arsitektur ringan **Model #3 (Audio Pernapasan; segmen 5 detik × 3 *voting*)**: ukuran ~3–8 MB, inferensi `~20–50 ms` di CPU/NPU, bebas lisensi (`PyTorch/BSD/Apache-2.0`). | Dilatih dari dataset *SmartEars* + *Poultry Vocalization* + *IceKhoffi*. | [PyTorch TorchVision](https://pytorch.org/vision/stable/models/mobilenetv3.html) *(standar resmi)* |
+| 16 | **Detektor (kandidat utama)** | **YOLOX** | Detektor feses, sejalan dengan TA | Apache-2.0 | [GitHub](https://github.com/Megvii-BaseDetection/YOLOX) |
+| 17 | **Detektor (kandidat)** | **RT-DETR** | Alternatif detektor | Apache-2.0 | [GitHub](https://github.com/lyuwenyu/RT-DETR) |
+| 18 | **Konversi NPU** | **rknn_model_zoo** & **rknn-toolkit2** | Konversi INT8 untuk NPU `Orange Pi 3B` | `rknn_model_zoo` Apache-2.0; lisensi `rknn-toolkit2` tidak memakai lisensi standar sehingga syaratnya dibaca sebelum komersialisasi | [rknn_model_zoo](https://github.com/airockchip/rknn_model_zoo) \| [rknn-toolkit2](https://github.com/airockchip/rknn-toolkit2) |
+| 19 | **Pembanding lisensi** | **Ultralytics YOLO** | **Tidak dipakai**; hanya pembanding lisensi | AGPL-3.0, mewajibkan kode dibuka bila dipakai dalam layanan | [GitHub](https://github.com/ultralytics/ultralytics) |
+
+### D. Riset Lanjutan Navigasi Rover (Data Deteksi Ayam, Bukan Data Penyakit)
+
+| No | Nama | Isi | Lisensi / Catatan | Tautan |
+| :-: | :--- | :--- | :--- | :--- |
+| 20 | **PIO** | 1.435 citra dengan 327.289 anotasi ayam, satu kelas | CC BY 4.0; untuk melatih deteksi ayam di depan rover | [Zenodo 16686320](https://zenodo.org/records/16686320) |
+| 21 | **YOLOv5-CBAM broiler di atas sekam** (Guo dkk. 2023) | Deteksi broiler di lantai sekam | Artikel CC BY-NC-ND 4.0; ketersediaan data dicek sebelum dipakai | [DOI](https://doi.org/10.1016/j.aiia.2023.08.002) |
+| 22 | **Big Broiler** | 102 video broiler lantai umur 10–40 hari, label perilaku dan postur | AGPL-3.0, sekitar 32,5 GB; dipakai untuk riset navigasi, bukan diagnosis | [GitHub](https://github.com/decide-ugent/big-broiler-dataset) |
+
+### E. Riset Lanjutan Lain yang Ditunda
+
+| No | Nama | Peran di Riset Lanjutan | Tautan |
+| :-: | :--- | :--- | :--- |
+| 23 | **SmartEars** (Qiao dkk. 2026) dan datasetnya | Rujukan riset mikrofon tetap per kandang; 6.000 klip berlabel dari kandang baterai bertingkat, CC BY 4.0 | [Artikel](https://doi.org/10.1016/j.compag.2025.111241) \| [Dataset](https://doi.org/10.17632/dy6gtvt4mk.2) |
+| 24 | **Rosyida dkk. 2026 (UGM)** | Data suara Cobb 500 dari Yogyakarta dan Blitar tersedia atas permintaan; peluang kolaborasi | [DOI](https://doi.org/10.48084/etasr.17149) |
+| 25 | **DFRobot SCD41** | Kandidat sensor CO₂ untuk modul kandang berpemanas gas (400–5.000 ppm) | [Wiki](https://wiki.dfrobot.com/SKU_SEN0536_Gravity_SCD41_Infrared_CO2_Sensor) |
 
 ---
 
 ## 12. Referensi Lengkap
 
-Seluruh referensi berikut telah diverifikasi sumber dan aksesibilitasnya (tanpa *preprint*).
+Format setiap entri mengikuti gaya **Vancouver** agar siap disalin ke proposal. Sitasi di dalam teks dokumen ini tetap memakai nama dan tahun; nomor final disusun saat mengisi template proposal karena urutannya mengikuti urutan kemunculan di proposal. Semua rujukan *peer-reviewed* atau sumber resmi, tanpa *preprint*. Metadata DOI diambil dari registri Crossref pada 28 November 2026.
 
-### A. Jurnal *Peer-Reviewed* Indonesia, Standar Veteriner, & Data Resmi Sektor Perunggasan
-1. **Badan Pusat Statistik (BPS).** (2025). *Produksi Daging Ayam Ras Pedaging Menurut Provinsi*. [bps.go.id](https://www.bps.go.id/id/statistics-table/2/NDg4IzI=/produksi-daging-ayam-ras-pedaging-menurut-provinsi.html)
-2. **Direktorat Jenderal Peternakan dan Kesehatan Hewan (Ditjen PKH), Kementerian Pertanian RI.** *Manual Penyakit Unggas*. [Manual Penyakit Unggas PDF (iSIKHNAS)](https://wiki.isikhnas.com/images/d/dd/Manual_Penyakit_Unggas.pdf)
-3. **World Organisation for Animal Health (WOAH).** *Terrestrial Animal Health Code*: *Chapter 1.4 (Animal Health Surveillance)* & *Chapter 6.4 (Biosecurity Procedures in Poultry Production)*. [woah.org](https://www.woah.org/en/what-we-do/standards/codes-and-manuals/terrestrial-code-online-access/)
-4. **PT Medion Technical Education & Consultation (TEC).** (Januari 2026). *Overview of Poultry Disease Analysis 2025 & Disease Projection 2026*. [medion.co.id](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/)
-5. **PT Medion.** *Closed House, Solusi Peningkatan Performa Ayam* (standar kepadatan *open house* 13–15 kg/m² vs *closed house* 25–30 kg/m²). [medion.co.id](https://www.medion.co.id/info-medion/closed-house-solusi-peningkatan-performa-ayam/)
-6. **Sumiati, *et al.*** (2025). *Animal Bioscience* (Q1): Tinjauan industri perunggasan Indonesia & *Heat Stress Index* (HSI) bulanan 2023. [DOI: 10.5713/ab.24.0678](https://doi.org/10.5713/ab.24.0678)
-7. **Pramuwidyatama, M. G., *et al.*** (2023). *Preventive Veterinary Medicine* (Q1): Pemodelan bio-ekonomi dampak wabah HPAI H5N1 pada broiler Sektor 3 Jawa Bagian Barat. [DOI: 10.1016/j.prevetmed.2022.105833](https://doi.org/10.1016/j.prevetmed.2022.105833)
-8. **Anwar Sani, R., *et al.*** (2025). *Poultry Science* (Q1): Evaluasi skor biosekuriti 6 dimensi pada 19 farm broiler (153 siklus) di Jawa Barat. [DOI: 10.1016/j.psj.2025.106010](https://doi.org/10.1016/j.psj.2025.106010)
-9. **Hartady, T., *et al.*** (2026). *Veterinary Sciences* (Q1): Studi kasus koinfeksi multifaktorial (AI H5/H9, IB, *M. gallisepticum*, koksidiosis) dan tekanan mikroklimat/NH₃ 20 ppm di Majalengka. [DOI: 10.3390/vetsci13040364](https://doi.org/10.3390/vetsci13040364)
-10. **Wilcox, C. H., *et al.*** (2025). *Animal Welfare* (Q1): Distribusi THI, RH (81,9%; maks 96%), amonia, dan lesi FPD (40%) pada 14 farm *closed/semi-closed house* Jawa Barat. [DOI: 10.1017/awf.2025.10052](https://doi.org/10.1017/awf.2025.10052)
-11. **Mohammadi, *et al.*** (2026). *Advances in Animal and Veterinary Sciences* (Q3): Beban panas kumulatif dan ambang ROC prediktor mortalitas broiler sore hari (`>32,8°C`; `THI >79`) di Jawa Tengah. [DOI: 10.17582/journal.aavs/2026/14.5.1100.1111](https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111)
-12. **Hasibuan, *et al.*** (2021). *Jurnal Sain Peternakan Indonesia* (SINTA 2): Variasi kadar air *litter* (`46,42%` dataran rendah) dan kadar `NH₃` lintas ketinggian wilayah di Jawa Tengah. [DOI: 10.31186/jspi.id.16.2.171-179](https://doi.org/10.31186/jspi.id.16.2.171-179)
-13. **Rehman, S., *et al.*** (2023). *PeerJ* (Q1): Survei tingkat pengetahuan *Avian Influenza* pada 200 pekerja kandang unggas di Indonesia. [DOI: 10.7717/peerj.14600](https://doi.org/10.7717/peerj.14600)
-14. **Efendi, R., *et al.*** (2022). *Veterinary World* (Q1): Pola penggunaan antibiotik profilaktik/*flushing* pada 132 peternak broiler Kabupaten Bogor. [DOI: 10.14202/vetworld.2022.707-713](https://doi.org/10.14202/vetworld.2022.707-713)
-15. **Chapot, L., *et al.*** (2024). *PLOS ONE* (Q1): Tantangan pencatatan data silo dan keputusan kesehatan pada 56 pemangku kepentingan perunggasan Indonesia. [DOI: 10.1371/journal.pone.0308379](https://doi.org/10.1371/journal.pone.0308379)
-16. **Quintana-Ospina, G. A., *et al.*** (2023). Effect of Environmental and Farm-Associated Factors on Live Performance Parameters of Broilers Raised under Commercial Tropical Conditions. *Animals*, 13(21), 3312. [DOI: 10.3390/ani13213312](https://doi.org/10.3390/ani13213312)
-17. **TROBOS Livestock.** (Maret 2024). `[SUARA LAPANGAN DARING]` *Virus AI Terus Mengintai*: Wawancara Hari Farm (kasus wabah AI awalnya dikira snot). [troboslivestock.com](https://troboslivestock.com/virus-ai-terus-mengintai/)
-18. **PecahTelur × Edufarmers.** `[SUARA LAPANGAN DARING]` *Usia 28 Tahun Sukses, Optimalkan Nutrisi & Performa Ayam Broiler untuk Keuntungan Maksimal!*: Wawancara peternak broiler Malang 12.000 ekor (Arif Ryan: fase pakan, standar suhu/bobot Cobb 500, FCR/ABK, & kasus mortalitas 2.000 ekor akibat *Colibacillosis*). [YouTube FKCNKnTRif0](https://www.youtube.com/watch?v=FKCNKnTRif0)
+### A. Data Resmi, Regulasi, Standar Veteriner, & Sektor Perunggasan Indonesia
+1. Badan Pusat Statistik. Produksi daging ayam ras pedaging menurut provinsi [Internet]. Jakarta: BPS; 2025 [dikutip 28 Nov 2026]. Tersedia dari: [bps.go.id](https://www.bps.go.id/id/statistics-table/2/NDg4IzI=/produksi-daging-ayam-ras-pedaging-menurut-provinsi.html)
+2. Direktorat Jenderal Peternakan dan Kesehatan Hewan, Kementerian Pertanian RI. Manual penyakit unggas [Internet]. Jakarta: Kementerian Pertanian RI [dikutip 28 Nov 2026]. Tersedia dari: [iSIKHNAS](https://wiki.isikhnas.com/images/d/dd/Manual_Penyakit_Unggas.pdf)
+3. World Organisation for Animal Health. Terrestrial Animal Health Code: Chapter 1.4 Animal health surveillance; Chapter 6.5 Biosecurity procedures in poultry production [Internet]. Paris: WOAH; edisi terkini [dikutip 28 Nov 2026]. Tersedia dari: [Bab 1.4](https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/chapitre_surveillance_general.pdf) \| [Bab 6.5](https://www.woah.org/fileadmin/Home/eng/Health_standards/tahc/current/chapitre_biosecu_poul_production.pdf)
+4. PT Medion Technical Education & Consultation. Overview of poultry disease analysis 2025 & disease projection 2026 [Internet]. Bandung: PT Medion; Januari 2026 [dikutip 28 Nov 2026]. Tersedia dari: [medion.co.id](https://www.medion.co.id/en/info-medion/overview-of-poultry-disease-analysis-2025-disease-projection-2026/)
+5. Badan Pangan Nasional. Peraturan Badan Pangan Nasional Nomor 6 Tahun 2024 tentang Perubahan atas Peraturan Badan Pangan Nasional Nomor 5 Tahun 2022 tentang Harga Acuan Pembelian di Tingkat Produsen dan Harga Acuan Penjualan di Tingkat Konsumen Komoditas Jagung, Telur Ayam Ras, dan Daging Ayam Ras. Jakarta: Bapanas; 2024. Tersedia dari: [peraturan.go.id](https://peraturan.go.id/files/peraturan-bapanas-no-6-tahun-2024.pdf)
+6. Dinas Pangan dan Pertanian Kota Cimahi. Rencana strategis Dinas Pangan dan Pertanian tahun 2025-2029 [Internet]. Cimahi: Pemerintah Kota Cimahi; 2025 [dikutip 28 Nov 2026]. Tersedia dari: [ppid.cimahikota.go.id](https://ppid.cimahikota.go.id/image/document/dinas-pangan-dan-pertanian-rencana-strategis-dinas-pangan-dan-pertanian-tahun-2025-2029.pdf)
+7. Sumiati, Fadilah R, Darmawan A, Nadia R. Invited review: challenges and constraints to the sustainability of poultry farming in Indonesia. Anim Biosci. 2025;38(4):802-817. doi:[10.5713/ab.24.0678](https://doi.org/10.5713/ab.24.0678)
+8. Pramuwidyatama MG, Indrawan D, Boeters M, Poetri ON, Saatkamp HW, Hogeveen H. Economic impact of highly pathogenic avian influenza outbreaks in Western Java smallholder broiler farms. Prev Vet Med. 2023;212:105833. doi:[10.1016/j.prevetmed.2022.105833](https://doi.org/10.1016/j.prevetmed.2022.105833)
+9. Anwar Sani R, Rachmawati A, Sunandar S, Pertela G, Jahja EJ, Suandy I, et al. Longitudinal evaluation of interventions on antimicrobial use and antimicrobial resistance on broiler farms in West Java, Indonesia. Poult Sci. 2025;104(12):106010. doi:[10.1016/j.psj.2025.106010](https://doi.org/10.1016/j.psj.2025.106010)
+10. Hartady T, Sugandi SD, Viqih M. A Case of Avian Influenza Co-Infection and Multifactorial Diseases in a Broiler Chicken Farm in Majalengka, West Java, Indonesia. Vet Sci. 2026;13(4):364. doi:[10.3390/vetsci13040364](https://doi.org/10.3390/vetsci13040364)
+11. Wilcox CH, Anang A, Asmara IY, Mayasari N, Siahaan MN, Sandilands V. Factors affecting animal welfare on commercial broiler chicken farms in West Java, Indonesia. Anim Welf. 2025;34:e78. doi:[10.1017/awf.2025.10052](https://doi.org/10.1017/awf.2025.10052)
+12. Mohammadi N, Coban O, Prastiwi A, Aji D, Anggraeni D, Purnomo A, et al. Heat stress impacts on broiler performance and mortality in non-cooled equatorial housing. Adv Anim Vet Sci. 2026;14(5):1100-1111. doi:[10.17582/journal.aavs/2026/14.5.1100.1111](https://doi.org/10.17582/journal.aavs/2026/14.5.1100.1111)
+13. Hasibuan AS, Mahfudz LD, Sarjana TA. Efek Perbedaan Dataran terhadap Kualitas Litter Closed House Ayam Broiler. J Sain Peternak Indones. 2021;16(2):171-179. doi:[10.31186/jspi.id.16.2.171-179](https://doi.org/10.31186/jspi.id.16.2.171-179)
+14. Rehman S, Shehzad A, Andriyani LD, Effendi MH, Abadeen ZU, Ilyas Khan M, et al. A cross-sectional survey of avian influenza knowledge among poultry farmworkers in Indonesia. PeerJ. 2023;11:e14600. doi:[10.7717/peerj.14600](https://doi.org/10.7717/peerj.14600)
+15. Efendi R, Sudarnika E, Wibawan IWT, Purnawarman T. An assessment of knowledge and attitude toward antibiotic misuse by small-scale broiler farmers in Bogor, West Java, Indonesia. Vet World. 2022:707-713. doi:[10.14202/vetworld.2022.707-713](https://doi.org/10.14202/vetworld.2022.707-713)
+16. Sunandar, Suandy I, Nurbiyanti N, Arief RA, Rachmawati AD, Pertela G, et al. Pola penggunaan anti mikrob pada peternakan mandiri ayam broiler di Kabupaten Bogor. Acta Vet Indones. 2024;12(1):83-90. Tersedia dari: [journal.ipb.ac.id](https://journal.ipb.ac.id/index.php/actavetindones/article/download/42701/27932)
+17. Quintana-Ospina GA, Alfaro-Wisaquillo MC, Oviedo-Rondon EO, Ruiz-Ramirez JR, Bernal-Arango LC, Martinez-Bernal GD. Effect of Environmental and Farm-Associated Factors on Live Performance Parameters of Broilers Raised under Commercial Tropical Conditions. Animals. 2023;13(21):3312. doi:[10.3390/ani13213312](https://doi.org/10.3390/ani13213312)
+18. `[SUARA LAPANGAN DARING]` PecahTelur, Edufarmers. Usia 28 tahun sukses, optimalkan nutrisi & performa ayam broiler untuk keuntungan maksimal! [video]. YouTube [dikutip 28 Nov 2026]. Tersedia dari: [YouTube FKCNKnTRif0](https://www.youtube.com/watch?v=FKCNKnTRif0)
 
-### B. Jurnal *Peer-Reviewed* Multi-Modal AI, Edge Computing, Robotika Unggas, Amonia, & Sanitasi
-19. **Baltrušaitis, T., Ahuja, C., & Morency, L.-P.** (2019). Multimodal Machine Learning: A Survey and Taxonomy. *IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)*. [DOI: 10.1109/TPAMI.2018.2798607](https://doi.org/10.1109/TPAMI.2018.2798607)
-20. **Shi, W., Cao, J., Zhang, Q., Li, Y., & Xu, L.** (2016). Edge Computing: Vision and Challenges. *IEEE Internet of Things Journal*. [DOI: 10.1109/JIOT.2016.2579198](https://doi.org/10.1109/JIOT.2016.2579198)
-21. **ISO 8373:2021.** *Robotics: Vocabulary* (Pasal 3.1 *Robot*, Pasal 3.16 *Robotic Device*, & Pasal 4.16 *Mobile Platform*). [iso.org](https://www.iso.org/standard/75539.html)
-22. **Machuve, D., Nwankwo, E., Mduma, N., & Mbelwa, J.** (2022). Poultry diseases diagnostics models using deep learning. *Frontiers in Artificial Intelligence*. [DOI: 10.3389/frai.2022.733345](https://doi.org/10.3389/frai.2022.733345)
-23. **Qiao, H., Huang, J.-X., *et al.*** (2026). SmartEars: A practical framework for poultry respiratory monitoring via spectrogram-based audio classification and AI-assisted labeling. *Computers and Electronics in Agriculture* (dataset terbuka Mendeley Data 2025, klip 5 detik 44,1 kHz). [DOI: 10.1016/j.compag.2025.111241](https://doi.org/10.1016/j.compag.2025.111241)
-24. **Ritz, C. W., Fairchild, B. D., & Lacy, M. P.** (2004). Implications of Ammonia Production and Emissions from Commercial Poultry Facilities: A Review. *The Journal of Applied Poultry Research*. [DOI: 10.1093/japr/13.4.684](https://doi.org/10.1093/japr/13.4.684)
-25. **Naseem, S., & King, A. J.** (2018). Ammonia production in poultry houses can affect health of humans, birds, and the environment-techniques for its reduction during poultry production. *Environmental Science and Pollution Research*. [DOI: 10.1007/s11356-018-2018-y](https://doi.org/10.1007/s11356-018-2018-y)
-26. **Ren, G., Lin, T., & Ying, Y.** (2020). Agricultural robotics research applicable to poultry production: A review. *Computers and Electronics in Agriculture*. [DOI: 10.1016/j.compag.2020.105216](https://doi.org/10.1016/j.compag.2020.105216)
-27. **Vroegindeweij, B. A., *et al.*** (2018). Evaluation of the performance of PoultryBot, an autonomous mobile robotic platform for poultry houses. *Biosystems Engineering*. [DOI: 10.1016/j.biosystemseng.2018.07.015](https://doi.org/10.1016/j.biosystemseng.2018.07.015)
-28. **Parajuli, P., Huang, Y., Tabler, T., Purswell, J. L., DuBien, J. L., & Zhao, Y.** (2020). Comparative Evaluation of Poultry-Human and Poultry-Robot Avoidance Distances. *Transactions of the ASABE*, 63(2), 477–484. [DOI: 10.13031/trans.13644](https://doi.org/10.13031/trans.13644)
-29. **Animals (2024).** How Do Escape Distance Behavior of Broiler Chickens Change in Response to a Mobile Robot Moving at Two Different Speeds? (*RobôFrango*, `0,04` & `0,07 m/s`). [PMC11011048](https://pmc.ncbi.nlm.nih.gov/articles/PMC11011048/)
-30. **Poultry Science (2026).** Research note: approach rather than avoidance: behavioral responses of broiler chicks repeatedly exposed to an autonomous robot (*AviSense*, `~0,09 m/s`). [PMC13696172](https://pmc.ncbi.nlm.nih.gov/articles/PMC13696172/)
-31. **Innovative prevention and control of coccidiosis (2024)** & **Frontiers (2026)**: Ketahanan dinding ookista *Eimeria* terhadap disinfektan kandang umum. [PMC11416347](https://pmc.ncbi.nlm.nih.gov/articles/PMC11416347/) \| [DOI: 10.3389/fcimb.2026.1756128](https://www.frontiersin.org/journals/cellular-and-infection-microbiology/articles/10.3389/fcimb.2026.1756128/full)
-32. **Evaluation of cleaning and disinfection procedures on poultry farms (2025).** Pentingnya pembersihan mekanis/fisik materi organik sebelum disinfeksi. [PMC12414267](https://pmc.ncbi.nlm.nih.gov/articles/PMC12414267/)
-33. **Persistence of non-typhoidal *Salmonella* (PMC13433518)** & **Prevalence of Newcastle Disease in Domestic Chickens (PLOS ONE, 2022)**: Bukti *subclinical/asymptomatic fecal shedding*. [PMC13433518](https://pmc.ncbi.nlm.nih.gov/articles/PMC13433518/) \| [PLOS ONE](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0264028)
-34. **Molecular Investigation of *Eimeria* Species in Broiler Farms (2023).** Peran *fomites* (sepatu bot, roda, peralatan) dan biosekuriti pada 100 farm broiler. [PMC10144399](https://pmc.ncbi.nlm.nih.gov/articles/PMC10144399/)
-35. **von Jasmund, N., *et al.*** (2022). Assessment of ammonia sensors and photoacoustic measurement systems using a gas calibration unit. *Computers and Electronics in Agriculture*, 194, 106744. [DOI: 10.1016/j.compag.2022.106744](https://doi.org/10.1016/j.compag.2022.106744)
-36. **Damasceno, F. A., & Saraz, J. A. O.** Evaluasi performa modul sensor amonia (MQ-137 vs elektrokimia) pada lingkungan kandang terbuka. [SciELO Brazil](https://www.scielo.br/j/eagri/a/qKDrWtT4XvNDdTnMVkCJJJC/?lang=en)
+### B. Ekonomi, Harga, & Performa Broiler Indonesia
+19. detikFinance. Alasan harga ayam di peternak dipatok paling murah Rp 19.500/kg [Internet]. Jakarta: detikcom; 7 Jul 2026 [dikutip 28 Nov 2026]. Tersedia dari: [detik.com](https://finance.detik.com/berita-ekonomi-bisnis/d-8562724/alasan-harga-ayam-di-peternak-dipatok-paling-murah-rp-19-500-kg)
+20. detikFinance. Harga ayam di kandang anjlok lagi [Internet]. Jakarta: detikcom; 4 Okt 2026 [dikutip 28 Nov 2026]. Tersedia dari: [detik.com](https://finance.detik.com/berita-ekonomi-bisnis/d-8691259/harga-ayam-di-kandang-anjlok-lagi)
+21. Amam, Harsita PA. Evaluasi usaha ternak ayam broiler sistem kemitraan inti plasma berbasis index performance (IP). Jurnal Peternakan. 2024;21(1):48-57. Tersedia dari: [ejournal.uin-suska.ac.id](https://ejournal.uin-suska.ac.id/index.php/peternakan/article/view/21188)
+22. Zulfan, Daud M, Ikram F. Performance comparison of broiler chickens reared in closed versus stage slatted-floor open-sided houses: a case study of broiler farmers under an inti-plasma partnership model in Indonesia. Acta Sci Anim Sci. 2025;48:e74435. doi:[10.4025/actascianimsci.v48i1.74435](https://doi.org/10.4025/actascianimsci.v48i1.74435)
+23. Candra AA, Irwani N, Cahyono AD. Performa broiler di PT ABC dengan manajemen close house system. Jurnal Peternakan Terapan (PETERPAN). 2025;7(2):144-151. Tersedia dari: [PDF](https://jurnal.polinela.ac.id/index.php/peterpan/article/download/4496/2539/18005)
+24. Junita C, et al. Performa ayam broiler pada zonasi berbeda di kandang tipe closed house PT Mitra Berlian Unggas Farm Cikancung. Jurnal Produksi Ternak Terapan. 2025;6(2):87-94. Tersedia dari: [PDF](https://journals.unpad.ac.id/jptt/article/download/54863/25957)
+25. Wijayanto R, Adiyastitie BET, Mulatmi SNW. Evaluasi performa broiler pola kemitraan PT Ciomas Adisatwa dengan sistem closed house. ARAS. 2023;3(1):18-26. doi:[10.22219/aras.v3i1.26592](https://doi.org/10.22219/aras.v3i1.26592)
 
-### C. Panduan Manajemen Broiler, *Datasheet* Hardware, & Referensi Industri
-37. **Cobb Genetics.** *Cobb 500 Broiler Management Guide* (edisi 2018 & edisi daring resmi 2021) serta *Cobb500 Broiler (Male) Performance & Nutrition Supplement* (2017 & 2020). [Cobb Broiler Guide 2021 PDF](https://www.cobbgenetics.com/assets/Cobb-Files/Broiler-Guide_English-2021-min.pdf) \| [Cobb Management Guides Portal](https://www.cobbgenetics.com/resources/management-guides)
-38. **Cobb Genetics.** (2024). *Nipple Drinker Management Poster* (tata letak jalur & ruang ujung kandang). [Cobb PDF](https://www.cobbgenetics.com/assets/Cobb-Files/2024-Nipple-Drinker-Poster.pdf)
-39. **Aviagen (Ross).** *Ross Broiler Management Handbook* (2018), *Ross 308 / 308 FF Broiler Performance Objectives* (2022), & *Ross Broiler Pocket Guide* (suhu, RH, target bobot, serta tata letak *pan feeder* & *nipple drinker*). [Aviagen Ross 308 Hub](https://aviagen.com/en/brands/ross/products/ross-308) \| [Aviagen Pocket Guide PDF](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-PocketGuide-EN.pdf)
-40. **Octopus Biosafety.** *FAQ: XO Broiler Robot* (kecepatan `0,04–0,12 m/s`, jendela operasi hari ke-5–23, pencucian roda). [octopusbiosafety.com](https://www.octopusbiosafety.com/en/faq/xo-en/)
-41. **Big Dutchman / Faromatics.** *ChickenBoy Brochure* (pembanding sistem rel plafon 24/7). [Big Dutchman PDF](https://cdn.bigdutchman.com/fileadmin/content/poultry/products/en/Poultry-growing-ChickenBoy-Big-Dutchman-en.pdf)
-42. **Ultralytics Official Documentation.** *Raspberry Pi Deployment & NCNN Benchmarks*. [docs.ultralytics.com](https://docs.ultralytics.com/guides/raspberry-pi/)
-43. **Orange Pi Official.** Spesifikasi Hardware [`Orange Pi 3B` (`RK3566`)](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-3B.html) & [`Orange Pi 5` (`RK3588S`)](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html).
-44. **Luckfox Official.** Spesifikasi Hardware [`Luckfox Pico Ultra` (`RV1106`)](https://www.luckfox.com/EN-Luckfox-Pico-Ultra?ci=502).
-45. **DFRobot Official.** Wiki [`SEN0567` MEMS `NH₃`](https://wiki.dfrobot.com/sen0567/), Datasheet [`SEN0469` Electrochemical `NH₃`](https://www.dfrobot.com/product-2513.html), & Datasheet [`A02YYUW` IP67 Ultrasonic (3 cm blind zone)](https://www.dfrobot.com/product-1935.html).
-46. **Toshiba / SparkFun.** *TB6612FNG Dual MOSFET Motor Driver Datasheet*. [TB6612FNG PDF](https://cdn.sparkfun.com/datasheets/Robotics/TB6612FNG.pdf)
-47. **BMKG (Badan Meteorologi, Klimatologi, dan Geofisika).** *Layanan Data Terbuka API Publik Prakiraan Cuaca Tingkat Desa/Kelurahan (`adm4`)*. [data.bmkg.go.id](https://data.bmkg.go.id/) \| [api.bmkg.go.id](https://api.bmkg.go.id/)
-48. **Open-Meteo.** *Free Open-Source Weather Forecast API (`ECMWF IFS` / Multi-Model)*. [open-meteo.com](https://open-meteo.com/)
-49. **Dokumen Internal Terverifikasi Hackathon UNJ 2026 (Tim Asprak):** [01_TEAM_AND_CONSTRAINTS.md](../01_Context_Memory/01_TEAM_AND_CONSTRAINTS.md) | [02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md) | [04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md).
+### C. Amonia, Kualitas Udara, & Penyakit Pernapasan
+26. Quarles CL, Kling HF. Evaluation of Ammonia and Infectious Bronchitis Vaccination Stress on Broiler Performance and Carcass Quality. Poult Sci. 1974;53(4):1592-1596. doi:[10.3382/ps.0531592](https://doi.org/10.3382/ps.0531592)
+27. Zhou Y, Liu QX, Li XM, Ma DD, Xing S, Feng JH, et al. Effects of ammonia exposure on growth performance and cytokines in the serum, trachea, and ileum of broilers. Poult Sci. 2020;99(5):2485-2493. doi:[10.1016/j.psj.2019.12.063](https://doi.org/10.1016/j.psj.2019.12.063)
+28. Miles DM, Branton SL, Lott BD. Atmospheric Ammonia is Detrimental to the Performance of Modern Commercial Broilers. Poult Sci. 2004;83(10):1650-1654. doi:[10.1093/ps/83.10.1650](https://doi.org/10.1093/ps/83.10.1650)
+29. Beker A, Vanhooser SL, Swartzlander JH, Teeter RG. Atmospheric Ammonia Concentration Effects on Broiler Growth and Performance. J Appl Poult Res. 2004;13(1):5-9. doi:[10.1093/japr/13.1.5](https://doi.org/10.1093/japr/13.1.5)
+30. Al-Mashhadani EH, Beck MM. Effect of atmospheric ammonia on the surface ultrastructure of the lung and trachea of broiler chicks. Poult Sci. 1985;64(11):2056-2061. doi:[10.3382/ps.0642056](https://doi.org/10.3382/ps.0642056)
+31. Barbosa LVS, Lima NDdS, Barros JdSG, de Moura DJ, Estellés F, Ramón-Moragues A, et al. Predicting Risk of Ammonia Exposure in Broiler Housing: Correlation with Incidence of Health Issues. Animals. 2024;14(4):615. doi:[10.3390/ani14040615](https://doi.org/10.3390/ani14040615)
+32. da Rocha Balthazar G, Silveira RMF, Aldrigue JT, da Silva IJO. Development and validation of a rapid-prototyping IoT-based sensor system for poultry house microclimate monitoring. Smart Agric Technol. 2025;12:101197. doi:[10.1016/j.atech.2025.101197](https://doi.org/10.1016/j.atech.2025.101197)
+33. von Jasmund N, Schmithausen AJ, Krommweh MS, Trimborn M, Boeker P, Büscher W. Assessment of ammonia sensors and photoacoustic measurement systems using a gas calibration unit. Comput Electron Agric. 2022;194:106744. doi:[10.1016/j.compag.2022.106744](https://doi.org/10.1016/j.compag.2022.106744)
+34. Edge CM, Davis JD, Purswell JL, Campbell JC, Batchelor WD, Linhoss JE. Water consumption trends for commercial broilers grown to nine weeks. J Appl Poult Res. 2025;34(2):100511. doi:[10.1016/j.japr.2024.100511](https://doi.org/10.1016/j.japr.2024.100511)
+35. Manning L, Chadd SA, Baines RN. Water consumption in broiler chicken: a welfare indicator. Worlds Poult Sci J. 2007;63(1):63-71. doi:[10.1017/s0043933907001274](https://doi.org/10.1017/s0043933907001274)
 
-### D. Regulasi Resmi & Jurnal *Peer-Reviewed* Tingkat Kesiapterapan Teknologi (TKT / TRL)
-50. **Kementerian Riset, Teknologi, dan Pendidikan Tinggi RI.** (2016). *Peraturan Menteri Riset, Teknologi, dan Pendidikan Tinggi Nomor 42 Tahun 2016 tentang Pengukuran dan Penetapan Tingkat Kesiapterapan Teknologi (TKT)* (Berita Negara RI Tahun 2016 Nomor 1010). [Peraturan BPK](https://peraturan.bpk.go.id/Details/143516/permen-ristekdikti-no-42-tahun-2016)
-51. **Mankins, J. C.** (2009). Technology readiness assessments: A retrospective. *Acta Astronautica*, 65(9–10), 1216–1223. [DOI: 10.1016/j.actaastro.2009.03.058](https://doi.org/10.1016/j.actaastro.2009.03.058)
-52. **Rowe, E., Dawkins, M. S., & Gebhardt-Henrich, S. G.** (2019). A systematic review of precision livestock farming in the poultry sector: Is technology focussed on improving bird welfare? *Animals*, 9(9), 614. [DOI: 10.3390/ani9090614](https://doi.org/10.3390/ani9090614)
-53. **Olechowski, A. L., Eppinger, S. D., Joglekar, N., & Tomaschek, K.** (2020). Technology readiness levels: Shortcomings and improvement opportunities. *Systems Engineering*, 23(4), 395–408. [DOI: 10.1002/sys.21533](https://doi.org/10.1002/sys.21533)
+### D. *Computer Vision* Feses, AI, & *Edge Computing*
+36. Machuve D, Nwankwo E, Mduma N, Mbelwa J. Poultry diseases diagnostics models using deep learning. Front Artif Intell. 2022;5:733345. doi:[10.3389/frai.2022.733345](https://doi.org/10.3389/frai.2022.733345)
+37. Wang J, Shen M, Liu L, Xu Y, Okinda C. Recognition and Classification of Broiler Droppings Based on Deep Convolutional Neural Network. J Sens. 2019;2019:1-10. doi:[10.1155/2019/3823515](https://doi.org/10.1155/2019/3823515)
+38. Aworinde HO, Adebayo S, Akinwunmi AO, Alabi OM, Ayandiji A, Sakpere AB, et al. Poultry fecal imagery dataset for health status prediction: A case of South-West Nigeria. Data Brief. 2023;50:109517. doi:[10.1016/j.dib.2023.109517](https://doi.org/10.1016/j.dib.2023.109517)
+39. Chidziwisano G, Samikwa E, Daka C. Deep learning methods for poultry disease prediction using images. Comput Electron Agric. 2025;230:109765. doi:[10.1016/j.compag.2024.109765](https://doi.org/10.1016/j.compag.2024.109765)
+40. Baltrušaitis T, Ahuja C, Morency LP. Multimodal Machine Learning: A Survey and Taxonomy. IEEE Trans Pattern Anal Mach Intell. 2019;41(2):423-443. doi:[10.1109/TPAMI.2018.2798607](https://doi.org/10.1109/TPAMI.2018.2798607)
+41. Shi W, Cao J, Zhang Q, Li Y, Xu L. Edge Computing: Vision and Challenges. IEEE Internet Things J. 2016;3(5):637-646. doi:[10.1109/JIOT.2016.2579198](https://doi.org/10.1109/JIOT.2016.2579198)
+42. Megvii-BaseDetection. YOLOX [perangkat lunak]. GitHub; 2021 [dikutip 28 Nov 2026]. Lisensi Apache-2.0. Tersedia dari: [GitHub](https://github.com/Megvii-BaseDetection/YOLOX)
+43. Lv W, et al. RT-DETR [perangkat lunak]. GitHub; 2023 [dikutip 28 Nov 2026]. Lisensi Apache-2.0. Tersedia dari: [GitHub](https://github.com/lyuwenyu/RT-DETR)
+44. Rockchip. rknn_model_zoo dan rknn-toolkit2 [perangkat lunak]. GitHub [dikutip 28 Nov 2026]. Tersedia dari: [rknn_model_zoo](https://github.com/airockchip/rknn_model_zoo) \| [rknn-toolkit2](https://github.com/airockchip/rknn-toolkit2)
+45. Rai R. Henomaly dan dasbor aremyhens.fit [perangkat lunak]. GitHub; 2026 [dikutip 28 Nov 2026]. Tersedia dari: [GitHub](https://github.com/RishitRai/Henomaly) \| [aremyhens.fit](https://aremyhens.fit/)
+46. FadhlanHawali. Talingan-Android [perangkat lunak]. GitHub; 2020 [dikutip 28 Nov 2026]. Tersedia dari: [GitHub](https://github.com/FadhlanHawali/Talingan-Android)
+47. farhan-439. AvianAlert [perangkat lunak]. GitHub; 2025 [dikutip 28 Nov 2026]. Tersedia dari: [GitHub](https://github.com/farhan-439/avian_alert)
+48. BroilerX. Smartfarm IoT [Internet]. Yogyakarta: BroilerX [dikutip 28 Nov 2026]. Tersedia dari: [broilerx.com](https://www.broilerx.com/teknologi/iot)
+49. Chickin Indonesia. CI-Touch [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [landing.chickin.id](https://landing.chickin.id/citouch/)
+
+### E. Robotika & Operasi Lantai Broiler
+50. Dennis IC, Abeyesinghe SM, Demmers TGM. The behaviour of commercial broilers in response to a mobile robot. Br Poult Sci. 2020;61(5):483-492. doi:[10.1080/00071668.2020.1759785](https://doi.org/10.1080/00071668.2020.1759785)
+51. Marin RH, Caliva JM, Kembro JM. Dynamics of changes in broiler spatial distribution induced by a robot with autonomous navigation along the growing cycle. Poult Sci. 2024;103(6):103710. doi:[10.1016/j.psj.2024.103710](https://doi.org/10.1016/j.psj.2024.103710)
+52. da Rocha Balthazar G, Silveira RMF, da Silva IJO. How Do Escape Distance Behavior of Broiler Chickens Change in Response to a Mobile Robot Moving at Two Different Speeds? Animals. 2024;14(7):1014. doi:[10.3390/ani14071014](https://doi.org/10.3390/ani14071014)
+53. Caliva JM, Kembro JM, Picco RPA, Guzman DA, Marin RH. Research note: approach rather than avoidance: behavioral responses of broiler chicks repeatedly exposed to an autonomous mobile robot. Poult Sci. 2026;105(12):107959. doi:[10.1016/j.psj.2026.107959](https://doi.org/10.1016/j.psj.2026.107959)
+54. Parajuli P, Huang Y, Tabler T, Purswell JL, DuBien JL, Zhao Y. Comparative Evaluation of Poultry-Human and Poultry-Robot Avoidance Distances. Trans ASABE. 2020;63(2):477-484. doi:[10.13031/trans.13644](https://doi.org/10.13031/trans.13644)
+55. Vroegindeweij BA, Blaauw SK, IJsselmuiden JMM, van Henten EJ. Evaluation of the performance of PoultryBot, an autonomous mobile robotic platform for poultry houses. Biosyst Eng. 2018;174:295-315. doi:[10.1016/j.biosystemseng.2018.07.015](https://doi.org/10.1016/j.biosystemseng.2018.07.015)
+56. Guo Y, Aggrey SE, Yang X, Oladeinde A, Qiao Y, Chai L. Detecting broiler chickens on litter floor with the YOLOv5-CBAM deep learning model. Artif Intell Agric. 2023;9:36-45. doi:[10.1016/j.aiia.2023.08.002](https://doi.org/10.1016/j.aiia.2023.08.002)
+57. Octopus Biosafety. FAQ: XO broiler robot [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [octopusbiosafety.com](https://www.octopusbiosafety.com/en/faq/xo-en/)
+58. Big Dutchman. ChickenBoy [brosur] [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://cdn.bigdutchman.com/fileadmin/content/poultry/products/en/Poultry-growing-ChickenBoy-Big-Dutchman-en.pdf)
+59. International Organization for Standardization. ISO 8373:2021 Robotics: vocabulary. Geneva: ISO; 2021. Tersedia dari: [iso.org](https://www.iso.org/standard/75539.html)
+
+### F. Sanitasi & Biosekuriti Alat
+60. Hansson I, Dzieciolowski T, Rydén J, Boqvist S. Evaluation of cleaning and disinfection procedures on poultry farms. Poult Sci. 2025;104(9):105453. doi:[10.1016/j.psj.2025.105453](https://doi.org/10.1016/j.psj.2025.105453)
+61. Zhao D, Suo J, Liang L, Liang R, Zhou R, Ding J, et al. Innovative prevention and control of coccidiosis: targeting sporogony for new control agent development. Poult Sci. 2024;103(12):104246. doi:[10.1016/j.psj.2024.104246](https://doi.org/10.1016/j.psj.2024.104246)
+62. Abdelgany A, Wong A, Guan J. Persistence of non-typhoidal Salmonella across hosts and environments: a One Health perspective. Front Microbiol. 2026;17:1830232. doi:[10.3389/fmicb.2026.1830232](https://doi.org/10.3389/fmicb.2026.1830232)
+
+### G. Panduan Manajemen Broiler, *Datasheet*, & Layanan
+63. Cobb-Vantress. Cobb broiler management guide [Internet]. Siloam Springs: Cobb; 2021 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://www.cobbgenetics.com/assets/Cobb-Files/Broiler-Guide_English-2021-min.pdf)
+64. Cobb-Vantress. Nipple drinker management poster [Internet]. 2024 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://www.cobbgenetics.com/assets/Cobb-Files/2024-Nipple-Drinker-Poster.pdf)
+65. Aviagen. Ross broiler management handbook [Internet]. Huntsville: Aviagen; 2025 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf)
+66. Aviagen. Ross 308 / Ross 308 FF broiler performance objectives [Internet]. Huntsville: Aviagen; 2022 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://aviagen.com/assets/Tech_Center/Ross_Broiler/RossxRoss308-BroilerPerformanceObjectives2022-EN.pdf)
+67. Aviagen. Ross broiler pocket guide [Internet]. Huntsville: Aviagen; 2025 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-PocketGuide-EN.pdf)
+68. Orange Pi. Orange Pi 3B dan Orange Pi 5 [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [Orange Pi 3B](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-3B.html) \| [Orange Pi 5](http://www.orangepi.org/html/hardWare/computerAndMicrocontrollers/details/Orange-Pi-5.html)
+69. Raspberry Pi Ltd. Raspberry Pi 4 Model B product brief [Internet]. Cambridge: Raspberry Pi Ltd; 2026 [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://datasheets.raspberrypi.com/rpi4/raspberry-pi-4-product-brief.pdf)
+70. Luckfox. Luckfox Pico Ultra [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [luckfox.com](https://www.luckfox.com/EN-Luckfox-Pico-Ultra?ci=502)
+71. DFRobot. SEN0567 NH3 sensor wiki dan A02YYUW waterproof ultrasonic sensor [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [SEN0567](https://wiki.dfrobot.com/sen0567/) \| [A02YYUW](https://www.dfrobot.com/product-1935.html)
+72. Toshiba, SparkFun. TB6612FNG dual motor driver datasheet [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://cdn.sparkfun.com/datasheets/Robotics/TB6612FNG.pdf)
+73. Badan Meteorologi, Klimatologi, dan Geofisika. API publik prakiraan cuaca tingkat desa (adm4) dan portal data terbuka [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [api.bmkg.go.id adm4](https://api.bmkg.go.id/publik/prakiraan-cuaca?adm4=31.71.03.1001) \| [data.bmkg.go.id](https://data.bmkg.go.id/)
+74. Open-Meteo. Free weather forecast API [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [open-meteo.com](https://open-meteo.com/)
+75. Biznet Gio. NEO Lite VPS [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [biznetgio.com](https://www.biznetgio.com/product/neo-lite)
+
+### H. Regulasi & Kajian Tingkat Kesiapterapan Teknologi (TKT / TRL)
+76. Kementerian Riset, Teknologi, dan Pendidikan Tinggi RI. Peraturan Menteri Riset, Teknologi, dan Pendidikan Tinggi Nomor 42 Tahun 2016 tentang Pengukuran dan Penetapan Tingkat Kesiapterapan Teknologi. Berita Negara RI Tahun 2016 Nomor 1010. Tersedia dari: [Peraturan BPK](https://peraturan.bpk.go.id/Details/143516/permen-ristekdikti-no-42-tahun-2016)
+77. LPPM Universitas Diponegoro. Materi sosialisasi pengukuran TKT/TRL [Internet] [dikutip 28 Nov 2026]. Tersedia dari: [PDF](https://lppm.undip.ac.id/wp-content/uploads/Materi-Sosialisasi-TRL1.pdf)
+78. Mankins JC. Technology readiness assessments: A retrospective. Acta Astronaut. 2009;65(9-10):1216-1223. doi:[10.1016/j.actaastro.2009.03.058](https://doi.org/10.1016/j.actaastro.2009.03.058)
+79. Rowe E, Dawkins MS, Gebhardt-Henrich SG. A Systematic Review of Precision Livestock Farming in the Poultry Sector: Is Technology Focussed on Improving Bird Welfare? Animals. 2019;9(9):614. doi:[10.3390/ani9090614](https://doi.org/10.3390/ani9090614)
+80. Olechowski AL, Eppinger SD, Joglekar N, Tomaschek K. Technology readiness levels: Shortcomings and improvement opportunities. Syst Eng. 2020;23(4):395-408. doi:[10.1002/sys.21533](https://doi.org/10.1002/sys.21533)
+
+### I. Riset Lanjutan (Navigasi, Audio, CO₂)
+81. Qiao H, Chen Z, Ji C, Gao J, Xue X, Zhou S, et al. SmartEars: A practical framework for poultry respiratory monitoring via spectrogram-based audio classification and AI-assisted labeling. Comput Electron Agric. 2026;241:111241. doi:[10.1016/j.compag.2025.111241](https://doi.org/10.1016/j.compag.2025.111241)
+82. Rosyida N, Priyambodo TK, Afiahayati, Zuprizal. An Acoustic Feature-Based Ensemble Learning Approach for Chicken Health Detection. Eng Technol Appl Sci Res. 2026;16(2):33557-33562. doi:[10.48084/etasr.17149](https://doi.org/10.48084/etasr.17149)
+83. Reece FN, Lott BD. Effect of carbon dioxide on broiler chicken performance. Poult Sci. 1980;59(11):2400-2402. doi:[10.3382/ps.0592400](https://doi.org/10.3382/ps.0592400)
+84. McGovern RH, Feddes JJR, Zuidhof MJ, Hanson JA, Robinson FE. Growth performance, heart characteristics and the incidence of ascites in broilers in response to carbon dioxide and oxygen concentrations. Can Biosyst Eng. 2001;43:4.1-4.6. Tersedia dari: [PDF](https://library.csbe-scgab.ca/docs/journal/43/c9843.pdf)
+
+### J. Dokumen Internal Tim Asprak
+85. Tim Asprak. Dokumen konteks lomba, peta fitur, dan evaluasi proyek BROVER. 2026. Tersedia dari: [01_TEAM_AND_CONSTRAINTS.md](../01_Context_Memory/01_TEAM_AND_CONSTRAINTS.md) \| [02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md) \| [04_MITRA_PT_ZARA_PROPERTIFARM.md](../01_Context_Memory/04_MITRA_PT_ZARA_PROPERTIFARM.md) \| [PETA_FITUR_DAN_BUKTI_BROVER.md](../08_Evaluasi_Proyek/PETA_FITUR_DAN_BUKTI_BROVER.md)
+
+---
+## 13. Pemetaan Concept ke Template Proposal Hackathon Deep Tech UNJ 2026
+
+Bab ini memetakan setiap bagian *Template Proposal Peserta Kegiatan HackAthon 2026* ke sumbernya di dokumen ini, agar proposal dapat diisi tanpa menulis ulang dari nol. Batas kata mengikuti template.
+
+| Bagian Template | Batas | Sumber di Dokumen Ini | Catatan Pengisian |
+| :--- | :--- | :--- | :--- |
+| **Sampul** | Tidak ada | Bab 1 | Judul final; *Focus Challenge* **Smart Poultry Production** (portal: *Smart Egg Production*); Tim **Asprak**; Ketua **M. Hikari Reiziq Rakhmadinta**; Anggota 1–4 sesuai tabel profil; Institusi **ITS dan UNJ**; Tahun 2026. |
+| **Lembar Pengesahan** | Tidak ada | Bab 1, tabel profil tim | NIM/NIP/NIK, nomor HP/WA, email, dan tanda tangan **diisi langsung di berkas docx**, tidak disimpan di repositori publik. Pihak *Mengetahui* mengikuti ketentuan panitia. |
+| **1. Executive Summary** | 500 kata | Ringkasan Eksekutif, Bab 1 | Sudah memuat enam unsur: latar belakang, tujuan, solusi *deeptech*, keunggulan, *novelty*, dan target hasil akhir. Panjang saat ini sekitar 449 kata. |
+| **2. Substansi Inovasi** | 1.000 kata total | Bab 2–6 | Ringkas dari bab sumber di bawah. |
+| 2.1 Deskripsi permasalahan & target pengguna | Bagian dari 1.000 kata | Bab 2, 3.1–3.2, **3.3 Rumusan Masalah**, **3.4 Calon Pengguna** | Pakai angka terverifikasi; tandai simulasi HPAI sebagai simulasi margin kotor. |
+| 2.2 Solusi dan teknologi | 500 kata | Bab 4.1, matriks paket, **4.5 Komponen *Deeptech*, Spesifikasi, & Keunggulan**, Bab 5 | Jangan klaim waktu skrining lebih cepat sebelum diukur di pilot. |
+| 2.3 Arsitektur & cara kerja prototype | 250 kata | Gambar 03, Bab 6, diagram blok 8.3, **9.5 A Status TKT** | Sertakan TKT saat ini (sistem utuh TKT 3; gerak & kendali web TKT 4) dan target (TKT 6 akhir *bootcamp*, TKT 7 akhir program). |
+| 2.4 Potensi pasar, model bisnis, & rencana hilirisasi | 250 kata | Bab 9.2 A–F, **9.6 Rencana Pengujian Lapangan & Hilirisasi** | Mitra uji ditulis sebagai rencana sampai ada kesepakatan tertulis. |
+| **3. Business Model Canvas** | Tidak ada | Bab 9.1 dan Gambar 07 | Pakai versi singkat 9 blok. |
+| **4.1 Jadwal Pengembangan Purwarupa** | Maksimal 3 bulan, tabel atau chart | **Bab 9.7** dan Gambar 08b | Desember 2026 – Februari 2027, berisi pengembangan dan pendampingan. |
+| **4.2 Peta Jalan & Target TKT** | 250 kata | **Bab 9.5 A–B** dan Gambar 06 | Tabel TKT per subsistem dan milestone M0–M5 dengan indikator teknis. |
+| **4.3 Target Luaran & Indikator Keberhasilan** | Tidak ada | **Bab 9.8** | Produk fisik/digital, model AI, data, dokumentasi, HKI, kesiapan adopsi, dan pilot. |
+| **Profil Tim** *(bernomor 4 kedua di template)* | Tabel | Bab 1, tabel profil tim, dan 9.5 D | Kolom: nomor, nama, program studi/keahlian, dan peran. |
+| **5. Lampiran Portofolio** | Tidak ada | Disiapkan terpisah | Daftar periksa: CV setiap anggota, prestasi dan publikasi relevan, foto/video purwarupa Tahap 1 dan dasbor awal. Tidak disimpan di repositori publik. |
+| **6. Daftar Pustaka** | Gaya Vancouver | **Bab 12** | Ambil hanya rujukan yang dikutip di proposal, lalu nomori ulang sesuai urutan kemunculan. |
+
+**Berkas Wajib di Luar Isi Proposal** `[Pedoman, Hal. 5]` ([02_HACKATHON_DFARM_RULES.md](../01_Context_Memory/02_HACKATHON_DFARM_RULES.md)):
+1. Formulir pendaftaran melalui portal resmi.
+2. Proposal sesuai template resmi panitia.
+3. *Business Model Canvas*.
+4. Identitas pengusul dan CV tim (ketua dan seluruh anggota).
+5. Surat pernyataan pakta integritas.
+6. **Link foto/video purwarupa awal.** Usulan isi: video rover Tahap 1 berjalan lewat web `192.168.4.1`, uji rem darurat `500 ms`, dan tampilan dasbor awal.
+7. Bukti Katsinov dengan ambang kelayakan 80% per tahap.

@@ -15,7 +15,7 @@
   <rect x="486" y="16" width="308" height="24" rx="12" fill="#CCFBF1"/>
   <text x="640" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#0F766E">DENAH OPERASI KANDANG BROILER</text>
   <text x="640" y="69" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="25" font-weight="800" fill="#0F172A">Pola Jalur Inspeksi Rover di Kandang Broiler</text>
-  <text x="640" y="95" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.5" fill="#475569">Rover menyusuri celah antar-baris pakan &amp; minum (pola huruf U) dengan kendali lewat Website</text>
+  <text x="640" y="95" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.5" fill="#475569">Rover berhenti di titik zona tetap, 2 putaran per hari (pagi &amp; 15.00–16.00); hari 0–6 dan di luar putaran parkir di dok sebagai mode stasiun</text>
 
   <!-- ================= BARN FLOORPLAN ================= -->
   <rect x="44" y="112" width="872" height="676" rx="22" fill="#FFFBEB" stroke="#B45309" stroke-width="2.6" filter="url(#softShadow)"/>
@@ -35,7 +35,7 @@
   <line x1="374" y1="226" x2="374" y2="690" stroke="#EA580C" stroke-width="3.2" stroke-linecap="round"/><circle cx="374" cy="258" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="258" r="5" fill="#EA580C" opacity="0.65"/><circle cx="374" cy="332" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="332" r="5" fill="#EA580C" opacity="0.65"/><circle cx="374" cy="406" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="406" r="5" fill="#EA580C" opacity="0.65"/><circle cx="374" cy="480" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="480" r="5" fill="#EA580C" opacity="0.65"/><circle cx="374" cy="554" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="554" r="5" fill="#EA580C" opacity="0.65"/><circle cx="374" cy="628" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="374" cy="628" r="5" fill="#EA580C" opacity="0.65"/><rect x="318" y="190" width="112" height="28" rx="14" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.2"/><circle cx="335" cy="204" r="6" fill="#F97316"/><text x="382" y="208.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#C2410C">Pan Feeder</text><line x1="842" y1="226" x2="842" y2="690" stroke="#EA580C" stroke-width="3.2" stroke-linecap="round"/><circle cx="842" cy="258" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="258" r="5" fill="#EA580C" opacity="0.65"/><circle cx="842" cy="332" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="332" r="5" fill="#EA580C" opacity="0.65"/><circle cx="842" cy="406" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="406" r="5" fill="#EA580C" opacity="0.65"/><circle cx="842" cy="480" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="480" r="5" fill="#EA580C" opacity="0.65"/><circle cx="842" cy="554" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="554" r="5" fill="#EA580C" opacity="0.65"/><circle cx="842" cy="628" r="14.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2.2"/><circle cx="842" cy="628" r="5" fill="#EA580C" opacity="0.65"/><rect x="786" y="190" width="112" height="28" rx="14" fill="#FFEDD5" stroke="#FDBA74" stroke-width="1.2"/><circle cx="803" cy="204" r="6" fill="#F97316"/><text x="850" y="208.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#C2410C">Pan Feeder</text>
 
   <!-- ================= U-TURN ROVER PATH ================= -->
-  <!-- Leg 0: Out of Cleaning Dock to Aisle 1 -->
+  <!-- Leg 0: Out of dock to Aisle 1 -->
   <path d="M 198 738 L 253 738 L 253 668" fill="none" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#pathArrow)"/>
   <!-- Leg 1: Up Aisle 1 -->
   <line x1="253" y1="600" x2="253" y2="412" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" marker-end="url(#pathArrow)"/>
@@ -50,11 +50,11 @@
   <!-- Leg 3: Up Aisle 3 & continue right -->
   <path d="M 729 570 L 729 174 L 882 174" fill="none" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#pathArrow)"/>
 
-  <!-- Cleaning Dock (Start/Finish) -->
+  <!-- Dock inside the house (Start/Finish, station mode) -->
   <g filter="url(#softShadow)">
     <rect x="68" y="704" width="132" height="62" rx="13" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
-    <text x="134" y="732" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">DOCK</text>
-    <text x="134" y="751" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#CCFBF1">Start &amp; Sanitasi</text>
+    <text x="134" y="732" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">DOK</text>
+    <text x="134" y="751" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#CCFBF1">Area brooding</text>
   </g>
 
   <!-- Top-Down Rover Icon on Aisle 1 -->
@@ -84,61 +84,56 @@
           <rect x="184.0" y="491" width="138" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="204.0" cy="515" r="13" fill="#EDE9FE"/>
           
-    <g transform="translate(196.0,507)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="204.0" cy="515" r="7.2"/>
+      <circle cx="204.0" cy="515" r="2.6" fill="#7C3AED"/>
     </g>
           <text x="223.0" y="511" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">Zona A1</text>
-          <text x="223.0" y="528" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Cek Napas 15 dtk</text>
+          <text x="223.0" y="528" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Foto + T/RH/NH₃</text>
         </g>
         <g filter="url(#softShadow)">
           <rect x="184.0" y="291" width="138" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="204.0" cy="315" r="13" fill="#EDE9FE"/>
           
-    <g transform="translate(196.0,307)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="204.0" cy="315" r="7.2"/>
+      <circle cx="204.0" cy="315" r="2.6" fill="#7C3AED"/>
     </g>
           <text x="223.0" y="311" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">Zona A2</text>
-          <text x="223.0" y="328" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Cek Napas 15 dtk</text>
+          <text x="223.0" y="328" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Foto + T/RH/NH₃</text>
         </g>
         <g filter="url(#softShadow)">
           <rect x="426.0" y="291" width="138" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="446.0" cy="315" r="13" fill="#EDE9FE"/>
           
-    <g transform="translate(438.0,307)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="446.0" cy="315" r="7.2"/>
+      <circle cx="446.0" cy="315" r="2.6" fill="#7C3AED"/>
     </g>
           <text x="465.0" y="311" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">Zona B2</text>
-          <text x="465.0" y="328" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Cek Napas 15 dtk</text>
+          <text x="465.0" y="328" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Foto + T/RH/NH₃</text>
         </g>
         <g filter="url(#softShadow)">
           <rect x="426.0" y="598" width="138" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="446.0" cy="622" r="13" fill="#EDE9FE"/>
           
-    <g transform="translate(438.0,614)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="446.0" cy="622" r="7.2"/>
+      <circle cx="446.0" cy="622" r="2.6" fill="#7C3AED"/>
     </g>
           <text x="465.0" y="618" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">Zona B1</text>
-          <text x="465.0" y="635" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Cek Napas 15 dtk</text>
+          <text x="465.0" y="635" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Foto + T/RH/NH₃</text>
         </g>
         <g filter="url(#softShadow)">
           <rect x="660.0" y="396" width="138" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="680.0" cy="420" r="13" fill="#EDE9FE"/>
           
-    <g transform="translate(672.0,412)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="680.0" cy="420" r="7.2"/>
+      <circle cx="680.0" cy="420" r="2.6" fill="#7C3AED"/>
     </g>
           <text x="699.0" y="416" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">Zona C1</text>
-          <text x="699.0" y="433" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Cek Napas 15 dtk</text>
+          <text x="699.0" y="433" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">Foto + T/RH/NH₃</text>
         </g>
   
     <g filter="url(#softShadow)">
@@ -150,8 +145,8 @@
       <circle cx="9" cy="9.8" r="2.6"/>
     </g>
       <text x="455.0" y="466" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#991B1B">Temuan Feses</text>
-      <text x="455.0" y="482" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Stop 30 cm + LED</text>
-      <text x="455.0" y="495" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Analisis Detail AI</text>
+      <text x="455.0" y="482" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Ditandai model CV</text>
+      <text x="455.0" y="495" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Masuk daftar triase</text>
     </g>
 
   <!-- ================= RIGHT LEGEND PANEL ================= -->
@@ -162,9 +157,9 @@
   <!-- Legend Item 1: Rover Path -->
   <rect x="960" y="186" width="260" height="74" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
   <line x1="972" y1="223" x2="1012" y2="223" stroke="#0D9488" stroke-width="3.5" stroke-dasharray="7,4" marker-end="url(#pathArrow)"/>
-  <text x="1028" y="213" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F172A">Jalur Rover (Huruf U)</text>
-  <text x="1028" y="232" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Gerak pelan &#8804;0,1 m/s agar</text>
-  <text x="1028" y="247" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">ayam tetap tenang</text>
+  <text x="1028" y="213" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F172A">Jalur Putaran (Huruf U)</text>
+  <text x="1028" y="232" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">0,07–0,1 m/s, 2 putaran/hari:</text>
+  <text x="1028" y="247" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">pagi &amp; pukul 15.00–16.00</text>
 
   <!-- Legend Item 2: Nipple & Pan Feeder -->
   <rect x="960" y="274" width="260" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
@@ -173,18 +168,17 @@
   <circle cx="986" cy="332" r="9.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2"/>
   <text x="1006" y="336" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#C2410C">Baris Pan Feeder (Pakan)</text>
 
-  <!-- Legend Item 3: Audio Check Zone -->
+  <!-- Legend Item 3: Fixed zone stop -->
   <rect x="960" y="368" width="260" height="82" rx="12" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.4"/>
   <circle cx="988" cy="409" r="17" fill="#EDE9FE"/>
   
-    <g transform="translate(980,401)" fill="none" stroke="#7C3AED" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
-      <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
-      <line x1="8" y1="13" x2="8" y2="15"/>
+    <g fill="none" stroke="#7C3AED" stroke-width="1.9">
+      <circle cx="988" cy="409" r="7.2"/>
+      <circle cx="988" cy="409" r="2.6" fill="#7C3AED"/>
     </g>
-  <text x="1016" y="397" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#4C1D95">Titik Cek Napas (15 dtk)</text>
-  <text x="1016" y="416" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">Motor &amp; kipas mati, rekam</text>
-  <text x="1016" y="432" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">3&#215;5 dtk + baca suhu/RH/NH&#8323;</text>
+  <text x="1016" y="397" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#4C1D95">Titik Zona Tetap</text>
+  <text x="1016" y="416" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">Berhenti: foto feses + LED</text>
+  <text x="1016" y="432" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">+ baca suhu, RH &amp; tren NH&#8323;</text>
 
   <!-- Legend Item 4: Visual Finding -->
   <rect x="960" y="464" width="260" height="82" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.4"/>
@@ -194,25 +188,25 @@
       <path d="M2 6.5A1.8 1.8 0 0 1 3.8 4.7h1.8l1.1-1.6h4.6l1.1 1.6h1.8A1.8 1.8 0 0 1 16 6.5v6.7a1.8 1.8 0 0 1-1.8 1.8H3.8A1.8 1.8 0 0 1 2 13.2z" fill="#FEE2E2"/>
       <circle cx="9" cy="9.8" r="2.6"/>
     </g>
-  <text x="1016" y="493" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#991B1B">Temuan Mencurigakan</text>
-  <text x="1016" y="512" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">Berhenti 30 cm, nyalakan</text>
-  <text x="1016" y="528" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">LED + voting 3-5 frame AI</text>
+  <text x="1016" y="493" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#991B1B">Temuan Feses Abnormal</text>
+  <text x="1016" y="512" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">Masuk daftar triase</text>
+  <text x="1016" y="528" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">3 tombol di dasbor</text>
 
   <!-- Legend Item 5: Dock -->
   <rect x="960" y="560" width="260" height="74" rx="12" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.4"/>
   <rect x="972" y="582" width="34" height="30" rx="7" fill="#0F766E"/>
-  <text x="989" y="601" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF">DOCK</text>
-  <text x="1018" y="588" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F766E">Cleaning Dock</text>
-  <text x="1018" y="606" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">Titik berangkat, isi daya,</text>
-  <text x="1018" y="621" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">&amp; bersihkan roda</text>
+  <text x="989" y="601" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF">DOK</text>
+  <text x="1018" y="588" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F766E">Dok di Dalam Kandang</text>
+  <text x="1018" y="606" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">Mode stasiun: catat per menit,</text>
+  <text x="1018" y="621" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">isi daya &amp; sanitasi roda</text>
 
   <!-- Compact Mode Info Strip -->
   <rect x="960" y="654" width="260" height="114" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.4"/>
   <text x="976" y="680" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1E40AF">MODE PENGENDALIAN</text>
   <text x="976" y="704" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Saat Ini:</text>
-  <text x="976" y="721" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Kendali lewat Website (Wi-Fi lokal)</text>
-  <text x="976" y="743" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Future Work:</text>
-  <text x="976" y="760" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Otomatis terjadwal &amp; setup rute</text>
+  <text x="976" y="721" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Disetir lewat web (Wi-Fi lokal)</text>
+  <text x="976" y="743" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Kelak:</text>
+  <text x="976" y="760" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">CV navigasi + jadwal otomatis</text>
 
   <!-- Footer -->
   <rect x="44" y="800" width="1192" height="28" rx="8" fill="#F1F5F9"/>

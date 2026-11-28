@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate 2 separate, clean, to-the-point vector SVG + high-res PNG diagrams for Section 6 of BROVER:
 - 04a_pola_jalur_inspeksi_rover.svg / .png : Top-down broiler barn inspection path (U-turn pattern)
-- 04b_alur_4tahap_inspeksi_brover.svg / .png : 4-stage visual multi-modal inspection & vet escalation flow
+- 04b_alur_4tahap_inspeksi_brover.svg / .png : 4-stage multisensor screening & vet escalation flow
 
 Zero em-dashes, clean vector icons & arrows, rendered at 2x scale via local Playwright Chromium.
 """
@@ -70,6 +70,15 @@ def icon_mic_small(cx: float, cy: float, color: str = "#7C3AED") -> str:
       <rect x="5.5" y="1.8" width="5" height="7.5" rx="2.5" fill="#EDE9FE"/>
       <path d="M3.5 8.5a4.5 4.5 0 0 0 9 0"/>
       <line x1="8" y1="13" x2="8" y2="15"/>
+    </g>"""
+
+
+def icon_zone_small(cx: float, cy: float, color: str = "#7C3AED") -> str:
+    """Titik zona tetap: tempat rover berhenti untuk foto feses dan baca udara."""
+    return f"""
+    <g fill="none" stroke="{color}" stroke-width="1.9">
+      <circle cx="{cx}" cy="{cy}" r="7.2"/>
+      <circle cx="{cx}" cy="{cy}" r="2.6" fill="{color}"/>
     </g>"""
 
 
@@ -155,13 +164,13 @@ def build_svg_4a() -> str:
             f'<text x="{px + 8}" y="208.5" text-anchor="middle" font-family="\'Montserrat\', sans-serif" font-size="11.5" font-weight="700" fill="#C2410C">Pan Feeder</text>'
         )
 
-    # Zone audio check markers (clean pills offset slightly to right/left so zero overlap!)
+    # Fixed zone stop markers (clean pills offset slightly to right/left so zero overlap!)
     zone_points = [
-        (x_a1, 515, "Zona A1", "Cek Napas 15 dtk", "right"),
-        (x_a1, 315, "Zona A2", "Cek Napas 15 dtk", "right"),
-        (x_a2, 315, "Zona B2", "Cek Napas 15 dtk", "right"),
-        (x_a2, 622, "Zona B1", "Cek Napas 15 dtk", "right"),
-        (x_a3, 420, "Zona C1", "Cek Napas 15 dtk", "right"),
+        (x_a1, 515, "Zona A1", "Foto + T/RH/NH₃", "right"),
+        (x_a1, 315, "Zona A2", "Foto + T/RH/NH₃", "right"),
+        (x_a2, 315, "Zona B2", "Foto + T/RH/NH₃", "right"),
+        (x_a2, 622, "Zona B1", "Foto + T/RH/NH₃", "right"),
+        (x_a3, 420, "Zona C1", "Foto + T/RH/NH₃", "right"),
     ]
     zones_svg = []
     for zx, zy, ztitle, zsub, side in zone_points:
@@ -175,7 +184,7 @@ def build_svg_4a() -> str:
         <g filter="url(#softShadow)">
           <rect x="{cx_box:.1f}" y="{zy - 24}" width="{card_w}" height="48" rx="11" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.8"/>
           <circle cx="{cx_box + 20:.1f}" cy="{zy}" r="13" fill="#EDE9FE"/>
-          {icon_mic_small(cx_box + 20, zy, "#7C3AED")}
+          {icon_zone_small(cx_box + 20, zy, "#7C3AED")}
           <text x="{cx_box + 39:.1f}" y="{zy - 4}" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="700" fill="#4C1D95">{escape(ztitle)}</text>
           <text x="{cx_box + 39:.1f}" y="{zy + 13}" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="600" fill="#6D28D9">{escape(zsub)}</text>
         </g>""")
@@ -190,8 +199,8 @@ def build_svg_4a() -> str:
       <circle cx="{fx_box + 22:.1f}" cy="{fy}" r="14.5" fill="#FEE2E2"/>
       {icon_cam_alert(fx_box + 22, fy, "#DC2626")}
       <text x="{fx_box + 43:.1f}" y="{fy - 6}" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#991B1B">Temuan Feses</text>
-      <text x="{fx_box + 43:.1f}" y="{fy + 10}" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Stop 30 cm + LED</text>
-      <text x="{fx_box + 43:.1f}" y="{fy + 23}" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Analisis Detail AI</text>
+      <text x="{fx_box + 43:.1f}" y="{fy + 10}" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Ditandai model CV</text>
+      <text x="{fx_box + 43:.1f}" y="{fy + 23}" font-family="'Open Sans', sans-serif" font-size="10.0" font-weight="600" fill="#B91C1C">Masuk daftar triase</text>
     </g>"""
 
     # Legend items on right panel (x: 944..1236, w = 292)
@@ -214,7 +223,7 @@ def build_svg_4a() -> str:
   <rect x="486" y="16" width="308" height="24" rx="12" fill="#CCFBF1"/>
   <text x="640" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#0F766E">DENAH OPERASI KANDANG BROILER</text>
   <text x="640" y="69" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="25" font-weight="800" fill="#0F172A">Pola Jalur Inspeksi Rover di Kandang Broiler</text>
-  <text x="640" y="95" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.5" fill="#475569">Rover menyusuri celah antar-baris pakan &amp; minum (pola huruf U) dengan kendali lewat Website</text>
+  <text x="640" y="95" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.5" fill="#475569">Rover berhenti di titik zona tetap, 2 putaran per hari (pagi &amp; 15.00–16.00); hari 0–6 dan di luar putaran parkir di dok sebagai mode stasiun</text>
 
   <!-- ================= BARN FLOORPLAN ================= -->
   <rect x="{bx}" y="{by}" width="{bw}" height="{bh}" rx="22" fill="#FFFBEB" stroke="#B45309" stroke-width="2.6" filter="url(#softShadow)"/>
@@ -228,7 +237,7 @@ def build_svg_4a() -> str:
   {''.join(pans_svg)}
 
   <!-- ================= U-TURN ROVER PATH ================= -->
-  <!-- Leg 0: Out of Cleaning Dock to Aisle 1 -->
+  <!-- Leg 0: Out of dock to Aisle 1 -->
   <path d="M 198 738 L {x_a1} 738 L {x_a1} 668" fill="none" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#pathArrow)"/>
   <!-- Leg 1: Up Aisle 1 -->
   <line x1="{x_a1}" y1="600" x2="{x_a1}" y2="412" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" marker-end="url(#pathArrow)"/>
@@ -243,11 +252,11 @@ def build_svg_4a() -> str:
   <!-- Leg 3: Up Aisle 3 & continue right -->
   <path d="M {x_a3} 570 L {x_a3} 174 L 882 174" fill="none" stroke="#0D9488" stroke-width="4" stroke-dasharray="10,7" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#pathArrow)"/>
 
-  <!-- Cleaning Dock (Start/Finish) -->
+  <!-- Dock inside the house (Start/Finish, station mode) -->
   <g filter="url(#softShadow)">
     <rect x="68" y="704" width="132" height="62" rx="13" fill="#0F766E" stroke="#115E59" stroke-width="2"/>
-    <text x="134" y="732" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">DOCK</text>
-    <text x="134" y="751" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#CCFBF1">Start &amp; Sanitasi</text>
+    <text x="134" y="732" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="800" fill="#FFFFFF">DOK</text>
+    <text x="134" y="751" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#CCFBF1">Area brooding</text>
   </g>
 
   <!-- Top-Down Rover Icon on Aisle 1 -->
@@ -265,9 +274,9 @@ def build_svg_4a() -> str:
   <!-- Legend Item 1: Rover Path -->
   <rect x="{lx + 16}" y="186" width="{lw - 32}" height="74" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
   <line x1="{lx + 28}" y1="223" x2="{lx + 68}" y2="223" stroke="#0D9488" stroke-width="3.5" stroke-dasharray="7,4" marker-end="url(#pathArrow)"/>
-  <text x="{lx + 84}" y="213" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F172A">Jalur Rover (Huruf U)</text>
-  <text x="{lx + 84}" y="232" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Gerak pelan &#8804;0,1 m/s agar</text>
-  <text x="{lx + 84}" y="247" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">ayam tetap tenang</text>
+  <text x="{lx + 84}" y="213" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F172A">Jalur Putaran (Huruf U)</text>
+  <text x="{lx + 84}" y="232" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">0,07–0,1 m/s, 2 putaran/hari:</text>
+  <text x="{lx + 84}" y="247" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">pagi &amp; pukul 15.00–16.00</text>
 
   <!-- Legend Item 2: Nipple & Pan Feeder -->
   <rect x="{lx + 16}" y="274" width="{lw - 32}" height="80" rx="12" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.3"/>
@@ -276,37 +285,37 @@ def build_svg_4a() -> str:
   <circle cx="{lx + 42}" cy="332" r="9.5" fill="#FDBA74" stroke="#C2410C" stroke-width="2"/>
   <text x="{lx + 62}" y="336" font-family="'Montserrat', sans-serif" font-size="11.8" font-weight="700" fill="#C2410C">Baris Pan Feeder (Pakan)</text>
 
-  <!-- Legend Item 3: Audio Check Zone -->
+  <!-- Legend Item 3: Fixed zone stop -->
   <rect x="{lx + 16}" y="368" width="{lw - 32}" height="82" rx="12" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.4"/>
   <circle cx="{lx + 44}" cy="409" r="17" fill="#EDE9FE"/>
-  {icon_mic_small(lx + 44, 409, "#7C3AED")}
-  <text x="{lx + 72}" y="397" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#4C1D95">Titik Cek Napas (15 dtk)</text>
-  <text x="{lx + 72}" y="416" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">Motor &amp; kipas mati, rekam</text>
-  <text x="{lx + 72}" y="432" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">3&#215;5 dtk + baca suhu/RH/NH&#8323;</text>
+  {icon_zone_small(lx + 44, 409, "#7C3AED")}
+  <text x="{lx + 72}" y="397" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#4C1D95">Titik Zona Tetap</text>
+  <text x="{lx + 72}" y="416" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">Berhenti: foto feses + LED</text>
+  <text x="{lx + 72}" y="432" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#475569">+ baca suhu, RH &amp; tren NH&#8323;</text>
 
   <!-- Legend Item 4: Visual Finding -->
   <rect x="{lx + 16}" y="464" width="{lw - 32}" height="82" rx="12" fill="#FEF2F2" stroke="#FCA5A5" stroke-width="1.4"/>
   <circle cx="{lx + 44}" cy="505" r="17" fill="#FEE2E2"/>
   {icon_cam_alert(lx + 44, 505, "#DC2626")}
-  <text x="{lx + 72}" y="493" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#991B1B">Temuan Mencurigakan</text>
-  <text x="{lx + 72}" y="512" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">Berhenti 30 cm, nyalakan</text>
-  <text x="{lx + 72}" y="528" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">LED + voting 3-5 frame AI</text>
+  <text x="{lx + 72}" y="493" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#991B1B">Temuan Feses Abnormal</text>
+  <text x="{lx + 72}" y="512" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">Masuk daftar triase</text>
+  <text x="{lx + 72}" y="528" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#7F1D1D">3 tombol di dasbor</text>
 
   <!-- Legend Item 5: Dock -->
   <rect x="{lx + 16}" y="560" width="{lw - 32}" height="74" rx="12" fill="#F0FDFA" stroke="#5EEAD4" stroke-width="1.4"/>
   <rect x="{lx + 28}" y="582" width="34" height="30" rx="7" fill="#0F766E"/>
-  <text x="{lx + 45}" y="601" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF">DOCK</text>
-  <text x="{lx + 74}" y="588" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F766E">Cleaning Dock</text>
-  <text x="{lx + 74}" y="606" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">Titik berangkat, isi daya,</text>
-  <text x="{lx + 74}" y="621" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">&amp; bersihkan roda</text>
+  <text x="{lx + 45}" y="601" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="8.5" font-weight="800" fill="#FFFFFF">DOK</text>
+  <text x="{lx + 74}" y="588" font-family="'Montserrat', sans-serif" font-size="12.2" font-weight="700" fill="#0F766E">Dok di Dalam Kandang</text>
+  <text x="{lx + 74}" y="606" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">Mode stasiun: catat per menit,</text>
+  <text x="{lx + 74}" y="621" font-family="'Open Sans', sans-serif" font-size="11.1" fill="#334155">isi daya &amp; sanitasi roda</text>
 
   <!-- Compact Mode Info Strip -->
   <rect x="{lx + 16}" y="654" width="{lw - 32}" height="114" rx="14" fill="#EFF6FF" stroke="#93C5FD" stroke-width="1.4"/>
   <text x="{lx + 32}" y="680" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1E40AF">MODE PENGENDALIAN</text>
   <text x="{lx + 32}" y="704" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Saat Ini:</text>
-  <text x="{lx + 32}" y="721" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Kendali lewat Website (Wi-Fi lokal)</text>
-  <text x="{lx + 32}" y="743" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Future Work:</text>
-  <text x="{lx + 32}" y="760" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Otomatis terjadwal &amp; setup rute</text>
+  <text x="{lx + 32}" y="721" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">Disetir lewat web (Wi-Fi lokal)</text>
+  <text x="{lx + 32}" y="743" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="700" fill="#0F172A">Kelak:</text>
+  <text x="{lx + 32}" y="760" font-family="'Open Sans', sans-serif" font-size="11.3" fill="#334155">CV navigasi + jadwal otomatis</text>
 
   <!-- Footer -->
   <rect x="44" y="800" width="1192" height="28" rx="8" fill="#F1F5F9"/>
@@ -317,7 +326,7 @@ def build_svg_4a() -> str:
 
 
 # ==============================================================================
-# DIAGRAM 4B: Alur 4-Tahap Inspeksi Multi-Modal & Pelaporan Dokter Hewan (1600 x 760)
+# DIAGRAM 4B: Alur 4-Tahap Inspeksi Multisensor & Pelaporan Dokter Hewan (1600 x 760)
 # ==============================================================================
 def hero_icon_stage1(cx: float, cy: float) -> str:
     """Rover + Phone control icon (for Stage 1)."""
@@ -339,7 +348,7 @@ def hero_icon_stage1(cx: float, cy: float) -> str:
 
 
 def hero_icon_stage2(cx: float, cy: float) -> str:
-    """AI Chip + Audio/Sensor waves icon (for Stage 2)."""
+    """AI Chip + sensor waves icon (for Stage 2)."""
     return f"""
     <g transform="translate({cx - 22},{cy - 22})" fill="none" stroke="#6D28D9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
       <rect x="11" y="11" width="22" height="22" rx="5" fill="#EDE9FE"/>
@@ -406,8 +415,8 @@ def build_svg_4b() -> str:
     ch = 556
 
     stages_meta = [
-        (xs[0], "1", "TAHAP 1", "Setup & Inspeksi Rover", "#0D9488", "#F0FDFA", "#5EEAD4", "#0F766E", hero_icon_stage1),
-        (xs[1], "2", "TAHAP 2", "Analisis AI & Standar Umur", "#7C3AED", "#F5F3FF", "#C4B5FD", "#5B21B6", hero_icon_stage2),
+        (xs[0], "1", "TAHAP 1", "Setup & Pengambilan Data", "#0D9488", "#F0FDFA", "#5EEAD4", "#0F766E", hero_icon_stage1),
+        (xs[1], "2", "TAHAP 2", "Skrining Feses & Udara", "#7C3AED", "#F5F3FF", "#C4B5FD", "#5B21B6", hero_icon_stage2),
         (xs[2], "3", "TAHAP 3", "Verifikasi Manusia (Triase)", "#D97706", "#FFFBEB", "#FCD34D", "#B45309", hero_icon_stage3),
         (xs[3], "4", "TAHAP 4", "Laporan 1-Klik & Sanitasi", "#2563EB", "#EFF6FF", "#93C5FD", "#1D4ED8", hero_icon_stage4),
     ]
@@ -451,8 +460,8 @@ def build_svg_4b() -> str:
     stage1_body = f"""
     <rect x="{s1_x}" y="{py_in}" width="{s1_w}" height="{ph_in}" rx="14" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.4"/>
     {bullet_item(s1_x + 14, py_in + 36, "Setup 1× Saat Chick-In", "Pilih bibit Cobb 500 / Ross 308", "untuk hitung umur otomatis", "#0D9488")}
-    {bullet_item(s1_x + 14, py_in + 126, "Kendalikan via Website", "Gerak pelan (≤0,1 m/s) lewat", "Wi-Fi lokal tanpa kabel fisik", "#0D9488")}
-    {bullet_item(s1_x + 14, py_in + 216, "Pindai Multi-Sensor", "Kamera AI + Cek Napas 15 dtk", "+ ukur suhu, RH & tren NH₃", "#0D9488")}
+    {bullet_item(s1_x + 14, py_in + 126, "Putaran Rover 2×/Hari", "Pagi & 15.00–16.00, berhenti", "di titik zona (0,07–0,1 m/s)", "#0D9488")}
+    {bullet_item(s1_x + 14, py_in + 216, "Foto Feses & Udara", "Kamera 45° + LED, suhu, RH,", "tren NH₃; Saku: foto HP", "#0D9488")}
     <rect x="{s1_x}" y="{cy_top + 506}" width="{s1_w}" height="32" rx="16" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.4"/>
     <text x="{xs[0] + cw / 2}" y="{cy_top + 526}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#0F766E">Rem Aman 500 ms  |  Tetap Jalan Offline</text>
     """
@@ -462,9 +471,9 @@ def build_svg_4b() -> str:
     s2_w = cw - 32
     stage2_body = f"""
     <rect x="{s2_x}" y="{py_in}" width="{s2_w}" height="{ph_in}" rx="14" fill="#FFFFFF" stroke="#DDD6FE" stroke-width="1.4"/>
-    {bullet_item(s2_x + 14, py_in + 36, "Cek Udara vs Umur Ayam", "Status dingin, ideal, atau panas", "sesuai Cobb 500 / Ross 308", "#7C3AED")}
-    {bullet_item(s2_x + 14, py_in + 126, "Prakiraan Cuaca Luar", "Hibrida BMKG + Open-Meteo", "cegah cekaman panas 1-7 hari", "#7C3AED")}
-    {bullet_item(s2_x + 14, py_in + 216, "3 Model AI di Atas Rover", "Deteksi feses, ayam lesu/mati,", "& suara ngorok (3×5 dtk voting)", "#7C3AED")}
+    {bullet_item(s2_x + 14, py_in + 36, "Cek Udara vs Umur Ayam", "Normal, Waspada, atau Bahaya", "vs Cobb 500 / Ross 308 + THI", "#7C3AED")}
+    {bullet_item(s2_x + 14, py_in + 126, "Prakiraan Cuaca Luar", "Hibrida BMKG + Open-Meteo", "antisipasi cekaman panas sore", "#7C3AED")}
+    {bullet_item(s2_x + 14, py_in + 216, "1 Model CV Feses (Edge)", "Tandai feses abnormal; foto", "Saku diproses di server", "#7C3AED")}
     <rect x="{s2_x}" y="{cy_top + 506}" width="{s2_w}" height="32" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.4"/>
     <text x="{xs[1] + cw / 2}" y="{cy_top + 526}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#5B21B6">Evaluasi Objektif  |  Tanpa Skor 0-100</text>
     """
@@ -474,7 +483,7 @@ def build_svg_4b() -> str:
     s3_w = cw - 32
     stage3_body = f"""
     <rect x="{s3_x}" y="{py_in}" width="{s3_w}" height="{ph_in}" rx="14" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4"/>
-    {bullet_item(s3_x + 14, py_in + 34, "Tinjau Bukti di Dasbor", "Lihat foto feses/ayam, putar", "klip audio & cek peta zona", "#D97706")}
+    {bullet_item(s3_x + 14, py_in + 34, "Tinjau Bukti & Ceklis", "Foto feses, grafik udara, &", "ceklis gejala pernapasan ABK", "#D97706")}
     <text x="{s3_x + 16}" y="{py_in + 114}" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#92400E">PILIH 1 DARI 3 TOMBOL AKSI:</text>
 
     <!-- Button 1: Akan Saya Cek -->
@@ -510,14 +519,14 @@ def build_svg_4b() -> str:
     <rect x="{s4_x}" y="{py_in}" width="{s4_w}" height="162" rx="14" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.6"/>
     <rect x="{s4_x + 12}" y="{py_in + 12}" width="{s4_w - 24}" height="28" rx="8" fill="#FFE4E6"/>
     <text x="{xs[3] + cw / 2}" y="{py_in + 30.5}" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#9F1239">LAPORAN 1-KLIK DOKTER HEWAN</text>
-    {bullet_item(s4_x + 14, py_in + 66, "Paket Bukti via WA / PDF", "Umur flok, deplesi/FCR, foto,", "audio ngorok & grafik suhu/NH₃", "#E11D48")}
+    {bullet_item(s4_x + 14, py_in + 66, "Paket Bukti via WA / PDF", "Umur flok, deplesi, foto feses,", "ceklis gejala & grafik udara", "#E11D48")}
     <text x="{s4_x + 39}" y="{py_in + 132}" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#BE123C">Siap dikirim ke Dokter Hewan / Dinas</text>
 
     <!-- Block B: Wheel Sanitation SOP -->
     <rect x="{s4_x}" y="{py_in + 174}" width="{s4_w}" height="162" rx="14" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.6"/>
     <rect x="{s4_x + 12}" y="{py_in + 186}" width="{s4_w - 24}" height="28" rx="8" fill="#CCFBF1"/>
-    <text x="{xs[3] + cw / 2}" y="{py_in + 204.5}" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">SOP SANITASI RODA DI DOCK</text>
-    <text x="{xs[3] + cw / 2}" y="{py_in + 234}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Wajib 3 langkah setelah kembali ke Dock:</text>
+    <text x="{xs[3] + cw / 2}" y="{py_in + 204.5}" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">SOP SANITASI RODA DI DOK</text>
+    <text x="{xs[3] + cw / 2}" y="{py_in + 234}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Wajib 3 langkah setelah kembali ke dok:</text>
 
     <!-- 3 mini step pills with arrows -->
     <rect x="{s4_x + 12}" y="{py_in + 248}" width="84" height="44" rx="9" fill="#F0FDFA" stroke="#2DD4BF" stroke-width="1.4"/>
@@ -537,7 +546,7 @@ def build_svg_4b() -> str:
     <text x="{xs[3] + cw / 2}" y="{py_in + 318}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#0F766E">Cegah kontaminasi silang antar-siklus</text>
 
     <rect x="{s4_x}" y="{cy_top + 506}" width="{s4_w}" height="32" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.4"/>
-    <text x="{xs[3] + cw / 2}" y="{cy_top + 526}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#1D4ED8">Kebijakan 1 Unit = 1 Kandang (WOAH)</text>
+    <text x="{xs[3] + cw / 2}" y="{cy_top + 526}" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#1D4ED8">SOP 1 Unit = 1 Kandang + Protokol Pindah</text>
     """
 
     svg = f"""<?xml version="1.0" encoding="UTF-8"?>
@@ -561,9 +570,9 @@ def build_svg_4b() -> str:
 
   <!-- ================= HEADER ================= -->
   <rect x="572" y="16" width="456" height="24" rx="12" fill="#EDE9FE"/>
-  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#5B21B6">ALUR KERJA INSPEKSI MULTI-MODAL BROVER</text>
+  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#5B21B6">ALUR KERJA INSPEKSI MULTISENSOR BROVER</text>
   <text x="800" y="70" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="25.5" font-weight="800" fill="#0F172A">4 Tahap Inspeksi Kandang hingga Pelaporan Dokter Hewan</text>
-  <text x="800" y="98" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.6" fill="#475569">Alur ringkas dari pemindaian Rover, evaluasi standar umur ayam broiler, triase 3 tombol manusia, hingga sanitasi roda</text>
+  <text x="800" y="98" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.6" fill="#475569">Dari putaran rover atau foto HP, skrining feses dan udara terhadap standar umur, triase 3 tombol, hingga laporan dokter hewan</text>
 
   <!-- ================= 4 STAGE CARDS ================= -->
   {''.join(cards_bg)}
@@ -577,7 +586,7 @@ def build_svg_4b() -> str:
 
   <!-- ================= FOOTER ================= -->
   <rect x="36" y="706" width="1528" height="36" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="800" y="728.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Standar Cobb 500 &amp; Ross 308, Audio SmartEars (3&#215;5 dtk), Cuaca BMKG + Open-Meteo &amp; Pedoman WOAH</text>
+  <text x="800" y="728.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Standar Cobb 500 &amp; Ross 308, 1 Model CV Feses Apache-2.0, Cuaca BMKG + Open-Meteo &amp; Pedoman WOAH</text>
 </svg>
 """
     return svg

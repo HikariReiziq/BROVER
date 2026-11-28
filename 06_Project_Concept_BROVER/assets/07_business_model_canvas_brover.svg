@@ -21,17 +21,17 @@
       <path d="M2 11l4 4"/>
     </g>
     <text x="90.0" y="98" font-family="'Montserrat', sans-serif" font-size="13.2" font-weight="800" fill="#FFFFFF">Key Partners</text>
-    <text x="90.0" y="116" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Mitra Strategis Utama</text>
+    <text x="90.0" y="116" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Mitra Strategis (Calon)</text>
     
 
         <circle cx="58.0" cy="148" r="4.5" fill="#0D9488"/>
         <text x="72.0" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">PT Zara Propertifarm</text>
-        <text x="72.0" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Uji lapangan 6 farm &amp; paket kandang</text>
+        <text x="72.0" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Calon mitra bundling KANOPIS</text>
         
 
         <circle cx="58.0" cy="246.8" r="4.5" fill="#0D9488"/>
-        <text x="72.0" y="250.8" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">PT Edura (PTNBH UNJ)</text>
-        <text x="72.0" y="267.8" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Dukungan alat &amp; komersialisasi</text>
+        <text x="72.0" y="250.8" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">PT Edura Cipta Gemilang</text>
+        <text x="72.0" y="267.8" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Dukungan in-kind alat &amp; rakit</text>
         
 
         <circle cx="58.0" cy="345.6" r="4.5" fill="#0D9488"/>
@@ -40,13 +40,13 @@
         
 
         <circle cx="58.0" cy="444.40000000000003" r="4.5" fill="#0D9488"/>
-        <text x="72.0" y="448.40000000000003" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dokter Hewan &amp; Dinas</text>
-        <text x="72.0" y="465.40000000000003" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Validasi gejala &amp; saluran laporan</text>
+        <text x="72.0" y="448.40000000000003" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dinas Pangan &amp; Pertanian</text>
+        <text x="72.0" y="465.40000000000003" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Kota Cimahi: rencana uji lapangan</text>
         
 
         <circle cx="58.0" cy="543.2" r="4.5" fill="#0D9488"/>
-        <text x="72.0" y="547.2" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Pemasok E-Commerce RI</text>
-        <text x="72.0" y="564.2" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Tokopedia, Shopee, Lazada &amp; Blibli</text>
+        <text x="72.0" y="547.2" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dokter Hewan &amp; Pemasok RI</text>
+        <text x="72.0" y="564.2" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Validasi gejala; komponen lokal</text>
         
 
     <g filter="url(#cardShadow)">
@@ -63,23 +63,23 @@
     
 
         <circle cx="366.4" cy="148" r="4.5" fill="#2563EB"/>
-        <text x="380.4" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Pelatihan Model AI</text>
-        <text x="380.4" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Data foto &amp; audio kandang lokal RI</text>
+        <text x="380.4" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Rakit &amp; QC Unit Rover</text>
+        <text x="380.4" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Kamera, servo, tiang sensor &amp; dok</text>
         
 
         <circle cx="366.4" cy="198.75" r="4.5" fill="#2563EB"/>
-        <text x="380.4" y="202.75" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Perakitan Rover</text>
-        <text x="380.4" y="219.75" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Casing tertutup tahan debu &amp; gas</text>
+        <text x="380.4" y="202.75" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Latih &amp; Perbarui Model</text>
+        <text x="380.4" y="219.75" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">CV feses, set uji foto rover &amp; HP</text>
         
 
         <circle cx="366.4" cy="249.5" r="4.5" fill="#2563EB"/>
-        <text x="380.4" y="253.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Pengembangan Website</text>
-        <text x="380.4" y="270.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Kendali alat, dasbor &amp; info cuaca</text>
+        <text x="380.4" y="253.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dukungan Lapangan</text>
+        <text x="380.4" y="270.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Pasang dok, ganti sensor &amp; baterai</text>
         
 
         <circle cx="366.4" cy="300.25" r="4.5" fill="#2563EB"/>
-        <text x="380.4" y="304.25" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Uji Lapangan &amp; HKI</text>
-        <text x="380.4" y="321.25" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Uji kandang mitra &amp; paten sederhana</text>
+        <text x="380.4" y="304.25" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Pilot &amp; Protokol Pindah</text>
+        <text x="380.4" y="321.25" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Uji kandang mitra &amp; SOP sanitasi</text>
         
 
     <g filter="url(#cardShadow)">
@@ -102,18 +102,18 @@
         
 
         <circle cx="366.4" cy="489.75" r="4.5" fill="#0284C7"/>
-        <text x="380.4" y="493.75" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Desain Sirkuit &amp; Rangka</text>
-        <text x="380.4" y="510.75" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Rancangan elektronik &amp; casing rover</text>
+        <text x="380.4" y="493.75" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Model CV Feses Apache-2.0</text>
+        <text x="380.4" y="510.75" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Set uji lokal berlabel dokter hewan</text>
         
 
         <circle cx="366.4" cy="540.5" r="4.5" fill="#0284C7"/>
-        <text x="380.4" y="544.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dataset &amp; 3 Model AI</text>
-        <text x="380.4" y="561.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Data terkurasi &amp; model siap pakai</text>
+        <text x="380.4" y="544.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Armada Unit Rover Tim</text>
+        <text x="380.4" y="561.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Modal unit untuk paket langganan</text>
         
 
         <circle cx="366.4" cy="591.25" r="4.5" fill="#0284C7"/>
-        <text x="380.4" y="595.25" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Fasilitas Lab UNJ</text>
-        <text x="380.4" y="612.25" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Lab Robotika, IoT &amp; Manufaktur</text>
+        <text x="380.4" y="595.25" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Desain PCB &amp; Server Pusat</text>
+        <text x="380.4" y="612.25" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Carrier PCB, casing &amp; VPS lokal</text>
         
 
     <g filter="url(#cardShadow)">
@@ -130,28 +130,28 @@
     
 
         <circle cx="674.8" cy="148" r="4.5" fill="#D97706"/>
-        <text x="688.8" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Deteksi Dini 3-in-1</text>
-        <text x="688.8" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Feses, fisik ayam &amp; suara ngorok</text>
+        <text x="688.8" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Skrining Feses</text>
+        <text x="688.8" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Foto rover berstandar atau foto HP</text>
         
 
         <circle cx="674.8" cy="246.8" r="4.5" fill="#D97706"/>
-        <text x="688.8" y="250.8" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Standar Umur Resmi</text>
-        <text x="688.8" y="267.8" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Cobb 500 &amp; Ross 308 + cuaca BMKG</text>
+        <text x="688.8" y="250.8" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Udara vs Standar Umur</text>
+        <text x="688.8" y="267.8" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Suhu, RH &amp; tren NH₃ vs Cobb/Ross</text>
         
 
         <circle cx="674.8" cy="345.6" r="4.5" fill="#D97706"/>
-        <text x="688.8" y="349.6" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Tetap Jalan Offline</text>
-        <text x="688.8" y="366.6" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Kendali lewat Website via Wi-Fi lokal</text>
+        <text x="688.8" y="349.6" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Catatan Harian &amp; Triase</text>
+        <text x="688.8" y="366.6" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Deplesi, pakan, air + 3 tombol</text>
         
 
         <circle cx="674.8" cy="444.40000000000003" r="4.5" fill="#D97706"/>
-        <text x="688.8" y="448.40000000000003" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Sepaket Tanpa Tagihan</text>
-        <text x="688.8" y="465.40000000000003" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Beli sekali, bebas langganan bulanan</text>
+        <text x="688.8" y="448.40000000000003" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Laporan 1-Klik Dokter</text>
+        <text x="688.8" y="465.40000000000003" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Foto, ceklis &amp; grafik (WA/PDF)</text>
         
 
         <circle cx="674.8" cy="543.2" r="4.5" fill="#D97706"/>
-        <text x="688.8" y="547.2" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Laporan 1-Klik Dokter</text>
-        <text x="688.8" y="564.2" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Kirim foto, audio &amp; grafik (WA/PDF)</text>
+        <text x="688.8" y="547.2" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Bayar Setelah Panen</text>
+        <text x="688.8" y="564.2" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Saku Rp75 rb, Kandang Rp750 rb/siklus</text>
         
 
     <g filter="url(#cardShadow)">
@@ -168,17 +168,17 @@
 
         <circle cx="983.1999999999999" cy="148" r="4.5" fill="#7C3AED"/>
         <text x="997.1999999999999" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Pendampingan Pasang</text>
-        <text x="997.1999999999999" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Setup awal dock &amp; profil umur ayam</text>
+        <text x="997.1999999999999" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Instalasi dok &amp; onboarding</text>
         
 
         <circle cx="983.1999999999999" cy="215.66666666666669" r="4.5" fill="#7C3AED"/>
-        <text x="997.1999999999999" y="219.66666666666669" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Layanan Suku Cadang</text>
-        <text x="997.1999999999999" y="236.66666666666669" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Ganti sensor &amp; baterai tiap 2-3 tahun</text>
+        <text x="997.1999999999999" y="219.66666666666669" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dukungan WhatsApp</text>
+        <text x="997.1999999999999" y="236.66666666666669" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Grup peternak &amp; kamus gejala</text>
         
 
         <circle cx="983.1999999999999" cy="283.33333333333337" r="4.5" fill="#7C3AED"/>
-        <text x="997.1999999999999" y="287.33333333333337" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dukungan WhatsApp</text>
-        <text x="997.1999999999999" y="304.33333333333337" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Grup peternak &amp; panduan gejala</text>
+        <text x="997.1999999999999" y="287.33333333333337" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Kunjungan Lapangan</text>
+        <text x="997.1999999999999" y="304.33333333333337" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Ganti sensor, baterai &amp; update model</text>
         
 
     <g filter="url(#cardShadow)">
@@ -197,18 +197,18 @@
     
 
         <circle cx="983.1999999999999" cy="439.0" r="4.5" fill="#6366F1"/>
-        <text x="997.1999999999999" y="443.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Paket Kandang Mitra</text>
-        <text x="997.1999999999999" y="460.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Tambahan paket kandang PT Zara</text>
+        <text x="997.1999999999999" y="443.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Demo Bersama Dinas</text>
+        <text x="997.1999999999999" y="460.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Uji lapangan Kota Cimahi (rencana)</text>
         
 
         <circle cx="983.1999999999999" cy="506.6666666666667" r="4.5" fill="#6366F1"/>
-        <text x="997.1999999999999" y="510.6666666666667" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Koperasi &amp; Asosiasi</text>
-        <text x="997.1999999999999" y="527.6666666666667" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">PINSAR, GOPAN &amp; inti kemitraan</text>
+        <text x="997.1999999999999" y="510.6666666666667" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Bundling Kandang</text>
+        <text x="997.1999999999999" y="527.6666666666667" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Mitra pembangun kandang (rencana)</text>
         
 
         <circle cx="983.1999999999999" cy="574.3333333333334" r="4.5" fill="#6366F1"/>
-        <text x="997.1999999999999" y="578.3333333333334" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Jejaring Dokter Hewan</text>
-        <text x="997.1999999999999" y="595.3333333333334" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Demo langsung di sentra broiler Jawa</text>
+        <text x="997.1999999999999" y="578.3333333333334" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">TSO, Koperasi &amp; Komunitas</text>
+        <text x="997.1999999999999" y="595.3333333333334" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Poultry shop &amp; grup peternak daring</text>
         
 
     <g filter="url(#cardShadow)">
@@ -227,23 +227,23 @@
     
 
         <circle cx="1291.6" cy="148" r="4.5" fill="#059669"/>
-        <text x="1305.6" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Kandang Menengah-Besar</text>
-        <text x="1305.6" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Skala 10.000-20.000 ekor (Beli Putus)</text>
+        <text x="1305.6" y="152" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Peternak Kecil</text>
+        <text x="1305.6" y="169" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">3.000–5.000 ekor → BROVER Saku</text>
         
 
         <circle cx="1291.6" cy="271.5" r="4.5" fill="#059669"/>
-        <text x="1305.6" y="275.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Peternak Rakyat Kecil</text>
-        <text x="1305.6" y="292.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Skala 3.000-5.000 ekor (Sewa/Koperasi)</text>
+        <text x="1305.6" y="275.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Peternak Menengah–Besar</text>
+        <text x="1305.6" y="292.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">≥10.000 ekor → BROVER Kandang</text>
         
 
         <circle cx="1291.6" cy="395.0" r="4.5" fill="#059669"/>
-        <text x="1305.6" y="399.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Penyedia Kandang Lokal</text>
-        <text x="1305.6" y="416.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">PT Zara / KANOPIS &amp; agritech lokal</text>
+        <text x="1305.6" y="399.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Mitra B2B Kandang</text>
+        <text x="1305.6" y="416.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">PT Zara / KANOPIS → beli putus</text>
         
 
         <circle cx="1291.6" cy="518.5" r="4.5" fill="#059669"/>
-        <text x="1305.6" y="522.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dokter Hewan &amp; TSO</text>
-        <text x="1305.6" y="539.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Penerima laporan klinis terstruktur</text>
+        <text x="1305.6" y="522.5" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Dokter Hewan, TSO &amp; Dinas</text>
+        <text x="1305.6" y="539.5" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Penerima laporan terstruktur</text>
         
 
     <g filter="url(#cardShadow)">
@@ -258,22 +258,22 @@
       <line x1="8.5" y1="16" x2="12.5" y2="16"/>
     </g>
     <text x="90" y="680" font-family="'Montserrat', sans-serif" font-size="13.2" font-weight="800" fill="#FFFFFF">Cost Structure</text>
-    <text x="90" y="698" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Struktur Biaya Nyata (100% Pengadaan Dalam Negeri)</text>
+    <text x="90" y="698" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Struktur Biaya (100% Pengadaan Dalam Negeri)</text>
     
 
         <circle cx="58" cy="730" r="4.5" fill="#E11D48"/>
-        <text x="72" y="734" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Biaya Produksi Satuan (~Rp8,23 jt): Belanja komponen lokal + ongkos rakit &amp; uji kualitas</text>
-        <text x="72" y="751" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Basis pengadaan satuan di Tokopedia, Shopee, Lazada &amp; Blibli</text>
+        <text x="72" y="734" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">HPP Unit Rover: Rp8,18 jt (eceran) atau ~Rp6,71 jt (grosir + dukungan in-kind PT Edura)</text>
+        <text x="72" y="751" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Modal armada unit langganan; komponen dari e-commerce &amp; distributor lokal RI</text>
         
 
         <circle cx="58" cy="778.0" r="4.5" fill="#E11D48"/>
-        <text x="72" y="782.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Biaya Produksi Grosir (~Rp6,75 jt): Diskon distributor lokal (≥20 unit) &amp; dukungan PT Edura</text>
-        <text x="72" y="799.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Hemat ~18% di dalam negeri tanpa risiko proses impor awal</text>
+        <text x="72" y="782.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Biaya Variabel ~Rp171 rb per Siklus per Unit BROVER Kandang</text>
+        <text x="72" y="799.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Dukungan teknis (asumsi Rp100 rb), cadangan sensor &amp; baterai, dok, bagi beban server</text>
         
 
         <circle cx="58" cy="826.0" r="4.5" fill="#E11D48"/>
-        <text x="72" y="830.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Cadangan Server 3 Tahun (~Rp900 rb/unit) &amp; Pendaftaran HKI</text>
-        <text x="72" y="847.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Sudah masuk harga jual agar pembeli bebas tagihan bulanan</text>
+        <text x="72" y="830.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Server, Pilot &amp; HKI</text>
+        <text x="72" y="847.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">VPS ~Rp139 rb/bulan dibagi banyak peternak; biaya pilot &amp; pendaftaran HKI</text>
         
 
     <g filter="url(#cardShadow)">
@@ -288,24 +288,24 @@
       <line x1="12" y1="16.3" x2="12" y2="18"/>
     </g>
     <text x="861.0" y="680" font-family="'Montserrat', sans-serif" font-size="13.2" font-weight="800" fill="#FFFFFF">Revenue Streams</text>
-    <text x="861.0" y="698" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Sumber Pendapatan Murni Sepaket (Tanpa Langganan Bulanan)</text>
+    <text x="861.0" y="698" font-family="'Open Sans', sans-serif" font-size="10.6" fill="#FFFFFF" opacity="0.92">Dua Paket per Siklus + Opsi Beli Putus</text>
     
 
         <circle cx="829.0" cy="730" r="4.5" fill="#059669"/>
-        <text x="843.0" y="734" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Penjualan Unit Sepaket: Rp11,50 juta/unit (termasuk Website, Server 3 thn &amp; Dock)</text>
-        <text x="843.0" y="751" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Untung kotor Rp2,37 jt (satuan) hingga Rp3,85 jt/unit (33,5%, grosir RI)</text>
+        <text x="843.0" y="734" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">BROVER Saku: Rp75.000/siklus, ditagih setelah panen, tanpa perangkat</text>
+        <text x="843.0" y="751" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Titik impas peternak setara 2,1–3,3 ekor ayam terselamatkan per siklus</text>
         
 
         <circle cx="829.0" cy="778.0" r="4.5" fill="#059669"/>
-        <text x="843.0" y="782.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Sewa per Siklus: Rp550-650 ribu/siklus (sepaket tanpa biaya bulanan terpisah)</text>
-        <text x="843.0" y="799.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Solusi bebas modal awal bagi peternak rakyat skala 3.000-5.000 ekor</text>
+        <text x="843.0" y="782.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">BROVER Kandang: Rp750.000/siklus, kontrak minimal 6 siklus</text>
+        <text x="843.0" y="799.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Titik impas peternak 21–33 ekor; modal unit kembali dalam 11,6–14,1 siklus</text>
         
 
         <circle cx="829.0" cy="826.0" r="4.5" fill="#059669"/>
-        <text x="843.0" y="830.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Paket Suku Cadang &amp; Kalibrasi (~Rp1,5 jt tiap 2-3 tahun): Sensor &amp; baterai awet</text>
-        <text x="843.0" y="847.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Pendapatan berulang alami mengikuti umur pakai sensor di kandang</text>
+        <text x="843.0" y="830.0" font-family="'Montserrat', sans-serif" font-size="11.9" font-weight="700" fill="#0F172A">Beli Putus: usulan Rp11,5 jt/unit, termasuk cloud 6 siklus pertama</text>
+        <text x="843.0" y="847.0" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Lalu iuran cloud opsional Rp75 rb/siklus; ganti sensor &amp; baterai oleh pemilik</text>
         
 
   <rect x="36" y="892" width="1528" height="34" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="800" y="913.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Berbasis Data BPS 2025, Mitra PT Zara / PT Edura, &amp; Wawancara Praktisi Peternak Broiler (Edufarmers × PecahTelur)</text>
+  <text x="800" y="913.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Berbasis Data BPS 2025, Calon Mitra PT Zara / PT Edura / Dinas Pangan dan Pertanian Kota Cimahi, &amp; Riset Harga 28 November 2026</text>
 </svg>

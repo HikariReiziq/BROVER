@@ -320,26 +320,26 @@ def build_svg() -> str:
 
     # Sensor rows in Zone 1
     sensor_specs = [
-        (296, "Kamera AI (Depan)", "Pindai gejala pada feses & fisik ayam", icon_camera),
-        (386, "Mikrofon Pernapasan (15 dtk)", "Rekam 3×5 dtk saat motor berhenti", icon_mic),
-        (476, "Sensor Udara di Tinggi Ayam", "Ukur suhu, kelembapan & tren gas NH₃", icon_thermo_air),
+        (296, "Kamera IMX291 + Servo", "Depan: FPV | Bawah 45°: foto feses", icon_camera, "#99F6E4", "#CCFBF1", "#0F766E"),
+        (386, "Sensor di Tiang Setinggi Ayam", "Suhu, RH & tren NH₃ per zona + dok", icon_thermo_air, "#99F6E4", "#CCFBF1", "#0F766E"),
+        (476, "BROVER Saku: Foto HP", "Peternak kecil memotret feses di HP", icon_camera, "#FCD34D", "#FEF3C7", "#B45309"),
     ]
     sensor_cards_svg = []
-    for sy, stitle, sdesc, sicon_fn in sensor_specs:
+    for sy, stitle, sdesc, sicon_fn, sstroke, sfill, scol in sensor_specs:
         sensor_cards_svg.append(f"""
-        <rect x="{z1_in_x}" y="{sy}" width="{z1_in_w}" height="78" rx="13" fill="#FFFFFF" stroke="#99F6E4" stroke-width="1.4" filter="url(#cardShadow)"/>
-        <circle cx="{z1_in_x + 31}" cy="{sy + 39}" r="21" fill="#CCFBF1"/>
-        {sicon_fn(z1_in_x + 31, sy + 39, "#0F766E")}
+        <rect x="{z1_in_x}" y="{sy}" width="{z1_in_w}" height="78" rx="13" fill="#FFFFFF" stroke="{sstroke}" stroke-width="1.4" filter="url(#cardShadow)"/>
+        <circle cx="{z1_in_x + 31}" cy="{sy + 39}" r="21" fill="{sfill}"/>
+        {sicon_fn(z1_in_x + 31, sy + 39, scol)}
         <text x="{z1_in_x + 64}" y="{sy + 33}" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="13" font-weight="700" fill="#0F172A">{escape(stitle)}</text>
         <text x="{z1_in_x + 64}" y="{sy + 54}" font-family="'Open Sans', 'Noto Sans', sans-serif" font-size="11.6" fill="#475569">{escape(sdesc)}</text>
         """)
 
     # Dashboard 4 panels in Zone 3
     panel_specs = [
-        (296, "1. Udara vs Umur Ayam", "Status dingin, ideal, atau panas", "sesuai umur broiler + NH₃ & cuaca luar", icon_gauge),
-        (416, "2. Temuan AI + 3 Tombol", "Foto feses/ayam & klip audio ngorok", "Pilih: Akan Dicek / Normal / Lapor", icon_alert_scan),
-        (536, "3. Kendali Rover via Website", "Gerakkan Rover lewat browser HP,", "video langsung & peta Zona A, B, C, D", icon_map_control),
-        (656, "4. Catatan ABK & Sanitasi", "Catat deplesi/FCR harian, panduan", "sanitasi roda & Laporan 1-Klik", icon_clipboard),
+        (296, "1. Udara vs Umur Ayam", "Normal, Waspada, atau Bahaya", "vs Cobb/Ross + THI & tren NH₃", icon_gauge),
+        (416, "2. Triase 3 Tombol", "Feses abnormal & ceklis gejala", "Akan Dicek / Normal / Lapor", icon_alert_scan),
+        (536, "3. Tren Harian ABK", "Deplesi, pakan, air & vaksin", "peringatan saat berubah tajam", icon_clipboard),
+        (656, "4. Kendali Rover & Laporan", "Kendali rover (paket Kandang)", "& Laporan 1-Klik dokter hewan", icon_map_control),
     ]
     panel_cards_svg = []
     for py, ptitle, pl1, pl2, picon_fn in panel_specs:
@@ -355,11 +355,11 @@ def build_svg() -> str:
     # Tech stack footer pills (Opsi 1: subtle badges at bottom of each zone)
     z1_pills = pill_row(z1_in_x, 798, ["RPi 4 / Orange Pi 3B", "ESP32", "SHT31 & SEN0567"],
                         bg="#FFFFFF", fg="#0F766E", border="#5EEAD4", font_size=9.8, mono=True, gap=6)
-    z2_pills = pill_row(z2_in_x, 798, ["Golang", "PostgreSQL", "BMKG + Open-Meteo"],
+    z2_pills = pill_row(z2_in_x, 798, ["Golang", "PostgreSQL", "ONNX Runtime"],
                         bg="#FFFFFF", fg="#1D4ED8", border="#93C5FD", font_size=9.5, mono=True, gap=5.5)
     z3_pills = pill_row(z3_in_x, 798, ["Next.js PWA", "Cobb 500 & Ross 308"],
                         bg="#FFFFFF", fg="#B45309", border="#FCD34D", font_size=9.7, mono=True, gap=7)
-    z4_pills = pill_row(z4_in_x, 798, ["Human-in-the-Loop", "Deteksi Dini"],
+    z4_pills = pill_row(z4_in_x, 798, ["Human-in-the-Loop", "Skrining"],
                         bg="#FFFFFF", fg="#334155", border="#CBD5E1", font_size=10.0, mono=False, gap=8)
 
     # Small status badges inside Zone 2 cards
@@ -376,7 +376,7 @@ def build_svg() -> str:
         connector_arrow(z1_x + z1_w + 4, 320, z2_x - 4, "#0D9488", "Wi-Fi", "Nirkabel",
                         dashed=False, bidir=False, marker_end="arrowTeal"),
         # Zone 1 -> Zone 2B (Cloud Auto-Sync)
-        connector_arrow(z1_x + z1_w + 4, 635, z2_x - 4, "#2563EB", "Auto-Sync", "(Internet)",
+        connector_arrow(z1_x + z1_w + 4, 635, z2_x - 4, "#2563EB", "Foto HP &", "Auto-Sync",
                         dashed=True, bidir=False, marker_end="arrowBlue"),
         # Zone 2A <-> Zone 3 (Bidirectional Live Video & Rover Control)
         connector_arrow(z2_x + z2_w + 6, 320, z3_x - 6, "#0D9488", "Kendali &", "Video",
@@ -430,10 +430,10 @@ def build_svg() -> str:
   <rect width="{WIDTH}" height="{HEIGHT}" fill="#FFFFFF"/>
 
   <!-- ================= HEADER ================= -->
-  <rect x="556" y="16" width="488" height="24" rx="12" fill="#CCFBF1"/>
-  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#0F766E">ARSITEKTUR SISTEM BROVER: MULTI-MODAL AI &amp; EDGE-CLOUD</text>
+  <rect x="460" y="16" width="680" height="24" rx="12" fill="#CCFBF1"/>
+  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#0F766E">ARSITEKTUR SISTEM BROVER: MULTISENSOR BERBASIS AI &amp; EDGE-CLOUD</text>
   <text x="800" y="70" text-anchor="middle" font-family="'Montserrat', 'Open Sans', sans-serif" font-size="25.5" font-weight="800" fill="#0F172A">Cara Kerja Sistem Inspeksi Kandang Ayam Broiler</text>
-  <text x="800" y="96" text-anchor="middle" font-family="'Open Sans', 'Noto Sans', sans-serif" font-size="13.8" fill="#475569">Alur dari Rover di dalam kandang hingga tindakan cepat Peternak &amp; Dokter Hewan (tetap berjalan saat internet kandang mati)</text>
+  <text x="800" y="96" text-anchor="middle" font-family="'Open Sans', 'Noto Sans', sans-serif" font-size="13.8" fill="#475569">Dua jalur: BROVER Kandang (rover, tetap berjalan saat internet kandang mati) &amp; BROVER Saku (foto HP, diproses di server)</text>
 
   <!-- ================= ZONE 1: ROVER DI KANDANG ================= -->
   <g filter="url(#zoneShadow)">
@@ -442,17 +442,17 @@ def build_svg() -> str:
   </g>
   <circle cx="{z1_x + 28}" cy="{zone_y + 27}" r="14" fill="#FFFFFF"/>
   <text x="{z1_x + 28}" y="{zone_y + 32}" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#0F766E">1</text>
-  <text x="{z1_x + 52}" y="{zone_y + 25}" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">ROVER DI KANDANG</text>
-  <text x="{z1_x + 52}" y="{zone_y + 42}" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#CCFBF1">1 Unit = 1 Kandang | Bebas kabel fisik</text>
+  <text x="{z1_x + 52}" y="{zone_y + 25}" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">DATA DARI KANDANG</text>
+  <text x="{z1_x + 52}" y="{zone_y + 42}" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#CCFBF1">Rover (Kandang) &amp; Foto HP (Saku)</text>
 
   <!-- Zone 1 Rover Hero Card -->
   <rect x="{z1_in_x}" y="186" width="{z1_in_w}" height="96" rx="14" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.5" filter="url(#cardShadow)"/>
   {icon_rover(z1_in_x + 12, 205)}
-  <text x="{z1_in_x + 108}" y="216" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="700" fill="#0F172A">Rover Inspeksi Beroda</text>
-  <text x="{z1_in_x + 108}" y="236" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">Gerak pelan (&#8804;0,1 m/s) menyusuri</text>
-  <text x="{z1_in_x + 108}" y="253" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">lorong agar ayam tetap tenang</text>
+  <text x="{z1_in_x + 108}" y="216" font-family="'Montserrat', sans-serif" font-size="13.5" font-weight="700" fill="#0F172A">Rover Inspeksi (Kandang)</text>
+  <text x="{z1_in_x + 108}" y="236" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">Berhenti di titik zona, 2×/hari;</text>
+  <text x="{z1_in_x + 108}" y="253" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">parkir di dok = mode stasiun</text>
   <rect x="{z1_in_x + 108}" y="260" width="168" height="17" rx="8.5" fill="#F0FDFA" stroke="#99F6E4" stroke-width="0.9"/>
-  <text x="{z1_in_x + 192}" y="272" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.6" font-weight="600" fill="#0F766E">Jangkau hampir seluruh flok</text>
+  <text x="{z1_in_x + 192}" y="272" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.6" font-weight="600" fill="#0F766E">1 unit = 1 kandang</text>
 
   <!-- Zone 1 Three Sensor Cards -->
   {''.join(sensor_cards_svg)}
@@ -462,9 +462,9 @@ def build_svg() -> str:
   <!-- Row A: Local AI -->
   <circle cx="{z1_in_x + 31}" cy="609" r="21" fill="#EDE9FE"/>
   {icon_ai_chip(z1_in_x + 31, 609, "#6D28D9")}
-  <text x="{z1_in_x + 64}" y="603" font-family="'Montserrat', sans-serif" font-size="13" font-weight="700" fill="#4C1D95">Otak AI Lokal (Offline-First)</text>
-  <text x="{z1_in_x + 64}" y="622" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">Proses 3 model AI langsung di Rover</text>
-  <text x="{z1_in_x + 64}" y="638" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">tanpa bergantung sinyal internet</text>
+  <text x="{z1_in_x + 64}" y="603" font-family="'Montserrat', sans-serif" font-size="13" font-weight="700" fill="#4C1D95">Otak AI di Rover (Edge)</text>
+  <text x="{z1_in_x + 64}" y="622" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">1 detektor feses Apache-2.0 (INT8)</text>
+  <text x="{z1_in_x + 64}" y="638" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">berjalan tanpa internet kandang</text>
 
   <line x1="{z1_in_x + 16}" y1="655" x2="{z1_in_x + z1_in_w - 16}" y2="655" stroke="#E2E8F0" stroke-width="1.2"/>
 
@@ -472,12 +472,12 @@ def build_svg() -> str:
   <circle cx="{z1_in_x + 31}" cy="693" r="21" fill="#D1FAE5"/>
   {icon_shield_brake(z1_in_x + 31, 693, "#047857")}
   <text x="{z1_in_x + 64}" y="687" font-family="'Montserrat', sans-serif" font-size="13" font-weight="700" fill="#065F46">Rem Aman Otomatis (500 ms)</text>
-  <text x="{z1_in_x + 64}" y="706" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">Stop mendadak jika sinyal putus</text>
-  <text x="{z1_in_x + 64}" y="722" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">atau sensor deteksi halangan depan</text>
+  <text x="{z1_in_x + 64}" y="706" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">Stop jika sinyal putus; sensor</text>
+  <text x="{z1_in_x + 64}" y="722" font-family="'Open Sans', sans-serif" font-size="11.5" fill="#475569">jarak memperlambat laju rover</text>
 
   <!-- Transparency note inside Zone 1 -->
   <rect x="{z1_in_x + 12}" y="736" width="{z1_in_w - 24}" height="24" rx="7" fill="#F8FAFC" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="{z1_in_x + z1_in_w / 2}" y="751.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.8" font-weight="600" fill="#475569">Kini: kendali lewat Website | Future Work: otomatis terjadwal</text>
+  <text x="{z1_in_x + z1_in_w / 2}" y="751.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="9.8" font-weight="600" fill="#475569">Kini: kendali lewat web | Kelak: navigasi otomatis</text>
 
   <!-- Zone 1 Tech Pills -->
   <text x="{z1_in_x}" y="786" font-family="'Open Sans', sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.4" fill="#0F766E">PERANGKAT INTI:</text>
@@ -501,9 +501,9 @@ def build_svg() -> str:
   <text x="{z2_in_x + 68}" y="224" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#0F172A">Wi-Fi Lokal</text>
   <text x="{z2_in_x + 68}" y="243" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#0F766E">Nirkabel</text>
   <text x="{z2_in_x + 16}" y="276" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="600" fill="#475569">Jalur langsung Rover ke HP/Laptop:</text>
-  {check_bullet(z2_in_x + 16, 305, "Kendali Rover & video langsung", "#0D9488", font_size=11.6, second_line="100% tanpa kabel di lantai kandang")}
-  {check_bullet(z2_in_x + 16, 354, "Tetap beroperasi penuh meski", "#0D9488", font_size=11.6, second_line="sinyal internet kandang mati total")}
-  {check_bullet(z2_in_x + 16, 403, "Simpan data sementara di Rover", "#0D9488", font_size=11.6, second_line="hingga lebih dari 30 hari (SQLite)")}
+  {check_bullet(z2_in_x + 16, 305, "Kendali rover & video FPV", "#0D9488", font_size=11.6, second_line="tanpa kabel di lantai kandang")}
+  {check_bullet(z2_in_x + 16, 354, "Foto HP cadangan langsung", "#0D9488", font_size=11.6, second_line="masuk Orange Pi tanpa internet")}
+  {check_bullet(z2_in_x + 16, 403, "Simpan data di rover (SQLite)", "#0D9488", font_size=11.6, second_line="lalu sinkron saat internet ada")}
 
   <!-- Bridge indicator between 2A and 2B -->
   <line x1="{z2_x + z2_w / 2}" y1="449" x2="{z2_x + z2_w / 2}" y2="493" stroke="#3B82F6" stroke-width="2" stroke-dasharray="4,3" marker-end="url(#arrowMutedDown)"/>
@@ -516,11 +516,11 @@ def build_svg() -> str:
   {icon_cloud_weather(z2_in_x + 34, 536, "#1D4ED8")}
   {autosync_pill}
   <text x="{z2_in_x + 68}" y="536" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#0F172A">Server Pusat</text>
-  <text x="{z2_in_x + 68}" y="555" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#1D4ED8">&amp; Data Cuaca</text>
-  <text x="{z2_in_x + 16}" y="588" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="600" fill="#475569">Analisis standar umur &amp; cuaca luar:</text>
+  <text x="{z2_in_x + 68}" y="555" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#1D4ED8">&amp; Inferensi Saku</text>
+  <text x="{z2_in_x + 16}" y="588" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="600" fill="#475569">Proses foto Saku &amp; standar umur:</text>
   {check_bullet(z2_in_x + 16, 617, "Bandingkan suhu-RH otomatis", "#2563EB", font_size=11.5, second_line="standar broiler Cobb 500 / Ross 308")}
-  {check_bullet(z2_in_x + 16, 666, "Cuaca luar (BMKG + Open-Meteo)", "#2563EB", font_size=11.5, second_line="cegah cekaman panas 1-7 hari")}
-  {check_bullet(z2_in_x + 16, 715, "Susun arsip foto/audio ngorok &", "#2563EB", font_size=11.5, second_line="paket Laporan 1-Klik Dokter Hewan")}
+  {check_bullet(z2_in_x + 16, 666, "Proses foto HP BROVER Saku", "#2563EB", font_size=11.5, second_line="(model sama, ONNX Runtime)")}
+  {check_bullet(z2_in_x + 16, 715, "Cuaca BMKG + Open-Meteo &", "#2563EB", font_size=11.5, second_line="paket Laporan 1-Klik Dokter Hewan")}
 
   <!-- Zone 2 Tech Pills -->
   <text x="{z2_in_x}" y="786" font-family="'Open Sans', sans-serif" font-size="9.5" font-weight="700" letter-spacing="0.4" fill="#1D4ED8">BACKEND &amp; DATA:</text>
@@ -567,9 +567,9 @@ def build_svg() -> str:
   {icon_farmer(z4_in_x + 38, 227, "#047857")}
   <text x="{z4_in_x + 76}" y="222" font-family="'Montserrat', sans-serif" font-size="14" font-weight="700" fill="#0F172A">Peternak / ABK</text>
   {farmer_pill}
-  {check_bullet(z4_in_x + 14, 286, "Langsung cek ayam sakit di", "#059669", font_size=11.5, second_line="zona temuan lebih awal")}
-  {check_bullet(z4_in_x + 14, 336, "Atur kipas/tirai sebelum", "#059669", font_size=11.5, second_line="panas kandang memuncak")}
-  {check_bullet(z4_in_x + 14, 386, "Kendalikan Rover lewat website", "#059669", font_size=11.5, second_line="& jalankan sanitasi roda di dock")}
+  {check_bullet(z4_in_x + 14, 286, "Cek zona sesuai daftar", "#059669", font_size=11.5, second_line="triase dan foto temuan")}
+  {check_bullet(z4_in_x + 14, 336, "Atur kipas/tirai saat udara", "#059669", font_size=11.5, second_line="di luar standar umur ayam")}
+  {check_bullet(z4_in_x + 14, 386, "Isi catatan harian & jalankan", "#059669", font_size=11.5, second_line="sanitasi roda di dok")}
 
   <!-- Zone 4B: Dokter Hewan / Dinas -->
   <rect x="{z4_in_x}" y="456" width="{z4_in_w}" height="248" rx="14" fill="#FFFFFF" stroke="#FDA4AF" stroke-width="1.8" filter="url(#cardShadow)"/>
@@ -578,8 +578,8 @@ def build_svg() -> str:
   <text x="{z4_in_x + 76}" y="492" font-family="'Montserrat', sans-serif" font-size="12.8" font-weight="700" fill="#0F172A">Dokter Hewan / Dinas</text>
   {vet_pill}
   {check_bullet(z4_in_x + 14, 556, "Terima Laporan 1-Klik", "#E11D48", font_size=11.5, second_line="via WhatsApp atau PDF")}
-  {check_bullet(z4_in_x + 14, 606, "Isi lengkap: foto, klip audio,", "#E11D48", font_size=11.5, second_line="grafik suhu/NH₃ & umur flok")}
-  {check_bullet(z4_in_x + 14, 656, "Diagnosis klinis & terapi", "#E11D48", font_size=11.5, second_line="jauh lebih cepat & akurat")}
+  {check_bullet(z4_in_x + 14, 606, "Isi: foto feses, grafik udara,", "#E11D48", font_size=11.5, second_line="ceklis gejala & umur flok")}
+  {check_bullet(z4_in_x + 14, 656, "Konfirmasi & beri saran", "#E11D48", font_size=11.5, second_line="diagnosis tetap oleh dokter")}
 
   <!-- Human-in-the-Loop Reassurance Banner -->
   <rect x="{z4_in_x}" y="716" width="{z4_in_w}" height="52" rx="12" fill="#EEF2FF" stroke="#A5B4FC" stroke-width="1.4"/>
@@ -596,7 +596,7 @@ def build_svg() -> str:
 
   <!-- ================= BOTTOM ATTRIBUTION FOOTER ================= -->
   <rect x="36" y="856" width="1528" height="44" rx="12" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1.2"/>
-  <text x="800" y="882.5" text-anchor="middle" font-family="'Open Sans', 'Noto Sans', sans-serif" font-size="11.3" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Multi-Modal AI, Kendali Website via Wi-Fi Lokal, Cuaca BMKG + Open-Meteo &amp; Standar Cobb 500 / Ross 308</text>
+  <text x="800" y="882.5" text-anchor="middle" font-family="'Open Sans', 'Noto Sans', sans-serif" font-size="11.3" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Multisensor + 1 Model CV Feses Apache-2.0, Edge-Cloud, Cuaca BMKG + Open-Meteo &amp; Standar Cobb 500 / Ross 308</text>
 </svg>
 """
     return svg

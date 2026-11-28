@@ -19,9 +19,9 @@
 
   <!-- ================= HEADER ================= -->
   <rect x="572" y="16" width="456" height="24" rx="12" fill="#EDE9FE"/>
-  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#5B21B6">ALUR KERJA INSPEKSI MULTI-MODAL BROVER</text>
+  <text x="800" y="32" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.5" font-weight="700" letter-spacing="0.7" fill="#5B21B6">ALUR KERJA INSPEKSI MULTISENSOR BROVER</text>
   <text x="800" y="70" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="25.5" font-weight="800" fill="#0F172A">4 Tahap Inspeksi Kandang hingga Pelaporan Dokter Hewan</text>
-  <text x="800" y="98" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.6" fill="#475569">Alur ringkas dari pemindaian Rover, evaluasi standar umur ayam broiler, triase 3 tombol manusia, hingga sanitasi roda</text>
+  <text x="800" y="98" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="13.6" fill="#475569">Dari putaran rover atau foto HP, skrining feses dan udara terhadap standar umur, triase 3 tombol, hingga laporan dokter hewan</text>
 
   <!-- ================= 4 STAGE CARDS ================= -->
   
@@ -32,7 +32,7 @@
         <circle cx="66" cy="156" r="15" fill="#FFFFFF"/>
         <text x="66" y="161.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="14.5" font-weight="800" fill="#0F766E">1</text>
         <text x="91" y="152" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="700" letter-spacing="0.8" fill="#FFFFFF" opacity="0.9">TAHAP 1</text>
-        <text x="91" y="171" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Setup &amp; Inspeksi Rover</text>
+        <text x="91" y="171" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Setup &amp; Pengambilan Data</text>
 
         <!-- Hero icon circle -->
         <circle cx="206.0" cy="234" r="36" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="2" filter="url(#cardShadow)"/>
@@ -59,7 +59,7 @@
         <circle cx="462" cy="156" r="15" fill="#FFFFFF"/>
         <text x="462" y="161.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="14.5" font-weight="800" fill="#5B21B6">2</text>
         <text x="487" y="152" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="700" letter-spacing="0.8" fill="#FFFFFF" opacity="0.9">TAHAP 2</text>
-        <text x="487" y="171" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Analisis AI &amp; Standar Umur</text>
+        <text x="487" y="171" font-family="'Montserrat', sans-serif" font-size="14" font-weight="800" fill="#FFFFFF">Skrining Feses &amp; Udara</text>
 
         <!-- Hero icon circle -->
         <circle cx="602.0" cy="234" r="36" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="2" filter="url(#cardShadow)"/>
@@ -128,14 +128,14 @@
 <text x="91" y="358" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">untuk hitung umur otomatis</text>
     <circle cx="75" cy="408" r="8" fill="#0D9488" opacity="0.14"/>
 <path d="M71.5 408 l2.3 2.4 4.2-4.6" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="91" y="412" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Kendalikan via Website</text>
-<text x="91" y="431" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Gerak pelan (≤0,1 m/s) lewat</text>
-<text x="91" y="448" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Wi-Fi lokal tanpa kabel fisik</text>
+<text x="91" y="412" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Putaran Rover 2×/Hari</text>
+<text x="91" y="431" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Pagi &amp; 15.00–16.00, berhenti</text>
+<text x="91" y="448" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">di titik zona (0,07–0,1 m/s)</text>
     <circle cx="75" cy="498" r="8" fill="#0D9488" opacity="0.14"/>
 <path d="M71.5 498 l2.3 2.4 4.2-4.6" fill="none" stroke="#0D9488" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="91" y="502" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pindai Multi-Sensor</text>
-<text x="91" y="521" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Kamera AI + Cek Napas 15 dtk</text>
-<text x="91" y="538" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">+ ukur suhu, RH &amp; tren NH₃</text>
+<text x="91" y="502" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Foto Feses &amp; Udara</text>
+<text x="91" y="521" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Kamera 45° + LED, suhu, RH,</text>
+<text x="91" y="538" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">tren NH₃; Saku: foto HP</text>
     <rect x="52" y="634" width="308" height="32" rx="16" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.4"/>
     <text x="206.0" y="654" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#0F766E">Rem Aman 500 ms  |  Tetap Jalan Offline</text>
     
@@ -144,18 +144,18 @@
     <circle cx="471" cy="318" r="8" fill="#7C3AED" opacity="0.14"/>
 <path d="M467.5 318 l2.3 2.4 4.2-4.6" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="487" y="322" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Cek Udara vs Umur Ayam</text>
-<text x="487" y="341" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Status dingin, ideal, atau panas</text>
-<text x="487" y="358" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">sesuai Cobb 500 / Ross 308</text>
+<text x="487" y="341" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Normal, Waspada, atau Bahaya</text>
+<text x="487" y="358" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">vs Cobb 500 / Ross 308 + THI</text>
     <circle cx="471" cy="408" r="8" fill="#7C3AED" opacity="0.14"/>
 <path d="M467.5 408 l2.3 2.4 4.2-4.6" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="487" y="412" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Prakiraan Cuaca Luar</text>
 <text x="487" y="431" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Hibrida BMKG + Open-Meteo</text>
-<text x="487" y="448" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">cegah cekaman panas 1-7 hari</text>
+<text x="487" y="448" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">antisipasi cekaman panas sore</text>
     <circle cx="471" cy="498" r="8" fill="#7C3AED" opacity="0.14"/>
 <path d="M467.5 498 l2.3 2.4 4.2-4.6" fill="none" stroke="#7C3AED" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="487" y="502" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">3 Model AI di Atas Rover</text>
-<text x="487" y="521" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Deteksi feses, ayam lesu/mati,</text>
-<text x="487" y="538" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">&amp; suara ngorok (3×5 dtk voting)</text>
+<text x="487" y="502" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">1 Model CV Feses (Edge)</text>
+<text x="487" y="521" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Tandai feses abnormal; foto</text>
+<text x="487" y="538" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Saku diproses di server</text>
     <rect x="448" y="634" width="308" height="32" rx="16" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.4"/>
     <text x="602.0" y="654" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#5B21B6">Evaluasi Objektif  |  Tanpa Skor 0-100</text>
     
@@ -163,9 +163,9 @@
     <rect x="844" y="286" width="308" height="336" rx="14" fill="#FFFFFF" stroke="#FDE68A" stroke-width="1.4"/>
     <circle cx="867" cy="316" r="8" fill="#D97706" opacity="0.14"/>
 <path d="M863.5 316 l2.3 2.4 4.2-4.6" fill="none" stroke="#D97706" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<text x="883" y="320" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Tinjau Bukti di Dasbor</text>
-<text x="883" y="339" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Lihat foto feses/ayam, putar</text>
-<text x="883" y="356" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">klip audio &amp; cek peta zona</text>
+<text x="883" y="320" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Tinjau Bukti &amp; Ceklis</text>
+<text x="883" y="339" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Foto feses, grafik udara, &amp;</text>
+<text x="883" y="356" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">ceklis gejala pernapasan ABK</text>
     <text x="860" y="400" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#92400E">PILIH 1 DARI 3 TOMBOL AKSI:</text>
 
     <!-- Button 1: Akan Saya Cek -->
@@ -200,15 +200,15 @@
     <circle cx="1263" cy="348" r="8" fill="#E11D48" opacity="0.14"/>
 <path d="M1259.5 348 l2.3 2.4 4.2-4.6" fill="none" stroke="#E11D48" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 <text x="1279" y="352" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Paket Bukti via WA / PDF</text>
-<text x="1279" y="371" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Umur flok, deplesi/FCR, foto,</text>
-<text x="1279" y="388" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">audio ngorok &amp; grafik suhu/NH₃</text>
+<text x="1279" y="371" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Umur flok, deplesi, foto feses,</text>
+<text x="1279" y="388" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">ceklis gejala &amp; grafik udara</text>
     <text x="1279" y="418" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#BE123C">Siap dikirim ke Dokter Hewan / Dinas</text>
 
     <!-- Block B: Wheel Sanitation SOP -->
     <rect x="1240" y="460" width="308" height="162" rx="14" fill="#FFFFFF" stroke="#5EEAD4" stroke-width="1.6"/>
     <rect x="1252" y="472" width="284" height="28" rx="8" fill="#CCFBF1"/>
-    <text x="1394.0" y="490.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">SOP SANITASI RODA DI DOCK</text>
-    <text x="1394.0" y="520" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Wajib 3 langkah setelah kembali ke Dock:</text>
+    <text x="1394.0" y="490.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">SOP SANITASI RODA DI DOK</text>
+    <text x="1394.0" y="520" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" fill="#475569">Wajib 3 langkah setelah kembali ke dok:</text>
 
     <!-- 3 mini step pills with arrows -->
     <rect x="1252" y="534" width="84" height="44" rx="9" fill="#F0FDFA" stroke="#2DD4BF" stroke-width="1.4"/>
@@ -228,7 +228,7 @@
     <text x="1394.0" y="604" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.8" font-weight="600" fill="#0F766E">Cegah kontaminasi silang antar-siklus</text>
 
     <rect x="1240" y="634" width="308" height="32" rx="16" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.4"/>
-    <text x="1394.0" y="654" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#1D4ED8">Kebijakan 1 Unit = 1 Kandang (WOAH)</text>
+    <text x="1394.0" y="654" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="700" fill="#1D4ED8">SOP 1 Unit = 1 Kandang + Protokol Pindah</text>
     
 
   <!-- ================= DIRECTIONAL ARROWS ================= -->
@@ -236,5 +236,5 @@
 
   <!-- ================= FOOTER ================= -->
   <rect x="36" y="706" width="1528" height="36" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="800" y="728.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Standar Cobb 500 &amp; Ross 308, Audio SmartEars (3&#215;5 dtk), Cuaca BMKG + Open-Meteo &amp; Pedoman WOAH</text>
+  <text x="800" y="728.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.4" font-weight="600" fill="#475569">Tim Asprak (Teknologi Informasi ITS &amp; Biologi UNJ)  |  Standar Cobb 500 &amp; Ross 308, 1 Model CV Feses Apache-2.0, Cuaca BMKG + Open-Meteo &amp; Pedoman WOAH</text>
 </svg>

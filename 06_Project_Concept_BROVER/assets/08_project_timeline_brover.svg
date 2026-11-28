@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="840" viewBox="0 0 1920 840">
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="852" viewBox="0 0 1920 852">
   <defs>
     <filter id="tableShadow" x="-2%" y="-2%" width="104%" height="105%">
       <feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0F172A" flood-opacity="0.06"/>
@@ -8,16 +8,16 @@
       <feDropShadow dx="0" dy="1.5" stdDeviation="1.6" flood-color="#0F172A" flood-opacity="0.16"/>
     </filter>
     <clipPath id="tableClip">
-      <rect x="28" y="76" width="1864" height="628" rx="14"/>
+      <rect x="28" y="76" width="1864" height="646" rx="14"/>
     </clipPath>
   </defs>
-  <rect width="1920" height="840" fill="#FFFFFF"/>
+  <rect width="1920" height="852" fill="#FFFFFF"/>
 
   <!-- CLEAN TITLE ONLY (No pill badge, no subtitle, no date/week range) -->
   <text x="960" y="50" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="27" font-weight="800" fill="#0F172A">Jadwal Pelaksanaan Proyek BROVER</text>
 
   <g filter="url(#tableShadow)">
-    <rect x="28" y="76" width="1864" height="628" rx="14" fill="#FFFFFF"/>
+    <rect x="28" y="76" width="1864" height="646" rx="14" fill="#FFFFFF"/>
   </g>
   <g clip-path="url(#tableClip)">
     <rect x="28" y="76" width="46" height="100" fill="#1E293B"/>
@@ -205,96 +205,110 @@
             <text x="1657.0" y="169" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="10.2" font-weight="700" fill="#475569">4</text>
             
     
-        <rect x="28" y="176" width="1864" height="48" fill="#FFFFFF"/>
-        <line x1="28" y1="224" x2="1892" y2="224" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="200.0" r="13" fill="#0D9488" opacity="0.14"/>
-        <text x="51.0" y="204.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0D9488">1</text>
-        <text x="88" y="204.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Penyusunan Proposal, BMC &amp; Purwarupa Awal</text>
-        <text x="1686" y="204.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Berkas &amp; video purwarupa</text>
+        <rect x="28" y="176" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="218" x2="1892" y2="218" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="197.0" r="13" fill="#0D9488" opacity="0.14"/>
+        <text x="51.0" y="201.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0D9488">1</text>
+        <text x="88" y="201.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Proposal, BMC &amp; Video Purwarupa Tahap 1</text>
+        <text x="1686" y="201.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Berkas &amp; video purwarupa</text>
         
-        <rect x="28" y="224" width="1864" height="48" fill="#F8FAFC"/>
-        <line x1="28" y1="272" x2="1892" y2="272" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="248.0" r="13" fill="#0F766E" opacity="0.14"/>
-        <text x="51.0" y="252.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">2</text>
-        <text x="88" y="252.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Seleksi Administrasi &amp; Substansi</text>
-        <text x="1686" y="252.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Lolos tahap finalis</text>
+        <rect x="28" y="218" width="1864" height="42" fill="#F8FAFC"/>
+        <line x1="28" y1="260" x2="1892" y2="260" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="239.0" r="13" fill="#0F766E" opacity="0.14"/>
+        <text x="51.0" y="243.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0F766E">2</text>
+        <text x="88" y="243.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Seleksi Administrasi &amp; Substansi</text>
+        <text x="1686" y="243.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Lolos tahap finalis</text>
         
-        <rect x="28" y="272" width="1864" height="48" fill="#FFFFFF"/>
-        <line x1="28" y1="320" x2="1892" y2="320" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="296.0" r="13" fill="#2563EB" opacity="0.14"/>
-        <text x="51.0" y="300.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#2563EB">3</text>
-        <text x="88" y="300.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Bootcamp &amp; Mentoring</text>
-        <text x="1686" y="300.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Validasi bisnis &amp; teknologi</text>
+        <rect x="28" y="260" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="302" x2="1892" y2="302" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="281.0" r="13" fill="#2563EB" opacity="0.14"/>
+        <text x="51.0" y="285.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#2563EB">3</text>
+        <text x="88" y="285.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Bootcamp 4 Modul &amp; Mentoring 3 Pilar</text>
+        <text x="1686" y="285.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Validasi bisnis &amp; teknologi</text>
         
-        <rect x="28" y="320" width="1864" height="48" fill="#F8FAFC"/>
-        <line x1="28" y1="368" x2="1892" y2="368" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="344.0" r="13" fill="#1D4ED8" opacity="0.14"/>
-        <text x="51.0" y="348.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1D4ED8">4</text>
-        <text x="88" y="348.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Desain Papan Sirkuit, Casing &amp; Rangka Rover</text>
-        <text x="1686" y="348.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Unit fisik siap uji</text>
+        <rect x="28" y="302" width="1864" height="42" fill="#F8FAFC"/>
+        <line x1="28" y1="344" x2="1892" y2="344" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="323.0" r="13" fill="#1D4ED8" opacity="0.14"/>
+        <text x="51.0" y="327.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1D4ED8">4</text>
+        <text x="88" y="327.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Rover Tahap 2–3: Servo, Tiang Sensor, Dok</text>
+        <text x="1686" y="327.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Unit fisik siap uji</text>
         
-        <rect x="28" y="368" width="1864" height="48" fill="#FFFFFF"/>
-        <line x1="28" y1="416" x2="1892" y2="416" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="392.0" r="13" fill="#3B82F6" opacity="0.14"/>
-        <text x="51.0" y="396.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#3B82F6">5</text>
-        <text x="88" y="396.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pengumpulan Data Kandang &amp; Pelatihan AI</text>
-        <text x="1686" y="396.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Model AI terlatih</text>
+        <rect x="28" y="344" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="386" x2="1892" y2="386" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="365.0" r="13" fill="#3B82F6" opacity="0.14"/>
+        <text x="51.0" y="369.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#3B82F6">5</text>
+        <text x="88" y="369.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Model CV Feses Apache-2.0 → RKNN INT8</text>
+        <text x="1686" y="369.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Model ONNX &amp; RKNN INT8</text>
         
-        <rect x="28" y="416" width="1864" height="48" fill="#F8FAFC"/>
-        <line x1="28" y1="464" x2="1892" y2="464" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="440.0" r="13" fill="#0284C7" opacity="0.14"/>
-        <text x="51.0" y="444.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0284C7">6</text>
-        <text x="88" y="444.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pengembangan Website &amp; Sistem Kendali</text>
-        <text x="1686" y="444.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Website &amp; kendali siap uji</text>
+        <rect x="28" y="386" width="1864" height="42" fill="#F8FAFC"/>
+        <line x1="28" y1="428" x2="1892" y2="428" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="407.0" r="13" fill="#0369A1" opacity="0.14"/>
+        <text x="51.0" y="411.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0369A1">6</text>
+        <text x="88" y="411.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Set Uji Lokal Foto Rover &amp; HP Berpasangan</text>
+        <text x="1686" y="411.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Data berlabel dokter hewan</text>
         
-        <rect x="28" y="464" width="1864" height="48" fill="#FFFFFF"/>
+        <rect x="28" y="428" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="470" x2="1892" y2="470" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="449.0" r="13" fill="#0284C7" opacity="0.14"/>
+        <text x="51.0" y="453.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#0284C7">7</text>
+        <text x="88" y="453.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Dasbor Web, Catatan ABK &amp; Laporan 1-Klik</text>
+        <text x="1686" y="453.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Dasbor siap uji</text>
+        
+        <rect x="28" y="470" width="1864" height="42" fill="#F8FAFC"/>
         <line x1="28" y1="512" x2="1892" y2="512" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="488.0" r="13" fill="#1E40AF" opacity="0.14"/>
-        <text x="51.0" y="492.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1E40AF">7</text>
-        <text x="88" y="492.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Integrasi Sistem &amp; Uji Simulasi Kandang</text>
-        <text x="1686" y="492.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Purwarupa berfungsi penuh</text>
+        <circle cx="51.0" cy="491.0" r="13" fill="#1E40AF" opacity="0.14"/>
+        <text x="51.0" y="495.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1E40AF">8</text>
+        <text x="88" y="495.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Uji Bak Sekam &amp; Kalibrasi SEN0567</text>
+        <text x="1686" y="495.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Traksi &amp; sensor teruji</text>
         
-        <rect x="28" y="512" width="1864" height="48" fill="#F8FAFC"/>
-        <line x1="28" y1="560" x2="1892" y2="560" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="536.0" r="13" fill="#D97706" opacity="0.14"/>
-        <text x="51.0" y="540.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#D97706">8</text>
-        <text x="88" y="540.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Persiapan Presentasi, Demo Alat &amp; Penghargaan</text>
-        <text x="1686" y="540.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Demonstrasi di depan juri</text>
+        <rect x="28" y="512" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="554" x2="1892" y2="554" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="533.0" r="13" fill="#1E3A8A" opacity="0.14"/>
+        <text x="51.0" y="537.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#1E3A8A">9</text>
+        <text x="88" y="537.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Jalur Server BROVER Saku &amp; Integrasi KPI</text>
+        <text x="1686" y="537.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Purwarupa terintegrasi (M3)</text>
         
-        <rect x="28" y="560" width="1864" height="48" fill="#FFFFFF"/>
-        <line x1="28" y1="608" x2="1892" y2="608" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="584.0" r="13" fill="#7C3AED" opacity="0.14"/>
-        <text x="51.0" y="588.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#7C3AED">9</text>
-        <text x="88" y="588.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pendampingan HKI &amp; Pertemuan Mitra Industri</text>
-        <text x="1686" y="588.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Komitmen kerja sama mitra</text>
+        <rect x="28" y="554" width="1864" height="42" fill="#F8FAFC"/>
+        <line x1="28" y1="596" x2="1892" y2="596" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="575.0" r="13" fill="#D97706" opacity="0.14"/>
+        <text x="51.0" y="579.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#D97706">10</text>
+        <text x="88" y="579.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pitch Deck, Demo Alat &amp; Demo Day</text>
+        <text x="1686" y="579.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Demonstrasi di depan juri</text>
         
-        <rect x="28" y="608" width="1864" height="48" fill="#F8FAFC"/>
-        <line x1="28" y1="656" x2="1892" y2="656" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="632.0" r="13" fill="#059669" opacity="0.14"/>
-        <text x="51.0" y="636.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#059669">10</text>
-        <text x="88" y="636.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Uji Coba Lapangan di Kandang Mitra</text>
-        <text x="1686" y="636.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Alat teruji di kandang asli</text>
+        <rect x="28" y="596" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="638" x2="1892" y2="638" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="617.0" r="13" fill="#7C3AED" opacity="0.14"/>
+        <text x="51.0" y="621.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#7C3AED">11</text>
+        <text x="88" y="621.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Business Matching, LoI &amp; Pendampingan HKI</text>
+        <text x="1686" y="621.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Kesepakatan uji tertulis</text>
         
-        <rect x="28" y="656" width="1864" height="48" fill="#FFFFFF"/>
-        <line x1="28" y1="704" x2="1892" y2="704" stroke="#E2E8F0" stroke-width="1"/>
-        <circle cx="51.0" cy="680.0" r="13" fill="#047857" opacity="0.14"/>
-        <text x="51.0" y="684.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#047857">11</text>
-        <text x="88" y="684.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pendaftaran HKI &amp; Laporan Akhir</text>
-        <text x="1686" y="684.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">HKI &amp; produk siap pasar</text>
+        <rect x="28" y="638" width="1864" height="42" fill="#F8FAFC"/>
+        <line x1="28" y1="680" x2="1892" y2="680" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="659.0" r="13" fill="#059669" opacity="0.14"/>
+        <text x="51.0" y="663.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#059669">12</text>
+        <text x="88" y="663.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pilot Mulai Hari ke-7 di Kandang Mitra</text>
+        <text x="1686" y="663.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Data 1–2 siklus penuh</text>
+        
+        <rect x="28" y="680" width="1864" height="42" fill="#FFFFFF"/>
+        <line x1="28" y1="722" x2="1892" y2="722" stroke="#E2E8F0" stroke-width="1"/>
+        <circle cx="51.0" cy="701.0" r="13" fill="#047857" opacity="0.14"/>
+        <text x="51.0" y="705.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.5" font-weight="800" fill="#047857">13</text>
+        <text x="88" y="705.5" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="700" fill="#0F172A">Pendaftaran HKI &amp; Laporan Akhir</text>
+        <text x="1686" y="705.5" font-family="'Open Sans', sans-serif" font-size="11.6" font-weight="600" fill="#334155">Draf HKI &amp; laporan pilot</text>
         
 
-    <line x1="74" y1="176" x2="74" y2="704" stroke="#CBD5E1" stroke-width="1.2"/>
-    <line x1="472" y1="176" x2="472" y2="704" stroke="#94A3B8" stroke-width="1.4"/>
-    <line x1="472" y1="176" x2="472" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="502" y1="176" x2="502" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="532" y1="176" x2="532" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="562" y1="176" x2="562" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="592" y1="176" x2="592" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="622" y1="176" x2="622" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="652" y1="176" x2="652" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="682" y1="176" x2="682" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="712" y1="176" x2="712" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="742" y1="176" x2="742" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="772" y1="176" x2="772" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="802" y1="176" x2="802" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="832" y1="176" x2="832" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="862" y1="176" x2="862" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="892" y1="176" x2="892" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="922" y1="176" x2="922" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="952" y1="176" x2="952" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="982" y1="176" x2="982" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1012" y1="176" x2="1012" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1042" y1="176" x2="1042" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1072" y1="176" x2="1072" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="1102" y1="176" x2="1102" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1132" y1="176" x2="1132" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1162" y1="176" x2="1162" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1192" y1="176" x2="1192" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="1222" y1="176" x2="1222" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1252" y1="176" x2="1252" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1282" y1="176" x2="1282" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1312" y1="176" x2="1312" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="1342" y1="176" x2="1342" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1372" y1="176" x2="1372" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1402" y1="176" x2="1402" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1432" y1="176" x2="1432" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="1462" y1="176" x2="1462" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1492" y1="176" x2="1492" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1522" y1="176" x2="1522" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1552" y1="176" x2="1552" y2="704" stroke="#94A3B8" stroke-width="1.15"/><line x1="1582" y1="176" x2="1582" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1612" y1="176" x2="1612" y2="704" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1642" y1="176" x2="1642" y2="704" stroke="#E2E8F0" stroke-width="0.85"/>
-    <line x1="1672" y1="176" x2="1672" y2="704" stroke="#94A3B8" stroke-width="1.4"/>
+    <line x1="74" y1="176" x2="74" y2="722" stroke="#CBD5E1" stroke-width="1.2"/>
+    <line x1="472" y1="176" x2="472" y2="722" stroke="#94A3B8" stroke-width="1.4"/>
+    <line x1="472" y1="176" x2="472" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="502" y1="176" x2="502" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="532" y1="176" x2="532" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="562" y1="176" x2="562" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="592" y1="176" x2="592" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="622" y1="176" x2="622" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="652" y1="176" x2="652" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="682" y1="176" x2="682" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="712" y1="176" x2="712" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="742" y1="176" x2="742" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="772" y1="176" x2="772" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="802" y1="176" x2="802" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="832" y1="176" x2="832" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="862" y1="176" x2="862" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="892" y1="176" x2="892" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="922" y1="176" x2="922" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="952" y1="176" x2="952" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="982" y1="176" x2="982" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1012" y1="176" x2="1012" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1042" y1="176" x2="1042" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1072" y1="176" x2="1072" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="1102" y1="176" x2="1102" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1132" y1="176" x2="1132" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1162" y1="176" x2="1162" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1192" y1="176" x2="1192" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="1222" y1="176" x2="1222" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1252" y1="176" x2="1252" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1282" y1="176" x2="1282" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1312" y1="176" x2="1312" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="1342" y1="176" x2="1342" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1372" y1="176" x2="1372" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1402" y1="176" x2="1402" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1432" y1="176" x2="1432" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="1462" y1="176" x2="1462" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1492" y1="176" x2="1492" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1522" y1="176" x2="1522" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1552" y1="176" x2="1552" y2="722" stroke="#94A3B8" stroke-width="1.15"/><line x1="1582" y1="176" x2="1582" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1612" y1="176" x2="1612" y2="722" stroke="#E2E8F0" stroke-width="0.85"/><line x1="1642" y1="176" x2="1642" y2="722" stroke="#E2E8F0" stroke-width="0.85"/>
+    <line x1="1672" y1="176" x2="1672" y2="722" stroke="#94A3B8" stroke-width="1.4"/>
 
-    <rect x="474.0" y="186" width="86.0" height="28" rx="6" fill="#0D9488" filter="url(#barShadow)"/><rect x="534.0" y="234" width="56.0" height="28" rx="6" fill="#0F766E" filter="url(#barShadow)"/><rect x="594.0" y="282" width="356.0" height="28" rx="6" fill="#2563EB" filter="url(#barShadow)"/><rect x="594.0" y="330" width="206.0" height="28" rx="6" fill="#1D4ED8" filter="url(#barShadow)"/><rect x="624.0" y="378" width="266.0" height="28" rx="6" fill="#3B82F6" filter="url(#barShadow)"/><rect x="594.0" y="426" width="296.0" height="28" rx="6" fill="#0284C7" filter="url(#barShadow)"/><rect x="804.0" y="474" width="146.0" height="28" rx="6" fill="#1E40AF" filter="url(#barShadow)"/><rect x="954.0" y="522" width="116.0" height="28" rx="6" fill="#D97706" filter="url(#barShadow)"/><rect x="1074.0" y="570" width="116.0" height="28" rx="6" fill="#7C3AED" filter="url(#barShadow)"/><rect x="1194.0" y="618" width="356.0" height="28" rx="6" fill="#059669" filter="url(#barShadow)"/><rect x="1314.0" y="666" width="356.0" height="28" rx="6" fill="#047857" filter="url(#barShadow)"/>
+    <rect x="474.0" y="184.0" width="86.0" height="26" rx="6" fill="#0D9488" filter="url(#barShadow)"/><rect x="534.0" y="226.0" width="56.0" height="26" rx="6" fill="#0F766E" filter="url(#barShadow)"/><rect x="594.0" y="268.0" width="356.0" height="26" rx="6" fill="#2563EB" filter="url(#barShadow)"/><rect x="594.0" y="310.0" width="296.0" height="26" rx="6" fill="#1D4ED8" filter="url(#barShadow)"/><rect x="594.0" y="352.0" width="296.0" height="26" rx="6" fill="#3B82F6" filter="url(#barShadow)"/><rect x="684.0" y="394.0" width="206.0" height="26" rx="6" fill="#0369A1" filter="url(#barShadow)"/><rect x="594.0" y="436.0" width="296.0" height="26" rx="6" fill="#0284C7" filter="url(#barShadow)"/><rect x="804.0" y="478.0" width="116.0" height="26" rx="6" fill="#1E40AF" filter="url(#barShadow)"/><rect x="864.0" y="520.0" width="86.0" height="26" rx="6" fill="#1E3A8A" filter="url(#barShadow)"/><rect x="894.0" y="562.0" width="176.0" height="26" rx="6" fill="#D97706" filter="url(#barShadow)"/><rect x="1074.0" y="604.0" width="116.0" height="26" rx="6" fill="#7C3AED" filter="url(#barShadow)"/><rect x="1194.0" y="646.0" width="476.0" height="26" rx="6" fill="#059669" filter="url(#barShadow)"/><rect x="1314.0" y="688.0" width="356.0" height="26" rx="6" fill="#047857" filter="url(#barShadow)"/>
   </g>
-  <rect x="28" y="76" width="1864" height="628" rx="14" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
+  <rect x="28" y="76" width="1864" height="646" rx="14" fill="none" stroke="#94A3B8" stroke-width="1.6"/>
 
-  <rect x="28" y="724" width="1864" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
-  <rect x="504.0" y="735" width="16" height="16" rx="4" fill="#0D9488"/><text x="528.0" y="747.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Seleksi</text><rect x="625.2" y="735" width="16" height="16" rx="4" fill="#2563EB"/><text x="649.2" y="747.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Bootcamp &amp; Prototyping</text><rect x="860.4" y="735" width="16" height="16" rx="4" fill="#D97706"/><text x="884.4" y="747.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Demo Day</text><rect x="989.2" y="735" width="16" height="16" rx="4" fill="#7C3AED"/><text x="1013.2" y="747.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Business Matching</text><rect x="1186.4" y="735" width="16" height="16" rx="4" fill="#059669"/><text x="1210.4" y="747.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Pilot Testing &amp; Hilirisasi</text>
+  <rect x="28" y="742" width="1864" height="38" rx="10" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.2"/>
+  <rect x="504.0" y="753" width="16" height="16" rx="4" fill="#0D9488"/><text x="528.0" y="765.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Seleksi</text><rect x="625.2" y="753" width="16" height="16" rx="4" fill="#2563EB"/><text x="649.2" y="765.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Bootcamp &amp; Prototyping</text><rect x="860.4" y="753" width="16" height="16" rx="4" fill="#D97706"/><text x="884.4" y="765.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Demo Day</text><rect x="989.2" y="753" width="16" height="16" rx="4" fill="#7C3AED"/><text x="1013.2" y="765.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Business Matching</text><rect x="1186.4" y="753" width="16" height="16" rx="4" fill="#059669"/><text x="1210.4" y="765.5" font-family="'Open Sans', sans-serif" font-size="12.6" font-weight="600" fill="#334155">Pilot Testing &amp; Hilirisasi</text>
 
-  <rect x="28" y="778" width="1864" height="36" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="960" y="800.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Kolom 1-4 Menunjukkan Minggu ke-1 s.d. Minggu ke-4 Setiap Bulan  |  Acuan Jadwal: Buku Pedoman Hackathon UNJ 2026</text>
+  <rect x="28" y="796" width="1864" height="36" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="960" y="818.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.5" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Kolom 1-4 = Minggu ke-1 s.d. ke-4 Setiap Bulan  |  Rincian Desember–Februari: Gambar 08b (Bab 9.7)  |  Acuan Jadwal: Buku Pedoman Hackathon UNJ 2026, Hal. 4</text>
 </svg>

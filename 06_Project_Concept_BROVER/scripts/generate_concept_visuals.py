@@ -222,8 +222,8 @@ def make_fig4_workflow():
     ax1.text(1.275, 2.12, "DOCK", ha="center", va="center", fontsize=7.0, fontweight="bold", color="#FFFFFF", zorder=7)
 
     ax1.text(5.0, 0.68,
-             "Batas Jujur: Kecepatan <=0,1 m/s | Dead-Man's Switch 500 ms | Fase lantai Hari ke-5 s.d. ~23\n"
-             "(sebelum kepadatan 25-30 kg/m² minggu 4-5 membatasi ruang gerak lantai)",
+             "Batas Jujur: Kecepatan 0,07-0,1 m/s | Dead-Man's Switch 500 ms | Fase lantai Hari ke-7 s.d. panen\n"
+             "(dinaikkan bertahap dengan kriteria berhenti; Dennis 2020, Marin 2024)",
              ha="center", va="center", fontsize=7.3, color=SLATE,
              bbox=dict(boxstyle="round,pad=0.3", fc="#F8FAFC", ec="#CBD5E1"))
 
@@ -286,85 +286,92 @@ def make_fig4_workflow():
 # FIGURE 5: Komparasi Hardware Komputasi & Keamanan Baterai (Zero overlaps!)
 # ==============================================================================
 def make_fig5_hardware_power():
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14.4, 6.6), dpi=300)
+    """Fig 05: official board specs for one feces CV model + PoC vs final power (no third-party FPS)."""
+    fig = plt.figure(figsize=(14.4, 6.9), dpi=300)
     fig.patch.set_facecolor("#FFFFFF")
+    ax = fig.add_axes([0, 0, 1, 1])
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.axis("off")
 
+    ax.text(0.5, 0.955, "Komputasi & Daya BROVER untuk Satu Model CV Feses",
+            ha="center", va="center", fontsize=15, fontweight="bold", color=NAVY)
+    ax.text(0.5, 0.912, "Spesifikasi dari sumber resmi produsen; kecepatan inferensi diukur sendiri oleh tim, "
+            "bukan dikutip dari dokumentasi pihak lain",
+            ha="center", va="center", fontsize=9.2, color=MUTED)
+
+    def draw_table(x0, y_top, col_w, header, rows, row_h, hdr_h=0.062, highlight=None, fs=7.9, hl_fc="#F0FDFA"):
+        edges = [x0]
+        for cw in col_w:
+            edges.append(edges[-1] + cw)
+        total_w = edges[-1] - x0
+        ax.add_patch(plt.Rectangle((x0, y_top - hdr_h), total_w, hdr_h, fc=NAVY, ec=NAVY, lw=0))
+        for i, htxt in enumerate(header):
+            ax.text(edges[i] + 0.008, y_top - hdr_h / 2, htxt, ha="left", va="center",
+                    fontsize=fs + 0.5, fontweight="bold", color="#FFFFFF", linespacing=1.25)
+        y = y_top - hdr_h
+        for r, row in enumerate(rows):
+            bg = hl_fc if r == highlight else ("#FFFFFF" if r % 2 == 0 else "#F8FAFC")
+            ax.add_patch(plt.Rectangle((x0, y - row_h), total_w, row_h, fc=bg, ec="#E2E8F0", lw=0.6))
+            for i, cell in enumerate(row):
+                ax.text(edges[i] + 0.008, y - row_h / 2, cell, ha="left", va="center", fontsize=fs,
+                        fontweight="bold" if i == 0 else "normal", color=NAVY if i == 0 else SLATE,
+                        linespacing=1.35)
+            y -= row_h
+        for xe in edges[1:-1]:
+            ax.plot([xe, xe], [y, y_top - hdr_h], color="#E2E8F0", lw=0.6)
+        ax.add_patch(plt.Rectangle((x0, y), total_w, y_top - y, fc="none", ec="#94A3B8", lw=0.9))
+        return y
+
+    # ---- Panel A: compute boards (official pages, accessed 28 Nov 2026)
+    ax.text(0.03, 0.845, "A. Spesifikasi Resmi Papan Komputasi", ha="left", va="center",
+            fontsize=11.2, fontweight="bold", color=NAVY)
     boards = [
-        "Raspberry Pi 4\n(PoC Eksisting\nNCNN CPU)",
-        "Luckfox Pico Ultra\n(RV1106 0,5-1T\nRAM 256MB*)",
-        "Orange Pi 3B\n(FINAL SWEET SPOT\nRK3566 0,8T 4GB)",
-        "Orange Pi 5\n(RK3588S 6T\nOver-Spec)",
+        ("Raspberry Pi 4\nModel B", "Broadcom BCM2711\n4× Cortex-A72, 1,8 GHz", "Tidak ada NPU",
+         "1/2/3/4/8 GB\nLPDDR4", "PoC: inferensi CPU\n(NCNN/ONNX), sudah dimiliki"),
+        ("Orange Pi 3B\n(dipilih)", "Rockchip RK3566\n4× Cortex-A55, hingga 1,8 GHz", "0,8 TOPS",
+         "2/4/8 GB\nLPDDR4/4X", "Final: RKNN INT8, varian\n4 GB + modul eMMC"),
+        ("Orange Pi 5", "Rockchip RK3588S\n4× A76 + 4× A55, hingga 2,4 GHz", "6 TOPS\n(INT4/INT8/INT16)",
+         "4/8/16 GB\nLPDDR4/4X", "Tidak dipilih: melebihi\nkebutuhan satu model"),
+        ("Luckfox Pico\nUltra", "Rockchip RV1106G3\n1× Cortex-A7", "1 TOPS (INT8)",
+         "256 MB\nDDR3L", "Tidak dipilih: RAM 256 MB\nberisiko kehabisan memori"),
     ]
-    fps_vals = [2.3, 8.5, 18.2, 53.1]
-    watts = [6.8, 1.8, 4.0, 7.5]
-    prices_usd = [55, 20, 35, 80]
-    colors_a = ["#64748B", "#F59E0B", TEAL, "#3B82F6"]
+    y_end_a = draw_table(0.03, 0.80, [0.095, 0.148, 0.095, 0.08, 0.142],
+                         ["Papan", "SoC & CPU", "NPU", "RAM", "Peran di BROVER"],
+                         boards, row_h=0.098, highlight=1)
+    ax.add_patch(FancyBboxPatch((0.03, y_end_a - 0.155), 0.56, 0.115,
+                                boxstyle="round,pad=0.004,rounding_size=0.008", fc="#F0FDFA", ec=TEAL, lw=1.0))
+    ax.text(0.042, y_end_a - 0.097,
+            "BROVER hanya menjalankan satu detektor feses saat rover berhenti di titik zona. Orange Pi 3B (NPU 0,8 TOPS,\n"
+            "RAM 4 GB, slot eMMC) cukup untuk beban ini. Kecepatan INT8 di Orange Pi 3B diukur sendiri oleh tim; pengukuran\n"
+            "FP32 vs INT8 di ONNX Runtime CPU dan RKNN NPU menjadi bagian TA Ketua Tim.",
+            ha="left", va="center", fontsize=7.8, color=SLATE, linespacing=1.4)
 
-    x = np.arange(len(boards))
-    bars = ax1.bar(x, fps_vals, width=0.52, color=colors_a, edgecolor=NAVY, linewidth=0.8, zorder=3)
-    ax1.axhline(5.0, color=CRIMSON, linestyle="--", linewidth=1.4, zorder=4)
-
-    ax1.annotate("Batas Nyaman Rover <=0,1 m/s (~5 FPS)",
-                 xy=(1.55, 5.0), xytext=(0.15, 34.0),
-                 fontsize=8.0, fontweight="bold", color=CRIMSON,
-                 bbox=dict(boxstyle="round,pad=0.3", fc="#FEF2F2", ec=CRIMSON, lw=0.9),
-                 arrowprops=dict(arrowstyle="->", color=CRIMSON, lw=1.3, connectionstyle="arc3,rad=0.18"),
-                 zorder=6)
-
-    for b, f, w, p in zip(bars, fps_vals, watts, prices_usd):
-        y_txt = max(f + 1.6, 6.4)
-        ax1.text(b.get_x() + b.get_width() / 2, y_txt,
-                 f"{f:.1f} FPS\n({w:.1f}W | ~${p})",
-                 ha="center", va="bottom", fontsize=7.9, fontweight="bold", color=NAVY, zorder=7)
-
-    ax1.set_xticks(x)
-    ax1.set_xticklabels(boards, fontsize=8.0, fontweight="bold", color=SLATE)
-    ax1.set_ylabel("Performa Inferensi YOLOv8n 640x640 (FPS)", fontsize=9.2, fontweight="bold", color=NAVY)
-    ax1.set_ylim(0, 66)
-    ax1.grid(axis="y", linestyle=":", alpha=0.6, zorder=0)
-    ax1.set_title("A. Performa YOLOv8n vs Daya & Harga Global SBC",
-                  fontsize=10.8, fontweight="bold", color=NAVY, pad=10)
-    ax1.text(0.5, -0.23, "*Luckfox 256MB RAM berisiko OOM untuk 3 model + audio + SQLite offline.",
-             transform=ax1.transAxes, ha="center", fontsize=7.4, style="italic", color=MUTED)
-
-    cats = [
-        "Ambang Thermal Runaway (°C)\n[Lebih Tinggi = Aman di Sekam]",
-        "Umur Pakai Baterai\n(Jumlah Siklus / 100)",
-        "Estimasi Durasi Operasi\n(Menit / Cas — PoC vs Final 6Ah)",
+    # ---- Panel B: power, PoC (stage 1, owned) vs final (stage 3)
+    ax.text(0.61, 0.845, "B. Daya Rover: PoC vs Final", ha="left", va="center",
+            fontsize=11.2, fontweight="bold", color=NAVY)
+    power = [
+        ("Sumber daya", "Dua jalur: powerbank 5V 3A\n10.000 mAh + 2× 18650\nLi-ion dengan BMS 2S",
+         "Satu paket LiFePO₄ 4S\n12,8 V 6 Ah (76,8 Wh)\ndengan BMS bawaan"),
+        ("Kimia sel", "Li-ion 18650\n(umumnya NMC)", "LiFePO₄, dikenal lebih\nstabil secara termal"),
+        ("Runtime", "Estimasi ~1,5–2,5 jam", "Target ≥3 jam, cukup\nuntuk 2 putaran per hari"),
+        ("Pengisian", "Manual saat uji meja\ndan uji lab", "Di dok: charger 14,6 V,\nsambil mode stasiun"),
+        ("Proteksi", "Sekring + saklar utama", "Sekring 15 A, kill switch\nIP65, INA219 (peringatan 25%)"),
+        ("Ambang thermal\nrunaway", "Mengikuti datasheet\nsel yang dibeli", "Mengikuti datasheet\nsel yang dibeli"),
     ]
-    y = np.arange(len(cats))
-    h = 0.34
-    b1 = ax2.barh(y + h / 2, [195, 15, 120], height=h, label="Fase PoC: Li-Ion NMC 18650 + PB", color="#94A3B8", edgecolor=NAVY, lw=0.8, zorder=3)
-    b2 = ax2.barh(y - h / 2, [260, 45, 210], height=h, label="Fase Final: LiFePO4 4S 12,8V 6Ah", color=EMERALD, edgecolor=NAVY, lw=0.8, zorder=3)
+    draw_table(0.61, 0.80, [0.098, 0.128, 0.144], ["Aspek", "PoC (Tahap 1)", "Final (Tahap 3)"],
+               power, row_h=0.0905)
 
-    lbls_nmc = ["180-210°C (Rentan api)", "1.000-2.000 siklus", "~90-150 mnt (~2 jam)"]
-    lbls_lfp = ["250-270°C (Aman sekam)", "3.000-6.000+ siklus", "~180-240 mnt (3-4 jam)"]
-    for bar, txt in zip(b1, lbls_nmc):
-        ax2.text(bar.get_width() + 7, bar.get_y() + bar.get_height() / 2, txt,
-                 va="center", ha="left", fontsize=7.7, color=SLATE, fontweight="bold")
-    for bar, txt in zip(b2, lbls_lfp):
-        ax2.text(bar.get_width() + 7, bar.get_y() + bar.get_height() / 2, txt,
-                 va="center", ha="left", fontsize=7.7, color="#065F46", fontweight="bold")
+    ax.text(0.5, 0.145,
+            "Sumber: laman resmi Orange Pi 3B dan Orange Pi 5, product brief Raspberry Pi 4, laman resmi Luckfox Pico Ultra "
+            "(diakses 28 Nov 2026); data daya dari Bab 7.1 dan BOM Bab 8.2",
+            ha="center", va="center", fontsize=7.7, fontweight="bold", color=MUTED,
+            bbox=dict(boxstyle="round,pad=0.35", fc="#F1F5F9", ec="#CBD5E1"))
 
-    ax2.set_yticks(y)
-    ax2.set_yticklabels(cats, fontsize=8.0, fontweight="bold", color=SLATE)
-    ax2.set_xlim(0, 440)
-    ax2.set_xlabel("Nilai Skala Pembanding (Lihat Label Satuan Masing-Masing Baris)", fontsize=8.3, fontweight="bold", color=NAVY)
-    ax2.grid(axis="x", linestyle=":", alpha=0.6, zorder=0)
-    ax2.legend(loc="center right", bbox_to_anchor=(0.98, 0.50), frameon=True,
-               facecolor="#FFFFFF", edgecolor="#CBD5E1", fontsize=8.0)
-    ax2.set_title("B. Keamanan Termal & Kapasitas Daya (Li-Ion NMC vs LiFePO4)",
-                  fontsize=10.8, fontweight="bold", color=NAVY, pad=10)
-
-    fig.suptitle("ANALISIS EFISIENSI KOMPUTASI & KEAMANAN ENERGI BROVER (ANTI-OVER-SPEC)",
-                 fontsize=13, fontweight="bold", color=NAVY, y=0.975)
-    fig.text(0.5, 0.018,
-             "[DATA DATASHEET & BENCHMARK TERVERIFIKASI — TIM ASPRAK | ULTRALYTICS DOCS, ORANGE PI, LUCKFOX & LITERATUR LFP]",
-             ha="center", va="center", fontsize=7.7, fontweight="bold", color=MUTED,
-             bbox=dict(boxstyle="round,pad=0.3", fc="#F1F5F9", ec="#CBD5E1"))
-
-    plt.tight_layout(rect=[0.01, 0.06, 0.99, 0.93])
-    plt.savefig(os.path.join(ASSETS_DIR, "05_komparasi_komputasi_dan_baterai_brover.png"), dpi=300)
+    from matplotlib.transforms import Bbox
+    w_in, h_in = fig.get_size_inches()
+    plt.savefig(os.path.join(ASSETS_DIR, "05_komparasi_komputasi_dan_baterai_brover.png"), dpi=300,
+                bbox_inches=Bbox.from_extents(0, 0.105 * h_in, w_in, h_in))
     plt.close()
 
 
@@ -398,7 +405,7 @@ def make_fig6_roadmap():
          "• Uji Lapangan Kandang\n  Mitra (PT Zara / Bogor)\n• Validasi CV, Audio 5 dtk,\n  Cobb 500 & Laporan Vet\n• Validasi SOP Sanitasi Roda\n• Penyempurnaan BMC\n• Demo Day & Inisiasi LoI\n  dengan Mitra Industri",
          BLUE, "#EFF6FF"),
         (0.87, "TAHAP 4\nMei - Agu 2027+", "TKT 7 - 9", "Pilot, HKI & Future Work",
-         "• Pilot 1-2 Siklus (Hr 5-23)\n• HKI / Paten (Apache-2.0)\n• Varian Rakyat vs Pro\n• FUTURE WORK UTAMA:\n  Otomatisasi Jadwal Rutin\n  & Setup Jalur Otomatis\n• Ekspansi: Modul Rel Plafon",
+         "• Pilot 1-2 Siklus (Hr 7-panen)\n• HKI / Paten (Apache-2.0)\n• Varian Rakyat vs Pro\n• FUTURE WORK UTAMA:\n  Otomatisasi Jadwal Rutin\n  & Setup Jalur Otomatis\n• Ekspansi: Modul Rel Plafon",
          PURPLE, "#F5F3FF"),
     ]
 
@@ -433,5 +440,5 @@ if __name__ == "__main__":
     build_fig4_svgs()
     build_biz_timeline_svgs()
     make_fig5_hardware_power()
-    make_fig6_roadmap()
+    # Fig 6 kini dikelola generate_business_timeline_svgs.py (SVG); make_fig6_roadmap() lama tidak dipanggil agar PNG 06 tidak tertimpa.
     print("REGENERATED ALL VISUALS FOR TIM ASPRAK SUCCESSFULLY")

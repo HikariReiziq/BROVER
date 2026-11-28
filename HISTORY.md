@@ -20,6 +20,105 @@
 
 ---
 
+## [2026-11-29 00:03 WIB] — `docs(brover): sync documents with the 28 Nov 2026 locked decisions, cover the proposal template, re-render diagrams, and rebuild TOP5/RCA PDFs`
+- **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — sinkronisasi seluruh dokumen dengan keputusan final tim 28 November 2026 (4 fitur, CV feses satu-satunya AI, dua paket BROVER Saku dan BROVER Kandang, titik impas tanpa ROI) serta kelengkapan bab template proposal resmi.
+- **Ringkasan Perubahan:**
+  - **Concept (`PROJECT_CONCEPT_BROVER.md`):** ditulis ulang menjadi 13 bab. Tambahan: 3.3 Rumusan Masalah, 3.4 Calon Pengguna, 4.5 Komponen *Deeptech*, matriks paket, 8.3 diagram blok, 9.2 A–G (paket, titik impas, beli putus, protokol pemindahan unit), 9.5 status TKT dan milestone M0–M5, 9.6 pilot dan hilirisasi, 9.7 jadwal purwarupa 12 minggu, 9.8 target luaran, Bab 12 format Vancouver (85 entri), dan Bab 13 pemetaan ke template. Koreksi: rentang BOM, bab WOAH 6.5, tabel Ross 308, titik impas Saku 2,1–3,3 ekor.
+  - **Peta fitur (`PETA_FITUR_DAN_BUKTI_BROVER.md`):** bagian yang terdampak keputusan baru diperbarui; urutan penulis Quarles dan Kling dikoreksi; tabel tautan 8.1 ditambah dan diuji dua kali.
+  - **Diagram:** 03, 04a, 04b, 04c, 05, 06, 07, dan 08 dirender ulang; ditambah `08b_jadwal_purwarupa_3_bulan_brover` dan `09_titik_impas_paket_brover`. Gambar lama dan `09_proyeksi_keuntungan_5tahun_brover` diarsipkan di `06_Project_Concept_BROVER/assets/history/2026-11-28_sebelum_sinkronisasi/` beserta README.
+  - **Memori & konteks:** `MEMORY.md`, `.agent/rules/hackathon-context.md`, dan `01_Context_Memory/01_TEAM_AND_CONSTRAINTS.md` diselaraskan; `README.md` disinkronkan lewat `sync_readme.py`.
+  - **Panduan IoT:** ketiga panduan dibersihkan dari mikrofon dan audio; ditambah servo dua posisi, tiang sensor, dok, dan mode stasiun; klaim FPS dan suhu baterai yang tidak terverifikasi diganti. Foto mikrofon diarsipkan di `07_IoT_Hardware_Guide/assets/history/`.
+  - **TOP5 & RCA:** label ayam petelur pada kasus Hari Farm, catatan verifikasi Wilcox dan Anwar Sani, dan PDF dibuat ulang dengan skrip baru `08_Evaluasi_Proyek/tools/md_to_pdf.py`.
+  - **Evaluasi & prompt lanjutan:** `EVALUASI_ULANG_BROVER.md` ditulis; prompt lanjutan proyek untuk sesi agent berikutnya ditambahkan; sebutan nama alat AI di dua prompt lama dinetralkan.
+  - **Commit perdana folder:** `07_IoT_Hardware_Guide/` dan `08_Evaluasi_Proyek/` mulai dilacak git (tanpa PDF SmartEars dan `__pycache__`), bersama template proposal resmi panitia (`.docx` dan `.docx.md`).
+- **File Terdampak:**
+  - `[MODIFY]` `06_Project_Concept_BROVER/PROJECT_CONCEPT_BROVER.md`, `README.md`, `MEMORY.md`, `HISTORY.md`
+  - `[MODIFY]` `06_Project_Concept_BROVER/scripts/generate_architecture_svg.py`, `generate_workflow_svgs.py`, `generate_business_timeline_svgs.py`, `generate_concept_visuals.py`
+  - `[MODIFY]` `06_Project_Concept_BROVER/assets/03_*`, `04a_*`, `04b_*`, `04c_*`, `05_*`, `06_*`, `07_*`, `08_*` (SVG/PNG)
+  - `[NEW]` `06_Project_Concept_BROVER/assets/08b_jadwal_purwarupa_3_bulan_brover.svg/.png`, `09_titik_impas_paket_brover.svg/.png`
+  - `[MOVE]` `06_Project_Concept_BROVER/assets/09_proyeksi_keuntungan_5tahun_brover.svg/.png` dan `04_alur_kerja_4lapis_biosekuriti.png` ke `assets/history/2026-11-28_sebelum_sinkronisasi/`
+  - `[NEW]` `06_Project_Concept_BROVER/assets/history/2026-11-28_sebelum_sinkronisasi/` (salinan gambar lama + `README.md`)
+  - `[MODIFY]` `.agent/rules/hackathon-context.md`, `01_Context_Memory/01_TEAM_AND_CONSTRAINTS.md`
+  - `[MODIFY]` `08_Evaluasi_Proyek/PETA_FITUR_DAN_BUKTI_BROVER.md`, `08_Evaluasi_Proyek/tools/notes.py`
+  - `[NEW]` `08_Evaluasi_Proyek/EVALUASI_ULANG_BROVER.md`, `08_Evaluasi_Proyek/tools/md_to_pdf.py`, `08_Evaluasi_Proyek/PROMPT_LANJUTAN_SINKRONISASI_TAHAP6_SAMPAI_11.md`, `08_Evaluasi_Proyek/PROMPT_ANTIGRAVITY_LANJUTAN_PROYEK_BROVER.md`
+  - `[NEW]` pertama kali dilacak: `07_IoT_Hardware_Guide/` (panduan, foto komponen, skrip), `08_Evaluasi_Proyek/` (evaluasi, peta fitur, prompt, `tools/`), `Template Proposal Peserta Kegiatan HackAthon 2026 -.docx` & `.docx.md`
+  - `[MODIFY]` `02_Problem_Research/TOP_5_MASALAH_PETERNAKAN_UNGGAS_INDONESIA_V3_TRANSPARAN.md` (+ `_tmp.html`, `.md.pdf`), `03_Root_Cause_Analysis/ROOT_CAUSE_PENYAKIT_BIOSEKURITI_DAN_HEAT_STRESS.md` (+ `_tmp.html`, `.md.pdf`)
+  - `[MODIFY]` `07_IoT_Hardware_Guide/01_*.md`, `02_*.md`, `03_*.md`, `scripts/fetch_component_images.py`; `[MOVE]` 3 foto mikrofon ke `07_IoT_Hardware_Guide/assets/history/`
+- **Alasan / Keputusan Penting:** dokumen lama masih memuat skema *Multi-Modal AI*, audio, sewa per siklus, beli sepaket Rp11,5 juta, dan ROI 498% yang sudah diganti keputusan tim 28 November 2026; concept juga harus menjadi sumber lengkap untuk mengisi template proposal, termasuk jadwal purwarupa maksimal 3 bulan.
+- **Verifikasi:** setiap PNG yang dirender ulang dilihat langsung; grep teks SVG bebas istilah lama; palet grafik 08b dan 09 lolos validator buta warna; spesifikasi papan pada Gambar 05 dicek ke laman resmi; 72 rujukan gambar panduan IoT valid; PDF TOP5 memuat 37 objek gambar unik dan PDF RCA 5 gambar; `EVALUASI_ULANG_BROVER.md` lolos `check_style.py` dengan TOTAL MASALAH 0 dan 36 tautannya diuji dua kali; `sync_readme.py` melaporkan 0 tautan rusak; tidak ada commit.
+
+---
+
+## [2026-11-27 20:32 WIB] — `docs(hardware-guide): sync Stage 1 rover guide with actual team inventory and expand 7-phase physical assembly instructions`
+- **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — Penyelarasan penuh `01_PANDUAN_TAHAP1_ROVER_KONTROL_WEB.md` terhadap seluruh komponen aktual yang telah dimiliki, dipinjam dari lab, dan dibeli (`Wintonic INR 18650 2200mAh`, `BMS 2S 7,4V 8A`, `3× PCT-223`, `Kabel 22 AWG Merah`, `12× MLCC 100 nF 50V`, `Fuse 5A/2A + 3× Fuse Holder Putar 5×20 mm`), sekaligus memperluas panduan rakit fisik menjadi **Fase 0 s.d. Fase 7** super detail.
+- **Ringkasan Perubahan:**
+  - Memperbarui seluruh tabel inventaris Tahap 1 (`22` item aktual berstatus lengkap siap rakit; menghapus kebutuhan `XT30` karena tergantikan oleh `3× PCT-223`, holder 2-slot, dan saklar).
+  - Menambahkan peta pemakaian eksak **`3× PCT-223`** (termasuk trik mengambil `GND` *breadboard* dari `Buck OUT-` agar 3 lubang `PCT-223 #2` pas tanpa kelebihan kabel), aturan penandaan *heat-shrink* hitam untuk potongan `GND` pada kabel `22 AWG` merah, catatan *wake-up* `BMS 2S 8A`, dan spesifikasi jujur baterai `Wintonic INR 18650` (`2,5 A` maks, *Flat Top*, non-protected).
+  - Memperluas Bagian 6 menjadi panduan perakitan langkah demi langkah **Fase 0 (Cek Fisik Lab & Pemotongan Kabel)** → **Fase 1 (Sasis & Solder 4 Motor + MLCC)** → **Fase 2 (`TB6612FNG` & `2× Breadboard 830`)** → **Fase 3 (Rail 2 `BMS 2S 8A` + Saklar + `Fuse Holder Putar 5A` + `3× PCT-223`)** → **Fase 4 (*Physical Gate* Multimeter & Set `5,00V`)** → **Fase 5 (Kapasitor + 9 Jumper Sinyal)** → **Fase 6 (Tata Letak Sasis `25×15 cm` & Aturan Aman USB Upload)** → **Fase 7 (Kriteria Lulus)**.
+- **File Terdampak:**
+  - `[MODIFY]` `07_IoT_Hardware_Guide/01_PANDUAN_TAHAP1_ROVER_KONTROL_WEB.md`
+  - `[MODIFY]` `HISTORY.md`
+- **Alasan / Keputusan Penting:** Memastikan panduan di meja kerja 100% cocok dengan fisik komponen aktual tim (nol kebingungan pin atau jumlah lubang konektor saat merakit pertama kali).
+- **Verifikasi:** Audit otomatis memastikan `22/22` baris komponen & foto `.jpg` valid, `0` tabel pecah, `0` tautan lokal rusak, `0` harga rupiah, `0` blok kode program, dan `PROJECT_CONCEPT_BROVER.md` tetap utuh.
+
+---
+
+## [2026-11-25 15:20 WIB] — `refactor(hardware-guide): restructure IoT documentation into 3 progressive anti-overclaim guides (Web Rover -> Full Prototype with INMP441 on RPi 4B -> Final Field-Ready)`
+- **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — Penataan ulang panduan IoT dari 2 file menjadi **3 file bertahap** bebas harga dan tanpa blok kode program dulu, menyertakan stok eksisting **`INMP441`** & **`Raspberry Pi 4 Model B`**, serta hasil riset objektif anti-*overclaim* (`2× Breadboard 830`, `1× TB6612FNG` + 4 pagar aman, `Wago 221` jalur daya luar *breadboard*, dan `INMP441` langsung ke 40-pin I2S `RPi 4B`).
+- **Ringkasan Perubahan:**
+  - **File 1 (`07_IoT_Hardware_Guide/01_PANDUAN_TAHAP1_ROVER_KONTROL_WEB.md`):** Panduan khusus merakit mobil 4WD kontrol website HP (`http://192.168.4.1`, `DOIT ESP32 DEVKIT V1 30-Pin`, `2× Breadboard 830` dirapatkan, `1× TB6612FNG` + 4 aturan pengaman anti-*stall*, `Wago 221` pemisah jalur daya `18 AWG` di luar *breadboard*, 24 item berfoto `.jpg` lengkap dengan kolom `Fungsi Utama` & `Alasan Objektif`).
+  - **File 2 (`07_IoT_Hardware_Guide/02_PANDUAN_TAHAP2_PROTOTYPE_LENGKAP_AI_SENSOR.md`):** Panduan lanjutan integrasi `Raspberry Pi 4 Model B`, Webcam USB, **`INMP441` (sudah dimiliki → langsung ke Header 40-Pin I2S `RPi 4B` + catatan jujur `ALSA softvol` Bookworm Kernel 6.6)**, `Servo Tilt`, `LED 5V` + MOSFET `3,3V`, `SHT31`, `SEN0567`, `HC-SR04` (divider `1 kΩ + 2 kΩ`), audit jujur bobot `≤800–1.000 g` + transisi *perfboard* sebelum demo (17 item tambahan berfoto `.jpg`).
+  - **File 3 (`07_IoT_Hardware_Guide/03_PANDUAN_IOT_FINAL_FIELD_READY.md`):** Versi Final *Field-Ready* (`TKT 5–6+`) berpenomoran urut `03`, memperbarui status `INMP441` menjadi *Reuse dari Prototype*, menambahkan kolom `Alasan Objektif Dipilih`, dan menghilangkan blok kode agar konsisten tanpa codingan dulu (25 item utama berfoto `.jpg` + 10 item pasif/alat Lab UNJ).
+  - **Aset & Pembersihan:** Menambahkan foto `assets/poc/39_wago_221_connector.jpg` (Wikimedia Commons, lolos inspeksi visual) & salinan `assets/poc/40_inmp441_i2s_mic.jpg`; menghapus 2 file draft lama (`01_PANDUAN_IOT_PROTOTYPE_POC.md` & `02_PANDUAN_IOT_FINAL_FIELD_READY.md`); menyinkronkan `MEMORY.md` & `HISTORY.md` (membiarkan `06_Project_Concept_BROVER/PROJECT_CONCEPT_BROVER.md` utuh).
+- **File Terdampak:**
+  - `[NEW]` `07_IoT_Hardware_Guide/01_PANDUAN_TAHAP1_ROVER_KONTROL_WEB.md`
+  - `[NEW]` `07_IoT_Hardware_Guide/02_PANDUAN_TAHAP2_PROTOTYPE_LENGKAP_AI_SENSOR.md`
+  - `[NEW]` `07_IoT_Hardware_Guide/03_PANDUAN_IOT_FINAL_FIELD_READY.md`
+  - `[NEW]` `07_IoT_Hardware_Guide/assets/poc/39_wago_221_connector.jpg`
+  - `[NEW]` `07_IoT_Hardware_Guide/assets/poc/40_inmp441_i2s_mic.jpg`
+  - `[DELETE]` `07_IoT_Hardware_Guide/01_PANDUAN_IOT_PROTOTYPE_POC.md`
+  - `[DELETE]` `07_IoT_Hardware_Guide/02_PANDUAN_IOT_FINAL_FIELD_READY.md`
+  - `[MODIFY]` `MEMORY.md`
+  - `[MODIFY]` `HISTORY.md`
+- **Alasan / Keputusan Penting:** Memungkinkan tim menuntaskan kendali mobil via website HP di *breadboard* dulu sebelum mengintegrasikan multi-modal AI (`INMP441` + CV + sensor), sekaligus memastikan setiap pilihan hardware berdiri di atas alasan objektif tanpa *overclaim*.
+- **Verifikasi:** Audit otomatis mengonfirmasi `76/76` baris komponen (`24` + `17` + `35`), `66/66` gambar `.jpg` valid, `0` tautan rusak, `0` tabel pecah, `0` blok kode program, `0` harga rupiah, `0` jargon terlarang, dan `PROJECT_CONCEPT_BROVER.md` tetap bersih.
+
+---
+
+## [2026-11-25 14:48 WIB] — `docs(hardware-guide): add dedicated to-the-point function column for every component in Prototype and Final IoT guides`
+- **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — Penyempurnaan keterbacaan daftar komponen pada kedua file panduan IoT (`07_IoT_Hardware_Guide/`) dengan menambahkan kolom khusus **`Fungsi Utama (*To The Point*)`** berbahasa orang awam untuk seluruh 38 item Prototype dan 25 item utama + 10 item pasif/alat Final.
+- **Ringkasan Perubahan:**
+  - Memisahkan penjelasan fungsi praktis (kolom 5: *"benda ini buat apa di BROVER?"*) dari spesifikasi teknis angka/nilai (kolom 6) pada seluruh 5 sub-tabel (`38/38` item) di `01_PANDUAN_IOT_PROTOTYPE_POC.md`.
+  - Menambahkan kolom **`Fungsi Utama (*To The Point*)`** pada seluruh 4 sub-tabel utama (`25/25` item) serta mengubah daftar bullet **Kelompok E (10 item pasif PCB & alat Lab UNJ)** menjadi tabel terstruktur berkolom fungsi pada `02_PANDUAN_IOT_FINAL_FIELD_READY.md`.
+- **File Terdampak:**
+  - `[MODIFY]` `07_IoT_Hardware_Guide/01_PANDUAN_IOT_PROTOTYPE_POC.md`
+  - `[MODIFY]` `07_IoT_Hardware_Guide/02_PANDUAN_IOT_FINAL_FIELD_READY.md`
+  - `[MODIFY]` `HISTORY.md`
+- **Alasan / Keputusan Penting:** Memastikan siapa pun anggota tim maupun pembaca awam langsung memahami kegunaan setiap komponen/alat dalam 3 detik sebelum mengecek spesifikasi teknis dan harga aktual di marketplace.
+- **Verifikasi:** Audit struktur tabel mengonfirmasi seluruh `73` baris item (`38` PoC + `25` Final + `10` pasif/alat Final) memiliki kolom fungsi terisi penuh dengan jumlah kolom valid, `63/63` foto `.jpg` tetap valid, `0` harga rupiah, dan `0` perubahan pada `PROJECT_CONCEPT_BROVER.md`.
+
+---
+
+## [2026-11-25 14:35 WIB] — `feat(hardware-guide): add complete layperson IoT Prototype & Final guides with 63 verified JPG component photos and pin-to-pin wiring`
+- **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — Pembuatan 2 buku panduan teknis IoT lapangan bebas harga (`07_IoT_Hardware_Guide/`) dengan rincian lengkap komponen pasif, alat kerja, software/library, panduan warna kabel pin-ke-pin untuk `DOIT ESP32 DEVKIT V1 (30-Pin)`, dan foto `.jpg` untuk setiap item.
+- **Ringkasan Perubahan:**
+  - **Panduan IoT Prototype PoC (`07_IoT_Hardware_Guide/01_PANDUAN_IOT_PROTOTYPE_POC.md`):** Menyusun panduan ramah pemula dengan strategi rakit 3 tahap berurutan (**Tahap 1A Mobil Jalan via Website `http://192.168.4.1` dari `ESP32` mandiri + *Dead-Man's Switch 500 ms*** → **Tahap 1B Sensor & Aktuator** → **Tahap 1C Integrasi `Raspberry Pi 4` + Kamera + Audio AI**), daftar lengkap **38 item** (termasuk komponen pasif: kabel silikon `18 AWG`, jumper DuPont, resistor `1 kΩ`/`2 kΩ`/`4,7 kΩ`/`220 Ω`/`10 kΩ`, kapasitor elektrolit `470–1000 µF` & keramik `100 nF`, *perfboard*, *pin header*, *terminal block*, `XT30`/`JST-XH`, sekring `5A`, saklar `10A`, *heat-shrink*, solder, timah `0,8 mm`, flux, multimeter, dll.) lengkap dengan **38 foto `.jpg` lokal**, software/library/plugin (`VS Code` + `PlatformIO`, `ESPAsyncWebServer`, `MediaMTX`, `MQTTX`), tabel warna kabel pin-ke-pin `DOIT ESP32 DEVKIT V1 (30-Pin)`, kode uji siap pakai Tahap 1A, troubleshooting, dan link referensi YouTube/GitHub/Hugging Face terverifikasi.
+  - **Panduan IoT Final *Field-Ready* (`07_IoT_Hardware_Guide/02_PANDUAN_IOT_FINAL_FIELD_READY.md`):** Menyusun panduan upgrade siap kandang broiler (`Orange Pi 3B` + `eMMC 32GB` + Antena Wi-Fi `2,4 GHz`, *Custom Carrier PCB* `KiCad 8` + *Conformal Coating*, `4× JGB37-520`, `2× BTS7960 43A`, Ban RC `110–120 mm`, Box Panel `IP65` + 3D Print `PETG`, `IMX291`, `DS3218`, `INMP441`, `FS304-SHT31`, `SEN0567`, `A02YYUW`, `LiFePO₄ 4S 12,8V 6Ah` + Charger `14,6V`, `2× XL4015`, `INA219` + shunt `0,01 Ω`, `16 AWG`/`XT60`/`GX16`/`PG7`, *Kill Switch IP65*, & *Cleaning Dock*) lengkap dengan **25 foto `.jpg` lokal**, software (`KiCad 8`, `FreeCAD`, `rknn-toolkit2`, `Golang`), tabel warna kabel pin-ke-pin, SOP sanitasi 3 langkah, dan link referensi terverifikasi.
+  - **Pengunduh & Normalisasi Foto Komponen (`07_IoT_Hardware_Guide/scripts/fetch_component_images.py`):** Membuat skrip pengunduh foto produk resmi (Adafruit, Pololu, DFRobot Wiki, Orange Pi Official, Wikimedia Commons) berformat `.jpg` seragam `480×360 px` di `assets/poc/` dan `assets/final/`.
+  - **Kepatuhan Batasan:** `06_Project_Concept_BROVER/PROJECT_CONCEPT_BROVER.md` dibiarkan utuh sesuai arahan tim hingga panduan hardware tervalidasi; `MEMORY.md` dan `HISTORY.md` disinkronkan.
+- **File Terdampak:**
+  - `[NEW]` `07_IoT_Hardware_Guide/01_PANDUAN_IOT_PROTOTYPE_POC.md`
+  - `[NEW]` `07_IoT_Hardware_Guide/02_PANDUAN_IOT_FINAL_FIELD_READY.md`
+  - `[NEW]` `07_IoT_Hardware_Guide/scripts/fetch_component_images.py`
+  - `[NEW]` `07_IoT_Hardware_Guide/assets/poc/*.jpg` (`38 files`)
+  - `[NEW]` `07_IoT_Hardware_Guide/assets/final/*.jpg` (`25 files`)
+  - `[MODIFY]` `MEMORY.md`
+  - `[MODIFY]` `HISTORY.md`
+- **Alasan / Keputusan Penting:** Memudahkan tim mengecek harga komponen nyata secara manual tanpa kebingungan spesifikasi komponen kecil/pasif maupun arah kabel saat merakit Prototype bertahap dari mobil kontrol web menuju unit Final siap kandang.
+- **Verifikasi:** Audit otomatis mengonfirmasi `63/63` gambar `.jpg` valid & terbuka, `0` tautan rusak, `0` nominal harga (`Rp`), `0` jargon terlarang/Alibaba, serta inspeksi visual 100% seluruh 63 gambar lewat *contact sheet* QA.
+
+---
+
 ## [2026-11-24 19:28 WIB] — `refactor(visuals,docs): simplify 06-09 visuals for laypeople, redesign TKT roadmap with peer-reviewed basis, replace PoC rover photo, and sync README`
 - **Kontributor / Konteks:** Tim Asprak (`HikariReiziq`) — Penyederhanaan bahasa dan tampilan seluruh visual kunci (`06`, `07`, `08`, `09`) agar bersih, bebas jargon teknis, dan ramah orang awam; penggantian foto kit rover PoC (`04d_ilustrasi_rover_4wd_poc.png`); penguatan landasan ilmiah TKT berbasis Permenristekdikti & jurnal *peer-reviewed*; serta sinkronisasi 100% `README.md` dan publikasi ke GitHub.
 - **Ringkasan Perubahan:**

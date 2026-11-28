@@ -25,7 +25,7 @@
       <line x1="7.5" y1="15" x2="16.5" y2="15"/>
     </g>
         <rect x="108" y="260" width="78" height="21" rx="10" fill="#FFFFFF" opacity="0.22"/>
-        <text x="147" y="274.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 3-4</text>
+        <text x="147" y="274.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 3–4</text>
         <text x="108" y="302" font-family="'Montserrat', sans-serif" font-size="15.8" font-weight="800" fill="#FFFFFF">Purwarupa Awal</text>
 
         <!-- Visual 1-9 TKT Progress Bar -->
@@ -41,12 +41,12 @@
         <!-- Fokus BROVER Box -->
         <rect x="60" y="438" width="316" height="122" rx="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
         <text x="72" y="459" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#475569">FOKUS PENGEMBANGAN BROVER</text>
-        <circle cx="74" cy="480" r="4" fill="#0D9488"/><text x="86" y="484" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Rakit rover uji awal &amp; sensor udara</text><circle cx="74" cy="508" r="4" fill="#0D9488"/><text x="86" y="512" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Kendali lewat website tanpa internet</text><circle cx="74" cy="536" r="4" fill="#0D9488"/><text x="86" y="540" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Uji deteksi AI pada simulasi meja</text>
+        <circle cx="74" cy="480" r="4" fill="#0D9488"/><text x="86" y="484" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Rover Tahap 1 dirakit &amp; lulus uji jalan</text><circle cx="74" cy="508" r="4" fill="#0D9488"/><text x="86" y="512" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Kendali web Wi-Fi lokal &amp; rem 500 ms</text><circle cx="74" cy="536" r="4" fill="#0D9488"/><text x="86" y="540" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Dasbor web versi awal berjalan</text>
 
         <!-- Bukti Lulus Pill -->
         <rect x="60" y="572" width="316" height="54" rx="11" fill="#CCFBF1" stroke="#5EEAD4" stroke-width="1.2"/>
         <text x="72" y="592" font-family="'Montserrat', sans-serif" font-size="10.0" font-weight="800" fill="#0F766E">BUKTI KELULUSAN</text>
-        <text x="72" y="612" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Video alat berjalan &amp; uji fungsi dasar</text>
+        <text x="72" y="612" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Video uji jalan rover &amp; dasbor awal</text>
         
         <g filter="url(#cardShadow)">
           <rect x="432" y="198" width="348" height="394" rx="18" fill="#EFF6FF" stroke="#93C5FD" stroke-width="2"/>
@@ -57,7 +57,7 @@
       <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4l-5.3 5.3a1.8 1.8 0 0 0 2.6 2.6l5.3-5.3a4 4 0 0 0 5.4-5.4l-2.3 2.3-2.6-2.6 2.3-2.3z"/>
     </g>
         <rect x="496" y="210" width="78" height="21" rx="10" fill="#FFFFFF" opacity="0.22"/>
-        <text x="535" y="224.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 5-6</text>
+        <text x="535" y="224.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 5–6</text>
         <text x="496" y="252" font-family="'Montserrat', sans-serif" font-size="15.8" font-weight="800" fill="#FFFFFF">Purwarupa Siap Kandang</text>
 
         <!-- Visual 1-9 TKT Progress Bar -->
@@ -67,18 +67,18 @@
         <!-- Arti Resmi Box -->
         <rect x="448" y="310" width="316" height="66" rx="11" fill="#FFFFFF" stroke="#93C5FD" stroke-width="1.2"/>
         <text x="460" y="330" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#1D4ED8">ARTI TINGKAT KESIAPAN</text>
-        <text x="460" y="348" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Uji purwarupa penuh di simulasi nyata</text>
+        <text x="460" y="348" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Uji purwarupa di lingkungan relevan</text>
         <text x="460" y="365" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">(Mankins, Acta Astronautica, 2009)</text>
 
         <!-- Fokus BROVER Box -->
         <rect x="448" y="388" width="316" height="122" rx="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
         <text x="460" y="409" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#475569">FOKUS PENGEMBANGAN BROVER</text>
-        <circle cx="462" cy="430" r="4" fill="#2563EB"/><text x="474" y="434" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Casing tertutup tahan debu &amp; gas</text><circle cx="462" cy="458" r="4" fill="#2563EB"/><text x="474" y="462" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Roda tangguh sekam &amp; baterai aman</text><circle cx="462" cy="486" r="4" fill="#2563EB"/><text x="474" y="490" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Latih ulang AI dengan data lokal RI</text>
+        <circle cx="462" cy="430" r="4" fill="#2563EB"/><text x="474" y="434" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Servo kamera, tiang sensor &amp; dok</text><circle cx="462" cy="458" r="4" fill="#2563EB"/><text x="474" y="462" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Uji bak sekam &amp; baterai ≥3 jam</text><circle cx="462" cy="486" r="4" fill="#2563EB"/><text x="474" y="490" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Model CV feses RKNN INT8 + set uji lokal</text>
 
         <!-- Bukti Lulus Pill -->
         <rect x="448" y="522" width="316" height="54" rx="11" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.2"/>
         <text x="460" y="542" font-family="'Montserrat', sans-serif" font-size="10.0" font-weight="800" fill="#1D4ED8">BUKTI KELULUSAN</text>
-        <text x="460" y="562" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Lolos uji bak sekam &amp; presentasi juri</text>
+        <text x="460" y="562" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">M3: purwarupa terintegrasi, KPI terukur</text>
         
         <g filter="url(#cardShadow)">
           <rect x="820" y="148" width="348" height="394" rx="18" fill="#F5F3FF" stroke="#C4B5FD" stroke-width="2"/>
@@ -101,18 +101,18 @@
         <!-- Arti Resmi Box -->
         <rect x="836" y="260" width="316" height="66" rx="11" fill="#FFFFFF" stroke="#C4B5FD" stroke-width="1.2"/>
         <text x="848" y="280" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#6D28D9">ARTI TINGKAT KESIAPAN</text>
-        <text x="848" y="298" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Demonstrasi langsung di kandang asli</text>
-        <text x="848" y="315" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">(Rowe et al., Animals Q1, 2019)</text>
+        <text x="848" y="298" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Demonstrasi sistem di kandang sebenarnya</text>
+        <text x="848" y="315" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">(Permenristekdikti No. 42 Tahun 2016)</text>
 
         <!-- Fokus BROVER Box -->
         <rect x="836" y="338" width="316" height="122" rx="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
         <text x="848" y="359" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#475569">FOKUS PENGEMBANGAN BROVER</text>
-        <circle cx="850" cy="380" r="4" fill="#7C3AED"/><text x="862" y="384" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Uji siklus penuh di kandang mitra</text><circle cx="850" cy="408" r="4" fill="#7C3AED"/><text x="862" y="412" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Validasi gejala bersama Dokter Hewan</text><circle cx="850" cy="436" r="4" fill="#7C3AED"/><text x="862" y="440" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Uji prosedur kebersihan roda harian</text>
+        <circle cx="850" cy="380" r="4" fill="#7C3AED"/><text x="862" y="384" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Pilot 1–2 siklus mulai hari ke-7</text><circle cx="850" cy="408" r="4" fill="#7C3AED"/><text x="862" y="412" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Validasi skrining bersama dokter hewan</text><circle cx="850" cy="436" r="4" fill="#7C3AED"/><text x="862" y="440" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Kalibrasi SEN0567 &amp; SOP sanitasi roda</text>
 
         <!-- Bukti Lulus Pill -->
         <rect x="836" y="472" width="316" height="54" rx="11" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.2"/>
         <text x="848" y="492" font-family="'Montserrat', sans-serif" font-size="10.0" font-weight="800" fill="#6D28D9">BUKTI KELULUSAN</text>
-        <text x="848" y="512" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Alat terbukti stabil di kandang komersial</text>
+        <text x="848" y="512" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Laporan pilot &amp; kesepakatan uji tertulis</text>
         
         <g filter="url(#cardShadow)">
           <rect x="1208" y="98" width="348" height="394" rx="18" fill="#ECFDF5" stroke="#6EE7B7" stroke-width="2"/>
@@ -125,7 +125,7 @@
       <path d="M9 15l-2 3.5h3.5M15 15l2 3.5h-3.5"/>
     </g>
         <rect x="1272" y="110" width="78" height="21" rx="10" fill="#FFFFFF" opacity="0.22"/>
-        <text x="1311" y="124.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 8-9</text>
+        <text x="1311" y="124.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.2" font-weight="800" fill="#FFFFFF">TKT 8–9</text>
         <text x="1272" y="152" font-family="'Montserrat', sans-serif" font-size="15.8" font-weight="800" fill="#FFFFFF">Produk Siap Pasar</text>
 
         <!-- Visual 1-9 TKT Progress Bar -->
@@ -135,42 +135,42 @@
         <!-- Arti Resmi Box -->
         <rect x="1224" y="210" width="316" height="66" rx="11" fill="#FFFFFF" stroke="#6EE7B7" stroke-width="1.2"/>
         <text x="1236" y="230" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#047857">ARTI TINGKAT KESIAPAN</text>
-        <text x="1236" y="248" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Sistem lengkap, terdaftar HKI &amp; siap jual</text>
+        <text x="1236" y="248" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="600" fill="#0F172A">Sistem lengkap, teruji &amp; terbukti dipakai</text>
         <text x="1236" y="265" font-family="'Open Sans', sans-serif" font-size="10.4" fill="#64748B">(Permenristekdikti No. 42 Tahun 2016)</text>
 
         <!-- Fokus BROVER Box -->
         <rect x="1224" y="288" width="316" height="122" rx="11" fill="#FFFFFF" stroke="#E2E8F0" stroke-width="1.2"/>
         <text x="1236" y="309" font-family="'Montserrat', sans-serif" font-size="10.2" font-weight="800" fill="#475569">FOKUS PENGEMBANGAN BROVER</text>
-        <circle cx="1238" cy="330" r="4" fill="#059669"/><text x="1250" y="334" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Pendaftaran HKI &amp; paten sederhana</text><circle cx="1238" cy="358" r="4" fill="#059669"/><text x="1250" y="362" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Skema beli sepaket &amp; sewa peternak</text><circle cx="1238" cy="386" r="4" fill="#059669"/><text x="1250" y="390" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Lanjutan: jalur otomatis &amp; aplikasi HP</text>
+        <circle cx="1238" cy="330" r="4" fill="#059669"/><text x="1250" y="334" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">HKI terdaftar &amp; produksi batch kecil</text><circle cx="1238" cy="358" r="4" fill="#059669"/><text x="1250" y="362" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Lanjutan: CV navigasi &amp; jadwal otomatis</text><circle cx="1238" cy="386" r="4" fill="#059669"/><text x="1250" y="390" font-family="'Open Sans', sans-serif" font-size="12.0" fill="#1E293B">Riset: CO₂, kamera termal, mikrofon tetap</text>
 
         <!-- Bukti Lulus Pill -->
         <rect x="1224" y="422" width="316" height="54" rx="11" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.2"/>
         <text x="1236" y="442" font-family="'Montserrat', sans-serif" font-size="10.0" font-weight="800" fill="#047857">BUKTI KELULUSAN</text>
-        <text x="1236" y="462" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">HKI terdaftar &amp; siap adopsi peternak</text>
+        <text x="1236" y="462" font-family="'Open Sans', sans-serif" font-size="11.8" font-weight="700" fill="#0F172A">Paket Saku &amp; Kandang dipakai peternak</text>
         
 
-  <!-- OFFICIAL PERMENRISTEKDIKTI 42/2016 3-GROUP SCALE BAR -->
+  <!-- Test-environment scale bar per TKT definitions (Permenristekdikti 42/2016) -->
   <rect x="44" y="720" width="348" height="32" rx="8" fill="#CCFBF1" stroke="#5EEAD4" stroke-width="1.2"/>
-  <text x="218" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#0F766E">RISET DASAR &amp; LAB (TKT 1-4)</text>
+  <text x="218" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#0F766E">ANALITIS &amp; LABORATORIUM (TKT 3–4)</text>
 
   <rect x="404" y="720" width="388" height="32" rx="8" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.2"/>
-  <text x="598" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#1D4ED8">RISET TERAPAN &amp; SIMULASI (TKT 5-6)</text>
+  <text x="598" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#1D4ED8">LINGKUNGAN RELEVAN (TKT 5–6)</text>
 
   <rect x="804" y="720" width="752" height="32" rx="8" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.2"/>
-  <text x="1180" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#047857">PENGEMBANGAN LAPANGAN &amp; KOMERSIALISASI (TKT 7-9)</text>
+  <text x="1180" y="740.5" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="11.4" font-weight="800" fill="#047857">LINGKUNGAN SEBENARNYA (TKT 7–9)</text>
 
   <!-- Horizontal baseline line -->
   <line x1="44" y1="708" x2="1556" y2="708" stroke="#CBD5E1" stroke-width="3" stroke-linecap="round"/>
-  <line x1="218.0" y1="642" x2="218.0" y2="704" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,4"/><circle cx="218.0" cy="708" r="6.5" fill="#0D9488" stroke="#FFFFFF" stroke-width="2.2"/><rect x="142.0" y="666" width="152" height="24" rx="12" fill="#CCFBF1" stroke="#5EEAD4" stroke-width="1.2"/><text x="218.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#0F766E">Nov 2026</text><path d="M 395 433 L 427 413" fill="none" stroke="#2563EB" stroke-width="3.2" marker-end="url(#arrStep0)"/><line x1="606.0" y1="592" x2="606.0" y2="704" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,4"/><circle cx="606.0" cy="708" r="6.5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2.2"/><rect x="530.0" y="666" width="152" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.2"/><text x="606.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#1D4ED8">Des 2026 - Feb 2027</text><path d="M 783 383 L 815 363" fill="none" stroke="#7C3AED" stroke-width="3.2" marker-end="url(#arrStep1)"/><line x1="994.0" y1="542" x2="994.0" y2="704" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,4"/><circle cx="994.0" cy="708" r="6.5" fill="#7C3AED" stroke="#FFFFFF" stroke-width="2.2"/><rect x="918.0" y="666" width="152" height="24" rx="12" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.2"/><text x="994.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#6D28D9">Mar - Jun 2027</text><path d="M 1171 333 L 1203 313" fill="none" stroke="#059669" stroke-width="3.2" marker-end="url(#arrStep2)"/><line x1="1382.0" y1="492" x2="1382.0" y2="704" stroke="#059669" stroke-width="2" stroke-dasharray="4,4"/><circle cx="1382.0" cy="708" r="6.5" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><rect x="1306.0" y="666" width="152" height="24" rx="12" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.2"/><text x="1382.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#047857">Jul 2027+</text>
+  <line x1="218.0" y1="642" x2="218.0" y2="704" stroke="#0D9488" stroke-width="2" stroke-dasharray="4,4"/><circle cx="218.0" cy="708" r="6.5" fill="#0D9488" stroke="#FFFFFF" stroke-width="2.2"/><rect x="142.0" y="666" width="152" height="24" rx="12" fill="#CCFBF1" stroke="#5EEAD4" stroke-width="1.2"/><text x="218.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#0F766E">Nov 2026 (Saat Ini)</text><path d="M 395 433 L 427 413" fill="none" stroke="#2563EB" stroke-width="3.2" marker-end="url(#arrStep0)"/><line x1="606.0" y1="592" x2="606.0" y2="704" stroke="#2563EB" stroke-width="2" stroke-dasharray="4,4"/><circle cx="606.0" cy="708" r="6.5" fill="#2563EB" stroke="#FFFFFF" stroke-width="2.2"/><rect x="530.0" y="666" width="152" height="24" rx="12" fill="#DBEAFE" stroke="#93C5FD" stroke-width="1.2"/><text x="606.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#1D4ED8">Des 2026 – Feb 2027</text><path d="M 783 383 L 815 363" fill="none" stroke="#7C3AED" stroke-width="3.2" marker-end="url(#arrStep1)"/><line x1="994.0" y1="542" x2="994.0" y2="704" stroke="#7C3AED" stroke-width="2" stroke-dasharray="4,4"/><circle cx="994.0" cy="708" r="6.5" fill="#7C3AED" stroke="#FFFFFF" stroke-width="2.2"/><rect x="918.0" y="666" width="152" height="24" rx="12" fill="#EDE9FE" stroke="#C4B5FD" stroke-width="1.2"/><text x="994.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#6D28D9">Mei – Agu 2027</text><path d="M 1171 333 L 1203 313" fill="none" stroke="#059669" stroke-width="3.2" marker-end="url(#arrStep2)"/><line x1="1382.0" y1="492" x2="1382.0" y2="704" stroke="#059669" stroke-width="2" stroke-dasharray="4,4"/><circle cx="1382.0" cy="708" r="6.5" fill="#059669" stroke="#FFFFFF" stroke-width="2.2"/><rect x="1306.0" y="666" width="152" height="24" rx="12" fill="#DCFCE7" stroke="#6EE7B7" stroke-width="1.2"/><text x="1382.0" y="682" text-anchor="middle" font-family="'Montserrat', sans-serif" font-size="10.8" font-weight="700" fill="#047857">Setelah Agu 2027</text>
 
   <!-- PEER-REVIEWED RATIONALE BANNER -->
   <rect x="44" y="770" width="1512" height="72" rx="14" fill="#F8FAFC" stroke="#CBD5E1" stroke-width="1.5"/>
   <rect x="44" y="770" width="8" height="72" rx="4" fill="#0F766E"/>
   <text x="68" y="797" font-family="'Montserrat', sans-serif" font-size="12.6" font-weight="800" fill="#0F172A">Mengapa Peningkatan TKT BROVER Dilakukan Bertahap?</text>
-  <text x="68" y="821" font-family="'Open Sans', sans-serif" font-size="12.2" fill="#334155">Tinjauan atas 260+ studi teknologi unggas (Rowe et al., 2019) membuktikan mayoritas alat berhenti di TKT 3-4 karena langsung melompat tanpa uji lingkungan kandang</text>
-  <text x="68" y="837" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">nyata; uji bertahap lab → simulasi sekam → kandang mitra memastikan integrasi alat dan ketahanan lingkungan tervalidasi sebelum dipasarkan (Mankins, 2009; Olechowski et al., 2020).</text>
+  <text x="68" y="821" font-family="'Open Sans', sans-serif" font-size="12.2" fill="#334155">Tinjauan sistematis atas 264 publikasi peternakan presisi unggas (Rowe et al., 2019) menyimpulkan teknologi ini belum menjadi kenyataan komersial yang luas.</text>
+  <text x="68" y="837" font-family="'Open Sans', sans-serif" font-size="11.8" fill="#475569">Karena itu BROVER diuji bertahap: lab → bak sekam (lingkungan relevan; Mankins, 2009) → kandang mitra, dengan integrasi antarsubsistem sebagai tantangan utama (Olechowski et al., 2020).</text>
 
   <!-- CLEAN FOOTER -->
   <rect x="44" y="862" width="1512" height="34" rx="10" fill="#F1F5F9" stroke="#E2E8F0" stroke-width="1"/>
-  <text x="800" y="883.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Acuan Resmi &amp; Peer-Reviewed: Permenristekdikti No. 42/2016, Mankins (2009), Rowe et al. (2019), &amp; Olechowski et al. (2020)</text>
+  <text x="800" y="883.5" text-anchor="middle" font-family="'Open Sans', sans-serif" font-size="11.2" font-weight="600" fill="#475569">Tim Asprak (ITS &amp; UNJ)  |  Definisi TKT: Permenristekdikti No. 42/2016 (Riset Dasar 1–3, Riset Terapan 4–6, Riset Pengembangan 7–9)  |  Mankins (2009), Rowe et al. (2019), Olechowski et al. (2020)</text>
 </svg>
